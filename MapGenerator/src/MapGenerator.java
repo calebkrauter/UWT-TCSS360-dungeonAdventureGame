@@ -13,6 +13,10 @@ public class MapGenerator {
     private int maxColInWalls = maxCols - 1;
     private int maxRowInWalls = maxRows - 1;
 
+    private int myStartCol = minColInWalls;
+    private int myStartRow = minRowInWalls;
+    private int myEndCol = maxColInWalls;
+    private int myEndRow = maxRows;
 
 
     
@@ -26,10 +30,58 @@ public class MapGenerator {
         mapLayout = new String[22][22];
         addWalls();
         randomStart();
+        addPath();
         randomEnd();
         printMap();
     }
 
+    private void addPath() {
+        int xDelta = random.nextInt(minColInWalls, maxColInWalls);
+        int yDelta = random.nextInt(minRowInWalls, maxRowInWalls);
+        int chooseDirection = random.nextInt(0, 1);
+        boolean xDir = false;
+        boolean yDir = false;
+
+
+        // TODO - check if S is surrounded.
+        //          if it is not then add path of random length to S and set S-Sourounded to true and save path location
+        //          elif E has no path
+        //          add intersection to random space in prev path referencing its location, then add random length new path to intersection
+        //          Do this step recursively to ensure that S links to E.
+        // else return
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // TODO make sure that the path is greater than zero length
+//        for (int cols = 0; cols < xDelta; cols++) {
+//            if (randomStartX >= xDelta) {
+//                System.out.println("Print from r to l");
+//                for (int rows = getMyStartCol() - 1; rows >= xDelta; rows--) {
+//                    mapLayout[getMyStartCol()][rows] = "-";
+//                }
+//            }
+//            else {
+//                for (int rows = getMyStartCol(); rows < xDelta; rows++) {
+//                    mapLayout[getMyStartCol()][rows] = "-";
+//                }
+//            }
+
+//        }
+
+    }
 
     private void printMap() {
         for (int cols = 0; cols < maxCols; cols++) {
@@ -54,11 +106,10 @@ public class MapGenerator {
         int randomRow = random.nextInt(minRowInWalls, maxRowInWalls);
         mapLayout[randomCol][randomRow] = "S";
 
-        setStartLocation(randomCol, randomRow);
+        setMyStartCol(randomCol);
+        setMyStartRow(randomRow);
     }
 
-    private Dimension myStartLocation = new Dimension(minColInWalls, minRowInWalls);
-    private Dimension myEndLocation = new Dimension(maxColInWalls, maxRowInWalls);
 
 
     // TODO setup a minimum distacne the end can be from start.
@@ -68,21 +119,36 @@ public class MapGenerator {
 
         mapLayout[randomCol][randomRow] = "E";
 
-        setEndLocation(randomCol, randomRow);
+        setMyEndCol(randomCol);
+        setMyEndRow(randomRow);
     }
 
-    private Dimension getStartLocation() {
-        return myStartLocation;
+    private void setMyStartCol(int theCol) {
+        myStartCol = theCol;
     }
-    private Dimension getEndLocation() {
-        return myEndLocation;
+    private void setMyStartRow(int theRow) {
+        myStartRow = theRow;
+    }
+    private void setMyEndCol(int theCol) {
+        myEndCol = theCol;
+    }
+    private void setMyEndRow(int theRow) {
+        myEndRow = theRow;
     }
 
-    private void setStartLocation(int theCol, int theRow) {
-        myStartLocation = new Dimension(theCol, theRow);
+    public int getMyStartCol() {
+        return myStartCol;
     }
 
-    private void setEndLocation(int theCol, int theRow) {
-        myEndLocation = new Dimension(theCol, theRow);
+    public int getMyStartRow() {
+        return myStartRow;
+    }
+
+    public int getMyEndCol() {
+        return myEndCol;
+    }
+
+    public int getMyEndRow() {
+        return myEndRow;
     }
 }

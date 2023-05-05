@@ -1,4 +1,3 @@
-import java.awt.*;
 import java.util.Random;
 
 public class MapGenerator {
@@ -17,10 +16,11 @@ public class MapGenerator {
     private int myStartRow = MIN_ROW_IN_BOUNDS;
     private int myEndCol = MAX_COL_IN_BOUNDS;
     private int myEndRow = MAX_ROWS;
-    final private int LEFT_WALL = 1;
-    final private int BOTTOM_WALL = 2;
-    final private int RIGHT_WALL = 3;
-    final private int TOP_WALL = 4;
+    final private int LEFT_BOUND = 1;
+    final private int BOTTOM_BOUND = 2;
+    final private int RIGHT_BOUND = 3;
+    final private int TOP_BOUND = 4;
+    final private int NOT_ADJACENT_TO_BOUND = 99;
     final private String START = "S";
     final private String END = "E";
     final private String X_PATH = "-";
@@ -28,6 +28,9 @@ public class MapGenerator {
     final private String INTERSECTION = "O";
     final private String DOOR = "[";
     final private String WALL = "#";
+    final private int X_DIRECTION = 66;
+    final private int Y_DIRECTION = -66;
+
 
 
 
@@ -42,28 +45,35 @@ public class MapGenerator {
         mapLayout = new String[22][22];
         addWalls();
         randomStart();
-        addPath();
         randomEnd();
+        addPath();
         printMap();
 
         System.out.println();
         System.out.println();
-        System.out.println(startIsSuroundedByWalls() + " S is surrounded by walls | " + endIsSuroundedByWalls() + " E is surrounded by walls");
+        System.out.println(startIsNotByPath() + " S is surrounded by walls | " + endIsNotByPath() + " E is surrounded by walls");
         System.out.println();
         System.out.println(" START is by the wall with the code: " + startOrEndByWall(START));
         System.out.println(" END is by the wall with the code: " + startOrEndByWall(END));
     }
 
-    private boolean startIsSuroundedByWalls() {
-        if (mapLayout[getMyStartCol() + 1][getMyStartCol()] == "#" && mapLayout[getMyStartCol() - 1][getMyStartCol()] == "#" && mapLayout[getMyStartCol()][getMyStartCol() + 1] == "#" && mapLayout[getMyStartCol() + 1][getMyStartCol() - 1] == "#") {
+    // TODO this is broken
+    private boolean startIsNotByPath() {
+        if (mapLayout[getMyStartRow() + 1][getMyStartCol()] != Y_PATH
+                && mapLayout[getMyStartRow() - 1][getMyStartCol()] != Y_PATH
+                && mapLayout[getMyStartRow()][getMyStartCol() + 1] != X_PATH
+                && mapLayout[getMyStartRow()][getMyStartCol() - 1] != X_PATH) {
             return true;
         } else {
             return false;
         }
     }
 
-    private boolean endIsSuroundedByWalls() {
-        if (mapLayout[getMyEndCol() + 1][getMyEndCol()] == "#" && mapLayout[getMyEndCol() - 1][getMyEndCol()] == "#" && mapLayout[getMyEndCol()][getMyEndCol() + 1] == "#" && mapLayout[getMyEndCol() + 1][getMyEndCol() - 1] == "#") {
+    private boolean endIsNotByPath() {
+        if (mapLayout[getMyEndRow() + 1][getMyEndCol()] != Y_PATH
+                && mapLayout[getMyEndRow() - 1][getMyEndCol()] != Y_PATH
+                && mapLayout[getMyEndRow()][getMyEndCol() + 1] != X_PATH
+                && mapLayout[getMyEndRow()][getMyEndCol() - 1] != X_PATH) {
             return true;
         } else {
             return false;
@@ -85,26 +95,45 @@ public class MapGenerator {
         }
 
         if (theCol == MIN_COL_IN_BOUNDS) {
-            return LEFT_WALL;
+            return LEFT_BOUND;
         } else if (theRow == MAX_ROW_IN_BOUNDS) { // S is at the bottom row within the walls
-            return BOTTOM_WALL;
+            return BOTTOM_BOUND;
         } else if (theCol == MAX_COL_IN_BOUNDS) {
-            return RIGHT_WALL;
+            return RIGHT_BOUND;
         } else if (theRow == MIN_ROW_IN_BOUNDS) {
-            return TOP_WALL;
+            return TOP_BOUND;
         }
-        return -1;
+        return NOT_ADJACENT_TO_BOUND;
 
     }
 
+    private void produceXPath(int theCol, int theRow, String theTile, boolean theInvertedDirection, int xOrYDirection) {
+        int distance = random.nextInt(MIN_COL_IN_BOUNDS, MAX_COL_IN_BOUNDS);
+
+        for (int Col = getMyStartCol() + 1; Col < 10; Col++) {
+            mapLayout[getMyStartRow()][Col] = "-";
+        }
+
+    }
+
+    private void produceYPath(int theCol, int theRow, String theTile, boolean theInvertedDirection, int xOrYDirection) {
+        int distance = random.nextInt(MIN_COL_IN_BOUNDS, MAX_COL_IN_BOUNDS);
+
+        for (int row = getMyStartRow() + 1; row < distance; row++) {
+            mapLayout[row][getMyStartCol()] = "|";
+        }
+    }
+
     private void addPath() {
-        int xDelta = random.nextInt(MIN_COL_IN_BOUNDS, MAX_COL_IN_BOUNDS);
+        int xDelta = random.nextInt(MIN_COL_IN_BOUNDS + 1, MAX_COL_IN_BOUNDS);
         int yDelta = random.nextInt(MIN_ROW_IN_BOUNDS, MAX_ROW_IN_BOUNDS);
-        int chooseDirection = random.nextInt(0, 1);
+        int chooseXorY = random.nextInt(0, 2);
+        int choosePosOrNeg = random.nextInt(0, 2);
         boolean xDir = false;
         boolean yDir = false;
-        String currentPathDirection = "-";
-
+        boolean xNegDir = false;
+        boolean yNegDir = false;
+        String currentPathDirection = X_PATH;
 
         // TODO - check if S is surrounded walls. //
         //          then add path of random length to S and set S-Sourounded to true and save path location
@@ -113,77 +142,78 @@ public class MapGenerator {
         //          Do this step recursively to ensure that S links to E.
         // else return
 
-        if (chooseDirection % 2 == 0) {
+        // TODO - consolidate to a method. Fucntion is to decide what direction a path should be produced and give it a starting row or column.
+        int rowOrCol = 0;
+        System.out.println(chooseXorY);
+        System.out.println(choosePosOrNeg);
+        if (chooseXorY % 2 == 0) {
             xDir = true;
             yDir = false;
-            currentPathDirection = "-";
+            currentPathDirection = X_PATH;
+            if (choosePosOrNeg % 2 == 0) {
+                xNegDir = false;
+                rowOrCol = getMyStartCol() + 1;
+            } else {
+                xNegDir = true;
+                rowOrCol = getMyStartCol() - 1;
+            }
         } else {
             xDir = false;
             yDir = true;
-            currentPathDirection = "|";
+            currentPathDirection = Y_PATH;
+            if (choosePosOrNeg % 2 == 0) {
+                yNegDir = false;
+                rowOrCol = getMyStartRow() + 1;
+            } else {
+                yNegDir = true;
+                rowOrCol = getMyStartRow() - 1;
+            }
+
         }
 
-
-//        if (startIsSuroundedByWalls()) { // add first path to start at S
-//            if (startOrEndByWall(START) == LEFT_WALL) {
-//                for (int i = getMyStartCol() + 1; i <= xDelta; i++) {
-//                    mapLayout[getMyStartRow()][i] = "-";
-//                }
-//            } else if (startOrEndByWall(START) == BOTTOM_WALL) {
-//                for (int i = yDelta; i <= getMyStartRow() + 1; i++) {
-//                    mapLayout[getMyStartCol()][i] = "|";
-//                }
-//            } else if (startOrEndByWall(START) == RIGHT_WALL) {
-//                for (int i = xDelta; i <= getMyStartCol() - 1; i++) {
-//                    mapLayout[getMyStartRow()][i] = "-";
-//                }
-//            } else if (startOrEndByWall(START) == TOP_WALL) {
-//                for (int i = yDelta; i <= getMyStartRow() - 1; i++) {
-//                    mapLayout[getMyStartCol()][i] = "|";
-//                }
-//            } else {
-//                if (xDir) {
-//                    for (int i = getMyStartCol() + 1; i <= xDelta; i++) {
-//                        mapLayout[getMyStartRow()][i] = "-";
-//                    }
-//                } else {
-//                    for (int i = yDelta; i <= getMyStartRow() + 1; i++) {
-//                        mapLayout[getMyStartCol()][i] = "|";
-//                    }
-//                }
-//            }
-//
+//        for (int i = getMyStartCol() + 1; i < xDelta; i++) {
+//            mapLayout[getMyStartRow()][i] = "-";
 //        }
+        if (startIsNotByPath()) {
+            switch (startOrEndByWall(START)) {
+                case LEFT_BOUND:
+                    xNegDir = false;
+                    produceXPath(getMyStartCol() + 1, getMyStartRow(), X_PATH, xNegDir, X_DIRECTION);
+                    break;
+                case BOTTOM_BOUND:
 
+                    yNegDir = true;
+                    produceYPath(getMyStartCol(),getMyStartRow() - 1, Y_PATH, yNegDir, Y_DIRECTION);
+                    break;
+                case RIGHT_BOUND:
 
+                    xNegDir = true;
+                    produceXPath(getMyStartCol() - 1, getMyStartRow(), X_PATH, xNegDir, X_DIRECTION);
+                    break;
+                case TOP_BOUND:
 
+                    yNegDir = false;
+                    produceYPath(getMyStartCol(),getMyStartRow() + 1, Y_PATH, yNegDir, Y_DIRECTION);
+                    break;
+                case NOT_ADJACENT_TO_BOUND:
 
+                    if (currentPathDirection == X_PATH) {
+                        produceXPath(rowOrCol, getMyStartRow(), X_PATH, xNegDir, X_DIRECTION);
+                    } else {
+                        produceYPath(getMyStartCol(), rowOrCol, Y_PATH, yNegDir, Y_DIRECTION);
+                    }
 
+                    break;
+            }
+            // no cases, then choose direction and go a random distance
+        }
 
+    }
 
-
-
-
-
-
-
-
-        // TODO make sure that the path is greater than zero length
-//        for (int cols = 0; cols < xDelta; cols++) {
-//            if (randomStartX >= xDelta) {
-//                System.out.println("Print from r to l");
-//                for (int rows = getMyStartCol() - 1; rows >= xDelta; rows--) {
-//                    mapLayout[getMyStartCol()][rows] = "-";
-//                }
-//            }
-//            else {
-//                for (int rows = getMyStartCol(); rows < xDelta; rows++) {
-//                    mapLayout[getMyStartCol()][rows] = "-";
-//                }
-//            }
-
-//        }
-
+    private void setStartPosition(int theRow, int theCol) {
+        mapLayout[theRow][theCol] = START;
+        setMyStartCol(theCol);
+        setMyStartRow(theRow);
     }
 
     private void printMap() {
@@ -194,8 +224,8 @@ public class MapGenerator {
             }
         }
     }
-
     // Fill the array with the path elements within the boundary of the wall.
+
     private void addWalls() {
         for (int cols = 0; cols < MAX_COLS; cols++) {
             for (int rows = 0; rows < MAX_ROWS; rows++) {
@@ -207,23 +237,23 @@ public class MapGenerator {
     private void randomStart() {
         int randomCol = random.nextInt(MIN_COL_IN_BOUNDS, MAX_COL_IN_BOUNDS);
         int randomRow = random.nextInt(MIN_ROW_IN_BOUNDS, MAX_ROW_IN_BOUNDS);
-        mapLayout[randomCol][randomRow] = "S";
 
-        setMyStartCol(randomCol);
-        setMyStartRow(randomRow);
+        setStartPosition(randomCol, randomRow);
     }
 
 
-
     // TODO setup a minimum distacne the end can be from start.
+
     private void randomEnd() {
         int randomCol = random.nextInt(MIN_COL_IN_BOUNDS, MAX_COL_IN_BOUNDS);
         int randomRow = random.nextInt(MIN_ROW_IN_BOUNDS, MAX_ROW_IN_BOUNDS);
 
-        mapLayout[randomCol][randomRow] = "E";
-
-        setMyEndCol(randomCol);
-        setMyEndRow(randomRow);
+        setEndPosition(randomCol, randomRow);
+    }
+    private void setEndPosition(int theRow, int theCol) {
+        mapLayout[theRow][theCol] = END;
+        setMyEndCol(theCol);
+        setMyEndRow(theRow);
     }
 
     private void setMyStartCol(int theCol) {

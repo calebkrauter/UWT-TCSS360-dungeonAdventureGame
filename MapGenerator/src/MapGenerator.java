@@ -107,20 +107,77 @@ public class MapGenerator {
 
     }
 
-    private void produceXPath(int theCol, int theRow, String theTile, boolean theInvertedDirection, int xOrYDirection) {
+    private void produceXPath(int theCol, int theRow, String theTile, boolean theNegDir, int xOrYDirection) {
         int distance = random.nextInt(MIN_COL_IN_BOUNDS, MAX_COL_IN_BOUNDS);
 
-        for (int Col = getMyStartCol() + 1; Col < 10; Col++) {
-            mapLayout[getMyStartRow()][Col] = "-";
+        if (theNegDir) {
+            System.out.println("neg left dir");
+
+            System.out.println(distance);
+            System.out.println(getMyStartCol());
+
+            if (distance >= getMyStartCol()) {
+                distance = distance % getMyStartCol();
+            }
+            System.out.println("left");
+            System.out.println(distance);
+            System.out.println(getMyStartCol());
+            for (int Col = getMyStartCol() - distance; Col < getMyStartCol(); Col++) {
+                mapLayout[getMyStartRow()][Col] = "-";
+            }
+        } else {
+            System.out.println(distance);
+            System.out.println(getMyStartCol());
+            if (distance <= getMyStartRow() + 1) {
+                distance = (distance + distance & getMyStartRow()) % MAX_COL_IN_BOUNDS;
+            }
+            System.out.println("right");
+            System.out.println(distance);
+            System.out.println(getMyStartCol());
+            for (int Col = getMyStartCol() + 1; Col < distance; Col++) {
+                mapLayout[getMyStartRow()][Col] = "-";
+            }
         }
+
 
     }
 
-    private void produceYPath(int theCol, int theRow, String theTile, boolean theInvertedDirection, int xOrYDirection) {
-        int distance = random.nextInt(MIN_COL_IN_BOUNDS, MAX_COL_IN_BOUNDS);
+    private void produceYPath(int theCol, int theRow, String theTile, boolean theNegDir, int xOrYDirection) {
+        int distance = random.nextInt(MIN_COL_IN_BOUNDS + 1, MAX_COL_IN_BOUNDS);
 
-        for (int row = getMyStartRow() + 1; row < distance; row++) {
-            mapLayout[row][getMyStartCol()] = "|";
+        if (theNegDir) {
+            System.out.println("neg up dir");
+            System.out.println(distance);
+            System.out.println(getMyStartRow());
+
+//            int startPath = 0;
+//            if (getMyStartCol() - distance <= 0) {
+//                startPath = getMyStartCol() - distance - getMyStartCol();
+//            } else {
+//                startPath = getMyStartCol() - distance;
+//            }
+
+            if (distance >= getMyStartRow()) {
+                distance = distance % getMyStartRow();
+            }
+            System.out.println("up");
+            System.out.println(distance);
+            System.out.println(getMyStartRow());
+            for (int row = distance; row < getMyStartRow(); row++) {
+                mapLayout[row][getMyStartCol()] = "|";
+            }
+        } else {
+            System.out.println(distance);
+            System.out.println(getMyStartRow());
+            if (distance <= getMyStartRow() + 1) {
+                distance = (distance + distance & getMyStartRow()) % MAX_ROW_IN_BOUNDS;
+            }
+            System.out.println("down");
+            System.out.println(distance);
+            System.out.println(getMyStartRow());
+            for (int row = getMyStartRow() + 1; row < distance; row++) {
+                mapLayout[row][getMyStartCol()] = "|";
+            }
         }
     }
 
@@ -198,9 +255,19 @@ public class MapGenerator {
                 case NOT_ADJACENT_TO_BOUND:
 
                     if (currentPathDirection == X_PATH) {
-                        produceXPath(rowOrCol, getMyStartRow(), X_PATH, xNegDir, X_DIRECTION);
+                        System.out.println("choose dir and go left or right");
+                        if (xNegDir) {
+                            produceXPath(getMyStartCol() + 1, getMyStartRow(), X_PATH, xNegDir, X_DIRECTION);
+                        } else {
+                            produceXPath(getMyStartCol() - 1, getMyStartRow(), X_PATH, xNegDir, X_DIRECTION);
+                        }
                     } else {
-                        produceYPath(getMyStartCol(), rowOrCol, Y_PATH, yNegDir, Y_DIRECTION);
+                        System.out.println("choose dir and go up or down");
+                        if (yNegDir) {
+                            produceYPath(getMyStartCol(),getMyStartRow() - 1, Y_PATH, yNegDir, Y_DIRECTION);
+                        } else {
+                            produceYPath(getMyStartCol(),getMyStartRow() + 1, Y_PATH, yNegDir, Y_DIRECTION);
+                        }
                     }
 
                     break;

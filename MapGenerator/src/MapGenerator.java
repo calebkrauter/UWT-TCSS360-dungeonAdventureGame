@@ -5,8 +5,8 @@ public class MapGenerator {
 
     private String[][] mapLayout;
     private Random random = new Random();
-    private int MAX_COLS = 200;
-    private int MAX_ROWS = 200;
+    private int MAX_COLS = 10;
+    private int MAX_ROWS = 10;
     final private int MIN_COL_IN_BOUNDS = 1;
     final private int MIN_ROW_IN_BOUNDS = 1;
     final private int MAX_COL_IN_BOUNDS = MAX_COLS - 1;
@@ -16,6 +16,9 @@ public class MapGenerator {
     private int myStartRow = MIN_ROW_IN_BOUNDS;
     private int myEndCol = MAX_COL_IN_BOUNDS;
     private int myEndRow = MAX_ROWS;
+    private int myCurIntersectionCol = 0;
+    private int myCurIntersectionRow = 0;
+
     final private int LEFT_BOUND = 1;
     final private int BOTTOM_BOUND = 2;
     final private int RIGHT_BOUND = 3;
@@ -48,16 +51,15 @@ public class MapGenerator {
         randomEnd();
         addPath();
         printMap();
-
-        System.out.println();
-        System.out.println();
-        System.out.println(startIsNotByPath() + " S is surrounded by walls | " + endIsNotByPath() + " E is surrounded by walls");
-        System.out.println();
-        System.out.println(" START is by the wall with the code: " + startOrEndByWall(START));
-        System.out.println(" END is by the wall with the code: " + startOrEndByWall(END));
+//
+//        System.out.println();
+//        System.out.println();
+//        System.out.println(startIsNotByPath() + " S is surrounded by walls | " + endIsByPath() + " E is surrounded by walls");
+//        System.out.println();
+//        System.out.println(" START is by the wall with the code: " + startOrEndByWall(START));
+//        System.out.println(" END is by the wall with the code: " + startOrEndByWall(END));
     }
 
-    // TODO this is broken
     private boolean startIsNotByPath() {
         if (mapLayout[getMyStartRow() + 1][getMyStartCol()] != Y_PATH
                 && mapLayout[getMyStartRow() - 1][getMyStartCol()] != Y_PATH
@@ -69,11 +71,22 @@ public class MapGenerator {
         }
     }
 
-    private boolean endIsNotByPath() {
-        if (mapLayout[getMyEndRow() + 1][getMyEndCol()] != Y_PATH
-                && mapLayout[getMyEndRow() - 1][getMyEndCol()] != Y_PATH
-                && mapLayout[getMyEndRow()][getMyEndCol() + 1] != X_PATH
-                && mapLayout[getMyEndRow()][getMyEndCol() - 1] != X_PATH) {
+
+    /*
+     0 1 2 3 4
+   0 # # # # #
+   1 # # # # #
+   2 # # # # #
+   3 # E # # #
+   4 # # # # #
+     */
+
+    private boolean endIsByPath() {
+        if (
+                mapLayout[getMyEndRow() + 1][getMyEndCol()] != "#"
+                || mapLayout[getMyEndRow() - 1][getMyEndCol()] != "#"
+                || mapLayout[getMyEndRow()][getMyEndCol() + 1] != "#"
+                || mapLayout[getMyEndRow()][getMyEndCol() - 1] != "#") {
             return true;
         } else {
             return false;
@@ -107,60 +120,74 @@ public class MapGenerator {
 
     }
 
+    // TODO - make sure that start and end cannot be overwritten.
     // TODO make sure distance is large enough, bound greater than origin.
     // TODO - make sure that intersections generate no matter the length of the random path.
 
     private void produceXPath(int theCol, int theRow, String theTile, boolean theNegDir, int xOrYDirection) {
+        if (endIsByPath()) {
+            return;
+        }
         int distance = random.nextInt(MIN_COL_IN_BOUNDS, MAX_COL_IN_BOUNDS);
 
         if (theNegDir) {
             System.out.println("neg left dir");
-
+//
             System.out.println(distance);
-            System.out.println(getMyStartCol());
+            System.out.println(theCol);
 
-            if (distance >= getMyStartCol()) {
-                distance = distance % getMyStartCol();
+            while (distance >= theCol) {
+                distance = distance % theCol;
+            }
+            if (distance > MAX_COL_IN_BOUNDS) {
+                distance = MAX_COL_IN_BOUNDS;
             }
             System.out.println("left");
             System.out.println(distance);
-            System.out.println(getMyStartCol());
-            int randomIntersect = random.nextInt(getMyStartCol() - distance, getMyStartCol());
-            for (int Col = getMyStartCol() - distance; Col < getMyStartCol(); Col++) {
-                mapLayout[getMyStartRow()][Col] = "-";
+            System.out.println(theCol);
+            int randomIntersect = random.nextInt(theCol - distance, theCol);
+            for (int Col = theCol - distance; Col < theCol; Col++) {
+                mapLayout[theRow][Col] = theTile;
             }
-            mapLayout[getMyStartRow()][randomIntersect] = INTERSECTION;
+            setMyCurIntersectionPos(theRow, randomIntersect);
+            produceYPath(getMyCurIntersectionCol(), getMyCurIntersectionRow(), Y_PATH, false, 0);
 
         } else {
             System.out.println(distance);
-            System.out.println(getMyStartCol());
-            if (distance <= getMyStartCol() + 1) {
-                distance = (distance + getMyStartCol()) % MAX_COL_IN_BOUNDS;
+            System.out.println(theCol);
+            while (distance <= theCol + 1) {
+                distance = (distance + theCol + 2);
+            }
+            if (distance > MAX_COL_IN_BOUNDS) {
+                distance = MAX_COL_IN_BOUNDS;
             }
             System.out.println("right");
             System.out.println(distance);
-            System.out.println(getMyStartCol());
+            System.out.println(theCol);
 
-            int randomIntersect = random.nextInt(getMyStartCol() + 1, distance);
+            int randomIntersect = random.nextInt( theCol, distance);
 
-            for (int Col = getMyStartCol() + 1; Col < distance; Col++) {
-                mapLayout[getMyStartRow()][Col] = "-";
+            for (int Col = theCol + 1; Col < distance; Col++) {
+                mapLayout[theRow][Col] = theTile;
            }
-            mapLayout[getMyStartCol()][randomIntersect] = INTERSECTION;
+            setMyCurIntersectionPos(theRow, randomIntersect);
+            produceYPath(getMyCurIntersectionCol(), getMyCurIntersectionRow(), Y_PATH, false, 0);
 
         }
 
 
     }
-
+//static int value = 0;
     private void produceYPath(int theCol, int theRow, String theTile, boolean theNegDir, int xOrYDirection) {
-
+        if (endIsByPath()) {
+            return;
+        }
         int distance = random.nextInt(MIN_COL_IN_BOUNDS + 1, MAX_COL_IN_BOUNDS);
 
         if (theNegDir) {
             System.out.println("neg up dir");
             System.out.println(distance);
-            System.out.println(getMyStartRow());
+            System.out.println(theRow);
 
 //            int startPath = 0;
 //            if (getMyStartCol() - distance <= 0) {
@@ -169,38 +196,51 @@ public class MapGenerator {
 //                startPath = getMyStartCol() - distance;
 //            }
 
-            if (distance >= getMyStartRow()) {
-                distance = distance % getMyStartRow();
+            while (distance >= theRow) {
+                distance = distance % theRow;
+            }
+            if (distance > MAX_ROW_IN_BOUNDS) {
+                distance = MAX_ROW_IN_BOUNDS;
             }
             System.out.println("up");
             System.out.println(distance);
-            System.out.println(getMyStartRow());
+            System.out.println(theRow);
 
 //            int chanceOfDoor = random.nextInt(0, 5);
 
-            int randomIntersect = random.nextInt(distance, getMyStartRow());
-            for (int row = distance; row < getMyStartRow(); row++) {
-                mapLayout[row][getMyStartCol()] = "|";
+            int randomIntersect = random.nextInt(distance, theRow);
+            for (int row = distance; row < theRow; row++) {
+                mapLayout[row][theCol] = theTile;
             }
-            mapLayout[randomIntersect][getMyStartCol()] = INTERSECTION;
+            setMyCurIntersectionPos(randomIntersect, theCol);
+            produceXPath(getMyCurIntersectionCol(), getMyCurIntersectionRow(), X_PATH, false, 0);
+
         } else {
             System.out.println(distance);
-            System.out.println(getMyStartRow());
-            if (distance <= getMyStartRow() + 1) {
-                distance = (distance + getMyStartRow()) % MAX_ROW_IN_BOUNDS;
+            System.out.println(theRow);
+            while (distance <= theRow + 1) {
+                distance = (distance + theRow + 2);
             }
+            if (distance > MAX_ROW_IN_BOUNDS) {
+                distance = MAX_ROW_IN_BOUNDS;
+            }
+//            distance = (int) (distance * random.nextGaussian());
+//            while (distance <=)
             System.out.println("down");
             System.out.println(distance);
-            System.out.println(getMyStartRow());
+            System.out.println(theRow);
 
-            int randomIntersect = random.nextInt(getMyStartRow() + 1, distance);
-            for (int row = getMyStartRow() + 1; row < distance; row++) {
-                mapLayout[row][getMyStartCol()] = "|";
+            int randomIntersect = random.nextInt(theRow, distance);
+            for (int row = theRow + 1; row < distance; row++) {
+                mapLayout[row][theCol] = theTile;
             }
-            mapLayout[randomIntersect][getMyStartCol()] = INTERSECTION;
-
+            setMyCurIntersectionPos(randomIntersect, theCol);
+            produceXPath(getMyCurIntersectionCol(), getMyCurIntersectionRow(), X_PATH, false, 0);
         }
     }
+
+
+
 
     private void addPath() {
         int xDelta = random.nextInt(MIN_COL_IN_BOUNDS + 1, MAX_COL_IN_BOUNDS);
@@ -256,38 +296,38 @@ public class MapGenerator {
             switch (startOrEndByWall(START)) {
                 case LEFT_BOUND:
                     xNegDir = false;
-                    produceXPath(getMyStartCol() + 1, getMyStartRow(), X_PATH, xNegDir, X_DIRECTION);
+                    produceXPath(getMyStartCol(), getMyStartRow(), X_PATH, xNegDir, X_DIRECTION);
                     break;
                 case BOTTOM_BOUND:
 
                     yNegDir = true;
-                    produceYPath(getMyStartCol(),getMyStartRow() - 1, Y_PATH, yNegDir, Y_DIRECTION);
+                    produceYPath(getMyStartCol(),getMyStartRow(), Y_PATH, yNegDir, Y_DIRECTION);
                     break;
                 case RIGHT_BOUND:
 
                     xNegDir = true;
-                    produceXPath(getMyStartCol() - 1, getMyStartRow(), X_PATH, xNegDir, X_DIRECTION);
+                    produceXPath(getMyStartCol(), getMyStartRow(), X_PATH, xNegDir, X_DIRECTION);
                     break;
                 case TOP_BOUND:
 
                     yNegDir = false;
-                    produceYPath(getMyStartCol(),getMyStartRow() + 1, Y_PATH, yNegDir, Y_DIRECTION);
+                    produceYPath(getMyStartCol(), getMyStartRow(), Y_PATH, yNegDir, Y_DIRECTION);
                     break;
                 case NOT_ADJACENT_TO_BOUND:
 
                     if (currentPathDirection == X_PATH) {
                         System.out.println("choose dir and go left or right");
                         if (xNegDir) {
-                            produceXPath(getMyStartCol() + 1, getMyStartRow(), X_PATH, xNegDir, X_DIRECTION);
+                            produceXPath(getMyStartCol(), getMyStartRow(), X_PATH, xNegDir, X_DIRECTION);
                         } else {
-                            produceXPath(getMyStartCol() - 1, getMyStartRow(), X_PATH, xNegDir, X_DIRECTION);
+                            produceXPath(getMyStartCol(), getMyStartRow(), X_PATH, xNegDir, X_DIRECTION);
                         }
                     } else {
                         System.out.println("choose dir and go up or down");
                         if (yNegDir) {
-                            produceYPath(getMyStartCol(),getMyStartRow() - 1, Y_PATH, yNegDir, Y_DIRECTION);
+                            produceYPath(getMyStartCol(), getMyStartRow(), Y_PATH, yNegDir, Y_DIRECTION);
                         } else {
-                            produceYPath(getMyStartCol(),getMyStartRow() + 1, Y_PATH, yNegDir, Y_DIRECTION);
+                            produceYPath(getMyStartCol(), getMyStartRow(), Y_PATH, yNegDir, Y_DIRECTION);
                         }
                     }
 
@@ -356,6 +396,17 @@ public class MapGenerator {
     private void setMyEndRow(int theRow) {
         myEndRow = theRow;
     }
+    private void setMyCurIntersectionPos(int theRow, int theCol) {
+        mapLayout[theRow][theCol] = INTERSECTION;
+        setMyCurIntersectionRow(theRow);
+        setMyCurIntersectionCol(theCol);
+    }
+    private void setMyCurIntersectionCol(int theCol) {
+        myCurIntersectionCol = theCol;
+    }
+    private void setMyCurIntersectionRow(int theRow) {
+        myCurIntersectionRow = theRow;
+    }
 
     public int getMyStartCol() {
         return myStartCol;
@@ -371,5 +422,12 @@ public class MapGenerator {
 
     public int getMyEndRow() {
         return myEndRow;
+    }
+
+    public int getMyCurIntersectionCol() {
+        return myCurIntersectionCol;
+    }
+    public int getMyCurIntersectionRow() {
+        return myCurIntersectionRow;
     }
 }

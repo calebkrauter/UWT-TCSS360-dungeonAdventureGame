@@ -5,8 +5,8 @@ public class MapGenerator {
 
     private String[][] mapLayout;
     private Random random = new Random();
-    private int MAX_COLS = 22;
-    private int MAX_ROWS = 22;
+    private int MAX_COLS = 200;
+    private int MAX_ROWS = 200;
     final private int MIN_COL_IN_BOUNDS = 1;
     final private int MIN_ROW_IN_BOUNDS = 1;
     final private int MAX_COL_IN_BOUNDS = MAX_COLS - 1;
@@ -42,7 +42,7 @@ public class MapGenerator {
 
     // Idea use recursion to add each type of space in one small funciton.
     public MapGenerator() {
-        mapLayout = new String[22][22];
+        mapLayout = new String[MAX_ROWS][MAX_COLS];
         addWalls();
         randomStart();
         randomEnd();
@@ -107,6 +107,9 @@ public class MapGenerator {
 
     }
 
+    // TODO make sure distance is large enough, bound greater than origin.
+    // TODO - make sure that intersections generate no matter the length of the random path.
+
     private void produceXPath(int theCol, int theRow, String theTile, boolean theNegDir, int xOrYDirection) {
         int distance = random.nextInt(MIN_COL_IN_BOUNDS, MAX_COL_IN_BOUNDS);
 
@@ -122,27 +125,36 @@ public class MapGenerator {
             System.out.println("left");
             System.out.println(distance);
             System.out.println(getMyStartCol());
+            int randomIntersect = random.nextInt(getMyStartCol() - distance, getMyStartCol());
             for (int Col = getMyStartCol() - distance; Col < getMyStartCol(); Col++) {
                 mapLayout[getMyStartRow()][Col] = "-";
             }
+            mapLayout[getMyStartRow()][randomIntersect] = INTERSECTION;
+
         } else {
             System.out.println(distance);
             System.out.println(getMyStartCol());
-            if (distance <= getMyStartRow() + 1) {
-                distance = (distance + distance & getMyStartRow()) % MAX_COL_IN_BOUNDS;
+            if (distance <= getMyStartCol() + 1) {
+                distance = (distance + getMyStartCol()) % MAX_COL_IN_BOUNDS;
             }
             System.out.println("right");
             System.out.println(distance);
             System.out.println(getMyStartCol());
+
+            int randomIntersect = random.nextInt(getMyStartCol() + 1, distance);
+
             for (int Col = getMyStartCol() + 1; Col < distance; Col++) {
                 mapLayout[getMyStartRow()][Col] = "-";
-            }
+           }
+            mapLayout[getMyStartCol()][randomIntersect] = INTERSECTION;
+
         }
 
 
     }
 
     private void produceYPath(int theCol, int theRow, String theTile, boolean theNegDir, int xOrYDirection) {
+
         int distance = random.nextInt(MIN_COL_IN_BOUNDS + 1, MAX_COL_IN_BOUNDS);
 
         if (theNegDir) {
@@ -163,21 +175,30 @@ public class MapGenerator {
             System.out.println("up");
             System.out.println(distance);
             System.out.println(getMyStartRow());
+
+//            int chanceOfDoor = random.nextInt(0, 5);
+
+            int randomIntersect = random.nextInt(distance, getMyStartRow());
             for (int row = distance; row < getMyStartRow(); row++) {
                 mapLayout[row][getMyStartCol()] = "|";
             }
+            mapLayout[randomIntersect][getMyStartCol()] = INTERSECTION;
         } else {
             System.out.println(distance);
             System.out.println(getMyStartRow());
             if (distance <= getMyStartRow() + 1) {
-                distance = (distance + distance & getMyStartRow()) % MAX_ROW_IN_BOUNDS;
+                distance = (distance + getMyStartRow()) % MAX_ROW_IN_BOUNDS;
             }
             System.out.println("down");
             System.out.println(distance);
             System.out.println(getMyStartRow());
+
+            int randomIntersect = random.nextInt(getMyStartRow() + 1, distance);
             for (int row = getMyStartRow() + 1; row < distance; row++) {
                 mapLayout[row][getMyStartCol()] = "|";
             }
+            mapLayout[randomIntersect][getMyStartCol()] = INTERSECTION;
+
         }
     }
 

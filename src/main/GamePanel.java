@@ -32,9 +32,11 @@ public class GamePanel extends JPanel implements Runnable{
     // 60 fps = 60 updates a second
     // Keeps program running until it is told to stop/
     // implementing runnable is key to using thread.
-    Thread myGameThread;
-    KeyHandler myKeyHandler = new KeyHandler();
-    Hero myHero = new Hero(this, myKeyHandler);
+    private Thread myGameThread;
+
+    private KeyHandler myKeyHandler = new KeyHandler();
+    private MouseHandler myMouseHandler = new MouseHandler();
+    private Hero myHero = new Hero(this, myKeyHandler);
 
     int FPS = 60;
 
@@ -56,7 +58,11 @@ public class GamePanel extends JPanel implements Runnable{
         // will be done in an offscreen painting buffer.
         this.setDoubleBuffered(true);
 
+        // listens to keyboard.
         this.addKeyListener(myKeyHandler);
+
+        // listens to when mouse is clicked, pressed, released, has entered or exited
+        this.addMouseListener(myMouseHandler);
 
         // this GamePanel can be "focused" to receive key input.
         this.setFocusable(true);

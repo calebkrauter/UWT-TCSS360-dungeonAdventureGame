@@ -15,6 +15,11 @@ public class Main {
 
         GamePanel myGamePanel = new GamePanel();
         myWindow.add(myGamePanel);
+
+        // Request that this component gets input focus.
+        myGamePanel.requestFocus();
+
+
         // so we can see it
         myWindow.pack();
 

@@ -1,6 +1,7 @@
 package main;
 
 import entity.Hero;
+import tile.TileManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,13 +21,13 @@ public class GamePanel extends JPanel implements Runnable{
 
     // size of our game screen. How many tiles can be displayed on a single
     // screen both horizontally and vertically?
-    final int maxScreenCol = 16;
-    final int maxScreenRow = 12;
+    public final int maxScreenCol = 16;
+    public final int maxScreenRow = 12;
 
     // 760 pixels
-    final int screenWidth = tileSize * maxScreenCol;
+    public final int screenWidth = tileSize * maxScreenCol;
     // 576 pixels
-    final int screenHeight = tileSize * maxScreenRow;
+    public final int screenHeight = tileSize * maxScreenRow;
 
     // We need a game clock
     // 60 fps = 60 updates a second
@@ -34,19 +35,12 @@ public class GamePanel extends JPanel implements Runnable{
     // implementing runnable is key to using thread.
     private Thread myGameThread;
 
+    private TileManager myTileManager = new TileManager(this);
     private KeyHandler myKeyHandler = new KeyHandler();
     private MouseHandler myMouseHandler = new MouseHandler();
     private Hero myHero = new Hero(this, myKeyHandler);
 
     int FPS = 60;
-
-    // Default player position
-    int heroX = 100;
-    int heroY = 100;
-    // 4 pixels
-    int heroSpeed = 4;
-
-
 
     // constructor for game panel
     public GamePanel() {
@@ -179,7 +173,7 @@ public class GamePanel extends JPanel implements Runnable{
     // X value increases when going to the right
     // Y value increases when going downward
     public void update (){
-        myHero.update();;
+        myHero.update();
     }
 
     // paint the current state.
@@ -189,6 +183,7 @@ public class GamePanel extends JPanel implements Runnable{
         // allows us to use additional functions such as....
         Graphics2D g2 = (Graphics2D) g;
 
+        myTileManager.draw(g2);
         myHero.draw(g2);
 
         // good practice to save memory.

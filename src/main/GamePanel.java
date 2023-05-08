@@ -2,8 +2,8 @@ package main;
 
 import entity.Hero;
 
+import javax.swing.*;
 import java.awt.*;
-import javax.swing.JPanel;
 
 public class GamePanel extends JPanel implements Runnable{
 
@@ -173,7 +173,7 @@ public class GamePanel extends JPanel implements Runnable{
     // X value increases when going to the right
     // Y value increases when going downward
     public void update (){
-myHero.update();;
+        myHero.update();;
     }
 
     // paint the current state.

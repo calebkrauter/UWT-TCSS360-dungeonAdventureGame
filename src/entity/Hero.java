@@ -3,8 +3,11 @@ package entity;
 import main.GamePanel;
 import main.KeyHandler;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
-import java.security.Key;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 
 public class Hero extends Entity {
@@ -18,6 +21,7 @@ public class Hero extends Entity {
         this.keyH = theKeyH;
 
         setDefaultValues();
+        getHeroImage();
     }
 
     // set the Hero's default values.
@@ -26,32 +30,114 @@ public class Hero extends Entity {
         x = 100;
         y = 100;
         speed = 4;
+        //starting direction can vary.
+        direction = "down";
 
     }
+
+    public void getHeroImage() {
+
+        try {
+            // only have two sprite pngs so its the same two in each direction. Need to make more
+            // Need to make more later on.
+            up1 = ImageIO.read(new File("/Users/makaimartinez/Desktop/360-Dungeon-Adventure/res/player/character1.png"));
+            up2 = ImageIO.read(new File("/Users/makaimartinez/Desktop/360-Dungeon-Adventure/res/player/character2.png"));
+            down1 = ImageIO.read(new File("/Users/makaimartinez/Desktop/360-Dungeon-Adventure/res/player/character1.png"));
+            down2 = ImageIO.read(new File("/Users/makaimartinez/Desktop/360-Dungeon-Adventure/res/player/character2.png"));
+            left1 = ImageIO.read(new File("/Users/makaimartinez/Desktop/360-Dungeon-Adventure/res/player/character1.png"));
+            left2 = ImageIO.read(new File("/Users/makaimartinez/Desktop/360-Dungeon-Adventure/res/player/character2.png"));
+            right1 = ImageIO.read(new File("/Users/makaimartinez/Desktop/360-Dungeon-Adventure/res/player/character1.png"));
+            right2 = ImageIO.read(new File("/Users/makaimartinez/Desktop/360-Dungeon-Adventure/res/player/character2.png"));
+
+        }catch(IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 
     // change player position. Important to remember that:
     // X value increases when going to the right
     // Y value increases when going downward
+    // gets called 60 times a seconds in the game loop (GamePanel class)
     public void update(){
-        if(keyH.upPressed == true){
-            y -= speed;
+
+        // this if statement allows our character to be frozen when
+        // we are stationary. Counter doesnt increase unless we press a key.
+        if(keyH.upPressed == true || keyH.downPressed == true ||
+                keyH.leftPressed == true || keyH.rightPressed == true) {
+
+            if(keyH.upPressed == true){
+                direction = "up";
+                y -= speed;
+            }
+            else if(keyH.downPressed == true){
+                direction = "down";
+                y += speed;
+            }
+            else if(keyH.leftPressed == true){
+                direction = "left";
+                x -= speed;
+            }
+            else if(keyH.rightPressed == true){
+                direction = "right";
+                x += speed;
+            }
+            spriteCounter++;
+            // every 12 frames player image changes
+            if(spriteCounter > 12) {
+                if(spriteNum == 1){
+                    spriteNum = 2;
+                } else if (spriteNum == 2) {
+                    spriteNum = 1;
+                }
+                spriteCounter = 0;
+            }
         }
-        else if(keyH.downPressed == true){
-            y += speed;
-        }
-        else if(keyH.leftPressed == true){
-            x -= speed;
-        }
-        else if(keyH.rightPressed == true){
-            x += speed;
-        }
+
+
+
     }
 
     public void draw(Graphics2D g2){
+//        test rectangle
+//        g2.setColor(Color.white);
+//        g2.fillRect(x, y, gp.tileSize, gp.tileSize);
 
-        g2.setColor(Color.white);
+        BufferedImage image = null;
 
-        g2.fillRect(x, y, gp.tileSize, gp.tileSize);
+        if (direction.equals("up")){
+            if(spriteNum == 1){
+                image = up1;
+            } else if (spriteNum == 2){
+                image = up2;
+            }
+        }
+        else if (direction.equals("down")){
+            if(spriteNum == 1){
+                image = down1;
+            } else if (spriteNum == 2){
+                image = down2;
+            }
+        }
+        else if (direction.equals("left")){
+            if(spriteNum == 1){
+                image = left1;
+            } else if (spriteNum == 2){
+                image = left2;
+            }
+        }
+        else if (direction.equals("right")){
+            if(spriteNum == 1){
+                image = right1;
+            } else if (spriteNum == 2){
+                image = right2;
+            }
+        }
+        // image, position, dimensions, ImageObserver
+        g2.drawImage(image, x, y, gp.tileSize, gp.tileSize, null);
+
+
     }
 
 }

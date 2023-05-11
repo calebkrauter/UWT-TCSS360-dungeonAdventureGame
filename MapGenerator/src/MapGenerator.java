@@ -11,8 +11,8 @@ public class MapGenerator {
     final private int NOT_ADJACENT_TO_BOUND = 99;
     final private int X_DIRECTION = 66;
     final private int Y_DIRECTION = -66;
-    final private int MAX_COLS = 25;
-    final private int MAX_ROWS = 25;
+    final private int MAX_COLS = 12;
+    final private int MAX_ROWS = 12;
     final private int MAX_COL_IN_BOUNDS = MAX_COLS - 1;
     final private int MAX_ROW_IN_BOUNDS = MAX_ROWS - 1;
     private int myStartCol = MIN_COL_IN_BOUNDS;
@@ -47,6 +47,9 @@ public class MapGenerator {
         randomStart();
         randomEnd();
         addPath();
+        addMissingIntersections();
+        replaceStartAndEnd();
+        addDoorIfNoneExist();
         printMap();
 //
 //        System.out.println();
@@ -59,6 +62,58 @@ public class MapGenerator {
 
     // TODO - Traverse the 2D array and add intersections where there are intersecting paths without an 'O'
 
+    private void replaceStartAndEnd() {
+        mapLayout[getMyStartRow()][getMyStartCol()] = START;
+        mapLayout[getMyEndRow()][getMyEndCol()] = END;
+    }
+
+
+    private void addMissingIntersections() {
+        for (int cols = 0; cols < MAX_COLS; cols++) {
+            for (int rows = 0; rows < MAX_ROWS; rows++) {
+                if (mapLayout[rows][cols] == X_PATH && mapLayout[rows + 1][cols] == Y_PATH
+                        || mapLayout[rows][cols] == X_PATH && mapLayout[rows - 1][cols] == Y_PATH) {
+                    mapLayout[rows][cols] = INTERSECTION;
+                }
+                if (mapLayout[rows][cols] == Y_PATH && mapLayout[rows][cols + 1] == X_PATH
+                        || mapLayout[rows][cols] == Y_PATH && mapLayout[rows][cols - 1] == X_PATH) {
+                    mapLayout[rows][cols] = INTERSECTION;
+                }
+            }
+        }
+    }
+
+    private void addDoorIfNoneExist() {
+        for (int cols = 0; cols < MAX_COLS; cols++) {
+            for (int rows = 0; rows < MAX_ROWS; rows++) {
+                if (mapLayout[rows][cols] == X_PATH && mapLayout[rows + 1][cols] == END
+                        || mapLayout[rows][cols] == X_PATH && mapLayout[rows - 1][cols] == END) {
+                    mapLayout[rows][cols] = DOOR;
+                }
+                if (mapLayout[rows][cols] == Y_PATH && mapLayout[rows][cols + 1] == DOOR
+                        || mapLayout[rows][cols] == Y_PATH && mapLayout[rows][cols - 1] == DOOR) {
+                    mapLayout[rows][cols] = DOOR;
+                }
+                if (mapLayout[rows][cols] == INTERSECTION && mapLayout[rows][cols + 1] == DOOR
+                        || mapLayout[rows][cols] == INTERSECTION && mapLayout[rows][cols - 1] == DOOR) {
+                    mapLayout[rows][cols] = DOOR;
+                }
+                if (mapLayout[rows][cols] == INTERSECTION && mapLayout[rows + 1][cols] == END
+                        || mapLayout[rows][cols] == INTERSECTION && mapLayout[rows - 1][cols] == END) {
+                    mapLayout[rows][cols] = DOOR;
+                }
+            }
+        }
+    }
+    /*
+    case
+    1: -|
+    2: |-
+    3: -
+       |
+    4: |
+       -
+     */
     private boolean startIsNotByPath() {
         if (mapLayout[getMyStartRow() + 1][getMyStartCol()] != Y_PATH
                 && mapLayout[getMyStartRow() - 1][getMyStartCol()] != Y_PATH
@@ -121,53 +176,42 @@ public class MapGenerator {
         return NOT_ADJACENT_TO_BOUND;
     }
 
-
-
-    // If necessary - do a code rewrite- Break up each path building direction into its own method.
-    // TODO - Make start and End have a minimum distance in the x and y direction to make the maze more difficult.
-    // TODO - Don't allow the start or end to be overwritten
-    // TODO BUG - make sure that intersections generate no matter the length of the random path.
-    // TODO BUG - bound must be greater than origin for any random number generators specifically for randomIntersect.
-    // TODO PRIORITY - When an intersection is created, we need to do a check to see if it is by a wall. Then we need to choose the correct direction.
-    // TO do this we will need to keep track of the current intersection position using setters and getters.
-    // consolidate the switch in addWalls into a method to be used by START and INTERSECTION
-
-
     private void produceXPath(int theCol, int theRow, String theTile, boolean theNegDir, int xOrYDirection) {
         if (endIsByPath()) {
             return;
         }
 
         if (theNegDir) {
-            System.out.println(MIN_COL_IN_BOUNDS + "Min col in bounds");
-            System.out.println(theCol - 1 + "the col bound");
             int distance = random.nextInt(MIN_COL_IN_BOUNDS, theCol);
             int randomIntersect = random.nextInt(theCol - distance, theCol);
             for (int Col = theCol - distance; Col < theCol; Col++) {
                 mapLayout[theRow][Col] = theTile;
             }
+            // Place a door on the path by chance
+            int doorChance = random.nextInt(0, 9);
+            if (doorChance % 9 == 0) {
+                int randomDoorSpace = random.nextInt(theCol - distance, theCol);
+                setMyCurDoorRoom(randomDoorSpace, theCol);
+            }
             setMyCurIntersectionPos(theRow, randomIntersect);
             choosePathGeneration(INTERSECTION, getMyCurIntersectionCol(), getMyCurIntersectionRow());
-//            produceYPath(getMyCurIntersectionCol(), getMyCurIntersectionRow(), Y_PATH, false, 0);
 
         } else {
-//            if (theCol < MAX_COL_IN_BOUNDS) {
-//                int distance = random.nextInt(theCol + 1, MAX_COL_IN_BOUNDS);
-//            } else go in other dir
-            System.out.println(MAX_COL_IN_BOUNDS + "Max col in bounds");
-            System.out.println(theCol + 1 + "the col origin");
             int distance = random.nextInt(theCol + 1, MAX_COL_IN_BOUNDS);
             int randomIntersect = random.nextInt(theCol, distance);
 
             for (int Col = theCol + 1; Col < distance; Col++) {
                 mapLayout[theRow][Col] = theTile;
            }
+            // Place a door on the path by chance
+            int doorChance = random.nextInt(0, 9);
+            if (doorChance % 9 == 0) {
+                int randomDoorSpace = random.nextInt(theCol, distance);
+                setMyCurDoorRoom(randomDoorSpace, theCol);
+            }
             setMyCurIntersectionPos(theRow, randomIntersect);
             choosePathGeneration(INTERSECTION, getMyCurIntersectionCol(), getMyCurIntersectionRow());
-//            produceYPath(getMyCurIntersectionCol(), getMyCurIntersectionRow(), Y_PATH, false, 0);
-
         }
-
 
     }
 //static int value = 0;
@@ -177,27 +221,38 @@ public class MapGenerator {
         }
 
         if (theNegDir) {
-            System.out.println(MIN_ROW_IN_BOUNDS + "Min col in bounds");
-            System.out.println(theRow - 1 + "the col bound");
             int distance = random.nextInt(MIN_ROW_IN_BOUNDS, theRow);
             int randomIntersect = random.nextInt(theRow - distance, theRow);
             for (int row = theRow - distance; row < theRow; row++) {
                 mapLayout[row][theCol] = theTile;
             }
+            // Place a door on the path by chance
+            int doorChance = random.nextInt(0, 9);
+            System.out.println(doorChance);
+
+            if (doorChance % 9 == 0) {
+                int randomDoorSpace = random.nextInt(theRow - distance, theRow);
+                setMyCurDoorRoom(randomDoorSpace, theCol);
+            }
             setMyCurIntersectionPos(randomIntersect, theCol);
             choosePathGeneration(INTERSECTION, getMyCurIntersectionCol(), getMyCurIntersectionRow());
-//            produceXPath(getMyCurIntersectionCol(), getMyCurIntersectionRow(), X_PATH, false, 0);
         } else {
-            System.out.println(MAX_ROW_IN_BOUNDS + "Max col in bounds");
-            System.out.println(theRow + 1 + "the col origin");
             int distance = random.nextInt(theRow + 1, MAX_ROW_IN_BOUNDS);
             int randomIntersect = random.nextInt(theRow, distance);
             for (int row = theRow + 1; row < distance; row++) {
                 mapLayout[row][theCol] = theTile;
             }
+
+            // Place a door on the path by chance
+            int doorChance = random.nextInt(1, 9);
+            System.out.println(doorChance);
+            if (doorChance % 9 == 0) {
+                int randomDoorSpace = random.nextInt(theRow, distance);
+                setMyCurDoorRoom(randomDoorSpace, theCol);
+            }
             setMyCurIntersectionPos(randomIntersect, theCol);
+
             choosePathGeneration(INTERSECTION, getMyCurIntersectionCol(), getMyCurIntersectionRow());
-//            produceXPath(getMyCurIntersectionCol(), getMyCurIntersectionRow(), X_PATH, false, 0);
         }
     }
 
@@ -214,18 +269,8 @@ public class MapGenerator {
         boolean yNegDir = false;
         String currentPathDirection = X_PATH;
 
-        // The general algorithm
-        //          - check if S is surrounded walls. //
-        //          then add path of random length to S and set S-Sourounded to true and save path location
-        //          elif E has no path
-        //          add intersection to random space in prev path referencing its location, then add random length new path to intersection
-        //          Do this step recursively to ensure that S links to E.
-        // else return
-
-        // TODO - consolidate to a method. Fucntion is to decide what direction a path should be produced and give it a starting row or column.
         int rowOrCol = 0;
-//        System.out.println(chooseXorY);
-//        System.out.println(choosePosOrNeg);
+
         if (chooseXorY % 2 == 0) {
             xDir = true;
             yDir = false;
@@ -274,34 +319,14 @@ public class MapGenerator {
 
                 if (currentPathDirection == X_PATH) {
                     if (xNegDir) {
-                        System.out.println("neg dir XPATH");
-                        System.out.println(theCol);
-                        System.out.println(theRow);
-                        System.out.println(getMyCurIntersectionCol() + " Intersection Col");
-                        System.out.println(getMyCurIntersectionRow() + " Intersection Row");
                         produceXPath(theCol, theRow, X_PATH, xNegDir, X_DIRECTION);
                     } else {
-                        System.out.println("pos dir XPATH");
-                        System.out.println(theCol);
-                        System.out.println(theRow);
-                        System.out.println(getMyCurIntersectionCol() + " Intersection Col");
-                        System.out.println(getMyCurIntersectionRow() + " Intersection Row");
                         produceXPath(theCol, theRow, X_PATH, xNegDir, X_DIRECTION);
                     }
                 } else {
                     if (yNegDir) {
-                        System.out.println("neg dir YPATH");
-                        System.out.println(theCol);
-                        System.out.println(theRow);
-                        System.out.println(getMyCurIntersectionCol() + " Intersection Col");
-                        System.out.println(getMyCurIntersectionRow() + " Intersection Row");
                         produceYPath(theCol, theRow, Y_PATH, yNegDir, Y_DIRECTION);
                     } else {
-                        System.out.println("pos dir YPATH");
-                        System.out.println(theCol);
-                        System.out.println(theRow);
-                        System.out.println(getMyCurIntersectionCol() + " Intersection Col");
-                        System.out.println(getMyCurIntersectionRow() + " Intersection Row");
                         produceYPath(theCol, theRow, Y_PATH, yNegDir, Y_DIRECTION);
                     }
                 }
@@ -314,25 +339,16 @@ public class MapGenerator {
         int xDelta = random.nextInt(MIN_COL_IN_BOUNDS + 1, MAX_COL_IN_BOUNDS);
         int yDelta = random.nextInt(MIN_ROW_IN_BOUNDS, MAX_ROW_IN_BOUNDS);
 
-
-//        for (int i = getMyStartCol() + 1; i < xDelta; i++) {
-//            mapLayout[getMyStartRow()][i] = "-";
-//        }
-
-
         if (startIsNotByPath()) {
             choosePathGeneration(START, getMyStartCol(), getMyStartRow());
-         // TODO consolidate this switch block into a method to be used by START and INTERSECTION
-
-            // no cases, then choose direction and go a random distance
-        }
+        } // else throw exception/error
 
     }
 
     private void setStartPosition(int theRow, int theCol) {
         mapLayout[theRow][theCol] = START;
-        setMyStartCol(theCol);
         setMyStartRow(theRow);
+        setMyStartCol(theCol);
     }
 
     private void printMap() {
@@ -343,7 +359,6 @@ public class MapGenerator {
             }
         }
     }
-    // Fill the array with the path elements within the boundary of the wall.
 
     private void addWalls() {
         for (int cols = 0; cols < MAX_COLS; cols++) {
@@ -396,6 +411,20 @@ public class MapGenerator {
         myCurIntersectionRow = theRow;
     }
 
+    // For every door made possibly assign it a boolean like use a map or something?
+    private void setMyCurDoorRoom(int theRow, int theCol) {
+        mapLayout[theRow][theCol] = DOOR;
+        setMyCurDoorRoomRow(theRow);
+        setMyCurDoorRoomCol(theCol);
+    }
+    private int myCurDoorRoomRow = 0;
+    private int myCurDoorRoomCol = 0;
+    private void setMyCurDoorRoomRow(int theRow) {
+        myCurDoorRoomRow = theRow;
+    }
+    private void setMyCurDoorRoomCol (int theCol) {
+        myCurDoorRoomCol = theCol;
+    }
     public int getMyStartCol() {
         return myStartCol;
     }

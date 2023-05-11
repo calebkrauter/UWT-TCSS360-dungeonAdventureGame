@@ -11,8 +11,8 @@ public class MapGenerator {
     final private int NOT_ADJACENT_TO_BOUND = 99;
     final private int X_DIRECTION = 66;
     final private int Y_DIRECTION = -66;
-    final private int MAX_COLS = 12;
-    final private int MAX_ROWS = 12;
+    final private int MAX_COLS = 15;
+    final private int MAX_ROWS = 15;
     final private int MAX_COL_IN_BOUNDS = MAX_COLS - 1;
     final private int MAX_ROW_IN_BOUNDS = MAX_ROWS - 1;
     private int myStartCol = MIN_COL_IN_BOUNDS;
@@ -33,7 +33,11 @@ public class MapGenerator {
 
 
 
-
+/*
+  There is a chance that no doors could be placed, possible bug where a door is placed at a random location on the map.
+  Todo - give start and end minimum start distance from each other.
+  Todo - add minimum amount of doors = 4.
+ */
 
     // | vertical path
     // - horizontal path
@@ -51,13 +55,6 @@ public class MapGenerator {
         replaceStartAndEnd();
         addDoorIfNoneExist();
         printMap();
-//
-//        System.out.println();
-//        System.out.println();
-//        System.out.println(startIsNotByPath() + " S is surrounded by walls | " + endIsByPath() + " E is surrounded by walls");
-//        System.out.println();
-//        System.out.println(" START is by the BOUNDS with the code: " + startOrEndByWall(START));
-//        System.out.println(" END is by the BOUNDS with the code: " + startOrEndByWall(END));
     }
 
     // TODO - Traverse the 2D array and add intersections where there are intersecting paths without an 'O'
@@ -87,20 +84,41 @@ public class MapGenerator {
         for (int cols = 0; cols < MAX_COLS; cols++) {
             for (int rows = 0; rows < MAX_ROWS; rows++) {
                 if (mapLayout[rows][cols] == X_PATH && mapLayout[rows + 1][cols] == END
-                        || mapLayout[rows][cols] == X_PATH && mapLayout[rows - 1][cols] == END) {
+                        && mapLayout[rows][cols] == X_PATH && mapLayout[rows - 1][cols] == END) {
                     mapLayout[rows][cols] = DOOR;
                 }
-                if (mapLayout[rows][cols] == Y_PATH && mapLayout[rows][cols + 1] == DOOR
-                        || mapLayout[rows][cols] == Y_PATH && mapLayout[rows][cols - 1] == DOOR) {
+                if (mapLayout[rows][cols] == Y_PATH && mapLayout[rows][cols + 1] == END
+                        || mapLayout[rows][cols] == Y_PATH && mapLayout[rows][cols - 1] == END) {
                     mapLayout[rows][cols] = DOOR;
                 }
-                if (mapLayout[rows][cols] == INTERSECTION && mapLayout[rows][cols + 1] == DOOR
-                        || mapLayout[rows][cols] == INTERSECTION && mapLayout[rows][cols - 1] == DOOR) {
+                if (mapLayout[rows][cols] == INTERSECTION && mapLayout[rows][cols + 1] == END
+                        || mapLayout[rows][cols] == INTERSECTION && mapLayout[rows][cols - 1] == END) {
                     mapLayout[rows][cols] = DOOR;
                 }
                 if (mapLayout[rows][cols] == INTERSECTION && mapLayout[rows + 1][cols] == END
                         || mapLayout[rows][cols] == INTERSECTION && mapLayout[rows - 1][cols] == END) {
                     mapLayout[rows][cols] = DOOR;
+                }
+
+                int twoInNine = random.nextInt(0,9);
+
+                if (twoInNine % 9 == 0) {
+                    if (mapLayout[rows][cols] == X_PATH && mapLayout[rows + 1][cols] == BOUNDS
+                            && mapLayout[rows][cols] == X_PATH && mapLayout[rows - 1][cols] == BOUNDS) {
+                        mapLayout[rows][cols] = DOOR;
+                    }
+                    if (mapLayout[rows][cols] == Y_PATH && mapLayout[rows][cols + 1] == BOUNDS
+                            || mapLayout[rows][cols] == Y_PATH && mapLayout[rows][cols - 1] == BOUNDS) {
+                        mapLayout[rows][cols] = DOOR;
+                    }
+                    if (mapLayout[rows][cols] == INTERSECTION && mapLayout[rows][cols + 1] == BOUNDS
+                            || mapLayout[rows][cols] == INTERSECTION && mapLayout[rows][cols - 1] == BOUNDS) {
+                        mapLayout[rows][cols] = DOOR;
+                    }
+                    if (mapLayout[rows][cols] == INTERSECTION && mapLayout[rows + 1][cols] == BOUNDS
+                            || mapLayout[rows][cols] == INTERSECTION && mapLayout[rows - 1][cols] == BOUNDS) {
+                        mapLayout[rows][cols] = DOOR;
+                    }
                 }
             }
         }
@@ -191,7 +209,7 @@ public class MapGenerator {
             int doorChance = random.nextInt(0, 9);
             if (doorChance % 9 == 0) {
                 int randomDoorSpace = random.nextInt(theCol - distance, theCol);
-                setMyCurDoorRoom(randomDoorSpace, theCol);
+                setMyCurDoorRoom(theRow, randomDoorSpace);
             }
             setMyCurIntersectionPos(theRow, randomIntersect);
             choosePathGeneration(INTERSECTION, getMyCurIntersectionCol(), getMyCurIntersectionRow());
@@ -207,7 +225,7 @@ public class MapGenerator {
             int doorChance = random.nextInt(0, 9);
             if (doorChance % 9 == 0) {
                 int randomDoorSpace = random.nextInt(theCol, distance);
-                setMyCurDoorRoom(randomDoorSpace, theCol);
+                setMyCurDoorRoom(theRow, randomDoorSpace);
             }
             setMyCurIntersectionPos(theRow, randomIntersect);
             choosePathGeneration(INTERSECTION, getMyCurIntersectionCol(), getMyCurIntersectionRow());

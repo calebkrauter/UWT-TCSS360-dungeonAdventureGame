@@ -2,8 +2,6 @@ import java.util.Random;
 
 public class MapGenerator {
 
-    final private int MIN_COL_IN_BOUNDS = 1;
-    final private int MIN_ROW_IN_BOUNDS = 1;
     final private int LEFT_BOUND = 1;
     final private int BOTTOM_BOUND = 2;
     final private int RIGHT_BOUND = 3;
@@ -11,8 +9,10 @@ public class MapGenerator {
     final private int NOT_ADJACENT_TO_BOUND = 99;
     final private int X_DIRECTION = 66;
     final private int Y_DIRECTION = -66;
-    final private int MAX_COLS = 15;
-    final private int MAX_ROWS = 15;
+    final private int MAX_COLS = 100;
+    final private int MAX_ROWS = 100;
+    final private int MIN_COL_IN_BOUNDS = 1;
+    final private int MIN_ROW_IN_BOUNDS = 1;
     final private int MAX_COL_IN_BOUNDS = MAX_COLS - 1;
     final private int MAX_ROW_IN_BOUNDS = MAX_ROWS - 1;
     private int myStartCol = MIN_COL_IN_BOUNDS;
@@ -35,8 +35,9 @@ public class MapGenerator {
 
 /*
   There is a chance that no doors could be placed, possible bug where a door is placed at a random location on the map.
-  Todo - give start and end minimum start distance from each other.
+  Todo - give start and end minimum start distance from each other or static position.
   Todo - add minimum amount of doors = 4.
+  TODO - make paths go out from S in the correct direction and into E from the right direction. Possibly Optional depending on map design and collision detection.
  */
 
     // | vertical path
@@ -155,10 +156,18 @@ public class MapGenerator {
 
     private boolean endIsByPath() {
         if (
-                mapLayout[getMyEndRow() + 1][getMyEndCol()] != BOUNDS
-                || mapLayout[getMyEndRow() - 1][getMyEndCol()] != BOUNDS
-                || mapLayout[getMyEndRow()][getMyEndCol() + 1] != BOUNDS
-                || mapLayout[getMyEndRow()][getMyEndCol() - 1] != BOUNDS) {
+                mapLayout[getMyEndRow() + 1][getMyEndCol()] == Y_PATH
+                || mapLayout[getMyEndRow() - 1][getMyEndCol()] == Y_PATH
+                || mapLayout[getMyEndRow()][getMyEndCol() + 1] == X_PATH
+                || mapLayout[getMyEndRow()][getMyEndCol() - 1] == X_PATH
+                ||  mapLayout[getMyEndRow() + 1][getMyEndCol()] == INTERSECTION
+                || mapLayout[getMyEndRow() - 1][getMyEndCol()] == INTERSECTION
+                || mapLayout[getMyEndRow()][getMyEndCol() + 1] == INTERSECTION
+                || mapLayout[getMyEndRow()][getMyEndCol() - 1] == INTERSECTION
+                ||  mapLayout[getMyEndRow() + 1][getMyEndCol()] == DOOR
+                || mapLayout[getMyEndRow() - 1][getMyEndCol()] == DOOR
+                || mapLayout[getMyEndRow()][getMyEndCol() + 1] == DOOR
+                || mapLayout[getMyEndRow()][getMyEndCol() - 1] == DOOR) {
             return true;
         } else {
             return false;
@@ -195,7 +204,9 @@ public class MapGenerator {
     }
 
     private void produceXPath(int theCol, int theRow, String theTile, boolean theNegDir, int xOrYDirection) {
-        if (endIsByPath()) {
+        recursiveCallsCounter++;
+        if (endIsByPath() || recursiveCallsCounter == 50) {
+            recursiveCallsCounter = 0;
             return;
         }
 
@@ -232,9 +243,11 @@ public class MapGenerator {
         }
 
     }
-//static int value = 0;
+static int recursiveCallsCounter = 0; // A counter used to end recursive calls to free up calls stack.
     private void produceYPath(int theCol, int theRow, String theTile, boolean theNegDir, int xOrYDirection) {
-        if (endIsByPath()) {
+        recursiveCallsCounter++;
+        if (endIsByPath() || recursiveCallsCounter == 50) {
+            recursiveCallsCounter = 0;
             return;
         }
 
@@ -246,7 +259,6 @@ public class MapGenerator {
             }
             // Place a door on the path by chance
             int doorChance = random.nextInt(0, 9);
-            System.out.println(doorChance);
 
             if (doorChance % 9 == 0) {
                 int randomDoorSpace = random.nextInt(theRow - distance, theRow);
@@ -263,7 +275,6 @@ public class MapGenerator {
 
             // Place a door on the path by chance
             int doorChance = random.nextInt(1, 9);
-            System.out.println(doorChance);
             if (doorChance % 9 == 0) {
                 int randomDoorSpace = random.nextInt(theRow, distance);
                 setMyCurDoorRoom(randomDoorSpace, theCol);
@@ -360,6 +371,9 @@ public class MapGenerator {
         if (startIsNotByPath()) {
             choosePathGeneration(START, getMyStartCol(), getMyStartRow());
         } // else throw exception/error
+        while (!endIsByPath()) {
+            choosePathGeneration(INTERSECTION, getMyCurIntersectionCol(), getMyCurIntersectionRow());
+        }
 
     }
 
@@ -387,17 +401,19 @@ public class MapGenerator {
     }
 
     private void randomStart() {
-        int randomCol = random.nextInt(MIN_COL_IN_BOUNDS, MAX_COL_IN_BOUNDS);
-        int randomRow = random.nextInt(MIN_ROW_IN_BOUNDS, MAX_ROW_IN_BOUNDS);
+        int randomCol = random.nextInt(MIN_COL_IN_BOUNDS, MAX_COL_IN_BOUNDS/4);
+        int randomRow = random.nextInt(MIN_ROW_IN_BOUNDS, MAX_ROW_IN_BOUNDS/4);
+        System.out.println(MAX_COL_IN_BOUNDS/4 + " max col bound for start");
 
-        setStartPosition(randomCol, randomRow);
+
+        setStartPosition(randomRow, randomCol);
     }
 
     private void randomEnd() {
-        int randomCol = random.nextInt(MIN_COL_IN_BOUNDS, MAX_COL_IN_BOUNDS);
-        int randomRow = random.nextInt(MIN_ROW_IN_BOUNDS, MAX_ROW_IN_BOUNDS);
-
-        setEndPosition(randomCol, randomRow);
+        int randomCol = random.nextInt((MAX_COL_IN_BOUNDS/4) * 4, MAX_COL_IN_BOUNDS);
+        int randomRow = random.nextInt((MAX_ROW_IN_BOUNDS/4) * 4 , MAX_ROW_IN_BOUNDS);
+        System.out.println((MAX_COL_IN_BOUNDS/4) * 4+ " min col origin for end");
+        setEndPosition(randomRow, randomCol);
     }
     private void setEndPosition(int theRow, int theCol) {
         mapLayout[theRow][theCol] = END;

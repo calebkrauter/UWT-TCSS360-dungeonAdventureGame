@@ -9,13 +9,13 @@ public class MapGenerator {
         final private int NOT_ADJACENT_TO_BOUND = 99;
         final private int X_DIRECTION = 66;
         final private int Y_DIRECTION = -66;
-        final private int MAX_COLS = 15;
-        final private int MAX_ROWS = 15;
+        final private int MAX_COLS = 10;
+        final private int MAX_ROWS = 10;
         final private int MIN_COL_IN_BOUNDS = 1;
         final private int MIN_ROW_IN_BOUNDS = 1;
         final private int MAX_COL_IN_BOUNDS = MAX_COLS - 1;
         final private int MAX_ROW_IN_BOUNDS = MAX_ROWS - 1;
-        final private int MIN_NUM_OF_DOORS = 5;
+        final private int MIN_NUM_OF_DOORS = 4;
         private int myStartCol = MIN_COL_IN_BOUNDS;
         private int myStartRow = MIN_ROW_IN_BOUNDS;
         private int myEndCol = MAX_COL_IN_BOUNDS;
@@ -38,7 +38,6 @@ public class MapGenerator {
 
 
 /*
-  Todo - add minimum amount of doors = 4.
   TODO - code cleanup and make code more dynamic and modular.
  */
 
@@ -111,8 +110,24 @@ public class MapGenerator {
 
                         // It is  not clear to me why if I put a door at row col-1 it is out of bounds and the condition is not helping.
                         // So i changed it to col + 1 and I have no issues with doors out of bounds so far. TEsT this.
-                        if (countDoors <= MIN_NUM_OF_DOORS && startOrEndByWall(mapLayout[rows][cols - 1]) != RIGHT_BOUND) {
-                            mapLayout[rows][cols + 1] = DOOR;
+                        else if (countDoors <= MIN_NUM_OF_DOORS && startOrEndByWall(mapLayout[rows][cols - 1]) != RIGHT_BOUND) {
+                            mapLayout[rows][cols - 1] = DOOR;
+                            countDoors++;
+                        }
+                        if (countDoors <= MIN_NUM_OF_DOORS) {
+                            mapLayout[getMyEndRow()][getMyEndCol() - 1] = DOOR;
+                            countDoors++;
+                        }
+                        if (countDoors <= MIN_NUM_OF_DOORS) {
+                            mapLayout[getMyEndRow() - 1][getMyEndCol()] = DOOR;
+                            countDoors++;
+                        }
+                        if (countDoors <= MIN_NUM_OF_DOORS) {
+                            mapLayout[getMyStartRow()][getMyStartCol() + 1] = DOOR;
+                            countDoors++;
+                        }
+                        if (countDoors <= MIN_NUM_OF_DOORS) {
+                            mapLayout[getMyStartRow() + 1][getMyStartCol()] = DOOR;
                             countDoors++;
                         }
                     }

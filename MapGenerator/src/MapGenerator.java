@@ -9,13 +9,13 @@ public class MapGenerator {
         final private int NOT_ADJACENT_TO_BOUND = 99;
         final private int X_DIRECTION = 66;
         final private int Y_DIRECTION = -66;
-        final private int MAX_COLS = 1000;
-        final private int MAX_ROWS = 1000;
+        final private int MAX_COLS = 15;
+        final private int MAX_ROWS = 15;
         final private int MIN_COL_IN_BOUNDS = 1;
         final private int MIN_ROW_IN_BOUNDS = 1;
         final private int MAX_COL_IN_BOUNDS = MAX_COLS - 1;
         final private int MAX_ROW_IN_BOUNDS = MAX_ROWS - 1;
-        final private int MIN_NUM_OF_DOORS = 4;
+        final private int MIN_NUM_OF_DOORS = 5;
         private int myStartCol = MIN_COL_IN_BOUNDS;
         private int myStartRow = MIN_ROW_IN_BOUNDS;
         private int myEndCol = MAX_COL_IN_BOUNDS;
@@ -32,16 +32,14 @@ public class MapGenerator {
         private String[][] mapLayout;
         private Random random = new Random();
         static int recursiveCallsCounter = 0; // A counter used to end recursive calls to free up calls stack.
-        private boolean myEasyMode = true;
+        private boolean myEasyMode = false;
 
 
 
 
 /*
-  There is a chance that no doors could be placed, possible bug where a door is placed at a random location on the map.
-  Todo - give start and end minimum start distance from each other or static position.
   Todo - add minimum amount of doors = 4.
-  TODO - make paths go out from S in the correct direction and into E from the right direction. Possibly Optional depending on map design and collision detection.
+  TODO - code cleanup and make code more dynamic and modular.
  */
 
     // | vertical path
@@ -60,6 +58,7 @@ public class MapGenerator {
             ensureValidPath();
         }
         addMissingIntersections();
+//        replaceDoors();
         replaceStartAndEnd();
         printMap();
     }
@@ -80,16 +79,42 @@ public class MapGenerator {
         mapLayout[getMyStartRow()][getMyStartCol()] = START;
         mapLayout[getMyEndRow()][getMyEndCol()] = END;
     }
+//    private void replaceDoors() {
+//        mapLayout[getMyCurDoorRoomRow()][getMyCurDoorRoomCol()] = "DOOR";
+//    }
 
 
     private void addMissingIntersections() {
+        int countDoors = 0;
+        for (int cols = 0; cols < MAX_COLS; cols++) {
+            for (int rows = 0; rows < MAX_ROWS; rows++) {
+                if (mapLayout[rows][cols] == DOOR) {
+                    countDoors++;
+                }
+
+            }
+        }
             for (int cols = 0; cols < MAX_COLS; cols++) {
                 for (int rows = 0; rows < MAX_ROWS; rows++) {
+
                     if (mapLayout[rows][cols] == X_PATH && mapLayout[rows + 1][cols] == Y_PATH
                             || mapLayout[rows][cols] == X_PATH && mapLayout[rows - 1][cols] == Y_PATH
                             || mapLayout[rows][cols] == Y_PATH && mapLayout[rows][cols + 1] == X_PATH
                             || mapLayout[rows][cols] == Y_PATH && mapLayout[rows][cols - 1] == X_PATH) {
                         mapLayout[rows][cols] = INTERSECTION;
+                    }
+                    if (mapLayout[rows][cols] == INTERSECTION) {
+                        if (countDoors <= MIN_NUM_OF_DOORS && startOrEndByWall(mapLayout[rows][cols + 1]) != LEFT_BOUND) {
+                            mapLayout[rows][cols + 1] = DOOR;
+                            countDoors++;
+                        }
+
+                        // It is  not clear to me why if I put a door at row col-1 it is out of bounds and the condition is not helping.
+                        // So i changed it to col + 1 and I have no issues with doors out of bounds so far. TEsT this.
+                        if (countDoors <= MIN_NUM_OF_DOORS && startOrEndByWall(mapLayout[rows][cols - 1]) != RIGHT_BOUND) {
+                            mapLayout[rows][cols + 1] = DOOR;
+                            countDoors++;
+                        }
                     }
                 }
             }
@@ -141,6 +166,9 @@ public class MapGenerator {
         } else if (theStartOrEnd == INTERSECTION) {
             theCol = getMyCurIntersectionCol();
             theRow = getMyCurIntersectionRow();
+        } else if (theStartOrEnd == DOOR) {
+            theCol = getMyCurDoorRoomCol();
+            theRow = getMyCurDoorRoomRow();
         }
 
         if (theCol == MIN_COL_IN_BOUNDS) {
@@ -155,13 +183,15 @@ public class MapGenerator {
         return NOT_ADJACENT_TO_BOUND;
     }
 
+    static int doorCounter = 0;
     private void produceXPath(int theCol, int theRow, String theTile, boolean theNegDir, int xOrYDirection) {
+
             recursiveCallsCounter++;
             if (endIsByPath()|| recursiveCallsCounter == 50) {
                 recursiveCallsCounter = 0;
                 return;
             }
-
+            int randomDoorSpace = 0;
             if (theNegDir) {
                 int distance = random.nextInt(MIN_COL_IN_BOUNDS, theCol);
                 int randomIntersect = random.nextInt(theCol - distance, theCol);
@@ -169,10 +199,9 @@ public class MapGenerator {
                     mapLayout[theRow][Col] = theTile;
                 }
                 // Place a door on the path by chance
-                int doorChance = random.nextInt(0, 9);
-
-                    if (doorChance % 9 == 0) {
-                    int randomDoorSpace = random.nextInt(theCol - distance, theCol);
+                int doorChance = random.nextInt(1, 10);
+                    if (10 % doorChance == 0) {
+                    randomDoorSpace = random.nextInt(theCol - distance, theCol);
                     setMyCurDoorRoom(theRow, randomDoorSpace);
                 }
                 setMyCurIntersectionPos(theRow, randomIntersect);
@@ -186,10 +215,9 @@ public class MapGenerator {
                     mapLayout[theRow][Col] = theTile;
                 }
                 // Place a door on the path by chance
-                int doorChance = random.nextInt(0, 9);
-
-                    if (doorChance % 9 == 0 ) {
-                    int randomDoorSpace = random.nextInt(theCol, distance);
+                int doorChance = random.nextInt(1, 10);
+                    if (10 % doorChance == 0) {
+                    randomDoorSpace = random.nextInt(theCol, distance);
                     setMyCurDoorRoom(theRow, randomDoorSpace);
                 }
                 setMyCurIntersectionPos(theRow, randomIntersect);
@@ -205,6 +233,7 @@ public class MapGenerator {
                 recursiveCallsCounter = 0;
                 return;
             }
+            int randomDoorSpace = 0;
 
             if (theNegDir) {
                 int distance = random.nextInt(MIN_ROW_IN_BOUNDS, theRow);
@@ -213,11 +242,10 @@ public class MapGenerator {
                     mapLayout[row][theCol] = theTile;
                 }
                 // Place a door on the path by chance
-                int doorChance = random.nextInt(0, 9);
+                int doorChance = random.nextInt(1, 10);
 
-
-                    if (doorChance % 9 == 0) {
-                    int randomDoorSpace = random.nextInt(theRow - distance, theRow);
+                    if (10 % doorChance == 0) {
+                    randomDoorSpace = random.nextInt(theRow - distance, theRow);
                     setMyCurDoorRoom(randomDoorSpace, theCol);
                 }
                 setMyCurIntersectionPos(randomIntersect, theCol);
@@ -230,10 +258,10 @@ public class MapGenerator {
                 }
 
                 // Place a door on the path by chance
-                int doorChance = random.nextInt(1, 9);
+                int doorChance = random.nextInt(1, 10);
 
-                    if (doorChance % 9 == 0 ) {
-                    int randomDoorSpace = random.nextInt(theRow, distance);
+                    if (10 % doorChance == 0) {
+                    randomDoorSpace = random.nextInt(theRow, distance);
                     setMyCurDoorRoom(randomDoorSpace, theCol);
                 }
                 setMyCurIntersectionPos(randomIntersect, theCol);
@@ -444,6 +472,13 @@ public class MapGenerator {
     private void setMyCurDoorRoomCol (int theCol) {
         myCurDoorRoomCol = theCol;
     }
+    private int getMyCurDoorRoomRow() {
+        return myCurDoorRoomRow;
+    }
+    private int getMyCurDoorRoomCol() {
+        return myCurDoorRoomCol;
+    }
+
     public int getMyStartCol() {
         return myStartCol;
     }

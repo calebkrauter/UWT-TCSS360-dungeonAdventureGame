@@ -3,33 +3,37 @@ import java.util.Random;
 public class MapGenerator {
 
     final private int LEFT_BOUND = 1;
-    final private int BOTTOM_BOUND = 2;
-    final private int RIGHT_BOUND = 3;
-    final private int TOP_BOUND = 4;
-    final private int NOT_ADJACENT_TO_BOUND = 99;
-    final private int X_DIRECTION = 66;
-    final private int Y_DIRECTION = -66;
-    final private int MAX_COLS = 100;
-    final private int MAX_ROWS = 100;
-    final private int MIN_COL_IN_BOUNDS = 1;
-    final private int MIN_ROW_IN_BOUNDS = 1;
-    final private int MAX_COL_IN_BOUNDS = MAX_COLS - 1;
-    final private int MAX_ROW_IN_BOUNDS = MAX_ROWS - 1;
-    private int myStartCol = MIN_COL_IN_BOUNDS;
-    private int myStartRow = MIN_ROW_IN_BOUNDS;
-    private int myEndCol = MAX_COL_IN_BOUNDS;
-    private int myEndRow = MAX_ROWS;
-    private int myCurIntersectionCol = 0;
-    private int myCurIntersectionRow = 0;
-    final private String START = "S";
-    final private String END = "E";
-    final private String X_PATH = "-";
-    final private String Y_PATH = "|";
-    final private String INTERSECTION = "O";
-    final private String DOOR = "[";
-    final private String BOUNDS = "#";
-    private String[][] mapLayout;
-    private Random random = new Random();
+        final private int BOTTOM_BOUND = 2;
+        final private int RIGHT_BOUND = 3;
+        final private int TOP_BOUND = 4;
+        final private int NOT_ADJACENT_TO_BOUND = 99;
+        final private int X_DIRECTION = 66;
+        final private int Y_DIRECTION = -66;
+        final private int MAX_COLS = 1000;
+        final private int MAX_ROWS = 1000;
+        final private int MIN_COL_IN_BOUNDS = 1;
+        final private int MIN_ROW_IN_BOUNDS = 1;
+        final private int MAX_COL_IN_BOUNDS = MAX_COLS - 1;
+        final private int MAX_ROW_IN_BOUNDS = MAX_ROWS - 1;
+        final private int MIN_NUM_OF_DOORS = 4;
+        private int myStartCol = MIN_COL_IN_BOUNDS;
+        private int myStartRow = MIN_ROW_IN_BOUNDS;
+        private int myEndCol = MAX_COL_IN_BOUNDS;
+        private int myEndRow = MAX_ROWS;
+        private int myCurIntersectionCol = 0;
+        private int myCurIntersectionRow = 0;
+        final private String START = "S";
+        final private String END = "E";
+        final private String X_PATH = "-";
+        final private String Y_PATH = "|";
+        final private String INTERSECTION = "O";
+        final private String DOOR = "[";
+        final private String BOUNDS = "#";
+        private String[][] mapLayout;
+        private Random random = new Random();
+        static int recursiveCallsCounter = 0; // A counter used to end recursive calls to free up calls stack.
+        private boolean myEasyMode = true;
+
 
 
 
@@ -52,12 +56,24 @@ public class MapGenerator {
         randomStart();
         randomEnd();
         addPath();
+        if (myEasyMode) {
+            ensureValidPath();
+        }
         addMissingIntersections();
         replaceStartAndEnd();
-        addDoorIfNoneExist();
         printMap();
     }
 
+    private void ensureValidPath() {
+            System.out.println("Ensured valid path");
+            for (int i = getMyStartCol() + 1; i <= getMyEndCol(); i++) {
+                mapLayout[getMyStartRow()][i] = X_PATH;
+            }
+            setMyCurDoorRoom(getMyStartRow(), getMyEndCol());
+            for (int i = getMyStartRow() + 1; i < getMyEndRow(); i++) {
+                mapLayout[i][getMyEndCol()] = Y_PATH;
+            }
+        }
     // TODO - Traverse the 2D array and add intersections where there are intersecting paths without an 'O'
 
     private void replaceStartAndEnd() {
@@ -67,72 +83,18 @@ public class MapGenerator {
 
 
     private void addMissingIntersections() {
-        for (int cols = 0; cols < MAX_COLS; cols++) {
-            for (int rows = 0; rows < MAX_ROWS; rows++) {
-                if (mapLayout[rows][cols] == X_PATH && mapLayout[rows + 1][cols] == Y_PATH
-                        || mapLayout[rows][cols] == X_PATH && mapLayout[rows - 1][cols] == Y_PATH) {
-                    mapLayout[rows][cols] = INTERSECTION;
-                }
-                if (mapLayout[rows][cols] == Y_PATH && mapLayout[rows][cols + 1] == X_PATH
-                        || mapLayout[rows][cols] == Y_PATH && mapLayout[rows][cols - 1] == X_PATH) {
-                    mapLayout[rows][cols] = INTERSECTION;
-                }
-            }
-        }
-    }
-
-    private void addDoorIfNoneExist() {
-        for (int cols = 0; cols < MAX_COLS; cols++) {
-            for (int rows = 0; rows < MAX_ROWS; rows++) {
-                if (mapLayout[rows][cols] == X_PATH && mapLayout[rows + 1][cols] == END
-                        && mapLayout[rows][cols] == X_PATH && mapLayout[rows - 1][cols] == END) {
-                    mapLayout[rows][cols] = DOOR;
-                }
-                if (mapLayout[rows][cols] == Y_PATH && mapLayout[rows][cols + 1] == END
-                        || mapLayout[rows][cols] == Y_PATH && mapLayout[rows][cols - 1] == END) {
-                    mapLayout[rows][cols] = DOOR;
-                }
-                if (mapLayout[rows][cols] == INTERSECTION && mapLayout[rows][cols + 1] == END
-                        || mapLayout[rows][cols] == INTERSECTION && mapLayout[rows][cols - 1] == END) {
-                    mapLayout[rows][cols] = DOOR;
-                }
-                if (mapLayout[rows][cols] == INTERSECTION && mapLayout[rows + 1][cols] == END
-                        || mapLayout[rows][cols] == INTERSECTION && mapLayout[rows - 1][cols] == END) {
-                    mapLayout[rows][cols] = DOOR;
-                }
-
-                int twoInNine = random.nextInt(0,9);
-
-                if (twoInNine % 9 == 0) {
-                    if (mapLayout[rows][cols] == X_PATH && mapLayout[rows + 1][cols] == BOUNDS
-                            && mapLayout[rows][cols] == X_PATH && mapLayout[rows - 1][cols] == BOUNDS) {
-                        mapLayout[rows][cols] = DOOR;
-                    }
-                    if (mapLayout[rows][cols] == Y_PATH && mapLayout[rows][cols + 1] == BOUNDS
-                            || mapLayout[rows][cols] == Y_PATH && mapLayout[rows][cols - 1] == BOUNDS) {
-                        mapLayout[rows][cols] = DOOR;
-                    }
-                    if (mapLayout[rows][cols] == INTERSECTION && mapLayout[rows][cols + 1] == BOUNDS
-                            || mapLayout[rows][cols] == INTERSECTION && mapLayout[rows][cols - 1] == BOUNDS) {
-                        mapLayout[rows][cols] = DOOR;
-                    }
-                    if (mapLayout[rows][cols] == INTERSECTION && mapLayout[rows + 1][cols] == BOUNDS
-                            || mapLayout[rows][cols] == INTERSECTION && mapLayout[rows - 1][cols] == BOUNDS) {
-                        mapLayout[rows][cols] = DOOR;
+            for (int cols = 0; cols < MAX_COLS; cols++) {
+                for (int rows = 0; rows < MAX_ROWS; rows++) {
+                    if (mapLayout[rows][cols] == X_PATH && mapLayout[rows + 1][cols] == Y_PATH
+                            || mapLayout[rows][cols] == X_PATH && mapLayout[rows - 1][cols] == Y_PATH
+                            || mapLayout[rows][cols] == Y_PATH && mapLayout[rows][cols + 1] == X_PATH
+                            || mapLayout[rows][cols] == Y_PATH && mapLayout[rows][cols - 1] == X_PATH) {
+                        mapLayout[rows][cols] = INTERSECTION;
                     }
                 }
             }
         }
-    }
-    /*
-    case
-    1: -|
-    2: |-
-    3: -
-       |
-    4: |
-       -
-     */
+
     private boolean startIsNotByPath() {
         if (mapLayout[getMyStartRow() + 1][getMyStartCol()] != Y_PATH
                 && mapLayout[getMyStartRow() - 1][getMyStartCol()] != Y_PATH
@@ -143,16 +105,6 @@ public class MapGenerator {
             return false;
         }
     }
-
-
-    /*
-     0 1 2 3 4
-   0 # # # # #
-   1 # # # # #
-   2 # # # # #
-   3 # E # # #
-   4 # # # # #
-     */
 
     private boolean endIsByPath() {
         if (
@@ -204,89 +156,91 @@ public class MapGenerator {
     }
 
     private void produceXPath(int theCol, int theRow, String theTile, boolean theNegDir, int xOrYDirection) {
-        recursiveCallsCounter++;
-        if (endIsByPath() || recursiveCallsCounter == 50) {
-            recursiveCallsCounter = 0;
-            return;
+            recursiveCallsCounter++;
+            if (endIsByPath()|| recursiveCallsCounter == 50) {
+                recursiveCallsCounter = 0;
+                return;
+            }
+
+            if (theNegDir) {
+                int distance = random.nextInt(MIN_COL_IN_BOUNDS, theCol);
+                int randomIntersect = random.nextInt(theCol - distance, theCol);
+                for (int Col = theCol - distance; Col <= theCol; Col++) {
+                    mapLayout[theRow][Col] = theTile;
+                }
+                // Place a door on the path by chance
+                int doorChance = random.nextInt(0, 9);
+
+                    if (doorChance % 9 == 0) {
+                    int randomDoorSpace = random.nextInt(theCol - distance, theCol);
+                    setMyCurDoorRoom(theRow, randomDoorSpace);
+                }
+                setMyCurIntersectionPos(theRow, randomIntersect);
+                choosePathGeneration(INTERSECTION, getMyCurIntersectionCol(), getMyCurIntersectionRow());
+
+            } else {
+                int distance = random.nextInt(theCol + 1, MAX_COL_IN_BOUNDS);
+                int randomIntersect = random.nextInt(theCol, distance);
+
+                for (int Col = theCol + 1; Col <= distance; Col++) {
+                    mapLayout[theRow][Col] = theTile;
+                }
+                // Place a door on the path by chance
+                int doorChance = random.nextInt(0, 9);
+
+                    if (doorChance % 9 == 0 ) {
+                    int randomDoorSpace = random.nextInt(theCol, distance);
+                    setMyCurDoorRoom(theRow, randomDoorSpace);
+                }
+                setMyCurIntersectionPos(theRow, randomIntersect);
+                choosePathGeneration(INTERSECTION, getMyCurIntersectionCol(), getMyCurIntersectionRow());
+            }
+
         }
 
-        if (theNegDir) {
-            int distance = random.nextInt(MIN_COL_IN_BOUNDS, theCol);
-            int randomIntersect = random.nextInt(theCol - distance, theCol);
-            for (int Col = theCol - distance; Col < theCol; Col++) {
-                mapLayout[theRow][Col] = theTile;
-            }
-            // Place a door on the path by chance
-            int doorChance = random.nextInt(0, 9);
-            if (doorChance % 9 == 0) {
-                int randomDoorSpace = random.nextInt(theCol - distance, theCol);
-                setMyCurDoorRoom(theRow, randomDoorSpace);
-            }
-            setMyCurIntersectionPos(theRow, randomIntersect);
-            choosePathGeneration(INTERSECTION, getMyCurIntersectionCol(), getMyCurIntersectionRow());
+        private void produceYPath(int theCol, int theRow, String theTile, boolean theNegDir, int xOrYDirection) {
+            recursiveCallsCounter++;
+            if (endIsByPath() || recursiveCallsCounter == 50) {
 
-        } else {
-            int distance = random.nextInt(theCol + 1, MAX_COL_IN_BOUNDS);
-            int randomIntersect = random.nextInt(theCol, distance);
-
-            for (int Col = theCol + 1; Col < distance; Col++) {
-                mapLayout[theRow][Col] = theTile;
-           }
-            // Place a door on the path by chance
-            int doorChance = random.nextInt(0, 9);
-            if (doorChance % 9 == 0) {
-                int randomDoorSpace = random.nextInt(theCol, distance);
-                setMyCurDoorRoom(theRow, randomDoorSpace);
+                recursiveCallsCounter = 0;
+                return;
             }
-            setMyCurIntersectionPos(theRow, randomIntersect);
-            choosePathGeneration(INTERSECTION, getMyCurIntersectionCol(), getMyCurIntersectionRow());
+
+            if (theNegDir) {
+                int distance = random.nextInt(MIN_ROW_IN_BOUNDS, theRow);
+                int randomIntersect = random.nextInt(theRow - distance, theRow);
+                for (int row = theRow - distance; row <= theRow; row++) {
+                    mapLayout[row][theCol] = theTile;
+                }
+                // Place a door on the path by chance
+                int doorChance = random.nextInt(0, 9);
+
+
+                    if (doorChance % 9 == 0) {
+                    int randomDoorSpace = random.nextInt(theRow - distance, theRow);
+                    setMyCurDoorRoom(randomDoorSpace, theCol);
+                }
+                setMyCurIntersectionPos(randomIntersect, theCol);
+                choosePathGeneration(INTERSECTION, getMyCurIntersectionCol(), getMyCurIntersectionRow());
+            } else {
+                int distance = random.nextInt(theRow + 1, MAX_ROW_IN_BOUNDS);
+                int randomIntersect = random.nextInt(theRow, distance);
+                for (int row = theRow + 1; row <= distance; row++) {
+                    mapLayout[row][theCol] = theTile;
+                }
+
+                // Place a door on the path by chance
+                int doorChance = random.nextInt(1, 9);
+
+                    if (doorChance % 9 == 0 ) {
+                    int randomDoorSpace = random.nextInt(theRow, distance);
+                    setMyCurDoorRoom(randomDoorSpace, theCol);
+                }
+                setMyCurIntersectionPos(randomIntersect, theCol);
+
+                choosePathGeneration(INTERSECTION, getMyCurIntersectionCol(), getMyCurIntersectionRow());
+            }
         }
-
-    }
-static int recursiveCallsCounter = 0; // A counter used to end recursive calls to free up calls stack.
-    private void produceYPath(int theCol, int theRow, String theTile, boolean theNegDir, int xOrYDirection) {
-        recursiveCallsCounter++;
-        if (endIsByPath() || recursiveCallsCounter == 50) {
-            recursiveCallsCounter = 0;
-            return;
-        }
-
-        if (theNegDir) {
-            int distance = random.nextInt(MIN_ROW_IN_BOUNDS, theRow);
-            int randomIntersect = random.nextInt(theRow - distance, theRow);
-            for (int row = theRow - distance; row < theRow; row++) {
-                mapLayout[row][theCol] = theTile;
-            }
-            // Place a door on the path by chance
-            int doorChance = random.nextInt(0, 9);
-
-            if (doorChance % 9 == 0) {
-                int randomDoorSpace = random.nextInt(theRow - distance, theRow);
-                setMyCurDoorRoom(randomDoorSpace, theCol);
-            }
-            setMyCurIntersectionPos(randomIntersect, theCol);
-            choosePathGeneration(INTERSECTION, getMyCurIntersectionCol(), getMyCurIntersectionRow());
-        } else {
-            int distance = random.nextInt(theRow + 1, MAX_ROW_IN_BOUNDS);
-            int randomIntersect = random.nextInt(theRow, distance);
-            for (int row = theRow + 1; row < distance; row++) {
-                mapLayout[row][theCol] = theTile;
-            }
-
-            // Place a door on the path by chance
-            int doorChance = random.nextInt(1, 9);
-            if (doorChance % 9 == 0) {
-                int randomDoorSpace = random.nextInt(theRow, distance);
-                setMyCurDoorRoom(randomDoorSpace, theCol);
-            }
-            setMyCurIntersectionPos(randomIntersect, theCol);
-
-            choosePathGeneration(INTERSECTION, getMyCurIntersectionCol(), getMyCurIntersectionRow());
-        }
-    }
-
-
-
 
     private void choosePathGeneration(String theTile, int theCol, int theRow) {
 
@@ -371,9 +325,18 @@ static int recursiveCallsCounter = 0; // A counter used to end recursive calls t
         if (startIsNotByPath()) {
             choosePathGeneration(START, getMyStartCol(), getMyStartRow());
         } // else throw exception/error
-        while (!endIsByPath()) {
+
+        if (myEasyMode) {
             choosePathGeneration(INTERSECTION, getMyCurIntersectionCol(), getMyCurIntersectionRow());
+
+        } else {
+
+            while (!endIsByPath()) {
+                choosePathGeneration(INTERSECTION, getMyCurIntersectionCol(), getMyCurIntersectionRow());
+            }
         }
+
+
 
     }
 
@@ -382,6 +345,7 @@ static int recursiveCallsCounter = 0; // A counter used to end recursive calls t
         setMyStartRow(theRow);
         setMyStartCol(theCol);
     }
+
 
     private void printMap() {
         for (int cols = 0; cols < MAX_COLS; cols++) {
@@ -392,34 +356,54 @@ static int recursiveCallsCounter = 0; // A counter used to end recursive calls t
         }
     }
 
+
     private void addWalls() {
         for (int cols = 0; cols < MAX_COLS; cols++) {
             for (int rows = 0; rows < MAX_ROWS; rows++) {
-            mapLayout[cols][rows] = BOUNDS;
+                mapLayout[cols][rows] = BOUNDS;
             }
         }
     }
 
+
     private void randomStart() {
-        int randomCol = random.nextInt(MIN_COL_IN_BOUNDS, MAX_COL_IN_BOUNDS/4);
-        int randomRow = random.nextInt(MIN_ROW_IN_BOUNDS, MAX_ROW_IN_BOUNDS/4);
-        System.out.println(MAX_COL_IN_BOUNDS/4 + " max col bound for start");
+        int randomRow = 0;
+        int randomCol = 0;
+        if (MAX_COL_IN_BOUNDS > 20 && MAX_ROW_IN_BOUNDS > 20) {
+            randomRow = random.nextInt(MIN_ROW_IN_BOUNDS, MAX_ROW_IN_BOUNDS/4);
+            randomCol = random.nextInt(MIN_COL_IN_BOUNDS, MAX_COL_IN_BOUNDS/4);
+        } else {
+            randomRow = MIN_ROW_IN_BOUNDS + 1;
+            randomCol = MIN_COL_IN_BOUNDS + 1;
+        }
+
+
 
 
         setStartPosition(randomRow, randomCol);
     }
 
+
     private void randomEnd() {
-        int randomCol = random.nextInt((MAX_COL_IN_BOUNDS/4) * 4, MAX_COL_IN_BOUNDS);
-        int randomRow = random.nextInt((MAX_ROW_IN_BOUNDS/4) * 4 , MAX_ROW_IN_BOUNDS);
-        System.out.println((MAX_COL_IN_BOUNDS/4) * 4+ " min col origin for end");
+        int randomRow = 0;
+        int randomCol = 0;
+        if (MAX_COL_IN_BOUNDS > 20 && MAX_ROW_IN_BOUNDS > 20) {
+            randomRow = random.nextInt((MAX_ROW_IN_BOUNDS/4) * 4 , MAX_ROW_IN_BOUNDS);
+            randomCol = random.nextInt((MAX_COL_IN_BOUNDS/4) * 4, MAX_COL_IN_BOUNDS);
+        } else {
+            randomRow = MAX_ROW_IN_BOUNDS - 2;
+            randomCol = MAX_COL_IN_BOUNDS - 2;
+        }
         setEndPosition(randomRow, randomCol);
+
+
     }
     private void setEndPosition(int theRow, int theCol) {
         mapLayout[theRow][theCol] = END;
         setMyEndCol(theCol);
         setMyEndRow(theRow);
     }
+
 
     private void setMyStartCol(int theCol) {
         myStartCol = theCol;
@@ -445,6 +429,7 @@ static int recursiveCallsCounter = 0; // A counter used to end recursive calls t
         myCurIntersectionRow = theRow;
     }
 
+
     // For every door made possibly assign it a boolean like use a map or something?
     private void setMyCurDoorRoom(int theRow, int theCol) {
         mapLayout[theRow][theCol] = DOOR;
@@ -463,17 +448,21 @@ static int recursiveCallsCounter = 0; // A counter used to end recursive calls t
         return myStartCol;
     }
 
+
     public int getMyStartRow() {
         return myStartRow;
     }
+
 
     public int getMyEndCol() {
         return myEndCol;
     }
 
+
     public int getMyEndRow() {
         return myEndRow;
     }
+
 
     public int getMyCurIntersectionCol() {
         return myCurIntersectionCol;

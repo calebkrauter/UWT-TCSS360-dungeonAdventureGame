@@ -32,7 +32,7 @@ public class MapGenerator {
         private String[][] mapLayout;
         private Random random = new Random();
         static int recursiveCallsCounter = 0; // A counter used to end recursive calls to free up calls stack.
-        private boolean myEasyMode = false;
+        private boolean myEasyMode = true;
 
 
 
@@ -56,8 +56,7 @@ public class MapGenerator {
         if (myEasyMode) {
             ensureValidPath();
         }
-        addMissingIntersections();
-//        replaceDoors();
+        addMissingSymbols();
         replaceStartAndEnd();
         printMap();
     }
@@ -78,62 +77,74 @@ public class MapGenerator {
         mapLayout[getMyStartRow()][getMyStartCol()] = START;
         mapLayout[getMyEndRow()][getMyEndCol()] = END;
     }
-//    private void replaceDoors() {
-//        mapLayout[getMyCurDoorRoomRow()][getMyCurDoorRoomCol()] = "DOOR";
-//    }
 
-
-    private void addMissingIntersections() {
-        int countDoors = 0;
+    /**
+     * Counts the number of times that a symbol is present in the map.
+     * @param theSymbol
+     * @return the number of times theSymbol is found in the map.
+     */
+    private int symbolCounter(String theSymbol) {
+        int count = 0;
         for (int cols = 0; cols < MAX_COLS; cols++) {
             for (int rows = 0; rows < MAX_ROWS; rows++) {
-                if (mapLayout[rows][cols] == DOOR) {
-                    countDoors++;
+                if (mapLayout[rows][cols] == theSymbol) {
+                    count++;
                 }
 
             }
         }
+        return count;
+    }
+    private void addMissingSymbols() {
+
+        int doorCount = symbolCounter(DOOR);
+
             for (int cols = 0; cols < MAX_COLS; cols++) {
                 for (int rows = 0; rows < MAX_ROWS; rows++) {
-
-                    if (mapLayout[rows][cols] == X_PATH && mapLayout[rows + 1][cols] == Y_PATH
-                            || mapLayout[rows][cols] == X_PATH && mapLayout[rows - 1][cols] == Y_PATH
-                            || mapLayout[rows][cols] == Y_PATH && mapLayout[rows][cols + 1] == X_PATH
-                            || mapLayout[rows][cols] == Y_PATH && mapLayout[rows][cols - 1] == X_PATH) {
-                        mapLayout[rows][cols] = INTERSECTION;
-                    }
-                    if (mapLayout[rows][cols] == INTERSECTION) {
-                        if (countDoors <= MIN_NUM_OF_DOORS && startOrEndByWall(mapLayout[rows][cols + 1]) != LEFT_BOUND) {
-                            mapLayout[rows][cols + 1] = DOOR;
-                            countDoors++;
-                        }
-
-                        // It is  not clear to me why if I put a door at row col-1 it is out of bounds and the condition is not helping.
-                        // So i changed it to col + 1 and I have no issues with doors out of bounds so far. TEsT this.
-                        else if (countDoors <= MIN_NUM_OF_DOORS && startOrEndByWall(mapLayout[rows][cols - 1]) != RIGHT_BOUND) {
-                            mapLayout[rows][cols - 1] = DOOR;
-                            countDoors++;
-                        }
-                        if (countDoors <= MIN_NUM_OF_DOORS) {
-                            mapLayout[getMyEndRow()][getMyEndCol() - 1] = DOOR;
-                            countDoors++;
-                        }
-                        if (countDoors <= MIN_NUM_OF_DOORS) {
-                            mapLayout[getMyEndRow() - 1][getMyEndCol()] = DOOR;
-                            countDoors++;
-                        }
-                        if (countDoors <= MIN_NUM_OF_DOORS) {
-                            mapLayout[getMyStartRow()][getMyStartCol() + 1] = DOOR;
-                            countDoors++;
-                        }
-                        if (countDoors <= MIN_NUM_OF_DOORS) {
-                            mapLayout[getMyStartRow() + 1][getMyStartCol()] = DOOR;
-                            countDoors++;
-                        }
-                    }
+                    addMissingIntersections(rows, cols);
+                    addMinimumNumOfDoors(doorCount, rows, cols);
                 }
             }
         }
+    private void addMissingIntersections(int theRows, int theCols) {
+        if (mapLayout[theRows][theCols] == X_PATH && mapLayout[theRows + 1][theCols] == Y_PATH
+                || mapLayout[theRows][theCols] == X_PATH && mapLayout[theRows - 1][theCols] == Y_PATH
+                || mapLayout[theRows][theCols] == Y_PATH && mapLayout[theRows][theCols + 1] == X_PATH
+                || mapLayout[theRows][theCols] == Y_PATH && mapLayout[theRows][theCols - 1] == X_PATH) {
+            mapLayout[theRows][theCols] = INTERSECTION;
+        }
+    }
+    private void addMinimumNumOfDoors(int theDoorCount, int theRows, int theCols) {
+        if (mapLayout[theRows][theCols] == INTERSECTION) {
+            if (theDoorCount <= MIN_NUM_OF_DOORS && symbolByWhichBound(mapLayout[theRows][theCols + 1], myCurIntersectionRow, myCurIntersectionCol) != LEFT_BOUND) {
+                mapLayout[theRows][theCols + 1] = DOOR;
+                theDoorCount++;
+            }
+
+            // It is  not clear to me why if I put a door at row col-1 it is out of bounds and the condition is not helping.
+            // So i changed it to col + 1 and I have no issues with doors out of bounds so far. TEsT this.
+            else if (theDoorCount <= MIN_NUM_OF_DOORS && symbolByWhichBound(mapLayout[theRows][theCols - 1], myCurDoorRoomRow, myCurDoorRoomCol) != RIGHT_BOUND) {
+                mapLayout[theRows][theCols - 1] = DOOR;
+                theDoorCount++;
+            }
+            if (theDoorCount <= MIN_NUM_OF_DOORS) {
+                mapLayout[getMyEndRow()][getMyEndCol() - 1] = DOOR;
+                theDoorCount++;
+            }
+            if (theDoorCount <= MIN_NUM_OF_DOORS) {
+                mapLayout[getMyEndRow() - 1][getMyEndCol()] = DOOR;
+                theDoorCount++;
+            }
+            if (theDoorCount <= MIN_NUM_OF_DOORS) {
+                mapLayout[getMyStartRow()][getMyStartCol() + 1] = DOOR;
+                theDoorCount++;
+            }
+            if (theDoorCount <= MIN_NUM_OF_DOORS) {
+                mapLayout[getMyStartRow() + 1][getMyStartCol()] = DOOR;
+                theDoorCount++;
+            }
+        }
+    }
 
     private boolean startIsNotByPath() {
         if (mapLayout[getMyStartRow() + 1][getMyStartCol()] != Y_PATH
@@ -165,30 +176,11 @@ public class MapGenerator {
             return false;
         }
     }
-    // Create a function that finds what BOUNDS if any that S is close to and returns a value that represents which BOUNDS it is by or -1 if none.
 
-    private int startOrEndByWall(String theStartOrEnd) {
-
-        int theCol = 0;
-        int theRow = 0;
-
-        if (theStartOrEnd == START) {
-            theCol = getMyStartCol();
-            theRow = getMyStartRow();
-        } else if (theStartOrEnd == END) {
-            theCol = getMyEndCol();
-            theRow = getMyEndRow();
-        } else if (theStartOrEnd == INTERSECTION) {
-            theCol = getMyCurIntersectionCol();
-            theRow = getMyCurIntersectionRow();
-        } else if (theStartOrEnd == DOOR) {
-            theCol = getMyCurDoorRoomCol();
-            theRow = getMyCurDoorRoomRow();
-        }
-
+    private int symbolByWhichBound(String theSymbol, int theRow, int theCol) {
         if (theCol == MIN_COL_IN_BOUNDS) {
             return LEFT_BOUND;
-        } else if (theRow == MAX_ROW_IN_BOUNDS) { // S is at the bottom row within the walls
+        } else if (theRow == MAX_ROW_IN_BOUNDS) {
             return BOTTOM_BOUND;
         } else if (theCol == MAX_COL_IN_BOUNDS) {
             return RIGHT_BOUND;
@@ -197,8 +189,6 @@ public class MapGenerator {
         }
         return NOT_ADJACENT_TO_BOUND;
     }
-
-    static int doorCounter = 0;
     private void produceXPath(int theCol, int theRow, String theTile, boolean theNegDir, int xOrYDirection) {
 
             recursiveCallsCounter++;
@@ -216,9 +206,9 @@ public class MapGenerator {
                 // Place a door on the path by chance
                 int doorChance = random.nextInt(1, 10);
                     if (10 % doorChance == 0) {
-                    randomDoorSpace = random.nextInt(theCol - distance, theCol);
-                    setMyCurDoorRoom(theRow, randomDoorSpace);
-                }
+                        randomDoorSpace = random.nextInt(theCol - distance, theCol);
+                        setMyCurDoorRoom(theRow, randomDoorSpace);
+                    }
                 setMyCurIntersectionPos(theRow, randomIntersect);
                 choosePathGeneration(INTERSECTION, getMyCurIntersectionCol(), getMyCurIntersectionRow());
 
@@ -321,7 +311,7 @@ public class MapGenerator {
             }
 
         }
-        switch (startOrEndByWall(theTile)) {
+        switch (symbolByWhichBound(theTile, theRow, theCol)) {
             case LEFT_BOUND:
                 xNegDir = false;
                 produceXPath(theCol, theRow, X_PATH, xNegDir, X_DIRECTION);

@@ -23,6 +23,11 @@ public class GamePanel extends JPanel implements Runnable{
 
     public final int ROOM_SIZE = MIN_ROOM_SIZE * SCALE;
 
+    // using 5 because that is the width and height of the current test map
+    // should be changeable by the view
+    public final int mapWidth = 5;
+    public final int mapLength = 5;
+
     // size of our game screen. How many tiles can be displayed on a single
     // screen both horizontally and vertically?
     public final int maxScreenCol = 16;

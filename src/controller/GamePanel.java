@@ -1,7 +1,7 @@
-package main;
+package controller;
 
-import entity.Hero;
-import tile.TileManager;
+import View.entity.Hero;
+import View.tile.TileManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,13 +11,17 @@ public class GamePanel extends JPanel implements Runnable{
     // SCREEN SETTINGS
 
     // many tiles are 16x16 pixels, some use more but this is just for practice.
-    final int minTileSize = 16;
+    final int MIN_TILE_SIZE = 16;
 
-    // scaling is our friend.
-    final int scale = 3;
+    final int MIN_ROOM_SIZE = 100;
 
-    // 48x48 tile. Needs to be public so entities can access.
-    public final int tileSize = minTileSize * scale;
+    public final int SCALE = 4;
+
+
+    // 48x48 View tile. Needs to be public so entities can access.
+    public final int TILE_SIZE = MIN_TILE_SIZE * SCALE;
+
+    public final int ROOM_SIZE = MIN_ROOM_SIZE * SCALE;
 
     // size of our game screen. How many tiles can be displayed on a single
     // screen both horizontally and vertically?
@@ -25,15 +29,16 @@ public class GamePanel extends JPanel implements Runnable{
     public final int maxScreenRow = 12;
 
     // 760 pixels
-    public final int screenWidth = tileSize * maxScreenCol;
+    public final int screenWidth = TILE_SIZE * maxScreenCol;
     // 576 pixels
-    public final int screenHeight = tileSize * maxScreenRow;
+    public final int screenHeight = TILE_SIZE * maxScreenRow;
 
     // We need a game clock
     // 60 fps = 60 updates a second
     // Keeps program running until it is told to stop/
     // implementing runnable is key to using thread.
     private Thread myGameThread;
+
 
     private TileManager myTileManager = new TileManager(this);
     private KeyHandler myKeyHandler = new KeyHandler();

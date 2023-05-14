@@ -1,5 +1,4 @@
-package entity;
-
+package View.entity;
 import java.awt.image.BufferedImage;
 
 //Parent

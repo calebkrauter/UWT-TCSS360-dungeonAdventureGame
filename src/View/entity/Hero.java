@@ -1,7 +1,7 @@
-package entity;
+package View.entity;
 
-import main.GamePanel;
-import main.KeyHandler;
+import controller.GamePanel;
+import controller.KeyHandler;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -34,6 +34,8 @@ public class Hero extends Entity {
         direction = "down";
 
     }
+
+
 
     public void getHeroImage() {
 
@@ -135,7 +137,7 @@ public class Hero extends Entity {
             }
         }
         // image, position, dimensions, ImageObserver
-        g2.drawImage(image, x, y, gp.tileSize, gp.tileSize, null);
+        g2.drawImage(image, x, y, gp.TILE_SIZE, gp.TILE_SIZE, null);
 
 
     }

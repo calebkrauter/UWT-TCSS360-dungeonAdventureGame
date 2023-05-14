@@ -15,10 +15,16 @@ public class Hero extends Entity {
     KeyHandler keyH;
     GamePanel gp;
 
+    protected final int myScreenX;
+    protected final int myScreenY;
 
     public Hero (GamePanel theGP, KeyHandler theKeyH){
         this.gp = theGP;
         this.keyH = theKeyH;
+
+        myScreenX = (gp.screenWidth / 2) - (gp.TILE_SIZE/2);
+        myScreenY = (gp.screenHeight / 2) - (gp.TILE_SIZE/2);;
+
 
         setDefaultValues();
         getHeroImage();
@@ -27,8 +33,11 @@ public class Hero extends Entity {
     // set the Hero's default values.
     public void setDefaultValues(){
 
-        x = 100;
-        y = 100;
+        // Will eventually be set to center of start room. This would be the coordinate of the room
+        // times the room size plus half the room size on both x and y.
+        // EX: StartRoom = [1, 3], worldX = (1 * 400) + 200, worldY = (3 * 400) + 200
+        worldX = gp.mapWidth / 2;
+        worldY = gp.mapHeight / 2;
         speed = 4;
         //starting direction can vary.
         direction = "down";
@@ -71,19 +80,19 @@ public class Hero extends Entity {
 
             if(keyH.upPressed == true){
                 direction = "up";
-                y -= speed;
+                worldY -= speed;
             }
             else if(keyH.downPressed == true){
                 direction = "down";
-                y += speed;
+                worldY += speed;
             }
             else if(keyH.leftPressed == true){
                 direction = "left";
-                x -= speed;
+                worldX -= speed;
             }
             else if(keyH.rightPressed == true){
                 direction = "right";
-                x += speed;
+                worldX += speed;
             }
             spriteCounter++;
             // every 12 frames player image changes
@@ -136,8 +145,9 @@ public class Hero extends Entity {
                 image = right2;
             }
         }
-        // image, position, dimensions, ImageObserver
-        g2.drawImage(image, x, y, gp.TILE_SIZE, gp.TILE_SIZE, null);
+
+        // g2.drawImage(image, positionX, positionY, dimensionX, dimensionY, ImageObserver);
+        g2.drawImage(image, myScreenX, myScreenY, gp.TILE_SIZE, gp.TILE_SIZE, null);
 
 
     }

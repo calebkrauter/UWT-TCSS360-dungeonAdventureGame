@@ -84,7 +84,7 @@ public class TileManager {
 
 
 
-        while(col < gp.mapWidth && row < gp.mapLength) {
+        while(col < gp.mapWidth && row < gp.mapHeight) {
 
             // had to do this interpreting because we did not do numbers.
             // "#" = walls = tile[0]
@@ -95,7 +95,7 @@ public class TileManager {
             // "E" = end = tile[5]
             // "[" = door = tile[6]
 
-            if (myMapRooms[row][col].equals("#")) {
+            if (myMapRooms[row][col].equals("#")) { // #777474 grey color
                 g2.drawImage(tile[0].image, x, y, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
             }
             if (myMapRooms[row][col].equals("|")) {

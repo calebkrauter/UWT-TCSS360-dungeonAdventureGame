@@ -13,30 +13,31 @@ public class GamePanel extends JPanel implements Runnable{
     // many tiles are 16x16 pixels, some use more but this is just for practice.
     final int MIN_TILE_SIZE = 16;
 
-    final int MIN_ROOM_SIZE = 100;
-
-    public final int SCALE = 4;
-
-
-    // 48x48 View tile. Needs to be public so entities can access.
-    public final int TILE_SIZE = MIN_TILE_SIZE * SCALE;
-
-    public final int ROOM_SIZE = MIN_ROOM_SIZE * SCALE;
-
-    // using 5 because that is the width and height of the current test map
-    // should be changeable by the view
-    public final int mapWidth = 5;
-    public final int mapLength = 5;
-
     // size of our game screen. How many tiles can be displayed on a single
     // screen both horizontally and vertically?
     public final int maxScreenCol = 16;
     public final int maxScreenRow = 12;
 
+    public final int SCALE = 4;
+
+    // 48x48 View tile. Needs to be public so entities can access.
+    public final int TILE_SIZE = MIN_TILE_SIZE * SCALE;
+
     // 760 pixels
     public final int screenWidth = TILE_SIZE * maxScreenCol;
     // 576 pixels
     public final int screenHeight = TILE_SIZE * maxScreenRow;
+
+
+    // MAP SETTINGS
+    final int MIN_ROOM_SIZE = 100;    // num pixels
+    public final int ROOM_SIZE = MIN_ROOM_SIZE * SCALE;
+    // using 5 because that is the width and height of the current test map
+    // should be changeable by the view
+    public final int mapWidth = 5;
+    public final int mapHeight = 5;
+
+
 
     // We need a game clock
     // 60 fps = 60 updates a second

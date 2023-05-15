@@ -82,8 +82,6 @@ public class TileManager {
 //        while(col < gp.maxScreenCol && row < gp.maxScreenRow) {
         // anywhere there is "room size" there should be a call to gp.TILE_SIZE
 
-
-
         while(col < gp.mapWidth && row < gp.mapHeight) {
 
             // had to do this interpreting because we did not do numbers.

@@ -13,22 +13,18 @@ public class Map {
 //        rules on whether they are locked
 
     // 5 x 5 room example
-    protected final String[][] myMap = new String[][]{
-        {"-", "-", "#", "#", "#"},
-        {"|", "|", "O", "O", "#"},
-        {"#", "#", "|", "|", "#"},
-        {"#", "-", "O", "E", "#"},
+    protected String[][] myMap = new String[][] {
+        {"#", "#", "#", "#", "#"},
+        {"#", "O", "-", "O", "#"},
+        {"#", "|", "#", "|", "#"},
+        {"#", "O", "_", "E", "#"},
         {"#", "#", "#", "#", "#"}
     };
 
-    public Map(){
-
-    }
+    public Map(){}
 
     public String[][] getMap() {
         return myMap.clone();
     }
-
-
 
 }

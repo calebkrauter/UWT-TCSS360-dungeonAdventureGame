@@ -1,7 +1,7 @@
 package View.tile;
 
 import controller.GamePanel;
-import View.Map;
+import controller.MapGenerator;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -10,20 +10,20 @@ import java.io.IOException;
 
 public class TileManager {
 
-    public GamePanel gp;
+    private GamePanel gp;
 
-    public Tile[] tile;
-    public String[][] myMapRooms;
+    private Tile[] tile;
+    private String[][] myMapRooms;
 
     // Map here???
-    public Map myMap = new Map();
+    private final MapGenerator myMapGenerator = new MapGenerator();
 
     public TileManager(GamePanel gp){
 
         this.gp = gp;
         // "10" is number of different tiles
         tile = new Tile[10];
-        myMapRooms = myMap.getMap();
+        myMapRooms = myMapGenerator.getMap();
         getTileImage();
     }
 
@@ -42,9 +42,9 @@ public class TileManager {
             tile[2] = new Tile();
             tile[2].image = ImageIO.read(new File("/Users/makaimartinez/Desktop/360-Dungeon-Adventure/res/tiles/xPath.png"));
 
-//            // "O" = intersection = tile[3]
-//            tile[3] = new Tile();
-//            tile[3].image = ImageIO.read(new File(""));
+            // "O" = intersection = tile[3]
+            tile[3] = new Tile();
+            tile[3].image = ImageIO.read(new File("/Users/makaimartinez/Desktop/360-Dungeon-Adventure/res/tiles/intersection.png"));
 //
 //            // "S" = start = tile[4]
 //            tile[4] = new Tile();

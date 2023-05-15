@@ -1,7 +1,7 @@
 package View.entity;
 
-import controller.GamePanel;
-import controller.KeyHandler;
+import Controller.GamePanel;
+import Controller.KeyHandler;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -15,8 +15,8 @@ public class Hero extends Entity {
     KeyHandler keyH;
     GamePanel gp;
 
-    protected final int myScreenX;
-    protected final int myScreenY;
+    private final int myScreenX;
+    private final int myScreenY;
 
     public Hero (GamePanel theGP, KeyHandler theKeyH){
         this.gp = theGP;
@@ -36,15 +36,20 @@ public class Hero extends Entity {
         // Will eventually be set to center of start room. This would be the coordinate of the room
         // times the room size plus half the room size on both x and y.
         // EX: StartRoom = [1, 3], worldX = (1 * 400) + 200, worldY = (3 * 400) + 200
-        worldX = gp.mapWidth / 2;
-        worldY = gp.mapHeight / 2;
+        worldX = gp.mapMaxCol / 2;
+        worldY = gp.mapMaxRow / 2;
         speed = 4;
         //starting direction can vary.
         direction = "down";
 
     }
 
-
+    public int getMyScreenX(){
+        return myScreenX;
+    }
+    public int getMyScreenY(){
+        return myScreenY;
+    }
 
     public void getHeroImage() {
 

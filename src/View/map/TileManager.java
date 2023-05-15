@@ -1,7 +1,7 @@
-package View.tile;
+package View.map;
 
-import controller.GamePanel;
-import controller.MapGenerator;
+import Controller.GamePanel;
+import Model.MapGenerator;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -63,48 +63,41 @@ public class TileManager {
         }
     }
 
+    // had to do this interpreting because we did not do numbers.
+    // "#" = walls = tile[0]
+    // "|" = yPath = tile[1]
+    // "-" = xPath = tile[2]
+    // "O" = intersection = tile[3]
+    // "S" = start = tile[4]
+    // "E" = end = tile[5]
+    // "[" = door = tile[6]
     public void draw (Graphics2D g2) {
-        // code from video example with 48 pixel View.tile size.
-//        g2.drawImage(View.tile[0].image, 0, 0, gp.tileSize, gp.tileSize, null);
-//        g2.drawImage(View.tile[1].image, 48, 0, gp.tileSize, gp.tileSize, null);
-//        g2.drawImage(View.tile[2].image, 96, 0, gp.tileSize, gp.tileSize, null);
 
-        // View.tile automation.
-        int col = 0;
-        int row = 0;
-        int x = 0;
-        int y = 0;
+        int mapCol = 0;
+        int mapRow = 0;
 
+        while(mapCol < gp.mapMaxCol && mapRow < gp.mapMaxRow) {
 
-        // how many 48 x 48 tiles can fit on the game window, the game window size
-        // depends on GamePanel class variables maxScreenCol, maxScreenRow.
-        // all three are made and stored only in GamePanel Class.
-//        while(col < gp.maxScreenCol && row < gp.maxScreenRow) {
-        // anywhere there is "room size" there should be a call to gp.TILE_SIZE
+            int mapX = mapCol * gp.ROOM_SIZE;
+            int mapY = mapRow * gp.ROOM_SIZE;
 
-        while(col < gp.mapWidth && row < gp.mapHeight) {
+            // currently the player's position is always at the center of the screen
+            // the center is
+            int screenX = mapX - gp.myHero.worldX + gp.myHero.getMyScreenX();
+            int screenY = mapY - gp.myHero.worldY + gp.myHero.getMyScreenY();
 
-            // had to do this interpreting because we did not do numbers.
-            // "#" = walls = tile[0]
-            // "|" = yPath = tile[1]
-            // "-" = xPath = tile[2]
-            // "O" = intersection = tile[3]
-            // "S" = start = tile[4]
-            // "E" = end = tile[5]
-            // "[" = door = tile[6]
-
-            if (myMapRooms[row][col].equals("#")) { // #777474 grey color
-                g2.drawImage(tile[0].image, x, y, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
+            if (myMapRooms[mapRow][mapCol].equals("#")) { // #777474 grey color
+                g2.drawImage(tile[0].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
             }
-            if (myMapRooms[row][col].equals("|")) {
-                g2.drawImage(tile[1].image, x, y, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
+            if (myMapRooms[mapRow][mapCol].equals("|")) {
+                g2.drawImage(tile[1].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
             }
-            if (myMapRooms[row][col].equals("-")) {
-                g2.drawImage(tile[2].image, x, y, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
+            if (myMapRooms[mapRow][mapCol].equals("-")) {
+                g2.drawImage(tile[2].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
             }
-//            if (myMapRooms[row][col].equals("O")) {
-//                g2.drawImage(tile[3].image, x, y, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
-//            }
+            if (myMapRooms[mapRow][mapCol].equals("O")) {
+                g2.drawImage(tile[3].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
+            }
 //            if (myMapRooms[row][col].equals("S")) {
 //                g2.drawImage(tile[4].image, x, y, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
 //            }
@@ -117,13 +110,10 @@ public class TileManager {
 
 
             // increase column by 1 each time until 16 then reset column count, go to next row.
-            col++;
-            x += gp.ROOM_SIZE;
-            if (col == gp.mapWidth) {
-                col = 0;
-                x = 0;
-                row++;
-                y += gp.ROOM_SIZE;
+            mapCol++;
+            if (mapCol == gp.mapMaxCol) {
+                mapCol = 0;
+                mapRow++;
             }
         }
     }

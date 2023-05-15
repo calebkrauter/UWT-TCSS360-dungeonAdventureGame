@@ -4,37 +4,121 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="">
+    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="100% successfully working camera.">
+      <change afterPath="$PROJECT_DIR$/res/room tiles/intersection.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/room tiles/wall.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/room tiles/xPath.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/room tiles/yPath.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/MapGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/tile/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/tile/TileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/tiles/intersection.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/tiles/wall.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/tiles/xPath.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/tiles/yPath.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/KeyHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MouseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MouseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Map.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/MenuButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MenuButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/entity/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/entity/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/tile/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/map/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/tile/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/map/TileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/MapGenerator.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="origin/Makai-Development" />
+  </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="main" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2PolAmz3H6RoZBEmYAwJBAWcDh8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "Makai-Development",
+    "ignore.preview.features.used": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/res/room tiles" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="" />
+      <created>1684131895812</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1684131895812</updated>
+      <workItem from="1684131901435" duration="84000" />
+      <workItem from="1684189363572" duration="2940000" />
+      <workItem from="1684192323648" duration="840000" />
+      <workItem from="1684193281077" duration="326000" />
+    </task>
+    <task id="LOCAL-00001" summary="100% successfully interprets randomly generated maps for the display.">
+      <created>1684131979650</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1684131979650</updated>
+    </task>
+    <task id="LOCAL-00002" summary="100% successfully working camera.">
+      <created>1684192040369</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1684192040369</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -50,5 +134,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="100% successfully interprets randomly generated maps for the display." />
+    <MESSAGE value="100% successfully working camera." />
+    <option name="LAST_COMMIT_MESSAGE" value="100% successfully working camera." />
   </component>
 </project>

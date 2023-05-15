@@ -1,4 +1,4 @@
-package View.tile;
+package View.map;
 
 import java.awt.image.BufferedImage;
 

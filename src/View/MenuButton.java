@@ -1,7 +1,7 @@
 package View;
 
-import controller.GamePanel;
-import controller.MouseHandler;
+import Controller.GamePanel;
+import Controller.MouseHandler;
 
 import javax.imageio.ImageIO;
 import java.awt.*;

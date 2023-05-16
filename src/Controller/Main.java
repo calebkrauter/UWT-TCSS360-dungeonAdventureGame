@@ -1,6 +1,6 @@
 // Game Project with jylee33@uw.edu & krautercaleb@gmail.com
 
-package controller;
+package Controller;
 
 import javax.swing.JFrame;
 

@@ -1,7 +1,7 @@
-package controller;
+package Controller;
 
 import View.entity.Hero;
-import View.tile.TileManager;
+import View.map.TileManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,7 +11,7 @@ public class GamePanel extends JPanel implements Runnable{
     // SCREEN SETTINGS
 
     // many tiles are 16x16 pixels, some use more but this is just for practice.
-    final int MIN_TILE_SIZE = 16;
+    final int MIN_TILE_SIZE = 12;   // using 12 to get a 48 x 48 character
 
     // size of our game screen. How many tiles can be displayed on a single
     // screen both horizontally and vertically?
@@ -34,8 +34,13 @@ public class GamePanel extends JPanel implements Runnable{
     public final int ROOM_SIZE = MIN_ROOM_SIZE * SCALE;
     // using 5 because that is the width and height of the current test map
     // should be changeable by the view
-    public final int mapWidth = 5;
-    public final int mapHeight = 5;
+    public final int mapMaxCol = 5;
+    public final int mapMaxRow = 5;
+
+
+    // in pixels (400 * # of Columns)
+    private final int worldWidth = ROOM_SIZE + mapMaxCol;
+    private final int worldHeight = ROOM_SIZE + mapMaxRow;
 
 
 
@@ -49,7 +54,7 @@ public class GamePanel extends JPanel implements Runnable{
     private TileManager myTileManager = new TileManager(this);
     private KeyHandler myKeyHandler = new KeyHandler();
     private MouseHandler myMouseHandler = new MouseHandler();
-    private Hero myHero = new Hero(this, myKeyHandler);
+    public Hero myHero = new Hero(this, myKeyHandler);
 
     int FPS = 60;
 
@@ -84,59 +89,6 @@ public class GamePanel extends JPanel implements Runnable{
 
 
     }
-
-    // SLEEP GAME LOOP
-
-//    // When we call myGameThread.start(), this method is automatically called.
-//    @Override
-//    public void run() {
-//        // GAME LOOP / CORE OF THE GAME
-//
-//        // 1 billion nanoseconds / 60 frames per second = 0.01666 seconds
-//        double drawInterval = 1000000000/FPS;
-//
-//        // current system time + drawinterval (allocated time for a single loop.
-//        double nextDrawTime = System.nanoTime() + drawInterval;
-//
-//        // as long as the thread exists, it repeats the process in the loop
-//        while (myGameThread != null) {
-//
-//            // we need to know how much time has passed from here to
-//            // after the repaint. We cannot tell our program when to update
-//            // or draw without interval
-////            long currTime = System.nanoTime();
-////            System.out.println("Current Time: " + currTime);
-//
-//            // UPDATE information such as positions.
-//            update();
-//
-//
-//            // DRAW the screen with the updated version.
-//            repaint();
-//
-//            // Thread must sleep for remaining time.
-//            try {
-//                // Next we need to find the time left of our 0.016666 second's
-//                // following the update and repaint.
-//                double remainingTime = nextDrawTime - System.nanoTime();
-//                // Sleep takes milliseconds so we must convert.
-//                remainingTime = remainingTime/1000000;
-//
-//                // what if there is no time left after update and repaint?
-//                if(remainingTime < 0) {
-//                    remainingTime = 0;
-//                }
-//
-//                Thread.sleep((long) remainingTime);
-//
-//                nextDrawTime += drawInterval;
-//
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//
-//    }
 
     // DELTA / ACCUMULATOR GAME LOOP
     @Override

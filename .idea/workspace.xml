@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="code base bug fixes.">
-      <change beforePath="$PROJECT_DIR$/src/Controller/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/KeyHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MouseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MouseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Room.java" afterDir="false" />
+    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="code base final bug fixes?">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/KeyHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/MouseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/MouseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Room.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +44,13 @@
         </map>
       </branch-storage>
     </excluded-from-favorite>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Makai-Development" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -58,7 +65,7 @@
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Makai-Development",
+    "git-widget-placeholder": "Makai-Development2",
     "ignore.preview.features.used": "true",
     "last_opened_file_path": "/Users/makaimartinez/IdeaProjects/360-Dungeon-Adventure",
     "node.js.detected.package.eslint": "true",
@@ -73,6 +80,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="Controller" />
       <recent name="Model" />
       <recent name="View.map" />
     </key>
@@ -102,6 +110,7 @@
       <workItem from="1684210114658" duration="137000" />
       <workItem from="1684210284240" duration="763000" />
       <workItem from="1684211722908" duration="2119000" />
+      <workItem from="1684216216193" duration="808000" />
     </task>
     <task id="LOCAL-00001" summary="100% successfully interprets randomly generated maps for the display.">
       <created>1684131979650</created>
@@ -138,7 +147,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684214208986</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="code base final bug fixes?">
+      <created>1684215963137</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1684215963137</updated>
+    </task>
+    <task id="LOCAL-00007" summary="code base final bug fixes?">
+      <created>1684215976471</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1684215976471</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,6 +183,7 @@
     <MESSAGE value="100% successfully working camera." />
     <MESSAGE value="code base." />
     <MESSAGE value="code base bug fixes." />
-    <option name="LAST_COMMIT_MESSAGE" value="code base bug fixes." />
+    <MESSAGE value="code base final bug fixes?" />
+    <option name="LAST_COMMIT_MESSAGE" value="code base final bug fixes?" />
   </component>
 </project>

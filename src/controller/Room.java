@@ -1,4 +1,4 @@
-package controller;
+package Controller;
 
 public class Room {
     // 1 View.tile = 48 x 48 pixels

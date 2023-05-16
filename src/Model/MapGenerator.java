@@ -36,13 +36,6 @@ public class MapGenerator {
     static int recursiveCallsCounter = 0; // A counter used to end recursive calls to free up calls stack.
     private boolean myEasyMode = true;
 
-
-
-
-/*
-  TODO - code cleanup and make code more dynamic and modular.
- */
-
     // | vertical path
     // - horizontal path
     // [ door
@@ -54,8 +47,8 @@ public class MapGenerator {
     public MapGenerator() {
         mapLayout = new String[myMaxRows][myMaxCols];
         addBoundSymbols();
-        randomStart();
-        randomEnd();
+        setStart();
+        setEnd();
         generatePaths();
         if (myEasyMode) {
             ensureValidPath();
@@ -432,34 +425,18 @@ public class MapGenerator {
     /**
      * Choose a location and set the start location.
      */
-    private void randomStart() {
-        int randomRow = 0;
-        int randomCol = 0;
-        if (MAX_COL_IN_BOUNDS > 20 && MAX_ROW_IN_BOUNDS > 20) {
-            randomRow = random.nextInt(MIN_ROW_IN_BOUNDS, MAX_ROW_IN_BOUNDS/4);
-            randomCol = random.nextInt(MIN_COL_IN_BOUNDS, MAX_COL_IN_BOUNDS/4);
-        } else {
-            randomRow = MIN_ROW_IN_BOUNDS + 1;
-            randomCol = MIN_COL_IN_BOUNDS + 1;
-        }
-        setStartPosition(randomRow, randomCol);
+    private void setStart() {
+        setStartPosition(MIN_ROW_IN_BOUNDS + 1, MIN_COL_IN_BOUNDS + 1);
     }
 
     /**
-     * Choose a location and set the end location.
+     *  Choose a location and set the end location.
      */
-    private void randomEnd() {
-        int randomRow = 0;
-        int randomCol = 0;
-        if (MAX_COL_IN_BOUNDS > 20 && MAX_ROW_IN_BOUNDS > 20) {
-            randomRow = random.nextInt((MAX_ROW_IN_BOUNDS/4) * 4 , MAX_ROW_IN_BOUNDS);
-            randomCol = random.nextInt((MAX_COL_IN_BOUNDS/4) * 4, MAX_COL_IN_BOUNDS);
-        } else {
-            randomRow = MAX_ROW_IN_BOUNDS - 2;
-            randomCol = MAX_COL_IN_BOUNDS - 2;
-        }
-        setEndPosition(randomRow, randomCol);
+    private void setEnd() {
+        setEndPosition(MAX_ROW_IN_BOUNDS - 2, MAX_COL_IN_BOUNDS - 2);
     }
+
+
 
     /**
      * set the end position.

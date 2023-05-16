@@ -7,6 +7,7 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 public class TileManager {
 
@@ -28,23 +29,24 @@ public class TileManager {
     }
 
     private void getTileImage(){
+
         try{
 
             // "#" = walls = tile[0]
             tile[0] = new Tile();
-            tile[0].image = ImageIO.read(new File("/Users/makaimartinez/Desktop/360-Dungeon-Adventure/res/tiles/wall.png"));
+            tile[0].image = ImageIO.read(new File("res/room tiles/wall.png"));
 
             // "|" = yPath = tile[1]
             tile[1] = new Tile();
-            tile[1].image = ImageIO.read(new File("/Users/makaimartinez/Desktop/360-Dungeon-Adventure/res/tiles/yPath.png"));
+            tile[1].image = ImageIO.read(new File("res/room tiles/yPath.png"));
 
             // "-" = xPath = tile[2]
             tile[2] = new Tile();
-            tile[2].image = ImageIO.read(new File("/Users/makaimartinez/Desktop/360-Dungeon-Adventure/res/tiles/xPath.png"));
+            tile[2].image = ImageIO.read(new File("res/room tiles/xPath.png"));
 
             // "O" = intersection = tile[3]
             tile[3] = new Tile();
-            tile[3].image = ImageIO.read(new File("/Users/makaimartinez/Desktop/360-Dungeon-Adventure/res/tiles/intersection.png"));
+            tile[3].image = ImageIO.read(new File("res/room tiles/intersection.png"));
 //
 //            // "S" = start = tile[4]
 //            tile[4] = new Tile();

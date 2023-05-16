@@ -86,6 +86,8 @@ public class TileManager {
             int screenX = mapX - gp.myHero.worldX + gp.myHero.getMyScreenX();
             int screenY = mapY - gp.myHero.worldY + gp.myHero.getMyScreenY();
 
+//            if(mapX > gp.m)
+
             if (myMapRooms[mapRow][mapCol].equals("#")) { // #777474 grey color
                 g2.drawImage(tile[0].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
             }

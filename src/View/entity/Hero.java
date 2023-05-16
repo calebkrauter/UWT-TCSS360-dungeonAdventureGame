@@ -56,14 +56,14 @@ public class Hero extends Entity {
         try {
             // only have two sprite pngs so its the same two in each direction. Need to make more
             // Need to make more later on.
-            up1 = ImageIO.read(new File("/Users/makaimartinez/Desktop/360-Dungeon-Adventure/res/hero/up1.png"));
-            up2 = ImageIO.read(new File("/Users/makaimartinez/Desktop/360-Dungeon-Adventure/res/hero/up2.png"));
-            down1 = ImageIO.read(new File("/Users/makaimartinez/Desktop/360-Dungeon-Adventure/res/hero/down1.png"));
-            down2 = ImageIO.read(new File("/Users/makaimartinez/Desktop/360-Dungeon-Adventure/res/hero/down2.png"));
-            left1 = ImageIO.read(new File("/Users/makaimartinez/Desktop/360-Dungeon-Adventure/res/hero/left1.png"));
-            left2 = ImageIO.read(new File("/Users/makaimartinez/Desktop/360-Dungeon-Adventure/res/hero/left1.png"));
-            right1 = ImageIO.read(new File("/Users/makaimartinez/Desktop/360-Dungeon-Adventure/res/hero/right1.png"));
-            right2 = ImageIO.read(new File("/Users/makaimartinez/Desktop/360-Dungeon-Adventure/res/hero/right1.png"));
+            up1 = ImageIO.read(new File("res/hero/up1.png"));
+            up2 = ImageIO.read(new File("res/hero/up2.png"));
+            down1 = ImageIO.read(new File("res/hero/down1.png"));
+            down2 = ImageIO.read(new File("res/hero/down2.png"));
+            left1 = ImageIO.read(new File("res/hero/left1.png"));
+            left2 = ImageIO.read(new File("res/hero/left1.png"));
+            right1 = ImageIO.read(new File("res/hero/right1.png"));
+            right2 = ImageIO.read(new File("res/hero/right1.png"));
 
         }catch(IOException e) {
             e.printStackTrace();

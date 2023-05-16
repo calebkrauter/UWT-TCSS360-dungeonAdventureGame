@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="code base final bug fixes?">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/KeyHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/MouseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/MouseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Room.java" afterDir="false" />
+    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="trying to get things to work">
+      <change beforePath="$PROJECT_DIR$/src/Controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/entity/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/entity/Hero.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +106,7 @@
       <workItem from="1684210114658" duration="137000" />
       <workItem from="1684210284240" duration="763000" />
       <workItem from="1684211722908" duration="2119000" />
-      <workItem from="1684216216193" duration="808000" />
+      <workItem from="1684216216193" duration="1143000" />
     </task>
     <task id="LOCAL-00001" summary="100% successfully interprets randomly generated maps for the display.">
       <created>1684131979650</created>
@@ -161,7 +157,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684215976471</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="trying to get things to work">
+      <created>1684217060404</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1684217060404</updated>
+    </task>
+    <task id="LOCAL-00009" summary="trying to get things to work">
+      <created>1684217207692</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1684217207692</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,6 +194,7 @@
     <MESSAGE value="code base." />
     <MESSAGE value="code base bug fixes." />
     <MESSAGE value="code base final bug fixes?" />
-    <option name="LAST_COMMIT_MESSAGE" value="code base final bug fixes?" />
+    <MESSAGE value="trying to get things to work" />
+    <option name="LAST_COMMIT_MESSAGE" value="trying to get things to work" />
   </component>
 </project>

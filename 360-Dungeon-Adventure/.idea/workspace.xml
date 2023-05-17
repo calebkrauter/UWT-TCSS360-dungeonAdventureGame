@@ -5,31 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="trying to get things to work">
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../res/Buttons/blueSheet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../res/hero/down1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../res/hero/down2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../res/hero/left1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../res/hero/right1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../res/hero/up1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../res/hero/up2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../res/room tiles/intersection.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../res/room tiles/wall.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../res/room tiles/xPath.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../res/room tiles/yPath.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/Controller/GamePanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/Controller/KeyHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/Controller/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/Controller/MouseHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/Controller/Room.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/Model/MapGenerator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/View/MenuButton.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/View/entity/Entity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/View/entity/Hero.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/View/map/Tile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/View/map/TileManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/map/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/map/TileManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,23 +60,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Makai-Development2",
-    "ignore.preview.features.used": "true",
-    "last_opened_file_path": "C:/Users/Kraut/Documents/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Makai-Development2&quot;,
+    &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/calebkrauter/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Controller" />

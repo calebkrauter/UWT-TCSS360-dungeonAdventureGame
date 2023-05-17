@@ -47,18 +47,18 @@ public class TileManager {
             // "O" = intersection = tile[3]
             tile[3] = new Tile();
             tile[3].image = ImageIO.read(new File("res/room tiles/intersection.png"));
-//
-//            // "S" = start = tile[4]
-//            tile[4] = new Tile();
-//            tile[4].image = ImageIO.read(new File(""));
-//
-//            // "E" = end = tile[5]
-//            tile[5] = new Tile();
-//            tile[5].image = ImageIO.read(new File(""));
-//
-//            // "[" = door = tile[6]
-//            tile[6] = new Tile();
-//            tile[6].image = ImageIO.read(new File(""));
+
+            // "S" = start = tile[4]
+            tile[4] = new Tile();
+            tile[4].image = ImageIO.read(new File("res/room tiles/openDoorRoom.png"));
+
+            // "E" = end = tile[5]
+            tile[5] = new Tile();
+            tile[5].image = ImageIO.read(new File("res/room tiles/closedDoorRoom.png"));
+
+            // "[" = door = tile[6]
+            tile[6] = new Tile();
+            tile[6].image = ImageIO.read(new File("res/room tiles/closedDoorRoom.png"));
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -102,15 +102,15 @@ public class TileManager {
             if (myMapRooms[mapRow][mapCol].equals("O")) {
                 g2.drawImage(tile[3].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
             }
-//            if (myMapRooms[row][col].equals("S")) {
-//                g2.drawImage(tile[4].image, x, y, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
-//            }
-//            if (myMapRooms[row][col].equals("E")) {
-//                g2.drawImage(tile[5].image, x, y, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
-//            }
-//            if (myMapRooms[row][col].equals("[")) {
-//                g2.drawImage(tile[6].image, x, y, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
-//            }
+            if (myMapRooms[mapRow][mapCol].equals("S")) {
+                g2.drawImage(tile[4].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
+            }
+            if (myMapRooms[mapRow][mapCol].equals("E")) {
+                g2.drawImage(tile[5].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
+            }
+            if (myMapRooms[mapRow][mapCol].equals("[")) {
+                g2.drawImage(tile[6].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
+            }
 
 
             // increase column by 1 each time until 16 then reset column count, go to next row.

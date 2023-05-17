@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.MapGenerator;
 import View.entity.Hero;
 import View.map.TileManager;
 
@@ -15,6 +16,7 @@ public class GamePanel extends JPanel implements Runnable{
 
     // size of our game screen. How many tiles can be displayed on a single
     // screen both horizontally and vertically?
+    private MapGenerator mg;
     public final int maxScreenCol = 16;
     public final int maxScreenRow = 12;
 
@@ -34,8 +36,9 @@ public class GamePanel extends JPanel implements Runnable{
     public final int ROOM_SIZE = MIN_ROOM_SIZE * SCALE;
     // using 5 because that is the width and height of the current test map
     // should be changeable by the view
-    public final int mapMaxCol = 5;
-    public final int mapMaxRow = 5;
+    MapGenerator mG = new MapGenerator();
+    public final int mapMaxCol = mG.getMyMaxCols();
+    public final int mapMaxRow = mG.getMyMaxRows();
 
 
     // in pixels (400 * # of Columns)
@@ -61,6 +64,7 @@ public class GamePanel extends JPanel implements Runnable{
     // constructor for game panel
     public GamePanel() {
 
+        mg = new MapGenerator();
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
         this.setBackground(Color.black);
 

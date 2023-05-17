@@ -7,7 +7,6 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 
 public class TileManager {
 
@@ -54,7 +53,7 @@ public class TileManager {
 
             // "E" = end = tile[5]
             tile[5] = new Tile();
-            tile[5].image = ImageIO.read(new File("res/room tiles/closedDoorRoom.png"));
+            tile[5].image = ImageIO.read(new File("res/room tiles/openDoorRoom.png"));
 
             // "[" = door = tile[6]
             tile[6] = new Tile();

@@ -88,30 +88,36 @@ public class TileManager {
             int screenX = mapX - gp.myHero.worldX + gp.myHero.getMyScreenX();
             int screenY = mapY - gp.myHero.worldY + gp.myHero.getMyScreenY();
 
-//            if(mapX > gp.m)
 
-            if (myMapRooms[mapRow][mapCol].equals("#")) { // #777474 grey color
-                g2.drawImage(tile[0].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
-            }
-            if (myMapRooms[mapRow][mapCol].equals("|")) {
-                g2.drawImage(tile[1].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
-            }
-            if (myMapRooms[mapRow][mapCol].equals("-")) {
-                g2.drawImage(tile[2].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
-            }
-            if (myMapRooms[mapRow][mapCol].equals("O")) {
-                g2.drawImage(tile[3].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
-            }
-            if (myMapRooms[mapRow][mapCol].equals("S")) {
-                g2.drawImage(tile[4].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
-            }
-            if (myMapRooms[mapRow][mapCol].equals("E")) {
-                g2.drawImage(tile[5].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
-            }
-            if (myMapRooms[mapRow][mapCol].equals("[")) {
-                g2.drawImage(tile[6].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
-            }
+            // create a boundary from the center in both directions based on player
+            // screenX or screenY. This is essentially render distance
+            if(mapX > gp.myHero.worldX - (gp.myHero.getMyScreenX() + 200) &&
+               mapX < gp.myHero.worldX + (gp.myHero.getMyScreenX() + 200) &&
+               mapY > gp.myHero.worldY - (gp.myHero.getMyScreenY() + 200) &&
+               mapX < gp.myHero.worldY + (gp.myHero.getMyScreenY() + 200)) {
 
+                if (myMapRooms[mapRow][mapCol].equals("#")) { // #777474 grey color
+                    g2.drawImage(tile[0].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
+                }
+                if (myMapRooms[mapRow][mapCol].equals("|")) {
+                    g2.drawImage(tile[1].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
+                }
+                if (myMapRooms[mapRow][mapCol].equals("-")) {
+                    g2.drawImage(tile[2].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
+                }
+                if (myMapRooms[mapRow][mapCol].equals("O")) {
+                    g2.drawImage(tile[3].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
+                }
+                if (myMapRooms[mapRow][mapCol].equals("S")) {
+                    g2.drawImage(tile[4].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
+                }
+                if (myMapRooms[mapRow][mapCol].equals("E")) {
+                    g2.drawImage(tile[5].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
+                }
+                if (myMapRooms[mapRow][mapCol].equals("[")) {
+                    g2.drawImage(tile[6].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
+                }
+            }
 
             // increase column by 1 each time until 16 then reset column count, go to next row.
             mapCol++;

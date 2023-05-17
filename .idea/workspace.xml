@@ -1,41 +1,237 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="6788aaa6-561f-4308-9843-1fd165a37baa" name="Changes" comment="">
+    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="final bug fixes?">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MapDisplay/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MapDisplay/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MapDisplay/.idea/checkstyle-idea.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MapDisplay/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MapDisplay/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MapDisplay/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MapDisplay/MapDisplay.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MapDisplay/src/main/DisplayFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MapDisplay/src/main/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MapDisplay/src/png/DungeonWall.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MapDisplay/src/png/FloorTile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MapDisplay/src/tile/MapManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MapDisplay/src/tile/Tile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tiles/WALLDB.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tiles/door32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tiles/door64.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tiles/doorhalf32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tiles/floor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tiles/openDoor64.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tiles/opendoor32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tiles/opendoor32by32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tiles/opendoorhalf32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tiles/wall.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tiles/wallNB.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="origin/Makai-Development" />
+  </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="main" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Makai-Development" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2PMLWxxRXSvkxokYKeQMvVZaJrh" />
+  <component name="ProjectId" id="2PolAmz3H6RoZBEmYAwJBAWcDh8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Makai-Development2&quot;,
+    &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/makaimartinez/IdeaProjects/360-Dungeon-Adventure&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Controller" />
+      <recent name="Model" />
+      <recent name="View.map" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\James\IdeaProjects\360-Dungeon-Adventure\tiles" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/Model" />
+      <recent name="$PROJECT_DIR$/res/room tiles" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6788aaa6-561f-4308-9843-1fd165a37baa" name="Changes" comment="" />
-      <created>1683262041499</created>
+      <changelist id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="" />
+      <created>1684131895812</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1683262041499</updated>
+      <updated>1684131895812</updated>
+      <workItem from="1684131901435" duration="84000" />
+      <workItem from="1684189363572" duration="2940000" />
+      <workItem from="1684192323648" duration="840000" />
+      <workItem from="1684193281077" duration="841000" />
+      <workItem from="1684208689520" duration="173000" />
+      <workItem from="1684209482135" duration="619000" />
+      <workItem from="1684210114658" duration="137000" />
+      <workItem from="1684210284240" duration="763000" />
+      <workItem from="1684211722908" duration="2119000" />
+      <workItem from="1684216216193" duration="1465000" />
+      <workItem from="1684265849642" duration="72000" />
     </task>
+    <task id="LOCAL-00001" summary="100% successfully interprets randomly generated maps for the display.">
+      <created>1684131979650</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1684131979650</updated>
+    </task>
+    <task id="LOCAL-00002" summary="100% successfully working camera.">
+      <created>1684192040369</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1684192040369</updated>
+    </task>
+    <task id="LOCAL-00003" summary="100% successfully working camera.">
+      <created>1684193625661</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1684193625661</updated>
+    </task>
+    <task id="LOCAL-00004" summary="code base.">
+      <created>1684210962487</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1684210962487</updated>
+    </task>
+    <task id="LOCAL-00005" summary="code base bug fixes.">
+      <created>1684214208986</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1684214208986</updated>
+    </task>
+    <task id="LOCAL-00006" summary="code base final bug fixes?">
+      <created>1684215963137</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1684215963137</updated>
+    </task>
+    <task id="LOCAL-00007" summary="code base final bug fixes?">
+      <created>1684215976471</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1684215976471</updated>
+    </task>
+    <task id="LOCAL-00008" summary="trying to get things to work">
+      <created>1684217060404</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1684217060404</updated>
+    </task>
+    <task id="LOCAL-00009" summary="trying to get things to work">
+      <created>1684217207692</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1684217207692</updated>
+    </task>
+    <task id="LOCAL-00010" summary="final bug fixes?">
+      <created>1684217400176</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1684217400176</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="100% successfully interprets randomly generated maps for the display." />
+    <MESSAGE value="100% successfully working camera." />
+    <MESSAGE value="code base." />
+    <MESSAGE value="code base bug fixes." />
+    <MESSAGE value="code base final bug fixes?" />
+    <MESSAGE value="trying to get things to work" />
+    <MESSAGE value="final bug fixes?" />
+    <option name="LAST_COMMIT_MESSAGE" value="final bug fixes?" />
   </component>
 </project>

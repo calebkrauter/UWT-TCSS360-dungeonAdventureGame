@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="displays all room types.">
+    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="Some additions to entity and Hero data. Added a rendering distance.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GamePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/entity/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/map/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/map/TileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/Room.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +111,7 @@
       <workItem from="1684216216193" duration="1465000" />
       <workItem from="1684265849642" duration="72000" />
       <workItem from="1684294312696" duration="2695000" />
-      <workItem from="1684361636465" duration="1609000" />
+      <workItem from="1684361636465" duration="2790000" />
     </task>
     <task id="LOCAL-00001" summary="100% successfully interprets randomly generated maps for the display.">
       <created>1684131979650</created>
@@ -199,7 +197,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684337236919</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Some additions to entity and Hero data. Added a rendering distance.">
+      <created>1684363327794</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1684363327794</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Some additions to entity and Hero data. Added a rendering distance.">
+      <created>1684363379855</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1684363379855</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,6 +238,7 @@
     <MESSAGE value="final bug fixes?" />
     <MESSAGE value="adding door rooms display." />
     <MESSAGE value="displays all room types." />
-    <option name="LAST_COMMIT_MESSAGE" value="displays all room types." />
+    <MESSAGE value="Some additions to entity and Hero data. Added a rendering distance." />
+    <option name="LAST_COMMIT_MESSAGE" value="Some additions to entity and Hero data. Added a rendering distance." />
   </component>
 </project>

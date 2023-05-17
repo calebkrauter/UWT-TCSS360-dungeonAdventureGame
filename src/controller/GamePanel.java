@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.MapGenerator;
 import View.entity.Hero;
 import View.map.TileManager;
 
@@ -32,10 +33,12 @@ public class GamePanel extends JPanel implements Runnable{
     // MAP SETTINGS
     final int MIN_ROOM_SIZE = 100;    // num pixels
     public final int ROOM_SIZE = MIN_ROOM_SIZE * SCALE;
-    // using 5 because that is the width and height of the current test map
+
+    private final MapGenerator myMapGenerator = new MapGenerator();
+
     // should be changeable by the view
-    public final int mapMaxCol = 5;
-    public final int mapMaxRow = 5;
+    public final int mapMaxCol = myMapGenerator.getMyMaxCols();
+    public final int mapMaxRow = myMapGenerator.getMyMaxRows();
 
 
     // in pixels (400 * # of Columns)

@@ -9,8 +9,8 @@ public class MapGenerator {
     final private int RIGHT_BOUND = 3;
     final private int TOP_BOUND = 4;
     final private int NOT_ADJACENT_TO_BOUND = 99;
-    private int myMaxRows = 10;
-    private int myMaxCols = 10;
+    private int myMaxRows = 100;
+    private int myMaxCols = 100;
     final private int MIN_COL_IN_BOUNDS = 1;
     final private int MIN_ROW_IN_BOUNDS = 1;
     final private int MAX_COL_IN_BOUNDS = myMaxCols - 1;
@@ -34,7 +34,7 @@ public class MapGenerator {
     private String[][] mapLayout;
     private Random random = new Random();
     static int recursiveCallsCounter = 0; // A counter used to end recursive calls to free up calls stack.
-    private boolean myEasyMode = true;
+    private boolean myEasyMode = false;
 
     // | vertical path
     // - horizontal path

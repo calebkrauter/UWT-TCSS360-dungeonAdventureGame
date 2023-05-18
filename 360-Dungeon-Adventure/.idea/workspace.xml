@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="">
+    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="trying to get things to work">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/MapGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MapGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/map/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/map/TileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MenuMaker/src/ButtonComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MenuMaker/src/ButtonComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MenuMaker/src/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MenuMaker/src/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MenuMaker/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../MenuMaker/src/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +68,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;Makai-Development2&quot;,
     &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/calebkrauter/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Kraut/Documents/Workspace/360-Dungeon-Adventure/MenuMaker&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,

@@ -2,8 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 
-import static java.awt.SystemColor.menu;
-
 public class GUI {
     /**
      * KIT used for getting info about screen size.
@@ -14,10 +12,10 @@ public class GUI {
      */
     private static final Dimension SCREEN_SIZE = KIT.getScreenSize();
     JFrame myJFrame = new JFrame();
-    Menu newMenu;
+    MenuManager newMenu;
     public GUI() throws IOException {
 
-        newMenu = new Menu(SCREEN_SIZE, myJFrame);
+        newMenu = new MenuManager(SCREEN_SIZE, myJFrame);
         loadGui();
     }
 

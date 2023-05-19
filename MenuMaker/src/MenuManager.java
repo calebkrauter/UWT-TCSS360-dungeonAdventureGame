@@ -12,27 +12,96 @@ import static javax.imageio.ImageIO.read;
 //      to generate a new button with the constraints and an array to hold the new data
 //      for each button.
 // TODO - main menu, options menu, pause menu, loadSaves Menu, character select menu, difficulty and map size menu
-public class Menu extends JPanel {
+public class MenuManager extends JPanel {
 //    BufferedImage image = ImageIO.read(new File("mainMenu.png"));
     Dimension myScreenSize;
     JFrame myJframe;
     BoxLayout bL;
     final int CUR_BUTTON = 0;
     final int CUR_BUTTON_CONSTRAINTS = 1;
+    final private int BUTTON = 0;
+    final private int TOGGLE_BUTTON = 1;
+    final private int SLIDER = 2;
+    final private int CHECK_BOX = 3;
+//    final private int anchor, iPAD x, iPAD Y, INSET LEFT RIGHT TOP BOTTOM
+    final private int GO_LEFT = 65;
+    final private int GO_RIGHT = 99;
+    final private int GO_UP = -88;
+    final private int GO_DOWN = 90;
+    private int myIPadX = 50;
+    private int myIPadY = 10;
+    private int myInsetTop = 0;
+    private int myInsetLeft = 0;
+    private int myInsetBottom = 0;
+    private int myInsetRight= 0;
+    String[] myTitles;
 
-    public Menu(Dimension theScreenSize, JFrame theJFrame) throws IOException {
+    public MenuManager(Dimension theScreenSize, JFrame theJFrame) throws IOException {
         myScreenSize = theScreenSize;
         myJframe = theJFrame;
-        ButtonComponent currentButton = new ButtonComponent();
+
+        String[] mainMenuTitles =  new String[]{"Play Game", "Load Game", "Options"};
+        String[] optionMenuTitles =  new String[]{"Volume", "Volume on/off", "About", "Credits"};
+        String[] characterSelectTitles = new String[]{"<--", "SELECT", "-->"};
+        String[] gameplayMenuTitles = new String[]{"EASY", "START!", "HARD"};
+        setMyTitles(mainMenuTitles);
+        setInsets(200, 0, 0, 0);
+        ComponentGenerator mainMenuButton = new ComponentGenerator(getMyTitles(), GridBagConstraints.PAGE_START, getMyInsetTop(), getMyInsetLeft(), getMyInsetBottom(), getMyInsetRight(), GO_DOWN);
 
         this.setLayout(new GridBagLayout());
-        this.add(currentButton.getMyButtons()[0], currentButton.getMyButtonConstraints()[0]);
-        this.add(currentButton.getMyButtons()[1], currentButton.getMyButtonConstraints()[1]);
-        this.add(currentButton.getMyButtons()[2], currentButton.getMyButtonConstraints()[2]);
-        this.add(currentButton.getMyButtons()[3], currentButton.getMyButtonConstraints()[3]);
+        this.add(mainMenuButton.getComponents()[0][BUTTON], mainMenuButton.getMyButtonConstraints()[0]);
+        this.add(mainMenuButton.getComponents()[1][BUTTON], mainMenuButton.getMyButtonConstraints()[1]);
+        this.add(mainMenuButton.getComponents()[2][BUTTON], mainMenuButton.getMyButtonConstraints()[2]);
 
-//        newBut.setBounds(this.getBounds().x,this.getBounds().y,100,75);
+//        ComponentGenerator optionButton = new ComponentGenerator(getMyTitles());
+//        this.add(optionButton.getComponents()[0][SLIDER], optionButton.getMyButtonConstraints()[0]);
+//        this.add(optionButton.getComponents()[1][TOGGLE_BUTTON], optionButton.getMyButtonConstraints()[1]);
+//        this.add(optionButton.getComponents()[2][BUTTON], optionButton.getMyButtonConstraints()[2]);
+//        this.add(optionButton.getComponents()[3][BUTTON], optionButton.getMyButtonConstraints()[3]);
 
+//        ComponentGenerator characterSelection = new ComponentGenerator(characterSelectTitles);
+//        this.add(characterSelection.getComponents()[0][BUTTON], characterSelection.getMyButtonConstraints()[0]);
+//        this.add(characterSelection.getComponents()[1][BUTTON], characterSelection.getMyButtonConstraints()[1]);
+//        this.add(characterSelection.getComponents()[2][BUTTON], characterSelection.getMyButtonConstraints()[2]);
+    }
+
+    private void setInsets(int theInsetTop, int theInsetLeft, int theInsetBottom, int theInsetRight) {
+        setMyInsetTop(theInsetTop);
+        setMyInsetLeft(theInsetLeft);
+        setMyInsetBottom(theInsetBottom);
+        setMyInsetRight(theInsetRight);
+    }
+
+    private void setMyInsetTop(int theInsetTop) {
+        myInsetTop = theInsetTop;
+    }
+    private void setMyInsetLeft(int theInsetLeft) {
+        myInsetLeft = theInsetLeft;
+    }
+    private void setMyInsetBottom(int theInsetBottom) {
+        myInsetBottom = theInsetBottom;
+    }
+    private void setMyInsetRight(int theInsetRight) {
+        myInsetRight = theInsetRight;
+    }
+
+    private int getMyInsetTop() {
+        return myInsetTop;
+    }
+    private int getMyInsetLeft() {
+        return myInsetLeft;
+    }
+    private int getMyInsetBottom() {
+        return myInsetBottom;
+    }
+    private int getMyInsetRight() {
+        return myInsetRight;
+    }
+    private void setMyTitles(String[] theTitles) {
+        myTitles = theTitles;
+    }
+    private String[] getMyTitles() {
+        return myTitles;
     }
     final BufferedImage image = ImageIO.read(new File("mainMenu.png"));
 

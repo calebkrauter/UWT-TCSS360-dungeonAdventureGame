@@ -5,32 +5,98 @@ import java.awt.image.BufferedImage;
 public class Entity {
 
     // Player position on world map
-    public int worldX, worldY;
-    public int speed;
-
+    public int myWorldX, myWorldY;
+    public int mySpeed;
     public BufferedImage up1, up2, down1, down2, left1, left2, right1, right2;
-    public String name;
-    public String direction;
+    private String myEntityName;
+    public String myDirection;
 
     // after how many updates should the sprite change?
     public int spriteCounter = 0;
     // number of sprite images is the max
     public int spriteNum = 1;
 
-    public int hitPoints = 75;
+    private int myHealthPoints = 75;
 
-    private int numHealingPotions = 0;
+    private int myMinDamage = 0;
 
-    private int numSpeedPotions = 0;
+    private int myMaxDamage = 0;
 
-    private int numKeys = 0;
+    private int myHitChance = 0;
 
-
-    // Overriding toString() method of String class
-    @Override
-    public String toString() {
-        return this.name + "_" + this.hitPoints + "_" + this.numHealingPotions + "_" + this.numSpeedPotions + "_" + this.numKeys;
+    public int getWorldX(){
+        return myWorldX;
     }
+    public void setWorldX (int theX) {
+        myWorldX = theX;
+    }
+    public int getWorldY(){
+        return myWorldY;
+    }
+    public void setWorldY (int theY) {
+        myWorldY = theY;
+    }
+
+    public void setSpeed(int theSpeed) {
+        mySpeed = theSpeed;
+    }
+    public int getSpeed() {
+        return mySpeed;
+    }
+
+    public void setEntityName(String theName){
+        myEntityName = theName;
+    }
+
+    public String getEntityName(){
+        return myEntityName;
+    }
+    public void setDirection(String theDirection){
+        myDirection = theDirection;
+    }
+
+    public String getDirection(){
+        return myDirection;
+    }
+
+    public void setHealth(int thePoints) {
+        myHealthPoints = thePoints;
+    }
+
+    public int getHealth() {
+        return myHealthPoints;
+    }
+
+    public void setMinDamage(int theDamage) {
+        myMinDamage = theDamage;
+    }
+
+    public int getMinDamage() {
+        return myMinDamage;
+    }
+    public void setMaxDamage(int theDamage) {
+        myMaxDamage = theDamage;
+    }
+
+    public int getMaxDamage() {
+        return myMaxDamage;
+    }
+
+    public void setHitChance(int theChance) {
+        myHitChance = theChance;
+    }
+
+    public int getHitChance() {
+        return myHitChance;
+    }
+
+
+
+//    // Overriding toString() method of String class
+//    @Override
+//    public String toString() {
+//       return "Name_Health_numHealingPotions_numSpeedPotions_numKeys";
+//    }
 
 
 }

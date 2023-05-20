@@ -17,6 +17,17 @@ public class Hero extends Entity {
 
     private final int myScreenX;
     private final int myScreenY;
+    private int myNumHealingPotions = 0;
+
+    private int myNumSpeedPotions = 0;
+
+    private int myNumKeys = 0;
+
+    private int myBlockChance = 0;
+
+    private int mySpecialChance = 0;
+
+    private int mySpecialDamage = 0;
 
     public Hero (GamePanel theGP, KeyHandler theKeyH){
         this.gp = theGP;
@@ -36,19 +47,63 @@ public class Hero extends Entity {
         // Will eventually be set to center of start room. This would be the coordinate of the room
         // times the room size plus half the room size on both x and y.
         // EX: StartRoom = [1, 3], worldX = (1 * 400) + 200, worldY = (3 * 400) + 200
-        worldX = gp.mapMaxCol / 2;
-        worldY = gp.mapMaxRow / 2;
-        speed = 4;
+        setWorldX(gp.mapMaxCol / 2);
+        setWorldY(gp.mapMaxRow / 2);
+        setSpeed(4);
         //starting direction can vary.
-        direction = "down";
+        setDirection("down");
 
     }
 
-    public int getMyScreenX(){
+    public int getScreenX(){
         return myScreenX;
     }
-    public int getMyScreenY(){
+    public int getScreenY(){
         return myScreenY;
+    }
+
+    public void setNumHealingPotions(int theNumPotions){
+        myNumHealingPotions = theNumPotions;
+    }
+
+    public int getNumHealingPotions() {
+        return myNumHealingPotions;
+    }
+
+    public void setNumSpeedPotions(int theNumPotions){
+        myNumSpeedPotions = theNumPotions;
+    }
+    public int getNumSpeedPotions(){
+        return myNumSpeedPotions;
+    }
+
+    public void setNumKeys(int theKeys) {
+        myNumKeys = theKeys;
+    }
+    public int getNumKeys() {
+        return myNumKeys;
+    }
+
+    public void setBlockChance(int theChance){
+        myBlockChance = theChance;
+    }
+    public int getBlockChance(){
+        return myBlockChance;
+    }
+
+    public void setSpecialChance(int theChance){
+        mySpecialChance = theChance;
+    }
+    public int getSpecialChance(){
+        return mySpecialChance;
+    }
+
+    public void setSpecialDamage(int theDamage) {
+        mySpecialDamage = theDamage;
+    }
+
+    public int getSpecialDamage() {
+        return mySpecialDamage;
     }
 
     public void getHeroImage() {
@@ -77,27 +132,28 @@ public class Hero extends Entity {
     // Y value increases when going downward
     // gets called 60 times a seconds in the game loop (GamePanel class)
     public void update(){
-
+        int tempWorldX = getWorldX();
+        int tempWorldY = getWorldY();
         // this if statement allows our character to be frozen when
         // we are stationary. Counter doesnt increase unless we press a key.
         if(keyH.upPressed == true || keyH.downPressed == true ||
                 keyH.leftPressed == true || keyH.rightPressed == true) {
 
             if(keyH.upPressed == true){
-                direction = "up";
-                worldY -= speed;
+                setDirection("up");
+                setWorldY(tempWorldY - getSpeed());
             }
             else if(keyH.downPressed == true){
-                direction = "down";
-                worldY += speed;
+                setDirection("down");
+                setWorldY(tempWorldY + getSpeed());
             }
             else if(keyH.leftPressed == true){
-                direction = "left";
-                worldX -= speed;
+                setDirection("left");
+                setWorldX(tempWorldX - getSpeed());
             }
             else if(keyH.rightPressed == true){
-                direction = "right";
-                worldX += speed;
+                setDirection("right");
+                setWorldX(tempWorldX + getSpeed());
             }
             spriteCounter++;
             // every 12 frames player image changes
@@ -122,28 +178,28 @@ public class Hero extends Entity {
 
         BufferedImage image = null;
 
-        if (direction.equals("up")){
+        if (getDirection().equals("up")){
             if(spriteNum == 1){
                 image = up1;
             } else if (spriteNum == 2){
                 image = up2;
             }
         }
-        else if (direction.equals("down")){
+        else if (getDirection().equals("down")){
             if(spriteNum == 1){
                 image = down1;
             } else if (spriteNum == 2){
                 image = down2;
             }
         }
-        else if (direction.equals("left")){
+        else if (getDirection().equals("left")){
             if(spriteNum == 1){
                 image = left1;
             } else if (spriteNum == 2){
                 image = left2;
             }
         }
-        else if (direction.equals("right")){
+        else if (getDirection().equals("right")){
             if(spriteNum == 1){
                 image = right1;
             } else if (spriteNum == 2){

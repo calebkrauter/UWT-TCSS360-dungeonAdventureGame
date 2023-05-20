@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="Some additions to entity and Hero data. Added a rendering distance.">
+    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="Added a rendering distance.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GamePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/entity/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/entity/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/entity/Hero.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/map/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/map/TileManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +113,11 @@
       <workItem from="1684216216193" duration="1465000" />
       <workItem from="1684265849642" duration="72000" />
       <workItem from="1684294312696" duration="2695000" />
-      <workItem from="1684361636465" duration="2790000" />
+      <workItem from="1684361636465" duration="2878000" />
+      <workItem from="1684367753930" duration="77000" />
+      <workItem from="1684378876700" duration="372000" />
+      <workItem from="1684457933491" duration="312000" />
+      <workItem from="1684602558603" duration="4230000" />
     </task>
     <task id="LOCAL-00001" summary="100% successfully interprets randomly generated maps for the display.">
       <created>1684131979650</created>
@@ -211,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684363379855</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Added a rendering distance.">
+      <created>1684364497794</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1684364497794</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,6 +252,7 @@
     <MESSAGE value="adding door rooms display." />
     <MESSAGE value="displays all room types." />
     <MESSAGE value="Some additions to entity and Hero data. Added a rendering distance." />
-    <option name="LAST_COMMIT_MESSAGE" value="Some additions to entity and Hero data. Added a rendering distance." />
+    <MESSAGE value="Added a rendering distance." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a rendering distance." />
   </component>
 </project>

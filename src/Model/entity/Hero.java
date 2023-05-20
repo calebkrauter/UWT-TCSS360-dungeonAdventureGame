@@ -1,4 +1,4 @@
-package View.entity;
+package Model.entity;
 
 import Controller.GamePanel;
 import Controller.KeyHandler;
@@ -123,93 +123,6 @@ public class Hero extends Entity {
         }catch(IOException e) {
             e.printStackTrace();
         }
-
-    }
-
-
-    // change player position. Important to remember that:
-    // X value increases when going to the right
-    // Y value increases when going downward
-    // gets called 60 times a seconds in the game loop (GamePanel class)
-    public void update(){
-        int tempWorldX = getWorldX();
-        int tempWorldY = getWorldY();
-        // this if statement allows our character to be frozen when
-        // we are stationary. Counter doesnt increase unless we press a key.
-        if(keyH.upPressed == true || keyH.downPressed == true ||
-                keyH.leftPressed == true || keyH.rightPressed == true) {
-
-            if(keyH.upPressed == true){
-                setDirection("up");
-                setWorldY(tempWorldY - getSpeed());
-            }
-            else if(keyH.downPressed == true){
-                setDirection("down");
-                setWorldY(tempWorldY + getSpeed());
-            }
-            else if(keyH.leftPressed == true){
-                setDirection("left");
-                setWorldX(tempWorldX - getSpeed());
-            }
-            else if(keyH.rightPressed == true){
-                setDirection("right");
-                setWorldX(tempWorldX + getSpeed());
-            }
-            spriteCounter++;
-            // every 12 frames player image changes
-            if(spriteCounter > 12) {
-                if(spriteNum == 1){
-                    spriteNum = 2;
-                } else if (spriteNum == 2) {
-                    spriteNum = 1;
-                }
-                spriteCounter = 0;
-            }
-        }
-
-
-
-    }
-
-    public void draw(Graphics2D g2){
-//        test rectangle
-//        g2.setColor(Color.white);
-//        g2.fillRect(x, y, gp.tileSize, gp.tileSize);
-
-        BufferedImage image = null;
-
-        if (getDirection().equals("up")){
-            if(spriteNum == 1){
-                image = up1;
-            } else if (spriteNum == 2){
-                image = up2;
-            }
-        }
-        else if (getDirection().equals("down")){
-            if(spriteNum == 1){
-                image = down1;
-            } else if (spriteNum == 2){
-                image = down2;
-            }
-        }
-        else if (getDirection().equals("left")){
-            if(spriteNum == 1){
-                image = left1;
-            } else if (spriteNum == 2){
-                image = left2;
-            }
-        }
-        else if (getDirection().equals("right")){
-            if(spriteNum == 1){
-                image = right1;
-            } else if (spriteNum == 2){
-                image = right2;
-            }
-        }
-
-        // g2.drawImage(image, positionX, positionY, dimensionX, dimensionY, ImageObserver);
-        g2.drawImage(image, myScreenX, myScreenY, gp.TILE_SIZE, gp.TILE_SIZE, null);
-
 
     }
 

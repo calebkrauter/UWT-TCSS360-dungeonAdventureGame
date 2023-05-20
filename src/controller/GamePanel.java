@@ -1,8 +1,9 @@
 package Controller;
 
 import Model.MapGenerator;
-import View.entity.Hero;
+import Model.entity.Hero;
 import View.map.TileManager;
+import View.HeroDisplay;
 
 import javax.swing.*;
 import java.awt.*;
@@ -58,6 +59,8 @@ public class GamePanel extends JPanel implements Runnable{
     private KeyHandler myKeyHandler = new KeyHandler();
     private MouseHandler myMouseHandler = new MouseHandler();
     public Hero myHero = new Hero(this, myKeyHandler);
+
+    private HeroDisplay myHeroDisplay = new HeroDisplay(this, myKeyHandler, myHero);
 
     int FPS = 60;
 
@@ -139,7 +142,7 @@ public class GamePanel extends JPanel implements Runnable{
     // X value increases when going to the right
     // Y value increases when going downward
     public void update (){
-        myHero.update();
+        myHeroDisplay.update();
     }
 
     // paint the current state.
@@ -150,7 +153,7 @@ public class GamePanel extends JPanel implements Runnable{
         Graphics2D g2 = (Graphics2D) g;
 
         myTileManager.draw(g2);
-        myHero.draw(g2);
+        myHeroDisplay.draw(g2);
 
         // good practice to save memory.
         g2.dispose();

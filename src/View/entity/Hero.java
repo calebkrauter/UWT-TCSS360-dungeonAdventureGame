@@ -25,6 +25,8 @@ public class Hero extends Entity {
         myScreenX = (gp.screenWidth / 2) - (gp.TILE_SIZE/2);
         myScreenY = (gp.screenHeight / 2) - (gp.TILE_SIZE/2);;
 
+        // for player collision area
+        solidArea = new Rectangle(8,16,32,32);
 
         setDefaultValues();
         getHeroImage();

@@ -5,14 +5,16 @@ import Model.MapGenerator;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 
 public class TileManager {
 
     private GamePanel gp;
+    int mapTileNum[][];
 
     private Tile[] tile;
+    //mapTileNum = new int[gp.max]
+    private RoomTile[] roomTile;
     private String[][] myMapRooms;
 
     // Map here???
@@ -23,6 +25,8 @@ public class TileManager {
         this.gp = gp;
         // "10" is number of different tiles
         tile = new Tile[10];
+        // tiles used to differentiate floor vs wall for collision
+        mapTileNum = new int[gp.maxScreenCol][gp.maxScreenRow];
         myMapRooms = myMapGenerator.getMap();
         getTileImage();
     }
@@ -53,7 +57,7 @@ public class TileManager {
 
             // "E" = end = tile[5]
             tile[5] = new Tile();
-            tile[5].image = ImageIO.read(new File("res/room tiles/openDoorRoom.png"));
+            tile[5].image = ImageIO.read(new File("res/room tiles/closedDoorRoom.png"));
 
             // "[" = door = tile[6]
             tile[6] = new Tile();
@@ -61,6 +65,35 @@ public class TileManager {
 
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    public void loadMap() {
+        try {
+            InputStream is = getClass().getResourceAsStream("res/Text Maps/walls.txt");
+            BufferedReader br = new BufferedReader(new InputStreamReader(is));
+
+            int col = 0;
+            int row = 0;
+
+            while(col < gp.maxScreenCol && row < gp.maxScreenRow) {
+                String line = br.readLine();
+
+                while(col < gp.maxScreenCol) {
+                    String numbers[] = line.split(" ");
+                    int num = Integer.parseInt(numbers[col]);
+                    mapTileNum[col][row] = num;
+                    col++;
+                }
+                if (col == gp.maxScreenCol) {
+                    col = 0;
+                    row++;
+                }
+            }
+            br.close();
+
+        } catch (Exception e) {
+
         }
     }
 
@@ -84,33 +117,39 @@ public class TileManager {
 
             // currently the player's position is always at the center of the screen
             // the center is
-            int screenX = mapX - gp.myHero.worldX + gp.myHero.getMyScreenX();
-            int screenY = mapY - gp.myHero.worldY + gp.myHero.getMyScreenY();
+            int screenX = mapX - gp.myHero.getWorldX() + gp.myHero.getScreenX();
+            int screenY = mapY - gp.myHero.getWorldY() + gp.myHero.getScreenY();
 
-//            if(mapX > gp.m)
 
-            if (myMapRooms[mapRow][mapCol].equals("#")) { // #777474 grey color
-                g2.drawImage(tile[0].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
-            }
-            if (myMapRooms[mapRow][mapCol].equals("|")) {
-                g2.drawImage(tile[1].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
-            }
-            if (myMapRooms[mapRow][mapCol].equals("-")) {
-                g2.drawImage(tile[2].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
-            }
-            if (myMapRooms[mapRow][mapCol].equals("O")) {
-                g2.drawImage(tile[3].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
-            }
-            if (myMapRooms[mapRow][mapCol].equals("S")) {
-                g2.drawImage(tile[4].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
-            }
-            if (myMapRooms[mapRow][mapCol].equals("E")) {
-                g2.drawImage(tile[5].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
-            }
-            if (myMapRooms[mapRow][mapCol].equals("[")) {
-                g2.drawImage(tile[6].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
-            }
+            // create a boundary from the center in both directions based on player
+            // screenX or screenY. This is essentially render distance
+            if(mapX + gp.ROOM_SIZE> gp.myHero.getWorldX() - gp.myHero.getScreenX() &&
+               mapX - gp.ROOM_SIZE < gp.myHero.getWorldX() + gp.myHero.getScreenX() &&
+               mapY + gp.ROOM_SIZE > gp.myHero.getWorldY() - gp.myHero.getScreenY() &&
+               mapY - gp.ROOM_SIZE < gp.myHero.getWorldY() + gp.myHero.getScreenY()) {
 
+                if (myMapRooms[mapRow][mapCol].equals("#")) { // #777474 grey color
+                    g2.drawImage(tile[0].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
+                }
+                if (myMapRooms[mapRow][mapCol].equals("|")) {
+                    g2.drawImage(tile[1].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
+                }
+                if (myMapRooms[mapRow][mapCol].equals("-")) {
+                    g2.drawImage(tile[2].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
+                }
+                if (myMapRooms[mapRow][mapCol].equals("O")) {
+                    g2.drawImage(tile[3].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
+                }
+                if (myMapRooms[mapRow][mapCol].equals("S")) {
+                    g2.drawImage(tile[4].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
+                }
+                if (myMapRooms[mapRow][mapCol].equals("E")) {
+                    g2.drawImage(tile[5].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
+                }
+                if (myMapRooms[mapRow][mapCol].equals("[")) {
+                    g2.drawImage(tile[6].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
+                }
+            }
 
             // increase column by 1 each time until 16 then reset column count, go to next row.
             mapCol++;

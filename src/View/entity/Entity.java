@@ -1,4 +1,5 @@
 package View.entity;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 
 // Parent
@@ -15,5 +16,9 @@ public class Entity {
     public int spriteCounter = 0;
     // number of sprite images is the max
     public int spriteNum = 1;
+
+    public Rectangle solidArea;
+
+    public boolean collisionOn = false;
 
 }

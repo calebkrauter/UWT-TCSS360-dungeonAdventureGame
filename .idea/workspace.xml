@@ -4,36 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="final bug fixes?">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="test">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Text Maps/doorRoom.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Text Maps/intersectionPath.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Text Maps/openDoorRoom.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Text Maps/walls.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Text Maps/xPath.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Text Maps/yPath.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MapDisplay/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MapDisplay/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MapDisplay/.idea/checkstyle-idea.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MapDisplay/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MapDisplay/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MapDisplay/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MapDisplay/MapDisplay.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MapDisplay/src/main/DisplayFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MapDisplay/src/main/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MapDisplay/src/png/DungeonWall.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MapDisplay/src/png/FloorTile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MapDisplay/src/tile/MapManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MapDisplay/src/tile/Tile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tiles/WALLDB.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tiles/door32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tiles/door64.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tiles/doorhalf32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tiles/floor.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tiles/openDoor64.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tiles/opendoor32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tiles/opendoor32by32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tiles/opendoorhalf32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tiles/wall.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tiles/wallNB.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/entity/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/entity/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/entity/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/map/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/map/TileManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,10 +95,10 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\James\IdeaProjects\360-Dungeon-Adventure\tiles" />
+      <recent name="C:\Users\James\IdeaProjects\360-Dungeon-Adventure\res\Text Maps" />
+      <recent name="$PROJECT_DIR$/res/room tiles" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/Model" />
-      <recent name="$PROJECT_DIR$/res/room tiles" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -136,6 +120,12 @@
       <workItem from="1684211722908" duration="2119000" />
       <workItem from="1684216216193" duration="1465000" />
       <workItem from="1684265849642" duration="72000" />
+      <workItem from="1684294312696" duration="2695000" />
+      <workItem from="1684361636465" duration="2878000" />
+      <workItem from="1684367753930" duration="77000" />
+      <workItem from="1684378876700" duration="372000" />
+      <workItem from="1684457933491" duration="312000" />
+      <workItem from="1684602558603" duration="5344000" />
     </task>
     <task id="LOCAL-00001" summary="100% successfully interprets randomly generated maps for the display.">
       <created>1684131979650</created>
@@ -207,7 +197,49 @@
       <option name="project" value="LOCAL" />
       <updated>1684217400176</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="adding door rooms display.">
+      <created>1684294536171</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1684294536172</updated>
+    </task>
+    <task id="LOCAL-00012" summary="displays all room types.">
+      <created>1684337236919</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1684337236919</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Some additions to entity and Hero data. Added a rendering distance.">
+      <created>1684363327794</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1684363327794</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Some additions to entity and Hero data. Added a rendering distance.">
+      <created>1684363379855</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1684363379855</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Added a rendering distance.">
+      <created>1684364497794</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1684364497794</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Added setters and getters as well as  fields for the &quot;hero&quot; and &quot;entity&quot; classes.">
+      <created>1684606984163</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1684606984163</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,6 +264,12 @@
     <MESSAGE value="code base final bug fixes?" />
     <MESSAGE value="trying to get things to work" />
     <MESSAGE value="final bug fixes?" />
-    <option name="LAST_COMMIT_MESSAGE" value="final bug fixes?" />
+    <MESSAGE value="adding door rooms display." />
+    <MESSAGE value="displays all room types." />
+    <MESSAGE value="Some additions to entity and Hero data. Added a rendering distance." />
+    <MESSAGE value="Added a rendering distance." />
+    <MESSAGE value="Added setters and getters as well as  fields for the &quot;hero&quot; and &quot;entity&quot; classes." />
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
 </project>

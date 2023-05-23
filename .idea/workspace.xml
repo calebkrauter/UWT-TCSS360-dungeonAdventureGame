@@ -4,13 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="test">
-      <change afterPath="$PROJECT_DIR$/src/View/HeroDisplay.java" afterDir="false" />
+    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="seperating view from model in hero class.">
+      <change afterPath="$PROJECT_DIR$/res/hero/Archer/ArcherDown1 copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/hero/Archer/ArcherDown2 copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/hero/Archer/ArcherLeft1 copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/hero/Archer/ArcherRight1 copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/hero/Archer/ArcherUp1 copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/hero/Archer/ArcherUp2 copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/entity/Archer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GamePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/entity/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/entity/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/entity/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/entity/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/entity/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/entity/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/HeroDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/HeroDisplay.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +80,7 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -88,6 +96,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/res/hero/Archer" />
       <recent name="$PROJECT_DIR$/res/room tiles" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/Model" />
@@ -117,7 +126,8 @@
       <workItem from="1684367753930" duration="77000" />
       <workItem from="1684378876700" duration="372000" />
       <workItem from="1684457933491" duration="312000" />
-      <workItem from="1684602558603" duration="5344000" />
+      <workItem from="1684602558603" duration="10307000" />
+      <workItem from="1684818554228" duration="5662000" />
     </task>
     <task id="LOCAL-00001" summary="100% successfully interprets randomly generated maps for the display.">
       <created>1684131979650</created>
@@ -231,7 +241,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684606984163</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="seperating view from model in hero class.">
+      <created>1684608259288</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1684608259288</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,6 +279,7 @@
     <MESSAGE value="Added a rendering distance." />
     <MESSAGE value="Added setters and getters as well as  fields for the &quot;hero&quot; and &quot;entity&quot; classes." />
     <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="seperating view from model in hero class." />
+    <option name="LAST_COMMIT_MESSAGE" value="seperating view from model in hero class." />
   </component>
 </project>

@@ -71,30 +71,30 @@ public class HeroDisplay {
 
         if (myHero.getDirection().equals("up")){
             if(myHero.spriteNum == 1){
-                image = myHero.up1;
+                image = myHero.getImageUp1();
             } else if (myHero.spriteNum == 2){
-                image = myHero.up2;
+                image = myHero.getImageUp2();
             }
         }
         else if (myHero.getDirection().equals("down")){
             if(myHero.spriteNum == 1){
-                image = myHero.down1;
+                image = myHero.getImageDown1();
             } else if (myHero.spriteNum == 2){
-                image = myHero.down2;
+                image = myHero.getImageDown2();
             }
         }
         else if (myHero.getDirection().equals("left")){
             if(myHero.spriteNum == 1){
-                image = myHero.left1;
+                image = myHero.getImageLeft1();
             } else if (myHero.spriteNum == 2){
-                image = myHero.left2;
+                image = myHero.getImageLeft2();
             }
         }
         else if (myHero.getDirection().equals("right")){
             if(myHero.spriteNum == 1){
-                image = myHero.right1;
+                image = myHero.getImageRight1();
             } else if (myHero.spriteNum == 2){
-                image = myHero.right2;
+                image = myHero.getImageRight2();
             }
         }
 

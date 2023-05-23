@@ -1,9 +1,10 @@
 package Controller;
 
 import Model.MapGenerator;
+import Model.entity.Archer;
 import Model.entity.Hero;
-import View.map.TileManager;
 import View.HeroDisplay;
+import View.map.TileManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -58,9 +59,24 @@ public class GamePanel extends JPanel implements Runnable{
     private TileManager myTileManager = new TileManager(this);
     private KeyHandler myKeyHandler = new KeyHandler();
     private MouseHandler myMouseHandler = new MouseHandler();
-    public Hero myHero = new Hero(this, myKeyHandler);
+
+
+
+
+
+
+
+    // THIS IS WHERE PICKING A CHARACTER FROM MENU NEEDS TO BE IMPLEMENTED:
+    public Hero myHero = new Archer(this, myKeyHandler);
+    // Character 2 needs to be added
+    // Character 3 needs to be added
 
     private HeroDisplay myHeroDisplay = new HeroDisplay(this, myKeyHandler, myHero);
+
+
+
+
+
 
     int FPS = 60;
 
@@ -92,8 +108,6 @@ public class GamePanel extends JPanel implements Runnable{
         // the thread constructor.
         myGameThread = new Thread(this);
         myGameThread.start();
-
-
     }
 
     // DELTA / ACCUMULATOR GAME LOOP

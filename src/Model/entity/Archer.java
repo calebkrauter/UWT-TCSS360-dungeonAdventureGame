@@ -62,7 +62,7 @@ public class Archer extends Hero {
         myImage = null;
         try {
         setImageUp1(ImageIO.read(new File("res/hero/Archer/ArcherUp1 copy.png")));
-        setImageUp2(ImageIO.read(new File("res/hero/Archer/ArcherUp21 copy.png")));
+        setImageUp2(ImageIO.read(new File("res/hero/Archer/ArcherUp2 copy.png")));
         setImageDown1(ImageIO.read(new File("res/hero/Archer/ArcherDown1 copy.png")));
         setImageDown2(ImageIO.read(new File("res/hero/Archer/ArcherDown2 copy.png")));
         setImagLeft1(ImageIO.read(new File("res/hero/Archer/ArcherLeft1 copy.png")));

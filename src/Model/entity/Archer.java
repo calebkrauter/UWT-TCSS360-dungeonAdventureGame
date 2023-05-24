@@ -19,8 +19,6 @@ public class Archer extends Hero {
     private int myBlockChance = 20; // 20% percent
     private int mySpecialChance = 40; // 40% percent
     private int mySpecialDamage = 100;
-    private BufferedImage myImage = null;
-
     private BufferedImage up1;
     private BufferedImage up2;
     private BufferedImage down1;
@@ -59,7 +57,6 @@ public class Archer extends Hero {
         setBlockChance(myBlockChance); // 20% percent
         setSpecialChance(mySpecialChance); // 40% percent
         setSpecialDamage(mySpecialDamage);
-        myImage = null;
         try {
         setImageUp1(ImageIO.read(new File("res/hero/Archer/ArcherUp1 copy.png")));
         setImageUp2(ImageIO.read(new File("res/hero/Archer/ArcherUp2 copy.png")));

@@ -55,11 +55,9 @@ public class GamePanel extends JPanel implements Runnable{
     // implementing runnable is key to using thread.
     private Thread myGameThread;
 
-
-    private TileManager myTileManager = new TileManager(this);
+    private TileManager myTileManager = new TileManager(this, myMapGenerator);
     private KeyHandler myKeyHandler = new KeyHandler();
     private MouseHandler myMouseHandler = new MouseHandler();
-
 
 
 

@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="main and gamePanel classes wont commmit?">
+    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="fixed image display issues for archer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GamePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/entity/Archer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/entity/Archer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/map/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/map/TileManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +119,9 @@
       <workItem from="1684457933491" duration="312000" />
       <workItem from="1684602558603" duration="10307000" />
       <workItem from="1684818554228" duration="6034000" />
-      <workItem from="1684872745902" duration="437000" />
+      <workItem from="1684872745902" duration="1377000" />
+      <workItem from="1684880115316" duration="61000" />
+      <workItem from="1684901504943" duration="933000" />
     </task>
     <task id="LOCAL-00001" summary="100% successfully interprets randomly generated maps for the display.">
       <created>1684131979650</created>
@@ -246,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684825077314</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="fixed image display issues for archer">
+      <created>1684873479374</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1684873479374</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,6 +289,7 @@
     <MESSAGE value="test" />
     <MESSAGE value="seperating view from model in hero class." />
     <MESSAGE value="Added &quot;Archer&quot; class as well as it's images and  values. Setters and getters for all direction images in &quot;Entity&quot; Class. Adjusting The gamePanel to the changes. NOTE: Still cannot get new images to display." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added &quot;Archer&quot; class as well as it's images and  values. Setters and getters for all direction images in &quot;Entity&quot; Class. Adjusting The gamePanel to the changes. NOTE: Still cannot get new images to display." />
+    <MESSAGE value="fixed image display issues for archer" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed image display issues for archer" />
   </component>
 </project>

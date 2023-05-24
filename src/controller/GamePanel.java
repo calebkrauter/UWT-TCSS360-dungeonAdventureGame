@@ -3,6 +3,8 @@ package Controller;
 import Model.MapGenerator;
 import Model.entity.Archer;
 import Model.entity.Hero;
+import Model.entity.StartHero;
+import Model.entity.Stevey;
 import View.HeroDisplay;
 import View.map.TileManager;
 
@@ -65,13 +67,14 @@ public class GamePanel extends JPanel implements Runnable{
 
 
     // THIS IS WHERE PICKING A CHARACTER FROM MENU NEEDS TO BE IMPLEMENTED:
-    public Hero myHero = new Archer(this, myKeyHandler);
-    // Character 2 needs to be added
-    // Character 3 needs to be added
-
-    private HeroDisplay myHeroDisplay = new HeroDisplay(this, myKeyHandler, myHero);
-
-
+    public Hero myHero;
+    // Character type 1
+    public Hero myStarterHero = new StartHero(this, myKeyHandler);
+    // Character type 2
+    public Hero myArcher = new Archer(this, myKeyHandler);
+    // Character type 3
+    public Hero myStevey = new Stevey(this, myKeyHandler);
+    private HeroDisplay myHeroDisplay;
 
 
 
@@ -84,6 +87,10 @@ public class GamePanel extends JPanel implements Runnable{
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
         this.setBackground(Color.black);
 
+        // some form of getHeroType() method from menu!!
+        myHero = myStevey;
+
+        myHeroDisplay = new HeroDisplay(this, myKeyHandler, myHero);
         // improves the game's rendering because all the drawing from this component
         // will be done in an offscreen painting buffer.
         this.setDoubleBuffered(true);

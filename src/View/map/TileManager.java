@@ -22,7 +22,7 @@ public class TileManager {
         this.gp = theGamePanel;
         // "10" is number of different tiles
         tile = new Tile[10];
-        myMapRooms = myMapGenerator.getMap();
+        myMapRooms = theMapGenerator.getMap();
         getTileImage();
     }
 

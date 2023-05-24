@@ -5,10 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="fixed image display issues for archer">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/360-Dungeon-Adventure.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/360_Dungeon_Adventure_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/hero/Stevey/SteveyDown1 copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/hero/Stevey/SteveyDown2 copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/hero/Stevey/SteveyLeft1 copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/hero/Stevey/SteveyRight1 copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/hero/Stevey/SteveyUp1 copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/hero/Stevey/SteveyUp2 copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/entity/StartHero.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/entity/Stevey.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GamePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/entity/Archer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/entity/Archer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/map/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/map/TileManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,6 +102,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/res/hero/Stevey" />
       <recent name="$PROJECT_DIR$/res/hero/Archer" />
       <recent name="$PROJECT_DIR$/res/room tiles" />
       <recent name="$PROJECT_DIR$/src" />
@@ -121,7 +137,7 @@
       <workItem from="1684818554228" duration="6034000" />
       <workItem from="1684872745902" duration="1377000" />
       <workItem from="1684880115316" duration="61000" />
-      <workItem from="1684901504943" duration="933000" />
+      <workItem from="1684901504943" duration="3882000" />
     </task>
     <task id="LOCAL-00001" summary="100% successfully interprets randomly generated maps for the display.">
       <created>1684131979650</created>
@@ -256,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684873479374</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="fixed image display issues for archer">
+      <created>1684902679150</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1684902679150</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

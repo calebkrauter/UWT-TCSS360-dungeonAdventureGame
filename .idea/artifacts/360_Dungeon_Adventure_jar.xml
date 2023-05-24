@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact name="360-Dungeon-Adventure:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/360_Dungeon_Adventure_jar</output-path>
+    <root id="root">
+      <element id="archive" name="360-Dungeon-Adventure.jar">
+        <element id="module-output" name="360-Dungeon-Adventure" />
+      </element>
+    </root>
+  </artifact>
+</component>

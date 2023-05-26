@@ -1,11 +1,37 @@
 package Actions;
 
+import javax.sound.sampled.FloatControl;
+
 public class VolumeChange {
-    public VolumeChange() {
-        this.setVolumeChange();
+
+    private static FloatControl gainControl;
+    private static int myMusicVolume;
+    float gain;
+    MusicPlayer musicPlayer;
+    public VolumeChange(int theMusicVolume) {
+        musicPlayer = new MusicPlayer();
+        myMusicVolume = theMusicVolume;
+        setVolumeChange(myMusicVolume);
     }
 
-    private void setVolumeChange() {
-        System.out.println("VOLUME CHANGE");
+    public VolumeChange() {
+
+    }
+
+    public void setVolumeChange(int theMusicVolume) {
+        gainControl = (FloatControl) musicPlayer.getClip().getControl(FloatControl.Type.MASTER_GAIN);
+        gain = (float) (theMusicVolume - 80);
+        if (gain > 6) {
+            gain = gainControl.getMaximum();
+        }
+        gainControl.setValue(gain);
+    }
+
+    public int getMusicVolume() {
+        int volume = (int) (gain + 80);
+        if (gain > 6) {
+            volume = (int) gainControl.getMaximum();
+        }
+        return volume;
     }
 }

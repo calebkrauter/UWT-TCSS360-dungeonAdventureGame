@@ -11,7 +11,6 @@ public class OptionsButtonAction {
     JComponent[] myMainMenuComponents;
 
     public OptionsButtonAction(JComponent[] theMainMenuComponents) throws IOException {
-        menuManager = new MenuManager();
         myMainMenuComponents = theMainMenuComponents;
         optionsAction(myMainMenuComponents);
     }

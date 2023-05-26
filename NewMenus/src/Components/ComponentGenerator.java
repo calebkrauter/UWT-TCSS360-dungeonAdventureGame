@@ -83,14 +83,13 @@ public class ComponentGenerator {
             this.myConstraints[i].gridy = 1;
             this.myConstraints[i].gridwidth = 3;
             this.setMyConstraints(this.myConstraints);
-            if (!(this.manyComponents[i][this.myButtonCode] instanceof JSlider) && !(this.manyComponents[i][this.myButtonCode] instanceof JCheckBox)) {
-                if (this.manyComponents[i][this.myButtonCode] instanceof JToggleButton) {
-                    ((JToggleButton)this.manyComponents[i][this.myButtonCode]).setText(this.myTitles[i]);
-                } else if (this.manyComponents[i][this.myButtonCode] instanceof JButton) {
-                    ((JButton)this.manyComponents[i][this.myButtonCode]).setText(this.myTitles[i]);
-                }
-            } else {
-                this.components[i].setToolTipText(this.myTitles[i]);
+
+            // Easily update buttons with titles
+            if (this.manyComponents[i][this.myButtonCode] instanceof JButton) {
+                ((JButton) this.manyComponents[i][this.myButtonCode]).setText(this.myTitles[i]);
+            }
+            if (this.manyComponents[i][this.myButtonCode + 1] instanceof JToggleButton) {
+                ((JToggleButton) this.manyComponents[i][this.myButtonCode + 1]).setText(this.myTitles[i]);
             }
 
             this.setcomponents(this.manyComponents);

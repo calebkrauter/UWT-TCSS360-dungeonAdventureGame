@@ -6,17 +6,17 @@ import javax.swing.*;
 import java.io.IOException;
 
 public class ToggleMusicChange {
-    JCheckBox myMusicToggle;
+    JToggleButton myMusicToggle;
     MusicPlayer musicPlayer;
     String myMusic;
-    public ToggleMusicChange(JCheckBox theMusicToggle, String theMusic) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+    public ToggleMusicChange(JToggleButton theMusicToggle, String theMusic) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         myMusicToggle = theMusicToggle;
         musicPlayer = new MusicPlayer();
         myMusic = theMusic;
         toggleMusicChange();
     }
 
-    public ToggleMusicChange(JCheckBox theMusicToggle) {
+    public ToggleMusicChange(JToggleButton theMusicToggle) {
         myMusicToggle = theMusicToggle;
 
     }

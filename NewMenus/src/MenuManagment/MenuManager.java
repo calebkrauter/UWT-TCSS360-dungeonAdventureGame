@@ -32,6 +32,7 @@ public class MenuManager extends JPanel {
     final private int TOGGLE_BUTTON = 1;
     final private int SLIDER = 2;
     final private int CHECK_BOX = 3;
+    final private int[] BUTTON_CODES;
     //    final private int anchor, iPAD x, iPAD Y, INSET LEFT RIGHT TOP BOTTOM
     final private int GO_LEFT = 65;
     final private int GO_RIGHT = 99;
@@ -50,8 +51,8 @@ public class MenuManager extends JPanel {
     JButton myRightSelect;
     JSlider myMapSizeSlider;
     JSlider myVolumeSlider;
-    JCheckBox myAudioToggle;
-    JCheckBox myMusicToggle;
+    JToggleButton myAudioToggle;
+    JToggleButton myMusicToggle;
     JButton myAboutButton;
     JButton myCreditsButton;
     JButton myBackButton;
@@ -93,6 +94,7 @@ public class MenuManager extends JPanel {
         myOptionMenuTitles = new String[]{"Volume", "Audio on/off", "Music on/off", "About", "Credits", "<--BACK"};
         characterSelectTitles = new String[]{"<--", "SELECT", "-->"};
         gameplayMenuTitles = new String[]{"EASY", "START!", "HARD"};
+        BUTTON_CODES = new int[] {BUTTON, TOGGLE_BUTTON, SLIDER, CHECK_BOX};
         screenData = new ScreenData();
         addMainMenu();
 
@@ -100,9 +102,7 @@ public class MenuManager extends JPanel {
 
     }
 
-    public MenuManager() throws IOException {
 
-    }
     private void addMainMenu() {
         setMyTitles(mainMenuTitles);
         modifyInsets.setInsets(this.getHeight()/2 + 200, 0, 0, 0);
@@ -140,11 +140,11 @@ public class MenuManager extends JPanel {
         setMyTitles(myOptionMenuTitles);
         modifyInsets.setInsets(this.getHeight()/2 - 200, 0, 0, 0);
 
-        ComponentGenerator optionButton = new ComponentGenerator(getMyTitles(), GridBagConstraints.PAGE_START, modifyInsets.getMyInsetTop(), modifyInsets.getMyInsetLeft(), modifyInsets.getMyInsetBottom(), modifyInsets.getMyInsetRight(), GO_DOWN);
-
+        ComponentGenerator optionButton = new ComponentGenerator(getMyTitles(), GridBagConstraints.PAGE_START, modifyInsets.getMyInsetTop(), modifyInsets.getMyInsetLeft(), modifyInsets.getMyInsetBottom(), modifyInsets.getMyInsetRight(), GO_DOWN
+        );
         myVolumeSlider = (JSlider) optionButton.getComponents()[0][SLIDER];
-        myAudioToggle = (JCheckBox) optionButton.getComponents()[1][CHECK_BOX];
-        myMusicToggle = (JCheckBox) optionButton.getComponents()[2][CHECK_BOX];
+        myAudioToggle = (JToggleButton) optionButton.getComponents()[1][TOGGLE_BUTTON];
+        myMusicToggle = (JToggleButton) optionButton.getComponents()[2][TOGGLE_BUTTON];
         myAboutButton = (JButton) optionButton.getComponents()[3][BUTTON];
         myCreditsButton = (JButton) optionButton.getComponents()[4][BUTTON];
         myBackButton = (JButton) optionButton.getComponents()[5][BUTTON];

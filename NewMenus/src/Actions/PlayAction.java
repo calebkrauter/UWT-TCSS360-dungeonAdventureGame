@@ -7,6 +7,6 @@ public class PlayAction {
     }
 
     private void playAction() {
-        System.out.println("PLAY");
+        System.out.println("ADD instantiation to game");
     }
 }

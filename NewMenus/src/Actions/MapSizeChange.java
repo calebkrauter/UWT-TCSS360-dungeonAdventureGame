@@ -1,11 +1,16 @@
 package Actions;
 
+import javax.swing.*;
+
 public class MapSizeChange {
-    public MapSizeChange() {
-        this.mapSizeChange();
+    static JSlider myMapSizeSlider;
+    public MapSizeChange(JSlider theMapSizeSlider) {
+        myMapSizeSlider = theMapSizeSlider;
+        System.out.println(myMapSizeSlider.getValue());
     }
 
-    private void mapSizeChange() {
-        System.out.println("MAPSIZE");
+    public int getMapSizeFromSlider() {
+        return myMapSizeSlider.getValue();
     }
+
 }

@@ -6,8 +6,9 @@ import java.io.IOException;
 public class HeroSelection {
     static int myHeroSelection = 0;
     static int i = 1;
-
+    static boolean mySelectedHero = false;
     public HeroSelection() {
+
     }
 
     public HeroSelection(boolean goLeft, boolean goRight) throws IOException {
@@ -15,14 +16,12 @@ public class HeroSelection {
             --i;
             this.containInBounds();
             this.setHeroSelection(i);
-            System.out.println(i);
         }
 
         if (goRight) {
             ++i;
             this.containInBounds();
             this.setHeroSelection(i);
-            System.out.println(i);
         }
 
     }
@@ -43,4 +42,14 @@ public class HeroSelection {
     public int getMyHeroSelection() {
         return myHeroSelection;
     }
+
+    public void setHeroSelected(boolean theSelectedHero) {
+        mySelectedHero = theSelectedHero;
+        System.out.println("HERO SELECTED< LETSA GO");
+    }
+
+    public boolean getHeroSelected() {
+        return mySelectedHero;
+    }
+
 }

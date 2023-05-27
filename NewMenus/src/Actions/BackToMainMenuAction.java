@@ -17,6 +17,5 @@ public class BackToMainMenuAction {
     private void backToMainMenuAction() {
         new DisableMenu(this.myMenuToDisable);
         new EnableMenu(this.myMenuToEnable);
-        System.out.println("LETS GO BACK");
     }
 }

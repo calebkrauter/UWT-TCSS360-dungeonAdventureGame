@@ -65,7 +65,7 @@ public class ComponentGenerator {
             }
 
             if (this.myDirectionOfFlow == 99) {
-                this.myInsetLeft += 400;
+                this.myInsetLeft += 300;
             }
 
             this.manyComponents[i][0] = new JButton();

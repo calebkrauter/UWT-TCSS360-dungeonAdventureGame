@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="trying to get things to work">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NewMenus/src/Actions/OptionsButtonAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NewMenus/src/Actions/OptionsButtonAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../NewMenus/src/Actions/ToggleMusicChange.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NewMenus/src/Actions/ToggleMusicChange.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NewMenus/src/Components/ComponentGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NewMenus/src/Components/ComponentGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NewMenus/src/Actions/UpdateSlider.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NewMenus/src/Actions/UpdateSlider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NewMenus/src/Actions/VolumeChange.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NewMenus/src/Actions/VolumeChange.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../NewMenus/src/MenuManagment/MenuManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NewMenus/src/MenuManagment/MenuManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

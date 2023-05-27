@@ -156,7 +156,7 @@ public class MenuManager extends JPanel {
         }
 
         updateAudioSettings();
-        setSliderPos();
+        musicPlayedFirstTime = 1;
 
         myMusicToggle.setSelected(true);
         toggleMusicChange.setMyMusicToggleSelected(true);
@@ -170,7 +170,6 @@ public class MenuManager extends JPanel {
 
             updateSlider.setMyVolumeSlider();
         }
-        musicPlayedFirstTime = 1;
     }
 
     private void addMainMenuActions() {
@@ -234,7 +233,7 @@ public class MenuManager extends JPanel {
         System.out.println("DO stuff");
         // TODO add actions
     }
-    private void setSliderPos() {
+    private void setMusicPlayedFirstTimeTo0() {
         musicPlayedFirstTime = 0;
     }
     private void addOptionsActions() {
@@ -246,9 +245,10 @@ public class MenuManager extends JPanel {
             try {
                 if (myMusicToggle.isSelected()) {
                     new ToggleMusicChange(myMusicToggle, "MainMenu.wav");
-
+                    musicPlayedFirstTime = 1;
                     updateAudioSettings();
                 } else {
+                    musicPlayedFirstTime = 1;
                     updateAudioSettings();
                     musicPlayer.stopMusic();
                 }

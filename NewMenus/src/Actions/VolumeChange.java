@@ -7,7 +7,7 @@ public class VolumeChange {
     private static FloatControl gainControl;
     private static int myMusicVolume;
     float gain;
-    MusicPlayer musicPlayer;
+    static MusicPlayer musicPlayer;
     public VolumeChange(int theMusicVolume) {
         musicPlayer = new MusicPlayer();
         myMusicVolume = theMusicVolume;
@@ -23,6 +23,10 @@ public class VolumeChange {
         gain = (float) (theMusicVolume - 80);
         if (gain > 6) {
             gain = gainControl.getMaximum();
+        }
+
+        if (gain < -80) {
+            musicPlayer.getClip().close();
         }
         gainControl.setValue(gain);
     }

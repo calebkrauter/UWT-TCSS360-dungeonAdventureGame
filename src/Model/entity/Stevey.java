@@ -56,14 +56,14 @@ public class Stevey extends Hero {
         setSpecialChance(mySpecialChance); // 40% percent
         setSpecialDamage(mySpecialDamage);
         try {
-            setImageUp1(ImageIO.read(new File("res/hero/Stevey/SteveyUp1 copy.png")));
-            setImageUp2(ImageIO.read(new File("res/hero/Stevey/SteveyUp2 copy.png")));
-            setImageDown1(ImageIO.read(new File("res/hero/Stevey/SteveyDown1 copy.png")));
-            setImageDown2(ImageIO.read(new File("res/hero/Stevey/SteveyDown2 copy.png")));
-            setImagLeft1(ImageIO.read(new File("res/hero/Stevey/SteveyLeft1 copy.png")));
-            setImageLeft2(ImageIO.read(new File("res/hero/Stevey/SteveyLeft1 copy.png")));
-            setImageRight1(ImageIO.read(new File("res/hero/Stevey/SteveyRight1 copy.png")));
-            setImageRight2(ImageIO.read(new File("res/hero/Stevey/SteveyRight1 copy.png")));
+            setImageUp1(ImageIO.read(new File("res/Hero/Stevey/SteveyUp1 copy.png")));
+            setImageUp2(ImageIO.read(new File("res/Hero/Stevey/SteveyUp2 copy.png")));
+            setImageDown1(ImageIO.read(new File("res/Hero/Stevey/SteveyDown1 copy.png")));
+            setImageDown2(ImageIO.read(new File("res/Hero/Stevey/SteveyDown2 copy.png")));
+            setImagLeft1(ImageIO.read(new File("res/Hero/Stevey/SteveyLeft1 copy.png")));
+            setImageLeft2(ImageIO.read(new File("res/Hero/Stevey/SteveyLeft1 copy.png")));
+            setImageRight1(ImageIO.read(new File("res/Hero/Stevey/SteveyRight1 copy.png")));
+            setImageRight2(ImageIO.read(new File("res/Hero/Stevey/SteveyRight1 copy.png")));
         } catch(IOException e) {
             e.printStackTrace();
         }

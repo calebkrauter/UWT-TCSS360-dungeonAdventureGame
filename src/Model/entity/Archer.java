@@ -58,14 +58,14 @@ public class Archer extends Hero {
         setSpecialChance(mySpecialChance); // 40% percent
         setSpecialDamage(mySpecialDamage);
         try {
-        setImageUp1(ImageIO.read(new File("res/hero/Archer/ArcherUp1 copy.png")));
-        setImageUp2(ImageIO.read(new File("res/hero/Archer/ArcherUp2 copy.png")));
-        setImageDown1(ImageIO.read(new File("res/hero/Archer/ArcherDown1 copy.png")));
-        setImageDown2(ImageIO.read(new File("res/hero/Archer/ArcherDown2 copy.png")));
-        setImagLeft1(ImageIO.read(new File("res/hero/Archer/ArcherLeft1 copy.png")));
-        setImageLeft2(ImageIO.read(new File("res/hero/Archer/ArcherLeft1 copy.png")));
-        setImageRight1(ImageIO.read(new File("res/hero/Archer/ArcherRight1 copy.png")));
-        setImageRight2(ImageIO.read(new File("res/hero/Archer/ArcherRight1 copy.png")));
+        setImageUp1(ImageIO.read(new File("res/Hero/Archer/ArcherUp1 copy.png")));
+        setImageUp2(ImageIO.read(new File("res/Hero/Archer/ArcherUp2 copy.png")));
+        setImageDown1(ImageIO.read(new File("res/Hero/Archer/ArcherDown1 copy.png")));
+        setImageDown2(ImageIO.read(new File("res/Hero/Archer/ArcherDown2 copy.png")));
+        setImagLeft1(ImageIO.read(new File("res/Hero/Archer/ArcherLeft1 copy.png")));
+        setImageLeft2(ImageIO.read(new File("res/Hero/Archer/ArcherLeft1 copy.png")));
+        setImageRight1(ImageIO.read(new File("res/Hero/Archer/ArcherRight1 copy.png")));
+        setImageRight2(ImageIO.read(new File("res/Hero/Archer/ArcherRight1 copy.png")));
         } catch(IOException e) {
             e.printStackTrace();
         }

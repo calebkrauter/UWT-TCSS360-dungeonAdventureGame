@@ -4,35 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="Added hero classes &quot;stevey&quot; and &quot;starter&quot;">
-      <change afterPath="$PROJECT_DIR$/res/Object/Key copy.png" afterDir="false" />
+    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="finished all 3 characters and their stats. Starting to add objects like keys">
+      <change afterPath="$PROJECT_DIR$/src/Model/Object/ParentObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/hero/Archer/ArcherDown1 copy.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/Hero/Archer/ArcherDown1 copy.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/hero/Archer/ArcherDown2 copy.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/Hero/Archer/ArcherDown2 copy.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/hero/Archer/ArcherLeft1 copy.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/Hero/Archer/ArcherLeft1 copy.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/hero/Archer/ArcherRight1 copy.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/Hero/Archer/ArcherRight1 copy.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/hero/Archer/ArcherUp1 copy.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/Hero/Archer/ArcherUp1 copy.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/hero/Archer/ArcherUp2 copy.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/Hero/Archer/ArcherUp2 copy.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/hero/Stevey/SteveyDown1 copy.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/Hero/Stevey/SteveyDown1 copy.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/hero/Stevey/SteveyDown2 copy.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/Hero/Stevey/SteveyDown2 copy.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/hero/Stevey/SteveyLeft1 copy.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/Hero/Stevey/SteveyLeft1 copy.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/hero/Stevey/SteveyRight1 copy.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/Hero/Stevey/SteveyRight1 copy.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/hero/Stevey/SteveyUp1 copy.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/Hero/Stevey/SteveyUp1 copy.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/hero/Stevey/SteveyUp2 copy.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/Hero/Stevey/SteveyUp2 copy.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/hero/down1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/Hero/down1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/hero/down2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/Hero/down2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/hero/left1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/Hero/left1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/hero/right1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/Hero/right1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/hero/up1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/Hero/up1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/hero/up2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/Hero/up2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/room tiles/closedDoorRoom.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/RoomTiles/closedDoorRoom.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/room tiles/intersection.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/RoomTiles/intersection.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/room tiles/openDoorRoom.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/RoomTiles/openDoorRoom.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/room tiles/wall.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/RoomTiles/wall.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/room tiles/xPath.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/RoomTiles/xPath.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/room tiles/yPath.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/RoomTiles/yPath.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GamePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/entity/Archer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/entity/Archer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/entity/Stevey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/entity/Stevey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/map/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/map/TileManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +53,19 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="71b7b7d8-4ffe-45f7-81cb-1e6d9c2f055c" />
+        <option name="url" value="https://github.com/calebkrauter/360-Dungeon-Adventure.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -102,6 +94,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="Model.Object" />
       <recent name="Controller" />
       <recent name="Model" />
       <recent name="View.map" />
@@ -110,11 +103,11 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/res/Object" />
       <recent name="$PROJECT_DIR$/res/hero/Stevey" />
       <recent name="$PROJECT_DIR$/res/hero/Archer" />
       <recent name="$PROJECT_DIR$/res/room tiles" />
       <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/src/Model" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -147,7 +140,7 @@
       <workItem from="1684880115316" duration="61000" />
       <workItem from="1684901504943" duration="3941000" />
       <workItem from="1685179726445" duration="218000" />
-      <workItem from="1685220763552" duration="429000" />
+      <workItem from="1685220763552" duration="2850000" />
     </task>
     <task id="LOCAL-00001" summary="100% successfully interprets randomly generated maps for the display.">
       <created>1684131979650</created>
@@ -296,7 +289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684907977891</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="finished all 3 characters and their stats. Starting to add objects like keys">
+      <created>1685221262523</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1685221262523</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,6 +331,7 @@
     <MESSAGE value="Added &quot;Archer&quot; class as well as it's images and  values. Setters and getters for all direction images in &quot;Entity&quot; Class. Adjusting The gamePanel to the changes. NOTE: Still cannot get new images to display." />
     <MESSAGE value="fixed image display issues for archer" />
     <MESSAGE value="Added hero classes &quot;stevey&quot; and &quot;starter&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added hero classes &quot;stevey&quot; and &quot;starter&quot;" />
+    <MESSAGE value="finished all 3 characters and their stats. Starting to add objects like keys" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished all 3 characters and their stats. Starting to add objects like keys" />
   </component>
 </project>

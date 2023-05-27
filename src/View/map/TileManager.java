@@ -32,31 +32,31 @@ public class TileManager {
 
             // "#" = walls = tile[0]
             tile[0] = new Tile();
-            tile[0].image = ImageIO.read(new File("res/room tiles/wall.png"));
+            tile[0].image = ImageIO.read(new File("res/RoomTiles/wall.png"));
 
             // "|" = yPath = tile[1]
             tile[1] = new Tile();
-            tile[1].image = ImageIO.read(new File("res/room tiles/yPath.png"));
+            tile[1].image = ImageIO.read(new File("res/RoomTiles/yPath.png"));
 
             // "-" = xPath = tile[2]
             tile[2] = new Tile();
-            tile[2].image = ImageIO.read(new File("res/room tiles/xPath.png"));
+            tile[2].image = ImageIO.read(new File("res/RoomTiles/xPath.png"));
 
             // "O" = intersection = tile[3]
             tile[3] = new Tile();
-            tile[3].image = ImageIO.read(new File("res/room tiles/intersection.png"));
+            tile[3].image = ImageIO.read(new File("res/RoomTiles/intersection.png"));
 
             // "S" = start = tile[4]
             tile[4] = new Tile();
-            tile[4].image = ImageIO.read(new File("res/room tiles/openDoorRoom.png"));
+            tile[4].image = ImageIO.read(new File("res/RoomTiles/openDoorRoom.png"));
 
             // "E" = end = tile[5]
             tile[5] = new Tile();
-            tile[5].image = ImageIO.read(new File("res/room tiles/closedDoorRoom.png"));
+            tile[5].image = ImageIO.read(new File("res/RoomTiles/closedDoorRoom.png"));
 
             // "[" = door = tile[6]
             tile[6] = new Tile();
-            tile[6].image = ImageIO.read(new File("res/room tiles/closedDoorRoom.png"));
+            tile[6].image = ImageIO.read(new File("res/RoomTiles/closedDoorRoom.png"));
 
         } catch (IOException e) {
             e.printStackTrace();

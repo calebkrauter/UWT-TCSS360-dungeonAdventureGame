@@ -2,7 +2,7 @@ package Model.Object;
 
 import java.awt.image.BufferedImage;
 
-public abstract class ParentObject {
+public class ParentObject {
 
     private BufferedImage myObjectImage;
     private String myObjectName;
@@ -10,41 +10,41 @@ public abstract class ParentObject {
     private int myWorldX, myWorldY;
 
 
-    private void setObjectImage(BufferedImage theObjectImage){
+    public void setObjectImage(BufferedImage theObjectImage){
         myObjectImage = theObjectImage;
     }
-    private BufferedImage getObjectImage(){
+    public BufferedImage getObjectImage(){
         return myObjectImage;
     }
 
-    private void setObjectName(String theObjectName){
+    public void setObjectName(String theObjectName){
         myObjectName = theObjectName;
     }
-    private String getObjectName(){
+    public String getObjectName(){
         return myObjectName;
     }
 
-    private void setCollision(boolean theCollision) {
+    public void setCollision(boolean theCollision) {
         myCollision = theCollision;
     }
 
-    private boolean getCollision() {
+    public boolean getCollision() {
         return myCollision;
     }
 
-    private void setWorldX(int theWorldX) {
+    public void setWorldX(int theWorldX) {
         myWorldX = theWorldX;
     }
 
-    private int getWorldX() {
+    public int getWorldX() {
         return myWorldX;
     }
 
-    private void setWorldY(int theWorldY) {
+    public void setWorldY(int theWorldY) {
         myWorldY = theWorldY;
     }
 
-    private int getWorldY() {
+    public int getWorldY() {
         return myWorldY;
     }
 }

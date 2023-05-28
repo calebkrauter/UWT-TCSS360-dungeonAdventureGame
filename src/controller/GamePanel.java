@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.MapGenerator;
+import Model.Object.ParentObject;
 import Model.entity.Archer;
 import Model.entity.Hero;
 import Model.entity.StartHero;
@@ -58,6 +59,7 @@ public class GamePanel extends JPanel implements Runnable{
     private Thread myGameThread;
 
     private TileManager myTileManager = new TileManager(this, myMapGenerator);
+    private MapManager myMapManager = new MapManager();
     private KeyHandler myKeyHandler = new KeyHandler();
     private MouseHandler myMouseHandler = new MouseHandler();
 
@@ -76,7 +78,8 @@ public class GamePanel extends JPanel implements Runnable{
     public Hero myStevey = new Stevey(this, myKeyHandler);
     private HeroDisplay myHeroDisplay;
 
-
+    public ObjectSetter myObjectSetter = new ObjectSetter(this);
+    public ParentObject myObjects[] = new ParentObject[10];
 
 
     int FPS = 60;

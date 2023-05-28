@@ -89,7 +89,7 @@ public class TileManager {
 
             // create a boundary from the center in both directions based on player
             // screenX or screenY. This is essentially render distance
-            if(mapX + gp.ROOM_SIZE> gp.myHero.getWorldX() - gp.myHero.getScreenX() &&
+            if(mapX + gp.ROOM_SIZE > gp.myHero.getWorldX() - gp.myHero.getScreenX() &&
                mapX - gp.ROOM_SIZE < gp.myHero.getWorldX() + gp.myHero.getScreenX() &&
                mapY + gp.ROOM_SIZE > gp.myHero.getWorldY() - gp.myHero.getScreenY() &&
                mapY - gp.ROOM_SIZE < gp.myHero.getWorldY() + gp.myHero.getScreenY()) {

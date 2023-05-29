@@ -11,11 +11,13 @@ public class TileManager {
 
     private GamePanel gp;
     int mapTileNum[][];
+    boolean collisionMap[][];
 
     private Tile[] tile;
     //mapTileNum = new int[gp.max]
     private RoomTile[] roomTile;
     private String[][] myMapRooms;
+    String[] textMap;
 
     // Map here???
     private final MapGenerator myMapGenerator = new MapGenerator();
@@ -29,6 +31,9 @@ public class TileManager {
         mapTileNum = new int[gp.maxScreenCol][gp.maxScreenRow];
         myMapRooms = myMapGenerator.getMap();
         getTileImage();
+        textMap = new String[]{"res/Text Maps/walls.txt", "res/Text Maps/yPath.txt", "res/Text Maps/xPath.txt", "res/Text Maps/intersectionPath.txt",
+                "res/Text Maps/openDoorRoom.txt", "res/Text Maps/doorRoom.txt"};
+        loadMap();
     }
 
     private void getTileImage(){
@@ -68,35 +73,53 @@ public class TileManager {
         }
     }
 
-    public void loadMap() {
-        try {
-            InputStream is = getClass().getResourceAsStream("res/Text Maps/walls.txt");
-            BufferedReader br = new BufferedReader(new InputStreamReader(is));
+    public void interpretMap(String theMapRooms) {
 
-            int col = 0;
-            int row = 0;
-
-            while(col < gp.maxScreenCol && row < gp.maxScreenRow) {
-                String line = br.readLine();
-
-                while(col < gp.maxScreenCol) {
-                    String numbers[] = line.split(" ");
-                    int num = Integer.parseInt(numbers[col]);
-                    mapTileNum[col][row] = num;
-                    col++;
-                }
-                if (col == gp.maxScreenCol) {
-                    col = 0;
-                    row++;
-                }
-            }
-            br.close();
-
-        } catch (Exception e) {
-
-        }
     }
 
+    public void loadMap() {
+        for (int i = 0; i < textMap.length; i++) {
+            try {
+                InputStream is = getClass().getResourceAsStream(textMap[i]);
+                BufferedReader br = new BufferedReader(new InputStreamReader(is));
+
+                int col = 0;
+                int row = 0;
+
+                while (col < gp.maxScreenCol && row < gp.maxScreenRow) {
+                    String line = br.readLine();
+
+                    while (col < gp.maxScreenCol) {
+                        String numbers[] = line.split(" ");
+                        int num = Integer.parseInt(numbers[col]);
+
+                        mapTileNum[col][row] = num;
+
+                        boolean hasCollision;
+                        if (num == 1) {
+                            hasCollision = true;
+                        } else {
+                            hasCollision = false;
+                        }
+
+                        collisionMap[col][row] = hasCollision;
+
+                        col++;
+                    }
+
+                    if (col == gp.maxScreenCol) {
+                        col = 0;
+                        row++;
+                    }
+                }
+
+                br.close();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
     // had to do this interpreting because we did not do numbers.
     // "#" = walls = tile[0]
     // "|" = yPath = tile[1]
@@ -129,24 +152,31 @@ public class TileManager {
                mapY - gp.ROOM_SIZE < gp.myHero.getWorldY() + gp.myHero.getScreenY()) {
 
                 if (myMapRooms[mapRow][mapCol].equals("#")) { // #777474 grey color
+                    interpretMap(textMap[0]);
                     g2.drawImage(tile[0].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
                 }
                 if (myMapRooms[mapRow][mapCol].equals("|")) {
+                    interpretMap(textMap[1]);
                     g2.drawImage(tile[1].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
                 }
                 if (myMapRooms[mapRow][mapCol].equals("-")) {
+                    interpretMap(textMap[2]);
                     g2.drawImage(tile[2].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
                 }
                 if (myMapRooms[mapRow][mapCol].equals("O")) {
+                    interpretMap(textMap[3]);
                     g2.drawImage(tile[3].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
                 }
                 if (myMapRooms[mapRow][mapCol].equals("S")) {
+                    interpretMap(textMap[4]);
                     g2.drawImage(tile[4].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
                 }
                 if (myMapRooms[mapRow][mapCol].equals("E")) {
+                    interpretMap(textMap[5]);
                     g2.drawImage(tile[5].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
                 }
                 if (myMapRooms[mapRow][mapCol].equals("[")) {
+                    interpretMap(textMap[0]);
                     g2.drawImage(tile[6].image, screenX, screenY, gp.ROOM_SIZE, gp.ROOM_SIZE, null);
                 }
             }

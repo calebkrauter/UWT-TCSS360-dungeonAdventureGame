@@ -19,7 +19,8 @@ public class MapManager extends MapGenerator {
     private final List<Point2D> IntersectionRoomPositions = new ArrayList<Point2D>();
 
     private final List<Point2D> SaveRoomPositions = new ArrayList<Point2D>();
-    private final List<Point2D> PathRoomPositions = new ArrayList<Point2D>();
+    private final List<Point2D> XPathRoomPositions = new ArrayList<Point2D>();
+    private final List<Point2D> YPathRoomPositions = new ArrayList<Point2D>();
 
     String[] textMaps = new String[]{"res/TextMaps/walls.txt", "res/TextMaps/yPath.txt", "res/TextMaps/xPath.txt", "res/TextMaps/intersectionPath.txt",
             "res/TextMaps/openDoorRoom.txt", "res/TextMaps/doorRoom.txt"};
@@ -96,10 +97,10 @@ public class MapManager extends MapGenerator {
             for(int j = 0; j < getMyMaxCols(); j++){
                 Point2D thePoint = new Point2D.Float(i, j);
                 if (theMap[i][j].equals("|")) {
-                    PathRoomPositions.add(thePoint);
+                    YPathRoomPositions.add(thePoint);
                 }
                 if (theMap[i][j].equals("-")) {
-                    PathRoomPositions.add(thePoint);
+                    XPathRoomPositions.add(thePoint);
                 }
                 if (theMap[i][j].equals("O")) {
                     IntersectionRoomPositions.add(thePoint);

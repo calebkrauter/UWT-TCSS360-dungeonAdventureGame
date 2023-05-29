@@ -9,7 +9,7 @@ import java.awt.image.BufferedImage;
 public class ItemDisplay {
     GamePanel myGamePanel;
 
-    public ItemDisplay(GamePanel theGP, ParentItem theObjects[]) {
+    public ItemDisplay(GamePanel theGP, ParentItem theItems[]) {
         this.myGamePanel = theGP;
     }
 

@@ -5,16 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="mapmanager class that is not fully functional due to loadBooleanMap class.">
-      <change afterPath="$PROJECT_DIR$/src/Controller/ItemSetter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/View/ItemDisplay.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Object/HealthPotion.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Object/SpeedPotion.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/Item/HealthPotion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/Item/SpeedPotion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GamePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/MapManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MapManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ObjectSetter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Item/Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Item/Key.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/ItemDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ItemDisplay.java" afterDir="false" />
     </list>
-    <list id="492d9688-64c1-4a1b-9655-e380e7b12f7c" name="Changes by James" comment="" />
-    <list id="0309bda9-84a2-481c-98b3-733694bba9bf" name="Changes by Kraut" comment="" />
+    <list id="d29364c7-93f2-4d11-9f3d-5a98fccdf7ce" name="Changes by James" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,6 +31,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/Primary-makai-development" />
   </component>
   <component name="Git.Rebase.Settings">
     <option name="NEW_BASE" value="origin/Makai-Development" />
@@ -106,8 +111,8 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/res/TextMaps" />
       <recent name="$PROJECT_DIR$/res/Object" />
+      <recent name="$PROJECT_DIR$/res/TextMaps" />
       <recent name="$PROJECT_DIR$/res/hero/Stevey" />
       <recent name="$PROJECT_DIR$/res/hero/Archer" />
       <recent name="$PROJECT_DIR$/res/room tiles" />
@@ -143,7 +148,7 @@
       <workItem from="1684880115316" duration="61000" />
       <workItem from="1684901504943" duration="3941000" />
       <workItem from="1685179726445" duration="218000" />
-      <workItem from="1685220763552" duration="24855000" />
+      <workItem from="1685220763552" duration="27633000" />
     </task>
     <task id="LOCAL-00001" summary="100% successfully interprets randomly generated maps for the display.">
       <created>1684131979650</created>
@@ -313,7 +318,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685291848688</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="mapmanager class that is not fully functional due to loadBooleanMap class.">
+      <created>1685337648999</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1685337649000</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

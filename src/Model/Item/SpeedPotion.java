@@ -4,12 +4,12 @@ import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
 
-public class Key extends ParentItem {
+public class SpeedPotion extends ParentItem {
 
-    public Key() {
-        setObjectName("Key");
+    public SpeedPotion() {
+        setObjectName("Speed Potion");
         try {
-            setObjectImage(ImageIO.read(new File("res/Object/Key.png")));
+            setObjectImage(ImageIO.read(new File("res/Object/SpeedPotion.png")));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

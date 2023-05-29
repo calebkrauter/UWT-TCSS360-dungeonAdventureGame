@@ -80,7 +80,7 @@ public class GamePanel extends JPanel implements Runnable{
     private HeroDisplay myHeroDisplay;
 
     // ASSETS
-    public ParentItem myObjects[] = new ParentItem[10];
+    public ParentItem myItems[] = new ParentItem[10];
     public ItemSetter myItemSetter = new ItemSetter(this, myMapManager);
     private ItemDisplay myItemDisplay;
 
@@ -97,7 +97,7 @@ public class GamePanel extends JPanel implements Runnable{
         myHero = myArcher;
 
         myHeroDisplay = new HeroDisplay(this, myKeyHandler, myHero);
-        myObjectDisplay = new ItemDisplay(this, myObjects);
+        myItemDisplay = new ItemDisplay(this, myItems);
         // improves the game's rendering because all the drawing from this component
         // will be done in an offscreen painting buffer.
         this.setDoubleBuffered(true);

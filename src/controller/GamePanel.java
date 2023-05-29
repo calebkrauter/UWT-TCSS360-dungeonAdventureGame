@@ -1,12 +1,13 @@
 package Controller;
 
 import Model.MapGenerator;
-import Model.Object.ParentObject;
+import Model.Item.ParentItem;
 import Model.entity.Archer;
 import Model.entity.Hero;
 import Model.entity.StartHero;
 import Model.entity.Stevey;
 import View.HeroDisplay;
+import View.ItemDisplay;
 import View.map.TileManager;
 
 import javax.swing.*;
@@ -70,16 +71,18 @@ public class GamePanel extends JPanel implements Runnable{
 
     // THIS IS WHERE PICKING A CHARACTER FROM MENU NEEDS TO BE IMPLEMENTED:
     public Hero myHero;
-    // Character type 1
+
+    // Character types
     public Hero myStarterHero = new StartHero(this, myKeyHandler);
-    // Character type 2
-    public Hero myArcher = new Archer(this, myKeyHandler);
-    // Character type 3
     public Hero myStevey = new Stevey(this, myKeyHandler);
+    public Hero myArcher = new Archer(this, myKeyHandler);
+
     private HeroDisplay myHeroDisplay;
 
-    public ObjectSetter myObjectSetter = new ObjectSetter(this);
-    public ParentObject myObjects[] = new ParentObject[10];
+    // ASSETS
+    public ParentItem myObjects[] = new ParentItem[10];
+    public ItemSetter myItemSetter = new ItemSetter(this, myMapManager);
+    private ItemDisplay myItemDisplay;
 
 
     int FPS = 60;
@@ -91,9 +94,10 @@ public class GamePanel extends JPanel implements Runnable{
         this.setBackground(Color.black);
 
         // some form of getHeroType() method from menu!!
-        myHero = myStevey;
+        myHero = myArcher;
 
         myHeroDisplay = new HeroDisplay(this, myKeyHandler, myHero);
+        myObjectDisplay = new ItemDisplay(this, myObjects);
         // improves the game's rendering because all the drawing from this component
         // will be done in an offscreen painting buffer.
         this.setDoubleBuffered(true);
@@ -107,6 +111,10 @@ public class GamePanel extends JPanel implements Runnable{
         // this GamePanel can be "focused" to receive key input.
         this.setFocusable(true);
 
+    }
+
+    public void SetupGame(){
+        myItemSetter.setObject();
     }
 
 

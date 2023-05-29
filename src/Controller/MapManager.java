@@ -12,8 +12,9 @@ public class MapManager extends MapGenerator {
     private final String[][] theMap;
     private GamePanel gp;
     int mapTileNum[][];
-    private Point2D myStartPoint;
-    private Point2D myEndPoint;
+    private Point2D myStartPoint = new Point2D.Float(0, 0);
+
+    private Point2D myEndPoint = new Point2D.Float(0, 0);
     private final List<Point2D> DoorRoomPositions = new ArrayList<Point2D>();
     private final List<Point2D> IntersectionRoomPositions = new ArrayList<Point2D>();
 
@@ -26,9 +27,9 @@ public class MapManager extends MapGenerator {
     public MapManager() {
         theMap = getMap();
         interpretMap();
-        for (String textMap : textMaps) {
-            loadBooleanMap(textMap);
-        }
+//        for (String textMap : textMaps) {
+//            loadBooleanMap(textMap);
+//        }
     }
 
 
@@ -90,7 +91,7 @@ public class MapManager extends MapGenerator {
      * Reads through the 2d string array representing the world map.
      * Saves the coordinates of each kind of room into it's designated list or point variable.
      */
-    public void interpretMap(){
+    private void interpretMap(){
         for(int i = 0; i < getMyMaxRows(); i++){
             for(int j = 0; j < getMyMaxCols(); j++){
                 Point2D thePoint = new Point2D.Float(i, j);
@@ -114,7 +115,25 @@ public class MapManager extends MapGenerator {
                 }
             }
         }
+    }
 
+    public List<Point2D> getYPathRoomPositions(){
+        return YPathRoomPositions;
+    }
+    public List<Point2D> getXPathRoomPositions(){
+        return XPathRoomPositions;
+    }
+    public List<Point2D> getIntersectionRoomPositions(){
+        return IntersectionRoomPositions;
+    }
+    public List<Point2D> getDoorRoomPositions(){
+        return DoorRoomPositions;
+    }
+    public Point2D getStartPoint(){
+        return myStartPoint;
+    }
+    public Point2D getEndPoint(){
+        return myEndPoint;
     }
 }
 

@@ -1,8 +1,8 @@
-package Model.Object;
+package Model.Item;
 
 import java.awt.image.BufferedImage;
 
-public class ParentObject {
+public class ParentItem {
 
     private BufferedImage myObjectImage;
     private String myObjectName;

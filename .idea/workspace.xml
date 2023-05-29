@@ -4,23 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="adding object and key classes with setters and getters">
-      <change afterPath="$PROJECT_DIR$/res/TextMaps/doorRoom.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/TextMaps/intersectionPath.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/TextMaps/openDoorRoom.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/TextMaps/walls.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/TextMaps/xPath.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/TextMaps/yPath.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/MapManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/ObjectSetter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Object/Key.java" afterDir="false" />
+    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="mapmanager class that is not fully functional due to loadBooleanMap class.">
+      <change afterPath="$PROJECT_DIR$/src/Controller/ItemSetter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View/ItemDisplay.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/Object/Key copy.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/Object/Key.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GamePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Object/ParentObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Object/ParentObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/map/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/map/TileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MapManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MapManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ObjectSetter.java" beforeDir="false" />
     </list>
+    <list id="492d9688-64c1-4a1b-9655-e380e7b12f7c" name="Changes by James" comment="" />
+    <list id="0309bda9-84a2-481c-98b3-733694bba9bf" name="Changes by Kraut" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -149,7 +143,7 @@
       <workItem from="1684880115316" duration="61000" />
       <workItem from="1684901504943" duration="3941000" />
       <workItem from="1685179726445" duration="218000" />
-      <workItem from="1685220763552" duration="18270000" />
+      <workItem from="1685220763552" duration="24855000" />
     </task>
     <task id="LOCAL-00001" summary="100% successfully interprets randomly generated maps for the display.">
       <created>1684131979650</created>
@@ -312,7 +306,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685223777685</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="mapmanager class that is not fully functional due to loadBooleanMap class.">
+      <created>1685291848687</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1685291848688</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,18 +350,7 @@
     <MESSAGE value="Added hero classes &quot;stevey&quot; and &quot;starter&quot;" />
     <MESSAGE value="finished all 3 characters and their stats. Starting to add objects like keys" />
     <MESSAGE value="adding object and key classes with setters and getters" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding object and key classes with setters and getters" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/View/map/TileManager.java</url>
-          <line>15</line>
-          <properties field="tile" class="View.map.TileManager" />
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="mapmanager class that is not fully functional due to loadBooleanMap class." />
+    <option name="LAST_COMMIT_MESSAGE" value="mapmanager class that is not fully functional due to loadBooleanMap class." />
   </component>
 </project>

@@ -1,10 +1,10 @@
-package Model.Object;
+package Model.Item;
 
 import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
 
-public class Key extends ParentObject{
+public class Key extends ParentItem {
 
     public Key() {
         setObjectName("Key");

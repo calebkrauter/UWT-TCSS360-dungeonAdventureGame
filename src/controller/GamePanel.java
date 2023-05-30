@@ -1,7 +1,8 @@
 package Controller;
 
-import Model.MapGenerator;
+import Model.Item.Key;
 import Model.Item.ParentItem;
+import Model.MapGenerator;
 import Model.entity.Archer;
 import Model.entity.Hero;
 import Model.entity.StartHero;
@@ -12,6 +13,8 @@ import View.map.TileManager;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.geom.Point2D;
+import java.awt.image.BufferedImage;
 
 public class GamePanel extends JPanel implements Runnable{
 
@@ -97,7 +100,7 @@ public class GamePanel extends JPanel implements Runnable{
         myHero = myArcher;
 
         myHeroDisplay = new HeroDisplay(this, myKeyHandler, myHero);
-        myItemDisplay = new ItemDisplay(this, myItems);
+        myItemDisplay = new ItemDisplay(this);
         // improves the game's rendering because all the drawing from this component
         // will be done in an offscreen painting buffer.
         this.setDoubleBuffered(true);
@@ -115,6 +118,12 @@ public class GamePanel extends JPanel implements Runnable{
 
     public void SetupGame(){
         myItemSetter.setObject();
+
+        // Sets character's position to center of start room
+        Point2D thePoint = new Point2D.Float(0, 0);
+        thePoint = myMapManager.getStartPoint();
+        myHero.setWorldX((int) thePoint.getX() * ROOM_SIZE + ROOM_SIZE/2 - TILE_SIZE/2);
+        myHero.setWorldY((int) thePoint.getX() * ROOM_SIZE + ROOM_SIZE/2 - TILE_SIZE/2);
     }
 
 
@@ -178,11 +187,21 @@ public class GamePanel extends JPanel implements Runnable{
     // paint the current state.
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
+        Graphics2D g2 = (Graphics2D) g;        // allows us to use additional functions
 
-        // allows us to use additional functions such as....
-        Graphics2D g2 = (Graphics2D) g;
 
+
+        // ROOMS
         myTileManager.draw(g2);
+
+        // ITEMS
+        for(int i = 0; i < myItems.length; i++) {
+            if(myItems[i] != null){
+                myItemDisplay.draw(g2, myItems[i]);
+            }
+        }
+
+        //THE PLAYER
         myHeroDisplay.draw(g2);
 
         // good practice to save memory.

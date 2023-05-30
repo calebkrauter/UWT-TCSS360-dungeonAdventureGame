@@ -9,30 +9,23 @@ import java.awt.image.BufferedImage;
 public class ItemDisplay {
     GamePanel myGamePanel;
 
-    public ItemDisplay(GamePanel theGP, ParentItem theItems[]) {
+    public ItemDisplay(GamePanel theGP) {
         this.myGamePanel = theGP;
     }
 
-    public void draw(Graphics2D g2, GamePanel theGP) {
+    public void draw(Graphics2D g2, ParentItem theItem) {
 
-        int mapCol = 0;
-        int mapRow = 0;
-//        while(){}
-        BufferedImage image = null;
-        int mapX = mapCol * theGP.ROOM_SIZE;
-        int mapY = mapRow * theGP.ROOM_SIZE;
-
-        int screenX = mapX - theGP.myHero.getWorldX() + theGP.myHero.getScreenX();
-        int screenY = mapY - theGP.myHero.getWorldY() + theGP.myHero.getScreenY();
+        int screenX = theItem.getWorldX() - myGamePanel.myHero.getWorldX() + myGamePanel.myHero.getScreenX();
+        int screenY = theItem.getWorldY() - myGamePanel.myHero.getWorldY() + myGamePanel.myHero.getScreenY();
 
 
         // create a boundary from the center in both directions based on player
         // screenX or screenY. This is essentially render distance
-        if (mapX + theGP.ROOM_SIZE > theGP.myHero.getWorldX() - theGP.myHero.getScreenX() &&
-                mapX - theGP.ROOM_SIZE < theGP.myHero.getWorldX() + theGP.myHero.getScreenX() &&
-                mapY + theGP.ROOM_SIZE > theGP.myHero.getWorldY() - theGP.myHero.getScreenY() &&
-                mapY - theGP.ROOM_SIZE < theGP.myHero.getWorldY() + theGP.myHero.getScreenY()) {
-
+        if (theItem.getWorldX() + myGamePanel.ROOM_SIZE > myGamePanel.myHero.getWorldX() - myGamePanel.myHero.getScreenX() &&
+                theItem.getWorldX() - myGamePanel.ROOM_SIZE < myGamePanel.myHero.getWorldX() + myGamePanel.myHero.getScreenX() &&
+                theItem.getWorldY() + myGamePanel.ROOM_SIZE > myGamePanel.myHero.getWorldY() - myGamePanel.myHero.getScreenY() &&
+                theItem.getWorldY() - myGamePanel.ROOM_SIZE < myGamePanel.myHero.getWorldY() + myGamePanel.myHero.getScreenY()) {
+            g2.drawImage(theItem.getObjectImage(), screenX, screenY, myGamePanel.TILE_SIZE, myGamePanel.TILE_SIZE, null);
 
         }
     }

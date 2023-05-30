@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="added health and speed potions, changed everything named &quot;object&quot; to &quot;item&quot;, Map manager, item setter, started item display">
+    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="GamePanel">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ItemSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ItemSetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/ItemDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ItemDisplay.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GamePanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -140,7 +142,8 @@
       <workItem from="1684901504943" duration="3941000" />
       <workItem from="1685179726445" duration="218000" />
       <workItem from="1685220763552" duration="27810000" />
-      <workItem from="1685386486400" duration="430000" />
+      <workItem from="1685386486400" duration="1961000" />
+      <workItem from="1685407801920" duration="1514000" />
     </task>
     <task id="LOCAL-00001" summary="100% successfully interprets randomly generated maps for the display.">
       <created>1684131979650</created>
@@ -324,7 +327,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685341068949</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="GamePanel">
+      <created>1685386931846</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1685386931847</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -363,6 +373,7 @@
     <MESSAGE value="adding object and key classes with setters and getters" />
     <MESSAGE value="mapmanager class that is not fully functional due to loadBooleanMap class." />
     <MESSAGE value="added health and speed potions, changed everything named &quot;object&quot; to &quot;item&quot;, Map manager, item setter, started item display" />
-    <option name="LAST_COMMIT_MESSAGE" value="added health and speed potions, changed everything named &quot;object&quot; to &quot;item&quot;, Map manager, item setter, started item display" />
+    <MESSAGE value="GamePanel" />
+    <option name="LAST_COMMIT_MESSAGE" value="GamePanel" />
   </component>
 </project>

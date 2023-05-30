@@ -4,11 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="GamePanel">
+    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="GamePanel sets up character and items, finished ItemDisplay">
+      <change afterPath="$PROJECT_DIR$/src/Controller/CollisionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ItemSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ItemSetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/ItemDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ItemDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MapManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MapManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Room.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/entity/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/entity/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/entity/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/map/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/map/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/map/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/map/RoomManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Main.java" afterDir="false" />
+    </list>
+    <list id="ff8a1f12-e31b-4acb-8e38-ce3f58b732c1" name="Changes by James" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Controller/MapManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MapManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +74,16 @@
         <option name="url" value="https://github.com/calebkrauter/360-Dungeon-Adventure.git" />
       </UrlAndAccount>
     </option>
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/Controller/MapManager.java">
+      <ranges>
+        <range start1="27" end1="27" start2="27" end2="37" changelist="d91291d8-a8e4-4500-8d53-d60e74afbf0b" />
+        <range start1="30" end1="33" start2="40" end2="46" changelist="d91291d8-a8e4-4500-8d53-d60e74afbf0b" />
+        <range start1="35" end1="35" start2="48" end2="55" changelist="d91291d8-a8e4-4500-8d53-d60e74afbf0b" />
+        <range start1="138" end1="138" start2="158" end2="184" changelist="ff8a1f12-e31b-4acb-8e38-ce3f58b732c1" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -143,7 +162,7 @@
       <workItem from="1685179726445" duration="218000" />
       <workItem from="1685220763552" duration="27810000" />
       <workItem from="1685386486400" duration="1961000" />
-      <workItem from="1685407801920" duration="1514000" />
+      <workItem from="1685407801920" duration="5006000" />
     </task>
     <task id="LOCAL-00001" summary="100% successfully interprets randomly generated maps for the display.">
       <created>1684131979650</created>
@@ -334,7 +353,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685386931847</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="GamePanel sets up character and items, finished ItemDisplay">
+      <created>1685409388156</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1685409388156</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,6 +400,7 @@
     <MESSAGE value="mapmanager class that is not fully functional due to loadBooleanMap class." />
     <MESSAGE value="added health and speed potions, changed everything named &quot;object&quot; to &quot;item&quot;, Map manager, item setter, started item display" />
     <MESSAGE value="GamePanel" />
-    <option name="LAST_COMMIT_MESSAGE" value="GamePanel" />
+    <MESSAGE value="GamePanel sets up character and items, finished ItemDisplay" />
+    <option name="LAST_COMMIT_MESSAGE" value="GamePanel sets up character and items, finished ItemDisplay" />
   </component>
 </project>

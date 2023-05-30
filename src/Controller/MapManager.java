@@ -25,13 +25,33 @@ public class MapManager extends MapGenerator {
     String[] textMaps = new String[]{"res/TextMaps/walls.txt", "res/TextMaps/yPath.txt", "res/TextMaps/xPath.txt", "res/TextMaps/intersectionPath.txt",
             "res/TextMaps/openDoorRoom.txt", "res/TextMaps/doorRoom.txt"};
 
+    private boolean myWallCollisionMap[][];
+    private boolean myXPathCollisionMap[][];
+    private boolean myYPathCollisionMap[][];
+    private boolean myIntersectionCollisionMap[][];
+    private boolean myOpenDoorRoomCollisionMap[][];
+    private boolean myClosedDoorCollisionMap[][];
+
+    private boolean myWorldCollisionMap[][];
+
+
     public MapManager() {
         theMap = getMap();
         interpretMap();
-//        for (String textMap : textMaps) {
-//            loadBooleanMap(textMap);
-//        }
+        myWallCollisionMap = loadBooleanMap(textMaps[0]);
+        myYPathCollisionMap = loadBooleanMap(textMaps[1]);
+        myXPathCollisionMap = loadBooleanMap(textMaps[2]);
+        myIntersectionCollisionMap = loadBooleanMap(textMaps[3]);
+        myOpenDoorRoomCollisionMap = loadBooleanMap(textMaps[4]);
+        myClosedDoorCollisionMap = loadBooleanMap(textMaps[5]);
     }
+
+    // WHAT WE NEED
+    //
+    // - Another world map representing the collision with booleans.
+    // - collision "tiles"/rectangles/hitboxes in places where walls and closed doors exist
+    // - door as an item instead of part of room??
+
 
 
     /**

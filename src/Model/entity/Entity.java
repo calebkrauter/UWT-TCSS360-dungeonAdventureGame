@@ -1,4 +1,6 @@
 package Model.entity;
+
+import java.awt.*;
 import java.awt.image.BufferedImage;
 
 // Parent
@@ -15,6 +17,9 @@ public abstract class Entity {
     public int spriteCounter = 0;
     // number of sprite images is the max
     public int spriteNum = 1;
+
+    public Rectangle myHitBox;
+    public boolean collisionActive = false;
 
     private int myHealthPoints = 75;
 
@@ -140,6 +145,18 @@ public abstract class Entity {
         return right2;
     }
 
+    public Rectangle getHitBox() {
+        return myHitBox;
+    }
+    public void setHitBox(Rectangle theHitBox) {
+        myHitBox = theHitBox;
+    }
+    public boolean getCollisionActive(){
+        return collisionActive;
+    }
+    public void setCollisionActive(boolean thecollisionActive){
+        collisionActive = thecollisionActive;
+    }
 
 //    // Overriding toString() method of String class
 //    @Override

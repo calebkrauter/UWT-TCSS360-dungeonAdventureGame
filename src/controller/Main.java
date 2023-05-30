@@ -19,7 +19,6 @@ public class Main {
         // so we can see it
         myWindow.pack();
 
-        //MapGenerator myMapGenerator = new MapGenerator();
 
 
 

@@ -1,6 +1,5 @@
 package Controller;
 
-import Model.Item.Key;
 import Model.Item.ParentItem;
 import Model.MapGenerator;
 import Model.entity.Archer;
@@ -9,12 +8,11 @@ import Model.entity.StartHero;
 import Model.entity.Stevey;
 import View.HeroDisplay;
 import View.ItemDisplay;
-import View.map.TileManager;
+import View.map.RoomManager;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Point2D;
-import java.awt.image.BufferedImage;
 
 public class GamePanel extends JPanel implements Runnable{
 
@@ -62,8 +60,9 @@ public class GamePanel extends JPanel implements Runnable{
     // implementing runnable is key to using thread.
     private Thread myGameThread;
 
-    private TileManager myTileManager = new TileManager(this, myMapGenerator);
     private MapManager myMapManager = new MapManager();
+
+    private RoomManager myRoomManager = new RoomManager(this, myMapManager);
     private KeyHandler myKeyHandler = new KeyHandler();
     private MouseHandler myMouseHandler = new MouseHandler();
 
@@ -192,7 +191,7 @@ public class GamePanel extends JPanel implements Runnable{
 
 
         // ROOMS
-        myTileManager.draw(g2);
+        myRoomManager.draw(g2);
 
         // ITEMS
         for(int i = 0; i < myItems.length; i++) {

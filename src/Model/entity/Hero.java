@@ -36,6 +36,9 @@ public abstract class Hero extends Entity {
         myScreenX = (gp.screenWidth / 2) - (gp.TILE_SIZE/2);
         myScreenY = (gp.screenHeight / 2) - (gp.TILE_SIZE/2);;
 
+        // can be changed, we don't want hitbox as big as character
+        Rectangle solidHitBox = new Rectangle(theGP.TILE_SIZE/8, theGP.TILE_SIZE/4, theGP.TILE_SIZE * 3/4, theGP.TILE_SIZE* 3/4);
+        setHitBox(solidHitBox);
 
         setDefaultValues();
         getHeroImage();

@@ -1,5 +1,6 @@
 package View;
 
+import Controller.CollisionHandler;
 import Controller.GamePanel;
 import Controller.KeyHandler;
 import Model.entity.Hero;
@@ -9,12 +10,15 @@ import java.awt.image.BufferedImage;
 
 public class HeroDisplay {
     KeyHandler myKeyHandler;
+    CollisionHandler myCollisionHandler;
     GamePanel myGamePanel;
     Hero myHero;
-    public HeroDisplay(GamePanel theGP, KeyHandler theKeyH, Hero theHero) {
+
+    public HeroDisplay(GamePanel theGP, KeyHandler theKeyH, Hero theHero, CollisionHandler theCollisionHandler) {
         this.myGamePanel = theGP;
         this.myKeyHandler = theKeyH;
         this.myHero = theHero;
+        this.myCollisionHandler = theCollisionHandler;
     }
 
 
@@ -46,6 +50,10 @@ public class HeroDisplay {
                 myHero.setDirection("right");
                 myHero.setWorldX(tempWorldX + myHero.getSpeed());
             }
+
+            myHero.setCollisionActive(false);
+            myCollisionHandler.checkTile(myHero); //pass hero class as an entity
+
             myHero.spriteCounter++;
             // every 12 frames player image changes
             if(myHero.spriteCounter > 12) {

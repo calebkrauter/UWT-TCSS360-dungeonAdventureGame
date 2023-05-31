@@ -7,11 +7,14 @@ import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A class that extends MapGenerator to give other classes information about the map
+ * Such as coordinates of Room Types
+ */
 public class MapManager extends MapGenerator {
 
     private final String[][] theMap;
     private GamePanel gp;
-    int mapTileNum[][];
     private Point2D myStartPoint = new Point2D.Float(0, 0);
 
     private Point2D myEndPoint = new Point2D.Float(0, 0);
@@ -22,90 +25,15 @@ public class MapManager extends MapGenerator {
     private final List<Point2D> XPathRoomPositions = new ArrayList<Point2D>();
     private final List<Point2D> YPathRoomPositions = new ArrayList<Point2D>();
 
-    String[] textMaps = new String[]{"res/TextMaps/walls.txt", "res/TextMaps/yPath.txt", "res/TextMaps/xPath.txt", "res/TextMaps/intersectionPath.txt",
-            "res/TextMaps/openDoorRoom.txt", "res/TextMaps/doorRoom.txt"};
+    myWorldCollisionMap
 
-    private boolean myWallCollisionMap[][];
-    private boolean myXPathCollisionMap[][];
-    private boolean myYPathCollisionMap[][];
-    private boolean myIntersectionCollisionMap[][];
-    private boolean myOpenDoorRoomCollisionMap[][];
-    private boolean myClosedDoorCollisionMap[][];
 
-    private boolean myWorldCollisionMap[][];
 
 
     public MapManager() {
         theMap = getMap();
         interpretMap();
-        myWallCollisionMap = loadBooleanMap(textMaps[0]);
-        myYPathCollisionMap = loadBooleanMap(textMaps[1]);
-        myXPathCollisionMap = loadBooleanMap(textMaps[2]);
-        myIntersectionCollisionMap = loadBooleanMap(textMaps[3]);
-        myOpenDoorRoomCollisionMap = loadBooleanMap(textMaps[4]);
-        myClosedDoorCollisionMap = loadBooleanMap(textMaps[5]);
-    }
-
-    // WHAT WE NEED
-    //
-    // - Another world map representing the collision with booleans.
-    // - collision "tiles"/rectangles/hitboxes in places where walls and closed doors exist
-    // - door as an item instead of part of room??
-
-
-
-    /**
-     * Each text file is 25 x 25 digits.
-     *
-     * @param thePathName pathname of textfile contaioning 1's and 0's representing the collision of a room
-     * @return 2D boolean array representing collision in given room
-     */
-    public boolean[][] loadBooleanMap(String thePathName) {
-        int textFileMaxRows = 25;
-        int textFileMaxCols = 25;
-        int col = 0;
-        int row = 0;
-        boolean myCollisionMap[][] = new boolean[textFileMaxCols][textFileMaxRows];
-
-        try {
-            InputStream is = getClass().getResourceAsStream(thePathName);
-            BufferedReader br = new BufferedReader(new InputStreamReader(is));
-
-            while (row < textFileMaxRows) {
-
-                String line = br.readLine();
-                while (col < textFileMaxCols) {
-                    String numbers[] = line.split(" ");
-                    int num = Integer.parseInt(numbers[col]);
-
-                    mapTileNum[col][row] = num;
-
-                    boolean hasCollision;
-                    if (num == 1) {
-                        hasCollision = true;
-                    } else {
-                        hasCollision = false;
-                    }
-
-                    myCollisionMap[col][row] = hasCollision;
-
-                    System.out.print(myCollisionMap[col][row] + " ");
-
-                    col++;
-                }
-                if (col == textFileMaxCols) {
-                    col = 0;
-                    row++;
-                    System.out.println();
-                }
-            }
-            br.close();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return myCollisionMap;
-
+        myWorldCollisionMap = createCollisionWorldMap();
     }
 
     /**

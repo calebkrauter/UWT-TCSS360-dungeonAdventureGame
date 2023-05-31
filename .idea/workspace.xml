@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="working con collision">
+    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="room">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CollisionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CollisionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ItemSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ItemSetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MapManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MapManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/HeroDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/HeroDisplay.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/map/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/map/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/map/RoomManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/map/RoomManager.java" afterDir="false" />
     </list>
     <list id="ff8a1f12-e31b-4acb-8e38-ce3f58b732c1" name="Changes by James" comment="">
       <change beforePath="$PROJECT_DIR$/src/Controller/MapManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MapManager.java" afterDir="false" />
@@ -66,6 +71,20 @@
         <option name="url" value="https://github.com/calebkrauter/360-Dungeon-Adventure.git" />
       </UrlAndAccount>
     </option>
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/Controller/MapManager.java">
+      <ranges>
+        <range start1="9" end1="9" start2="9" end2="13" changelist="d91291d8-a8e4-4500-8d53-d60e74afbf0b" />
+        <range start1="13" end1="14" start2="17" end2="17" changelist="d91291d8-a8e4-4500-8d53-d60e74afbf0b" />
+        <range start1="24" end1="26" start2="27" end2="28" changelist="d91291d8-a8e4-4500-8d53-d60e74afbf0b" />
+        <range start1="27" end1="33" start2="29" end2="29" changelist="d91291d8-a8e4-4500-8d53-d60e74afbf0b" />
+        <range start1="34" end1="35" start2="30" end2="30" changelist="d91291d8-a8e4-4500-8d53-d60e74afbf0b" />
+        <range start1="40" end1="46" start2="35" end2="36" changelist="d91291d8-a8e4-4500-8d53-d60e74afbf0b" />
+        <range start1="47" end1="109" start2="37" end2="37" changelist="d91291d8-a8e4-4500-8d53-d60e74afbf0b" />
+        <range start1="158" end1="158" start2="86" end2="113" changelist="ff8a1f12-e31b-4acb-8e38-ce3f58b732c1" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -144,7 +163,9 @@
       <workItem from="1685179726445" duration="218000" />
       <workItem from="1685220763552" duration="27810000" />
       <workItem from="1685386486400" duration="1961000" />
-      <workItem from="1685407801920" duration="5968000" />
+      <workItem from="1685407801920" duration="6007000" />
+      <workItem from="1685430142767" duration="477000" />
+      <workItem from="1685440511501" duration="8160000" />
     </task>
     <task id="LOCAL-00001" summary="100% successfully interprets randomly generated maps for the display.">
       <created>1684131979650</created>
@@ -349,7 +370,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685412840144</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="room">
+      <created>1685413878606</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1685413878606</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -391,6 +419,7 @@
     <MESSAGE value="GamePanel" />
     <MESSAGE value="GamePanel sets up character and items, finished ItemDisplay" />
     <MESSAGE value="working con collision" />
-    <option name="LAST_COMMIT_MESSAGE" value="working con collision" />
+    <MESSAGE value="room" />
+    <option name="LAST_COMMIT_MESSAGE" value="room" />
   </component>
 </project>

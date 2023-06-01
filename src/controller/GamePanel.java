@@ -62,7 +62,10 @@ public class GamePanel extends JPanel implements Runnable{
 
     private MapManager myMapManager = new MapManager();
 
-    private RoomManager myRoomManager = new RoomManager(this, myMapManager);
+    private CollisionHandler myCollisionHandler = new CollisionHandler(this);
+
+    // set to public rn for the collisionHandler class
+    public RoomManager myRoomManager = new RoomManager(this, myMapManager);
     private KeyHandler myKeyHandler = new KeyHandler();
     private MouseHandler myMouseHandler = new MouseHandler();
 
@@ -98,7 +101,7 @@ public class GamePanel extends JPanel implements Runnable{
         // some form of getHeroType() method from menu!!
         myHero = myArcher;
 
-        myHeroDisplay = new HeroDisplay(this, myKeyHandler, myHero);
+        myHeroDisplay = new HeroDisplay(this, myKeyHandler, myHero, myCollisionHandler);
         myItemDisplay = new ItemDisplay(this);
         // improves the game's rendering because all the drawing from this component
         // will be done in an offscreen painting buffer.

@@ -28,6 +28,7 @@ public class GUI {
         this.myJFrame.setMinimumSize(new Dimension(750, 750));
         this.myJFrame.add(this.newMenu);
         this.myJFrame.setLocationRelativeTo(null);
+
         this.myJFrame.pack();
         this.myJFrame.setVisible(true);
     }

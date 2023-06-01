@@ -22,6 +22,7 @@ import static javax.imageio.ImageIO.read;
 //      to generate a new button with the constraints and an array to hold the new data
 //      for each button.
 // TODO - main menu, options menu, pause menu, loadSaves Menu, character select menu, difficulty and map size menu
+// TODO - update setinsets in game loop so the buttons move as game is resized.
 public class MenuManager extends JPanel {
     //    BufferedImage image = ImageIO.read(new File("mainMenu.png"));
     Dimension myScreenSize;
@@ -349,8 +350,8 @@ public class MenuManager extends JPanel {
 
                 image = characters[heroSelection.getMyHeroSelection()];
             }
-            g.drawImage(image,(this.getWidth() - image.getWidth(null)) / 2,
-                    (this.getHeight() - image.getHeight(null)) / 2, 100, 100, null);
+            g.drawImage(image,(this.getWidth() - image.getWidth(null)) / 2 - 20,
+                    (this.getHeight() - image.getHeight(null)) / 2 - 20, 100, 100, null);
 
         }
     }

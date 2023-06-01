@@ -5,19 +5,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="trying to get things to work">
-      <change afterPath="$PROJECT_DIR$/../NewMenus/about.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MainMenu.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TreasureHunt.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TreasureTest.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/about.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mainMenu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/man1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/man2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/man3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/man4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/man5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/AboutAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/BackToMainMenuAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/CreditsAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/EasyModeAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/HardModeAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/HeroSelection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/LoadAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/LoadButtonAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/MapSizeChange.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/MusicPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/OptionsButtonAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/PlayAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/PlayButtonAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/StartAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/ToggleMusicChange.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/UpdateSlider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/VolumeChange.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ChangeMenuAttributes/DisableMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ChangeMenuAttributes/EnableMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/ComponentGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/ModifyInsets.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MenuManagment/AddCharacterSelectorPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MenuManagment/CharacterSelectorMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MenuManagment/GUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MenuManagment/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MenuManagment/MenuManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MenuManagment/OptionsMenuPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MenuManagment/ScreenData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NewMenus/man1.png" beforeDir="false" afterPath="$PROJECT_DIR$/../NewMenus/man1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NewMenus/src/Actions/AboutAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NewMenus/src/Actions/AboutAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NewMenus/src/Actions/BackToMainMenuAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NewMenus/src/Actions/BackToMainMenuAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NewMenus/src/Actions/CreditsAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NewMenus/src/Actions/CreditsAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NewMenus/src/Actions/EasyModeAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NewMenus/src/Actions/EasyModeAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NewMenus/src/Actions/HardModeAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NewMenus/src/Actions/HardModeAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NewMenus/src/Actions/HeroSelection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NewMenus/src/Actions/HeroSelection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NewMenus/src/Actions/MapSizeChange.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NewMenus/src/Actions/MapSizeChange.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NewMenus/src/Actions/ToggleAudioChange.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NewMenus/src/Actions/VolumeChange.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NewMenus/src/Actions/VolumeChange.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NewMenus/src/Components/ComponentGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NewMenus/src/Components/ComponentGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/StartGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NewMenus/src/MenuManagment/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NewMenus/src/MenuManagment/GUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../NewMenus/src/MenuManagment/MenuManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../NewMenus/src/MenuManagment/MenuManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,25 +98,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Makai-Development2&quot;,
-    &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Kraut/Documents/Workspace/360-Dungeon-Adventure/MenuMaker&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Makai-Development2",
+    "ignore.preview.features.used": "true",
+    "last_opened_file_path": "C:/Users/Kraut/Documents/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Controller" />
@@ -95,17 +124,33 @@
       <recent name="View.map" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Kraut\Documents\Workspace\360-Dungeon-Adventure\360-Dungeon-Adventure" />
+      <recent name="C:\Users\Kraut\Documents\Workspace\360-Dungeon-Adventure\360-Dungeon-Adventure\src" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Kraut\Documents\Workspace\360-Dungeon-Adventure\360-Dungeon-Adventure" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/Model" />
       <recent name="$PROJECT_DIR$/res/room tiles" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Controller.Main" />
+  <component name="RunManager" selected="Application.MenuManagment.Main">
+    <configuration name="MenuManagment.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MenuManagment.Main" />
+      <module name="360-Dungeon-Adventure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="MenuManagment.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StartGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Controller.StartGame" />
       <module name="360-Dungeon-Adventure" />
       <extension name="coverage">
         <pattern>
@@ -119,7 +164,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.MenuManagment.Main" />
+        <item itemvalue="Application.StartGame" />
       </list>
     </recent_temporary>
   </component>

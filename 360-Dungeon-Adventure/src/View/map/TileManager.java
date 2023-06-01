@@ -16,10 +16,10 @@ public class TileManager {
     private String[][] myMapRooms;
 
     // Map here???
-    private final MapGenerator myMapGenerator = new MapGenerator();
+    private MapGenerator myMapGenerator;
 
-    public TileManager(GamePanel gp){
-
+    public TileManager(GamePanel gp, MapGenerator mG){
+        myMapGenerator = mG;
         this.gp = gp;
         // "10" is number of different tiles
         tile = new Tile[10];

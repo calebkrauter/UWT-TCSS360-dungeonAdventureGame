@@ -1,16 +1,17 @@
 package Model;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class MapGenerator {
+public class MapGenerator implements Serializable {
 
     final private int LEFT_BOUND = 1;
     final private int BOTTOM_BOUND = 2;
     final private int RIGHT_BOUND = 3;
     final private int TOP_BOUND = 4;
     final private int NOT_ADJACENT_TO_BOUND = 99;
-    private int myMaxRows = 100;
-    private int myMaxCols = 100;
+    private int myMaxRows = 10;
+    private int myMaxCols = 10;
     final private int MIN_COL_IN_BOUNDS = 1;
     final private int MIN_ROW_IN_BOUNDS = 1;
     final private int MAX_COL_IN_BOUNDS = myMaxCols - 1;

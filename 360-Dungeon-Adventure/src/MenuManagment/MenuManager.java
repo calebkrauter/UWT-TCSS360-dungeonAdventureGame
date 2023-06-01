@@ -281,6 +281,7 @@ public class MenuManager extends JPanel {
             hardModeAction.setHardMode(true);
         });
         myStartButton.addActionListener(e -> {
+
             try {
                 new GUI(true);
             } catch (UnsupportedAudioFileException ex) {
@@ -289,7 +290,10 @@ public class MenuManager extends JPanel {
                 throw new RuntimeException(ex);
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
+            } catch (ClassNotFoundException ex) {
+                throw new RuntimeException(ex);
             }
+
             musicPlayer.getClip().close();
                 try {
                     musicPlayer.playMusic("TreasureHunt.wav");

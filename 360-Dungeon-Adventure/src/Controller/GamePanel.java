@@ -6,6 +6,9 @@ import View.map.TileManager;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 
 public class GamePanel extends JPanel implements Runnable{
 
@@ -16,7 +19,6 @@ public class GamePanel extends JPanel implements Runnable{
 
     // size of our game screen. How many tiles can be displayed on a single
     // screen both horizontally and vertically?
-    private MapGenerator mg;
     public final int maxScreenCol = 16;
     public final int maxScreenRow = 12;
 
@@ -36,14 +38,14 @@ public class GamePanel extends JPanel implements Runnable{
     public final int ROOM_SIZE = MIN_ROOM_SIZE * SCALE;
     // using 5 because that is the width and height of the current test map
     // should be changeable by the view
-    MapGenerator mG = new MapGenerator();
-    public final int mapMaxCol = mG.getMyMaxCols();
-    public final int mapMaxRow = mG.getMyMaxRows();
+    MapGenerator mG;
+    public int mapMaxCol;
+    public int mapMaxRow;
 
 
     // in pixels (400 * # of Columns)
-    private final int worldWidth = ROOM_SIZE + mapMaxCol;
-    private final int worldHeight = ROOM_SIZE + mapMaxRow;
+//    private final int worldWidth = ROOM_SIZE + mapMaxCol;
+//    private final int worldHeight = ROOM_SIZE + mapMaxRow;
 
 
 
@@ -54,7 +56,7 @@ public class GamePanel extends JPanel implements Runnable{
     private Thread myGameThread;
 
 
-    private TileManager myTileManager = new TileManager(this);
+    private TileManager myTileManager;
     private KeyHandler myKeyHandler = new KeyHandler();
     private MouseHandler myMouseHandler = new MouseHandler();
     public Hero myHero = new Hero(this, myKeyHandler);
@@ -62,9 +64,17 @@ public class GamePanel extends JPanel implements Runnable{
     int FPS = 60;
 
     // constructor for game panel
-    public GamePanel() {
+    public GamePanel() throws IOException, ClassNotFoundException {
+        MapGenerator mG = null;
+        FileInputStream fileInputStream = new FileInputStream("USERINFO.ser");
+        ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+        mG = (MapGenerator) objectInputStream.readObject();
+        fileInputStream.close();
+        objectInputStream.close();
+        mapMaxCol = mG.getMyMaxCols();
+        mapMaxRow  = mG.getMyMaxRows();
+        myTileManager = new TileManager(this, mG);
 
-        mg = new MapGenerator();
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
         this.setBackground(Color.black);
 

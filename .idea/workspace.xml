@@ -4,13 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="Moving code to different classes to make more sense. Additions to MapManager and CollisionHandler.">
+    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="Additions to MapManager">
+      <change afterPath="$PROJECT_DIR$/src/View/map/CollisionTile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/RoomTiles/closedDoorRoom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/RoomTiles/openDoorRoom.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/RoomTiles/openDoorRoom.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/TextMaps/doorRoom.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/TextMaps/doorRoom.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/TextMaps/intersectionPath.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/TextMaps/intersectionPath.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/TextMaps/openDoorRoom.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/TextMaps/openDoorRoom.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/TextMaps/walls.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/TextMaps/walls.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/TextMaps/xPath.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/TextMaps/xPath.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/TextMaps/yPath.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/TextMaps/yPath.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ItemSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ItemSetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MapManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/entity/Archer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/entity/Archer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/entity/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/entity/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/entity/StartHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/entity/StartHero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/entity/Stevey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/entity/Stevey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/map/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/map/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/map/RoomManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/map/RoomManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GamePanel.java" afterDir="false" />
     </list>
     <list id="ff8a1f12-e31b-4acb-8e38-ce3f58b732c1" name="Changes by James" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Controller/MapManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MapManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/map/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/map/Room.java" afterDir="false" />
     </list>
+    <list id="c9d39182-ef57-426f-855e-eb4806e1b925" name="Changes by Kraut" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,6 +85,15 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/View/map/Room.java">
+      <ranges>
+        <range start1="8" end1="9" start2="8" end2="9" changelist="d91291d8-a8e4-4500-8d53-d60e74afbf0b" />
+        <range start1="20" end1="21" start2="20" end2="21" changelist="ff8a1f12-e31b-4acb-8e38-ce3f58b732c1" />
+        <range start1="24" end1="25" start2="24" end2="25" changelist="d91291d8-a8e4-4500-8d53-d60e74afbf0b" />
+      </ranges>
+    </file>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -105,11 +132,11 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/res/Object" />
       <recent name="$PROJECT_DIR$/res/TextMaps" />
+      <recent name="$PROJECT_DIR$/res/RoomTiles" />
+      <recent name="$PROJECT_DIR$/res/Object" />
       <recent name="$PROJECT_DIR$/res/hero/Stevey" />
       <recent name="$PROJECT_DIR$/res/hero/Archer" />
-      <recent name="$PROJECT_DIR$/res/room tiles" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -148,6 +175,7 @@
       <workItem from="1685430142767" duration="477000" />
       <workItem from="1685440511501" duration="8361000" />
       <workItem from="1685542019895" duration="611000" />
+      <workItem from="1685583895316" duration="12232000" />
     </task>
     <task id="LOCAL-00001" summary="100% successfully interprets randomly generated maps for the display.">
       <created>1684131979650</created>
@@ -366,7 +394,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685511534988</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Additions to MapManager">
+      <created>1685583993385</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1685583993385</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -384,7 +419,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="100% successfully working camera." />
     <MESSAGE value="code base." />
     <MESSAGE value="code base bug fixes." />
     <MESSAGE value="code base final bug fixes?" />
@@ -409,6 +443,18 @@
     <MESSAGE value="working con collision" />
     <MESSAGE value="room" />
     <MESSAGE value="Moving code to different classes to make more sense. Additions to MapManager and CollisionHandler." />
-    <option name="LAST_COMMIT_MESSAGE" value="Moving code to different classes to make more sense. Additions to MapManager and CollisionHandler." />
+    <MESSAGE value="Additions to MapManager" />
+    <option name="LAST_COMMIT_MESSAGE" value="Additions to MapManager" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/View/map/RoomManager.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

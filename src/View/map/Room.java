@@ -6,7 +6,7 @@ public class Room {
 
     private BufferedImage myRoomImage;
 
-    boolean myCollisionMap[][];
+    private CollisionTile myCollisionMap[][];
 
     public void setRoomImage(BufferedImage theRoomImage){
         myRoomImage = theRoomImage;
@@ -22,7 +22,7 @@ public class Room {
         myCollisionMap = theCollisionMap;
     }
 
-    public boolean[][] getCollisionMap(){
+    public  CollisionTile[][] getCollisionMap(){
         return myCollisionMap;
     }
 

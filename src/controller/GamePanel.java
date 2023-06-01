@@ -28,8 +28,14 @@ public class GamePanel extends JPanel implements Runnable{
 
     public final int SCALE = 4;
 
+    private int FPS = 60;
+
     // 48x48 View tile. Needs to be public so entities can access.
     public final int TILE_SIZE = MIN_TILE_SIZE * SCALE;
+
+    // A collision tile is 50 x 50 pixel rectangle
+    public final int COLLISION_TILE_SIZE = 50;
+
 
     // 760 pixels
     public final int screenWidth = TILE_SIZE * maxScreenCol;
@@ -40,17 +46,14 @@ public class GamePanel extends JPanel implements Runnable{
     // MAP SETTINGS
     final int MIN_ROOM_SIZE = 100;    // num pixels
     public final int ROOM_SIZE = MIN_ROOM_SIZE * SCALE;
+    public int myWorldMapMaxCol;
+    public int myWorldMapMaxRow;
 
-    private final MapGenerator myMapGenerator = new MapGenerator();
+    private int myWorldMapWidth;
+    private int myWorldHeight;
 
-    // should be changeable by the view
-    public final int mapMaxCol = myMapGenerator.getMyMaxCols();
-    public final int mapMaxRow = myMapGenerator.getMyMaxRows();
+    private String[][] myWorldMap;
 
-
-    // in pixels (400 * # of Columns)
-    private final int worldWidth = ROOM_SIZE + mapMaxCol;
-    private final int worldHeight = ROOM_SIZE + mapMaxRow;
 
 
 
@@ -60,15 +63,14 @@ public class GamePanel extends JPanel implements Runnable{
     // implementing runnable is key to using thread.
     private Thread myGameThread;
 
-    private MapManager myMapManager = new MapManager();
 
-    private CollisionHandler myCollisionHandler = new CollisionHandler(this);
+    private final MapGenerator myMapGenerator;
+    private RoomManager myRoomManager;
 
-    // set to public rn for the collisionHandler class
-    public RoomManager myRoomManager = new RoomManager(this, myMapManager);
+
+    private CollisionHandler myCollisionHandler;
     private KeyHandler myKeyHandler = new KeyHandler();
     private MouseHandler myMouseHandler = new MouseHandler();
-
 
 
 
@@ -84,13 +86,15 @@ public class GamePanel extends JPanel implements Runnable{
 
     private HeroDisplay myHeroDisplay;
 
+
+
+
+
     // ASSETS
     public ParentItem myItems[] = new ParentItem[10];
-    public ItemSetter myItemSetter = new ItemSetter(this, myMapManager);
+    public ItemSetter myItemSetter = new ItemSetter(this, myRoomManager);
     private ItemDisplay myItemDisplay;
 
-
-    int FPS = 60;
 
     // constructor for game panel
     public GamePanel() {
@@ -98,11 +102,17 @@ public class GamePanel extends JPanel implements Runnable{
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
         this.setBackground(Color.black);
 
+        myMapGenerator = new MapGenerator();
+        setMapValues();
+        myRoomManager = new RoomManager(this, myWorldMap);
+
         // some form of getHeroType() method from menu!!
         myHero = myArcher;
 
+        myCollisionHandler = new CollisionHandler(this);
         myHeroDisplay = new HeroDisplay(this, myKeyHandler, myHero, myCollisionHandler);
         myItemDisplay = new ItemDisplay(this);
+
         // improves the game's rendering because all the drawing from this component
         // will be done in an offscreen painting buffer.
         this.setDoubleBuffered(true);
@@ -117,13 +127,25 @@ public class GamePanel extends JPanel implements Runnable{
         this.setFocusable(true);
 
     }
+    public void setMapValues(){
+        myWorldMap = myMapGenerator.getMap();
+        // should be changeable by the view
+        myWorldMapMaxCol = myMapGenerator.getMyMaxCols();
+        myWorldMapMaxRow = myMapGenerator.getMyMaxRows();
+        // in pixels (400 * # of Columns)
+        myWorldMapWidth = ROOM_SIZE * myWorldMapMaxCol;
+        myWorldHeight = ROOM_SIZE * myWorldMapMaxRow;
+    }
+    public String[][] getWorldMap(){
+        return myWorldMap;
+    }
 
     public void SetupGame(){
         myItemSetter.setObject();
 
         // Sets character's position to center of start room
         Point2D thePoint = new Point2D.Float(0, 0);
-        thePoint = myMapManager.getStartPoint();
+        thePoint = myRoomManager.getStartPoint();
         myHero.setWorldX((int) thePoint.getX() * ROOM_SIZE + ROOM_SIZE/2 - TILE_SIZE/2);
         myHero.setWorldY((int) thePoint.getX() * ROOM_SIZE + ROOM_SIZE/2 - TILE_SIZE/2);
     }

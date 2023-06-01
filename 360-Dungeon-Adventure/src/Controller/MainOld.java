@@ -6,7 +6,7 @@ package Controller;
 
 import javax.swing.JFrame;
 
-public class StartGame {
+public class MainOld {
 
     public static void main(String[] args) {
 

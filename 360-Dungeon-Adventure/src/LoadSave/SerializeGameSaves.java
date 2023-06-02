@@ -21,8 +21,8 @@ public class SerializeGameSaves {
         if (myGameSaves == null) {
             myGameSaves = new ArrayList<>();
         }
-        theGameStateFile = new CheckFileNotEqualToSavesFile().checkThatFileIsNotSavesFile(theGameStateFile);
-        setGameSaves(theGameStateFile);
+        theGameStateFile = new CheckFileValidity().checkThatFileIsNotSavesFile(theGameStateFile);
+        setGameSavesByFile(theGameStateFile);
         FileOutputStream fileOutputStream = new FileOutputStream("game-saves.ser");
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
 
@@ -31,8 +31,26 @@ public class SerializeGameSaves {
         objectOutputStream.close();
         fileOutputStream.close();
     }
+    public void deleteSaveAndSerializeRemainingSaves(int theIndex) throws IOException {
+        DeserializeGameSaves deserializeGameSaves = new DeserializeGameSaves();
+        deserializeGameSaves.deserializeGameSaves();
+        myGameSaves = deserializeGameSaves.getDeserializedGameSaves();
+        if (myGameSaves == null) {
+            myGameSaves = new ArrayList<>();
+        }
 
-    public void setGameSaves(String theGameFile) {
+        System.out.println( "index to remove from" + theIndex);
+        myGameSaves.remove(theIndex);
+        FileOutputStream fileOutputStream = new FileOutputStream("game-saves.ser");
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+
+
+        objectOutputStream.writeObject(getGameSaves());
+        System.out.println("After deletion size " + getGameSaves().size());
+        objectOutputStream.close();
+        fileOutputStream.close();
+    }
+    public void setGameSavesByFile(String theGameFile) {
         myGameSaves.add(theGameFile);
         for (int i = 0; i < myGameSaves.size(); i++) {
             System.out.println(myGameSaves.get(i));
@@ -40,6 +58,9 @@ public class SerializeGameSaves {
 
     }
 
+    public void setGameSaves(ArrayList<String> theSaves) {
+        myGameSaves = theSaves;
+    }
     public ArrayList<String> getGameSaves() {
         return myGameSaves;
     }

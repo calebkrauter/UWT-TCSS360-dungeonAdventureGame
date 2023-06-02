@@ -33,8 +33,7 @@ public class GUI {
 
     void loadGui() throws IOException, ClassNotFoundException {
         this.myJFrame.setDefaultCloseOperation(3);
-        this.myJFrame.setSize(850, 850);
-        this.myJFrame.setMinimumSize(new Dimension(750, 750));
+        this.myJFrame.setMinimumSize(new Dimension(850, 850));
 
         if (getPlayGame()) {
             GamePanel myGamePanel = new GamePanel(myGameStateFile);

@@ -22,7 +22,8 @@ public class SerializeMapGenerator {
     }
 
     private void serializeMapGenerator(String theGameStateFile) throws IOException {
-        theGameStateFile = new CheckFileNotEqualToSavesFile().checkThatFileIsNotSavesFile(theGameStateFile);
+        CheckFileValidity checkFileValidity = new CheckFileValidity();
+        theGameStateFile = checkFileValidity.checkThatFileIsNotSavesFile(theGameStateFile);
         // In case game saves are accidentally overwritten by a new save game.
         MapGenerator user = null;
         user = new MapGenerator();

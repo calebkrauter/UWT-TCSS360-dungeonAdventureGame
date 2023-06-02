@@ -19,13 +19,13 @@ public class LoadSaveSelection implements Serializable {
         if (goLeft) {
             --i;
             this.containInBounds();
-            this.setLoadSaveSelection(i);
+            this.setLoadSaveSelection(i+1);
         }
 
         if (goRight) {
             ++i;
             this.containInBounds();
-            this.setLoadSaveSelection(i);
+            this.setLoadSaveSelection(i+1);
         }
 
     }

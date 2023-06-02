@@ -335,7 +335,12 @@ public class MenuManager extends JPanel {
         myStartButton.addActionListener(e -> {
 
             String gameStateFile = new AppendExtension().appendExtension(myGameStateField.getText());
-            new Serialize(gameStateFile);
+            Serialize serialize = new Serialize(gameStateFile);
+//            try {
+//                serialize.serializeGameSaves(gameStateFile);
+//            } catch (IOException ex) {
+//                throw new RuntimeException(ex);
+//            }
             try {
                 new GUI(true, gameStateFile);
             } catch (UnsupportedAudioFileException ex) {

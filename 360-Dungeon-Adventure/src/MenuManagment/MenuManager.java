@@ -95,12 +95,15 @@ public class MenuManager extends JPanel {
     ToggleMusicChange toggleMusicChange;
     MusicPlayer musicPlayer = new MusicPlayer();
     static boolean myShownCharacter = false;
+    DeserializeGameSaves deserializeGameSaves;
+
 
     private static int musicPlayedFirstTime = 0;
 
     // TODO - cleanup code such that each menu has its own class, and there are classes for any actions associated with a given class. Ex, OptionsMenu and OptionsActions.
 
     public MenuManager(JFrame theJFrame) throws IOException {
+        deserializeGameSaves = new DeserializeGameSaves();
         this.setLayout(new GridBagLayout());
         modifyInsets = new ModifyInsets();
         myJframe = theJFrame;
@@ -160,7 +163,7 @@ public class MenuManager extends JPanel {
         myLeftSelect = (JButton) loadSaveSelectionComponent.getComponents()[1][BUTTON];
         mySelect = (JButton) loadSaveSelectionComponent.getComponents()[2][BUTTON];
         myRightSelect = (JButton) loadSaveSelectionComponent.getComponents()[3][BUTTON];
-
+        mySelect.setText(deserializeGameSaves.getDeserializedGameSaves().get(0).toString());
         SerializeMapGenerator serializeMapGenerator = new SerializeMapGenerator();
 
         // TODO serialize the save state files to a seperate file so that they can be referenced.
@@ -177,16 +180,17 @@ public class MenuManager extends JPanel {
         myBackButton.addActionListener(e -> new GoBackAction(loadSaveSelectionComponents, mainMenuComponents));
         LoadSaveSelection loadSaveSelection = new LoadSaveSelection();
         SerializeGameSaves serializeGameSaves = new SerializeGameSaves();
+
         myLeftSelect.addActionListener(e -> {
             try {
                 loadSaveSelection.loadSaveSelection(true, false);
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
+            mySelect.setText(deserializeGameSaves.getDeserializedGameSaves().get(loadSaveSelection.getLoadSaveSelection()).toString());
 
         });
         mySelect.addActionListener(e -> {
-            DeserializeGameSaves deserializeGameSaves = new DeserializeGameSaves();
 
             try {
                 deserializeGameSaves.deserializeGameSaves();
@@ -194,10 +198,9 @@ public class MenuManager extends JPanel {
                 throw new RuntimeException(ex);
             }
 
-            String gameSaveFile = deserializeGameSaves.getDeserializedGameSaves().get(loadSaveSelection.getLoadSaveSelection()).toString();
-                System.out.println(gameSaveFile);
+                System.out.println(deserializeGameSaves.getDeserializedGameSaves().get(loadSaveSelection.getLoadSaveSelection()).toString());
             try {
-                new GUI(true, gameSaveFile);
+                new GUI(true, deserializeGameSaves.getDeserializedGameSaves().get(loadSaveSelection.getLoadSaveSelection()).toString());
             } catch (UnsupportedAudioFileException ex) {
                 throw new RuntimeException(ex);
             } catch (LineUnavailableException ex) {
@@ -214,6 +217,8 @@ public class MenuManager extends JPanel {
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
+            mySelect.setText(deserializeGameSaves.getDeserializedGameSaves().get(loadSaveSelection.getLoadSaveSelection()).toString());
+
         });
 
     }
@@ -267,7 +272,6 @@ public class MenuManager extends JPanel {
         myMainLoadButton.addActionListener(e -> {
             new DisableMenu(mainMenuComponents);
             try {
-                DeserializeGameSaves deserializeGameSaves = new DeserializeGameSaves();
                 deserializeGameSaves.deserializeGameSaves();
 
                 addLoadSaveSelectMenu();

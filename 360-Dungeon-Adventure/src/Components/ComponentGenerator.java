@@ -37,7 +37,7 @@ public class ComponentGenerator {
         this.myInsetBottom = theInsetBottom;
         this.myInsetRight = theInsetRight;
         this.myDirectionOfFlow = theDirectionOfFlow;
-        this.manyComponents = new JComponent[this.myTitles.length][4];
+        this.manyComponents = new JComponent[this.myTitles.length][5];
         this.gBC = new GridBagConstraints();
         this.produceButton();
     }
@@ -67,6 +67,7 @@ public class ComponentGenerator {
             this.manyComponents[i][1] = new JToggleButton();
             this.manyComponents[i][2] = new JSlider();
             this.manyComponents[i][3] = new JCheckBox();
+            this.manyComponents[i][4] = new JTextField();
             this.myConstraints[i] = new GridBagConstraints();
             this.myConstraints[i].ipadx = 50;
             this.myConstraints[i].ipady = 10;
@@ -85,6 +86,9 @@ public class ComponentGenerator {
             }
             if (this.manyComponents[i][this.myButtonCode + 1] instanceof JToggleButton) {
                 ((JToggleButton) this.manyComponents[i][this.myButtonCode + 1]).setText(this.myTitles[i]);
+            }
+            if (this.manyComponents[i][4] instanceof JTextField) {
+                ((JTextField) this.manyComponents[i][4]).setText(this.myTitles[i]);
             }
 
             this.setcomponents(this.manyComponents);

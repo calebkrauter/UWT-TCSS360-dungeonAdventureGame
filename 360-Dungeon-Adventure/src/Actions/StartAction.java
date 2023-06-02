@@ -1,11 +1,17 @@
 package Actions;
 
+import java.io.IOException;
+
 public class StartAction {
     public StartAction() {
-        this.startAction();
+        try {
+            this.startAction();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    private void startAction() {
-        System.out.println("START");
+    private void startAction() throws IOException {
+
     }
 }

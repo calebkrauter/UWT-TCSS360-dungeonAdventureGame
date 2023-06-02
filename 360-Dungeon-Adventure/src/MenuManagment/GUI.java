@@ -16,6 +16,7 @@ public class GUI {
     private MenuManager newMenu;
     ScreenData screenData;
     boolean myPlayGame = false;
+    String myGameStateFile = "";
 
     public GUI() throws IOException, UnsupportedAudioFileException, LineUnavailableException, ClassNotFoundException {
         screenData = new ScreenData(this.myJFrame.getWidth(), this.myJFrame.getHeight());
@@ -23,19 +24,21 @@ public class GUI {
         this.loadGui();
         new MusicPlayer("MainMenu.wav");
     }
-    public GUI(boolean thePlayGame) throws UnsupportedAudioFileException, LineUnavailableException, IOException, ClassNotFoundException {
+    public GUI(boolean thePlayGame, String theGameStateFile) throws UnsupportedAudioFileException, LineUnavailableException, IOException, ClassNotFoundException {
         myPlayGame = thePlayGame;
+        myGameStateFile = theGameStateFile;
         setPlayGame(thePlayGame);
         loadGui();
     }
 
-    void loadGui() throws IOException, UnsupportedAudioFileException, LineUnavailableException, ClassNotFoundException {
+    void loadGui() throws IOException, ClassNotFoundException {
         this.myJFrame.setDefaultCloseOperation(3);
         this.myJFrame.setSize(850, 850);
         this.myJFrame.setMinimumSize(new Dimension(750, 750));
 
         if (getPlayGame()) {
-            GamePanel myGamePanel = new GamePanel();
+            GamePanel myGamePanel = new GamePanel(myGameStateFile);
+
             myJFrame.add(myGamePanel);
             myGamePanel.requestFocus();
             myGamePanel.startGameThread();

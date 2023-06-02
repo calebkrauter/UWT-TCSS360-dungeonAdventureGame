@@ -45,7 +45,6 @@ public class HeroSelection {
 
     public void setHeroSelected(boolean theSelectedHero) {
         mySelectedHero = theSelectedHero;
-        System.out.println("HERO SELECTED< LETSA GO");
     }
 
     public boolean getHeroSelected() {

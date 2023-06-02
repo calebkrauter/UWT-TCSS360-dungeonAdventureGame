@@ -5,11 +5,11 @@ import ChangeMenuAttributes.EnableMenu;
 
 import javax.swing.*;
 
-public class BackToMainMenuAction {
+public class GoBackAction {
     JComponent[] myMenuToDisable;
     JComponent[] myMenuToEnable;
 
-    public BackToMainMenuAction(JComponent[] theMenuToDisable, JComponent[] theMenuToEnable) {
+    public GoBackAction(JComponent[] theMenuToDisable, JComponent[] theMenuToEnable) {
         this.myMenuToDisable = theMenuToDisable;
         this.myMenuToEnable = theMenuToEnable;
         this.backToMainMenuAction();

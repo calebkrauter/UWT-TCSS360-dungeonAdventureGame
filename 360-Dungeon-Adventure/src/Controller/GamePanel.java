@@ -1,14 +1,13 @@
 package Controller;
 
+import Actions.Deserialize;
 import Model.MapGenerator;
 import View.entity.Hero;
 import View.map.TileManager;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
 
 public class GamePanel extends JPanel implements Runnable{
 
@@ -64,13 +63,8 @@ public class GamePanel extends JPanel implements Runnable{
     int FPS = 60;
 
     // constructor for game panel
-    public GamePanel() throws IOException, ClassNotFoundException {
-        MapGenerator mG = null;
-        FileInputStream fileInputStream = new FileInputStream("USERINFO.ser");
-        ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-        mG = (MapGenerator) objectInputStream.readObject();
-        fileInputStream.close();
-        objectInputStream.close();
+    public GamePanel(String theGameFile) throws IOException, ClassNotFoundException {
+        mG = new Deserialize(theGameFile).getMyMapGenerator();
         mapMaxCol = mG.getMyMaxCols();
         mapMaxRow  = mG.getMyMaxRows();
         myTileManager = new TileManager(this, mG);

@@ -48,6 +48,7 @@ public class MenuManager extends JPanel {
     final private int GO_DOWN = 90;
     final private int FIRST_TIME_PLAYED = 0;
     final private int NOT_FIRST_TIME_PLAYED = 1;
+    final private String TREASURE_HUNT_SONG = "TreasureHunt.wav";
     String gameSaveName;
     String[] myTitles;
     ComponentGenerator mainMenuButton;
@@ -81,7 +82,6 @@ public class MenuManager extends JPanel {
     UpdateSlider updateSlider;
     JComponent[] loadSaveSelectionComponents;
 
-    String myGameStateFile = "";
     private void setMyTitles(String[] theTitles) {
         myTitles = theTitles;
     }
@@ -169,6 +169,7 @@ public class MenuManager extends JPanel {
         myRightSelect = (JButton) loadSaveSelectionComponent.getComponents()[3][BUTTON];
         myDelete = (JButton) loadSaveSelectionComponent.getComponents()[4][BUTTON];
         GridBagConstraints deleteButtonConstraints = new GridBagConstraints();
+
         deserializeGameSaves.deserializeGameSaves();
         if (deserializeGameSaves.getDeserializedGameSaves().size() > 0) {
             mySelect.setText(deserializeGameSaves.getDeserializedGameSaves().get(0).toString());
@@ -199,9 +200,10 @@ public class MenuManager extends JPanel {
                 throw new RuntimeException(ex);
             }
             mySelect.setText(deserializeGameSaves.getDeserializedGameSaves().get(loadSaveSelection.getLoadSaveSelection()).toString());
-            myGameStateFile = deserializeGameSaves.getDeserializedGameSaves().get(loadSaveSelection.getLoadSaveSelection()).toString();
+
         });
         mySelect.addActionListener(e -> {
+            startInGameMusic(TREASURE_HUNT_SONG);
 
             try {
                 deserializeGameSaves.deserializeGameSaves();
@@ -221,7 +223,7 @@ public class MenuManager extends JPanel {
             } catch (ClassNotFoundException ex) {
                 throw new RuntimeException(ex);
             }
-            myGameStateFile = deserializeGameSaves.getDeserializedGameSaves().get(loadSaveSelection.getLoadSaveSelection()).toString();
+
 
         });
         myRightSelect.addActionListener(e -> {
@@ -231,7 +233,7 @@ public class MenuManager extends JPanel {
                 throw new RuntimeException(ex);
             }
             mySelect.setText(deserializeGameSaves.getDeserializedGameSaves().get(loadSaveSelection.getLoadSaveSelection()).toString());
-            myGameStateFile = deserializeGameSaves.getDeserializedGameSaves().get(loadSaveSelection.getLoadSaveSelection()).toString();
+
 
         });
         myDelete.addActionListener(e -> {
@@ -252,7 +254,8 @@ public class MenuManager extends JPanel {
                 serializeGameSaves.deleteSaveAndSerializeRemainingSaves(theSelection);
 
                 // This code block from chatgpt
-                File file = new File(myGameStateFile);
+                File file = new File(deserializeGameSaves.getDeserializedGameSaves().get(theSelection));
+                System.out.println(deserializeGameSaves.getDeserializedGameSaves().get(theSelection));
                 if (file.exists()) {
                     file.delete();
                 }
@@ -335,7 +338,7 @@ public class MenuManager extends JPanel {
             new DisableMenu(mainMenuComponents);
             try {
                 addLoadSaveSelectMenu();
-                if (deserializeGameSaves.getDeserializedGameSaves() == null || deserializeGameSaves.getDeserializedGameSaves().isEmpty()) {
+                if (deserializeGameSaves == null || deserializeGameSaves.getDeserializedGameSaves() == null || deserializeGameSaves.getDeserializedGameSaves().isEmpty()) {
                     setLoadSaveButtonsEnabled(false);
                     mySelect.setText("NO SAVES");
                 } else {
@@ -466,18 +469,7 @@ public class MenuManager extends JPanel {
             } catch (ClassNotFoundException ex) {
                 throw new RuntimeException(ex);
             }
-
-            musicPlayer.getClip().close();
-                try {
-                    musicPlayer.playMusic("TreasureHunt.wav");
-                } catch (LineUnavailableException ex) {
-                    throw new RuntimeException(ex);
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                } catch (UnsupportedAudioFileException ex) {
-                    throw new RuntimeException(ex);
-                }
-                
+            startInGameMusic(TREASURE_HUNT_SONG);
         });
 
         myBackButton.addActionListener(e -> {
@@ -486,6 +478,19 @@ public class MenuManager extends JPanel {
             repaint();
         });
 
+    }
+
+    private void startInGameMusic(String theMusic) {
+        musicPlayer.getClip().close();
+        try {
+            musicPlayer.playMusic(theMusic);
+        } catch (LineUnavailableException ex) {
+            throw new RuntimeException(ex);
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        } catch (UnsupportedAudioFileException ex) {
+            throw new RuntimeException(ex);
+        }
     }
     private void setMusicPlayedFirstTime(int thePlayValue) {
         musicPlayedFirstTime = thePlayValue;

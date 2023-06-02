@@ -35,8 +35,7 @@ public class CheckFileValidity {
         StringBuilder sb2 = new StringBuilder();
         sb2.append(theGameSaveName);
         sb2.append(".ser");
-        System.out.println("SB2 " + sb2
-        );
+
         if (new File(sb2.toString()).exists()) {
             DeserializeGameSaves deserializeGameSaves = new DeserializeGameSaves();
             try {

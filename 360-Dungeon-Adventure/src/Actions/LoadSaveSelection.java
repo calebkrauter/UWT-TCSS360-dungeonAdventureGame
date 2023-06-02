@@ -42,10 +42,10 @@ public class LoadSaveSelection implements Serializable {
             if (theI < 0 || i < 0) {
                 theI = deserializeGameSaves.getDeserializedGameSaves().size() - 1;
                 i = theI;
-            } else if (theI >= deserializeGameSaves.getDeserializedGameSaves().size() - 1 || i >  deserializeGameSaves.getDeserializedGameSaves().size() - 1) {
+            } else if (theI >= deserializeGameSaves.getDeserializedGameSaves().size() - 1) {
                 theI = 0;
-                i = theI;
-
+            } if (i > deserializeGameSaves.getDeserializedGameSaves().size() - 1) {
+                i = 0;
             }
         }
         return theI;

@@ -1,6 +1,6 @@
 package Controller;
 
-import Actions.Deserialize;
+import LoadSave.DeserializeMapGenerator;
 import Model.MapGenerator;
 import View.entity.Hero;
 import View.map.TileManager;
@@ -64,7 +64,7 @@ public class GamePanel extends JPanel implements Runnable{
 
     // constructor for game panel
     public GamePanel(String theGameFile) throws IOException, ClassNotFoundException {
-        mG = new Deserialize(theGameFile).getMyMapGenerator();
+        mG = new DeserializeMapGenerator(theGameFile).getMyMapGenerator();
         mapMaxCol = mG.getMyMaxCols();
         mapMaxRow  = mG.getMyMaxRows();
         myTileManager = new TileManager(this, mG);

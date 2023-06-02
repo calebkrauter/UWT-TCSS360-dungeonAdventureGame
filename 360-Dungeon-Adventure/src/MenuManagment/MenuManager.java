@@ -5,6 +5,9 @@ import ChangeMenuAttributes.DisableMenu;
 import ChangeMenuAttributes.EnableMenu;
 import Components.ComponentGenerator;
 import Components.ModifyInsets;
+import LoadSave.DeserializeGameSaves;
+import LoadSave.SerializeGameSaves;
+import LoadSave.SerializeMapGenerator;
 
 import javax.imageio.ImageIO;
 import javax.sound.sampled.LineUnavailableException;
@@ -158,11 +161,10 @@ public class MenuManager extends JPanel {
         mySelect = (JButton) loadSaveSelectionComponent.getComponents()[2][BUTTON];
         myRightSelect = (JButton) loadSaveSelectionComponent.getComponents()[3][BUTTON];
 
-        Serialize serialize = new Serialize();
+        SerializeMapGenerator serializeMapGenerator = new SerializeMapGenerator();
 
         // TODO serialize the save state files to a seperate file so that they can be referenced.
         // TODO implement a feature to erase the file holding the gamestate files
-//        mySelect.setText(serialize.getGameSaves().get(0));
         loadSaveSelectionComponents = new JComponent[] {myBackButton, myLeftSelect, mySelect, myRightSelect};
         for (int i = 0; i < loadSaveSelectionComponents.length; i++) {
             this.add(loadSaveSelectionComponents[i], loadSaveSelectionComponent.getMyButtonConstraints()[i]);
@@ -174,8 +176,7 @@ public class MenuManager extends JPanel {
         new EnableMenu(loadSaveSelectionComponents);
         myBackButton.addActionListener(e -> new GoBackAction(loadSaveSelectionComponents, mainMenuComponents));
         LoadSaveSelection loadSaveSelection = new LoadSaveSelection();
-        Serialize serialize = new Serialize();
-
+        SerializeGameSaves serializeGameSaves = new SerializeGameSaves();
         myLeftSelect.addActionListener(e -> {
             try {
                 loadSaveSelection.loadSaveSelection(true, false);
@@ -183,8 +184,38 @@ public class MenuManager extends JPanel {
                 throw new RuntimeException(ex);
             }
 
-            mySelect.setText(serialize.getGameSaves().get(loadSaveSelection.getLoadSaveSelection()));
         });
+        mySelect.addActionListener(e -> {
+            DeserializeGameSaves deserializeGameSaves = new DeserializeGameSaves();
+
+            try {
+                deserializeGameSaves.deserializeGameSaves();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+
+            String gameSaveFile = deserializeGameSaves.getDeserializedGameSaves().get(loadSaveSelection.getLoadSaveSelection()).toString();
+                System.out.println(gameSaveFile);
+            try {
+                new GUI(true, gameSaveFile);
+            } catch (UnsupportedAudioFileException ex) {
+                throw new RuntimeException(ex);
+            } catch (LineUnavailableException ex) {
+                throw new RuntimeException(ex);
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            } catch (ClassNotFoundException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+        myRightSelect.addActionListener(e -> {
+            try {
+                loadSaveSelection.loadSaveSelection(false, true);
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+
     }
     private void addOptionsMenu() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
 
@@ -335,12 +366,13 @@ public class MenuManager extends JPanel {
         myStartButton.addActionListener(e -> {
 
             String gameStateFile = new AppendExtension().appendExtension(myGameStateField.getText());
-            Serialize serialize = new Serialize(gameStateFile);
-//            try {
-//                serialize.serializeGameSaves(gameStateFile);
-//            } catch (IOException ex) {
-//                throw new RuntimeException(ex);
-//            }
+            SerializeMapGenerator serializeMapGenerator = new SerializeMapGenerator(gameStateFile);
+            try {
+                new SerializeGameSaves().serializeGameSaves(gameStateFile);
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+            new DisableMenu(gamePlayMenuComponents);
             try {
                 new GUI(true, gameStateFile);
             } catch (UnsupportedAudioFileException ex) {

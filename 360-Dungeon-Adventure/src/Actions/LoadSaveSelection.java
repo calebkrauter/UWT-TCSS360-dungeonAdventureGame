@@ -1,5 +1,7 @@
 package Actions;
 
+import LoadSave.SerializeGameSaves;
+
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -8,11 +10,11 @@ public class LoadSaveSelection implements Serializable {
     static int mySaveSelection = 0;
     static int i = 0;
     static boolean mySelectedSave = false;
-    static Serialize serialize;
+    static SerializeGameSaves serializeGameSaves;
     ArrayList<String> mySaves;
     public LoadSaveSelection() {
-        serialize = new Serialize();
-        mySaves = serialize.getGameSaves();
+        serializeGameSaves = new SerializeGameSaves();
+        mySaves = serializeGameSaves.getGameSaves();
     }
 
     public void loadSaveSelection(boolean goLeft, boolean goRight) throws IOException {
@@ -30,11 +32,11 @@ public class LoadSaveSelection implements Serializable {
 
     }
     private void containInBounds() {
-        if (serialize.getGameSaves() != null) {
+        if (serializeGameSaves.getGameSaves() != null) {
 
             if (i < 0) {
-                i = serialize.getGameSaves().size() - 1;
-            } else if (i > serialize.getGameSaves().size() - 1) {
+                i = serializeGameSaves.getGameSaves().size() - 1;
+            } else if (i > serializeGameSaves.getGameSaves().size() - 1) {
                 i = 0;
             }
         }

@@ -39,7 +39,16 @@ public class SerializeGameSaves {
             myGameSaves = new ArrayList<>();
         }
 
+        if (deserializeGameSaves.getDeserializedGameSaves() != null) {
+
+            if (theIndex < 0 ) {
+                theIndex = deserializeGameSaves.getDeserializedGameSaves().size() - 1;
+            } else if (theIndex >= deserializeGameSaves.getDeserializedGameSaves().size() - 1) {
+                theIndex = 0;
+            }
+        }
         System.out.println( "index to remove from" + theIndex);
+
         myGameSaves.remove(theIndex);
         FileOutputStream fileOutputStream = new FileOutputStream("game-saves.ser");
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);

@@ -23,7 +23,7 @@ public class CheckFileValidity {
                 }
             }
         } else {
-            for (int i = 0; i < fileStringArray.length-1; i++) {
+            for (int i = 0; i < fileStringArray.length; i++) {
                 sb.append(fileStringArray[i]);
             }
         }

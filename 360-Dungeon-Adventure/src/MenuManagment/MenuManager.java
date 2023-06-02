@@ -21,7 +21,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicInteger;
 
 
 // TODO - add all constraints to a method, use recursion or a for loop
@@ -49,6 +48,7 @@ public class MenuManager extends JPanel {
     final private int GO_DOWN = 90;
     final private int FIRST_TIME_PLAYED = 0;
     final private int NOT_FIRST_TIME_PLAYED = 1;
+    String gameSaveName;
     String[] myTitles;
     ComponentGenerator mainMenuButton;
     JButton myMainPlayButton;
@@ -169,8 +169,12 @@ public class MenuManager extends JPanel {
         myRightSelect = (JButton) loadSaveSelectionComponent.getComponents()[3][BUTTON];
         myDelete = (JButton) loadSaveSelectionComponent.getComponents()[4][BUTTON];
         GridBagConstraints deleteButtonConstraints = new GridBagConstraints();
-
-        mySelect.setText(deserializeGameSaves.getDeserializedGameSaves().get(0).toString());
+        deserializeGameSaves.deserializeGameSaves();
+        if (deserializeGameSaves.getDeserializedGameSaves().size() > 0) {
+            mySelect.setText(deserializeGameSaves.getDeserializedGameSaves().get(0).toString());
+        } else {
+            mySelect.setText("NO SAVES");
+        }
         SerializeMapGenerator serializeMapGenerator = new SerializeMapGenerator();
 
         // TODO serialize the save state files to a seperate file so that they can be referenced.
@@ -230,12 +234,15 @@ public class MenuManager extends JPanel {
             myGameStateFile = deserializeGameSaves.getDeserializedGameSaves().get(loadSaveSelection.getLoadSaveSelection()).toString();
 
         });
-        AtomicInteger i = new AtomicInteger();
         myDelete.addActionListener(e -> {
-            i.getAndDecrement();
             StringBuilder sb = new StringBuilder();
-            sb.append(deserializeGameSaves.getDeserializedGameSaves().get(loadSaveSelection.getLoadSaveSelection()).toString());
-            myGameStateFile = sb.toString();
+            try {
+                deserializeGameSaves.deserializeGameSaves();
+                loadSaveSelection.loadSaveSelection(true, false);
+
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
             ArrayList<String> newSaves = new ArrayList<>();
             newSaves = deserializeGameSaves.getDeserializedGameSaves();
             serializeGameSaves.setGameSaves(newSaves);
@@ -246,35 +253,36 @@ public class MenuManager extends JPanel {
 
                 // This code block from chatgpt
                 File file = new File(myGameStateFile);
-
-                // Check if the file exists
                 if (file.exists()) {
-                    // Attempt to delete the file
-                    boolean deleted = file.delete();
-
-                    if (deleted) {
-                        System.out.println("File deleted successfully.");
-                    } else {
-                        System.out.println("Failed to delete the file.");
-                    }
-                } else {
-                    System.out.println("File does not exist.");
-                    System.out.println(myGameStateFile);
+                    file.delete();
                 }
-//                new File(myGameStateFile).delete();
 
-                loadSaveSelection.loadSaveSelection(true, false);
                 newSaves.remove(theSelection);
+                if (deserializeGameSaves.getDeserializedGameSaves().size() == 0) {
+                    setLoadSaveButtonsEnabled(false);
+                    mySelect.setText("NO SAVES");
+                } else {
+                    setLoadSaveButtonsEnabled(true);
+                    if (theSelection >= deserializeGameSaves.getDeserializedGameSaves().size()) {
 
-                System.out.println(theSelection);
-                mySelect.setText(deserializeGameSaves.getDeserializedGameSaves().get(theSelection).toString());
-                deserializeGameSaves.deserializeGameSaves();
+                        theSelection -= 1;
+                    }
+                    mySelect.setText(deserializeGameSaves.getDeserializedGameSaves().get(theSelection).toString());
+                    deserializeGameSaves.deserializeGameSaves();
+                }
 
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
         });
 
+    }
+
+    private void setLoadSaveButtonsEnabled(boolean theEnabledValue) {
+        myDelete.setEnabled(theEnabledValue);
+        myLeftSelect.setEnabled(theEnabledValue);
+        myRightSelect.setEnabled(theEnabledValue);
+        mySelect.setEnabled(theEnabledValue);
     }
     private void addOptionsMenu() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
 
@@ -326,9 +334,14 @@ public class MenuManager extends JPanel {
         myMainLoadButton.addActionListener(e -> {
             new DisableMenu(mainMenuComponents);
             try {
-                deserializeGameSaves.deserializeGameSaves();
-
                 addLoadSaveSelectMenu();
+                if (deserializeGameSaves.getDeserializedGameSaves() == null || deserializeGameSaves.getDeserializedGameSaves().isEmpty()) {
+                    setLoadSaveButtonsEnabled(false);
+                    mySelect.setText("NO SAVES");
+                } else {
+                    setLoadSaveButtonsEnabled(true);
+                }
+                deserializeGameSaves.deserializeGameSaves();
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
@@ -425,9 +438,9 @@ public class MenuManager extends JPanel {
             hardModeAction.setHardMode(true);
         });
         myStartButton.addActionListener(e -> {
-            String gameSaveName = myGameStateField.getText();
+            gameSaveName = myGameStateField.getText();
             CheckFileValidity checkFileValidity = new CheckFileValidity();
-//            checkFileValidity.checkAlreadyExists(gameSaveName);
+            checkFileValidity.checkAlreadyExists(gameSaveName);
             gameSaveName = checkFileValidity.checkValidLength(gameSaveName);
             String gameStateFile = new AppendExtension().appendExtension(gameSaveName);
             SerializeMapGenerator serializeMapGenerator = new SerializeMapGenerator(gameStateFile);

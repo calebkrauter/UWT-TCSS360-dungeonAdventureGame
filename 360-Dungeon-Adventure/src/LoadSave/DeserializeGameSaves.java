@@ -16,15 +16,15 @@ public class DeserializeGameSaves {
     public void deserializeGameSaves() throws IOException {
         ArrayList<String> deserializedGameSaves = null;
 
-        FileInputStream fileOutputStream = null;
+        FileInputStream fileInputStream = null;
         try {
-            fileOutputStream = new FileInputStream("game-saves.ser");
+            fileInputStream = new FileInputStream("game-saves.ser");
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
         ObjectInputStream objectInputStream = null;
         try {
-            objectInputStream = new ObjectInputStream(fileOutputStream);
+            objectInputStream = new ObjectInputStream(fileInputStream);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -36,13 +36,9 @@ public class DeserializeGameSaves {
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-//
-//        for (int i = 0; i < gameSaves.size(); i++) {
-//
-//            serialize.setGameSaves(gameSaves.get(i));
-//        }
+
         objectInputStream.close();
-        fileOutputStream.close();
+        fileInputStream.close();
     }
     private void setDeserializedGameSaves(ArrayList<String> theDeserializedGameSaves) {
         myDeserializedGameSaves = theDeserializedGameSaves;

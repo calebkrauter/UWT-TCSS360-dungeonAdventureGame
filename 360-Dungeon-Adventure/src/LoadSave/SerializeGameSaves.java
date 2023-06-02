@@ -3,20 +3,21 @@ package LoadSave;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.io.Serializable;
 import java.util.ArrayList;
 
-public class SerializeGameSaves implements Serializable {
+public class SerializeGameSaves {
     ArrayList<String> myGameSaves;
     static String myGameStateFile;
 
     public SerializeGameSaves() {
-        myGameSaves = new ArrayList<>();
 //        setGameSaves(theGameStateFile);
 
     }
 
     public void serializeGameSaves(String theGameStateFile) throws IOException {
+        DeserializeGameSaves deserializeGameSaves = new DeserializeGameSaves();
+        deserializeGameSaves.deserializeGameSaves();
+        myGameSaves = deserializeGameSaves.getDeserializedGameSaves();
         if (myGameSaves == null) {
             myGameSaves = new ArrayList<>();
         }
@@ -26,14 +27,13 @@ public class SerializeGameSaves implements Serializable {
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
 
 
-        objectOutputStream.writeObject(myGameSaves);
+        objectOutputStream.writeObject(getGameSaves());
         objectOutputStream.close();
         fileOutputStream.close();
     }
 
     public void setGameSaves(String theGameFile) {
-        myGameStateFile = theGameFile;
-        myGameSaves.add(myGameStateFile);
+        myGameSaves.add(theGameFile);
         for (int i = 0; i < myGameSaves.size(); i++) {
             System.out.println(myGameSaves.get(i));
         }

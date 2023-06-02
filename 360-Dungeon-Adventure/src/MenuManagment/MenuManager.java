@@ -267,6 +267,9 @@ public class MenuManager extends JPanel {
         myMainLoadButton.addActionListener(e -> {
             new DisableMenu(mainMenuComponents);
             try {
+                DeserializeGameSaves deserializeGameSaves = new DeserializeGameSaves();
+                deserializeGameSaves.deserializeGameSaves();
+
                 addLoadSaveSelectMenu();
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
@@ -367,11 +370,16 @@ public class MenuManager extends JPanel {
 
             String gameStateFile = new AppendExtension().appendExtension(myGameStateField.getText());
             SerializeMapGenerator serializeMapGenerator = new SerializeMapGenerator(gameStateFile);
+            SerializeGameSaves serializeGameSaves = new SerializeGameSaves();
             try {
-                new SerializeGameSaves().serializeGameSaves(gameStateFile);
+                serializeGameSaves.serializeGameSaves(gameStateFile);
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
+//            for (int i = 0; i < serializeGameSaves.getGameSaves().size(); i++) {
+//                System.out.println(serializeGameSaves.getGameSaves().get(i));
+//                System.out.println(i);
+//            }
             new DisableMenu(gamePlayMenuComponents);
             try {
                 new GUI(true, gameStateFile);

@@ -30,7 +30,7 @@ public class Serialize {
 
 
 
-
+        setGameSaves(theGameStateFile);
         FileOutputStream fileOutputStream = new FileOutputStream(theGameStateFile);
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
 
@@ -41,8 +41,13 @@ public class Serialize {
     }
 
     public void setGameSaves(String theGameFile) {
+        myGameSaves = new ArrayList<>();
         myGameStateFile = theGameFile;
         myGameSaves.add(myGameStateFile);
+        for (String val : myGameSaves) {
+
+            System.out.println(val);
+        }
     }
 
     public ArrayList<String> getGameSaves() {

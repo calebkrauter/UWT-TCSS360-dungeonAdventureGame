@@ -151,24 +151,39 @@ public class MenuManager extends JPanel {
     private void addLoadSaveSelectMenu() throws IOException {
         setMyTitles(loadGameTitles);
         modifyInsets.setInsets(this.getHeight() - 100, -800, 0, 0);
-        ComponentGenerator loadSaveSelection = new ComponentGenerator(getMyTitles(), GridBagConstraints.PAGE_START, modifyInsets.getMyInsetTop(), modifyInsets.getMyInsetLeft(), modifyInsets.getMyInsetBottom(), modifyInsets.getMyInsetRight(), GO_RIGHT);
+        ComponentGenerator loadSaveSelectionComponent = new ComponentGenerator(getMyTitles(), GridBagConstraints.PAGE_START, modifyInsets.getMyInsetTop(), modifyInsets.getMyInsetLeft(), modifyInsets.getMyInsetBottom(), modifyInsets.getMyInsetRight(), GO_RIGHT);
 
-        myBackButton = (JButton) loadSaveSelection.getComponents()[0][BUTTON];
-        myLeftSelect = (JButton) loadSaveSelection.getComponents()[1][BUTTON];
-        mySelect = (JButton) loadSaveSelection.getComponents()[2][BUTTON];
-        myRightSelect = (JButton) loadSaveSelection.getComponents()[3][BUTTON];
+        myBackButton = (JButton) loadSaveSelectionComponent.getComponents()[0][BUTTON];
+        myLeftSelect = (JButton) loadSaveSelectionComponent.getComponents()[1][BUTTON];
+        mySelect = (JButton) loadSaveSelectionComponent.getComponents()[2][BUTTON];
+        myRightSelect = (JButton) loadSaveSelectionComponent.getComponents()[3][BUTTON];
+
+        Serialize serialize = new Serialize();
+
+        // TODO serialize the save state files to a seperate file so that they can be referenced.
+        // TODO implement a feature to erase the file holding the gamestate files
+//        mySelect.setText(serialize.getGameSaves().get(0));
         loadSaveSelectionComponents = new JComponent[] {myBackButton, myLeftSelect, mySelect, myRightSelect};
         for (int i = 0; i < loadSaveSelectionComponents.length; i++) {
-            this.add(loadSaveSelectionComponents[i], loadSaveSelection.getMyButtonConstraints()[i]);
+            this.add(loadSaveSelectionComponents[i], loadSaveSelectionComponent.getMyButtonConstraints()[i]);
         }
         addLoadSaveActions();
     }
 
-    private void addLoadSaveActions() {
+    private void addLoadSaveActions() throws IOException {
         new EnableMenu(loadSaveSelectionComponents);
         myBackButton.addActionListener(e -> new GoBackAction(loadSaveSelectionComponents, mainMenuComponents));
+        LoadSaveSelection loadSaveSelection = new LoadSaveSelection();
+        Serialize serialize = new Serialize();
+
         myLeftSelect.addActionListener(e -> {
-            mySelect.setText(new Serialize().getGameSaves().get(0));
+            try {
+                loadSaveSelection.loadSaveSelection(true, false);
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+
+            mySelect.setText(serialize.getGameSaves().get(loadSaveSelection.getLoadSaveSelection()));
         });
     }
     private void addOptionsMenu() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
@@ -252,10 +267,8 @@ public class MenuManager extends JPanel {
         setShownCharacter(true);
         HeroSelection heroSelection = new HeroSelection();
         myLeftSelect.addActionListener(e -> {
-            goLeft.set(true);
-            goRight.set(false);
             try {
-                new HeroSelection(goLeft.get(), goRight.get());
+                new HeroSelection(true, false);
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
@@ -266,10 +279,8 @@ public class MenuManager extends JPanel {
             addGamePlayMenu();
         });
         myRightSelect.addActionListener(e -> {
-            goLeft.set(false);
-            goRight.set(true);
             try {
-                new HeroSelection(goLeft.get(), goRight.get());
+                new HeroSelection(false, true);
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
@@ -416,14 +427,14 @@ public class MenuManager extends JPanel {
         g.drawImage(mainImage, 0, 0, myJframe.getWidth(), myJframe.getHeight(), null);
 
         if (getShownCharacter()) {
-            if (heroSelection.getMyHeroSelection() == 0) {
-                image = characters[heroSelection.getMyHeroSelection()];
-            } else if (heroSelection.getMyHeroSelection() == 1) {
+            if (heroSelection.getHeroSelection() == 0) {
+                image = characters[heroSelection.getHeroSelection()];
+            } else if (heroSelection.getHeroSelection() == 1) {
 
-                image = characters[heroSelection.getMyHeroSelection()];
-            } else if (heroSelection.getMyHeroSelection() == 2) {
+                image = characters[heroSelection.getHeroSelection()];
+            } else if (heroSelection.getHeroSelection() == 2) {
 
-                image = characters[heroSelection.getMyHeroSelection()];
+                image = characters[heroSelection.getHeroSelection()];
             }
             g.drawImage(image,(this.getWidth() - image.getWidth(null)) / 2 - 20,
                     (this.getHeight() - image.getHeight(null)) / 2 - 20, 100, 100, null);

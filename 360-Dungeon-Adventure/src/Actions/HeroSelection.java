@@ -39,7 +39,7 @@ public class HeroSelection {
         myHeroSelection = theHeroSelection;
     }
 
-    public int getMyHeroSelection() {
+    public int getHeroSelection() {
         return myHeroSelection;
     }
 

@@ -1,70 +1,63 @@
 package Actions;
 
 import java.io.IOException;
+import java.io.Serializable;
+import java.util.ArrayList;
 
-public class LoadSaveSelection {
-
+public class LoadSaveSelection implements Serializable {
+    static int mySaveSelection = 0;
+    static int i = 0;
+    static boolean mySelectedSave = false;
+    static Serialize serialize;
+    ArrayList<String> mySaves;
     public LoadSaveSelection() {
-        loadSaveSelection();
+        serialize = new Serialize();
+        mySaves = serialize.getGameSaves();
     }
 
-    private void loadSaveSelection() {
+    public void loadSaveSelection(boolean goLeft, boolean goRight) throws IOException {
+        if (goLeft) {
+            --i;
+            this.containInBounds();
+            this.setLoadSaveSelection(i);
+        }
 
-package Actions;
-
-import java.io.IOException;
-
-        public class HeroSelection {
-            static int myHeroSelection = 0;
-            static int i = 1;
-            static boolean mySelectedHero = false;
-            public HeroSelection() {
-
-            }
-
-            public HeroSelection(boolean goLeft, boolean goRight) throws IOException {
-                if (goLeft) {
-                    --i;
-                    this.containInBounds();
-                    this.setHeroSelection(i);
-                }
-
-                if (goRight) {
-                    ++i;
-                    this.containInBounds();
-                    this.setHeroSelection(i);
-                }
-
-            }
-
-            private void containInBounds() {
-                if (i < 0) {
-                    i = 2;
-                } else if (i > 2) {
-                    i = 0;
-                }
-
-            }
-
-            private void setHeroSelection(int theHeroSelection) {
-                myHeroSelection = theHeroSelection;
-            }
-
-            public int getMyHeroSelection() {
-                return myHeroSelection;
-            }
-
-            public void setHeroSelected(boolean theSelectedHero) {
-                mySelectedHero = theSelectedHero;
-            }
-
-            public boolean getHeroSelected() {
-                return mySelectedHero;
-            }
-
+        if (goRight) {
+            ++i;
+            this.containInBounds();
+            this.setLoadSaveSelection(i);
         }
 
     }
+    private void containInBounds() {
+        if (serialize.getGameSaves() != null) {
+
+            if (i < 0) {
+                i = serialize.getGameSaves().size() - 1;
+            } else if (i > serialize.getGameSaves().size() - 1) {
+                i = 0;
+            }
+        }
+
+    }
+    private void setLoadSaveSelection(int theSaveSelection) {
+        mySaveSelection = theSaveSelection;
+    }
+
+    public int getLoadSaveSelection() {
+        return mySaveSelection;
+    }
+
+    public void setLoadSaveSelected(boolean theSelectedSave) {
+        mySelectedSave = theSelectedSave;
+    }
+
+    public boolean getLoadSaveSelected() {
+        return mySelectedSave;
+    }
+
+
+
 
 
 }

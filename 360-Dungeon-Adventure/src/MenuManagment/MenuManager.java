@@ -39,7 +39,6 @@ public class MenuManager extends JPanel {
     final private int SLIDER = 2;
     final private int CHECK_BOX = 3;
     final private int TEXT_FIELD = 4;
-    final private int[] BUTTON_CODES;
     //    final private int anchor, iPAD x, iPAD Y, INSET LEFT RIGHT TOP BOTTOM
     final private int GO_LEFT = 65;
     final private int GO_RIGHT = 99;
@@ -81,6 +80,10 @@ public class MenuManager extends JPanel {
     UpdateSlider updateSlider;
     JComponent[] loadSaveSelectionComponents;
 
+    public MenuManager() throws IOException {
+
+    }
+
     private void setMyTitles(String[] theTitles) {
         myTitles = theTitles;
     }
@@ -115,7 +118,6 @@ public class MenuManager extends JPanel {
         characterSelectTitles = new String[]{"<--BACK", "<--", "SELECT", "-->"};
         loadGameTitles = new String[]{"<--BACK", "<--", "SELECT", "-->", "DELETE"};
         gameplayMenuTitles = new String[]{"MAP_SIZE_SLIDER", "EASY", "HARD", "Game File Name", "START!", "<--BACK"};
-        BUTTON_CODES = new int[] {BUTTON, TOGGLE_BUTTON, SLIDER, CHECK_BOX, TEXT_FIELD};
         screenData = new ScreenData();
         addMainMenu();
 
@@ -525,9 +527,14 @@ public class MenuManager extends JPanel {
         });
 
     }
-
-    private void startInGameMusic(String theMusic) {
+    public void stopInGameMusic() {
         musicPlayer.getClip().close();
+    }
+    public void startInGameMusic(String theMusic) {
+        if (musicPlayer != null && musicPlayer.getClip() != null) {
+
+            musicPlayer.getClip().close();
+        }
         try {
             musicPlayer.playMusic(theMusic);
         } catch (LineUnavailableException ex) {

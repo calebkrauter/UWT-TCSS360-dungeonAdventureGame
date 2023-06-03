@@ -21,8 +21,11 @@ public class SerializeGameSaves {
         if (myGameSaves == null) {
             myGameSaves = new ArrayList<>();
         }
+//        myGameSaves = null;
         theGameStateFile = new CheckFileValidity().checkThatFileIsNotSavesFile(theGameStateFile);
-        setGameSavesByFile(theGameStateFile);
+        if (!(deserializeGameSaves.getDeserializedGameSaves().contains(theGameStateFile))) {
+            setGameSavesByFile(theGameStateFile);
+        }
         FileOutputStream fileOutputStream = new FileOutputStream("game-saves.ser");
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
 

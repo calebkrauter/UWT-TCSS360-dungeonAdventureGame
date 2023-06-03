@@ -19,7 +19,6 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 
@@ -195,6 +194,18 @@ public class MenuManager extends JPanel {
 
         myLeftSelect.addActionListener(e -> {
             try {
+                if (deserializeGameSaves == null || deserializeGameSaves.getDeserializedGameSaves() == null || deserializeGameSaves.getDeserializedGameSaves().isEmpty()) {
+                    setLoadSaveButtonsEnabled(false);
+                    mySelect.setText("NO SAVES");
+                } else {
+                    setLoadSaveButtonsEnabled(true);
+                }
+                deserializeGameSaves.deserializeGameSaves();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+
+            try {
                 loadSaveSelection.loadSaveSelection(true, false);
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
@@ -203,15 +214,21 @@ public class MenuManager extends JPanel {
 
         });
         mySelect.addActionListener(e -> {
-            startInGameMusic(TREASURE_HUNT_SONG);
-
             try {
+                if (deserializeGameSaves == null || deserializeGameSaves.getDeserializedGameSaves() == null || deserializeGameSaves.getDeserializedGameSaves().isEmpty()) {
+                    setLoadSaveButtonsEnabled(false);
+                    mySelect.setText("NO SAVES");
+                } else {
+                    setLoadSaveButtonsEnabled(true);
+                }
                 deserializeGameSaves.deserializeGameSaves();
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
 
-                System.out.println(deserializeGameSaves.getDeserializedGameSaves().get(loadSaveSelection.getLoadSaveSelection()).toString());
+            startInGameMusic(TREASURE_HUNT_SONG);
+
+            System.out.println(deserializeGameSaves.getDeserializedGameSaves().get(loadSaveSelection.getLoadSaveSelection()).toString());
             try {
                 new GUI(true, deserializeGameSaves.getDeserializedGameSaves().get(loadSaveSelection.getLoadSaveSelection()).toString());
             } catch (UnsupportedAudioFileException ex) {
@@ -226,53 +243,81 @@ public class MenuManager extends JPanel {
 
 
         });
+
         myRightSelect.addActionListener(e -> {
             try {
-                loadSaveSelection.loadSaveSelection(false, true);
-            } catch (IOException ex) {
-                throw new RuntimeException(ex);
-            }
-            int theSelection = loadSaveSelection.containInBounds(loadSaveSelection.getLoadSaveSelection());
-            mySelect.setText(deserializeGameSaves.getDeserializedGameSaves().get(theSelection).toString());
-
-
-        });
-        myDelete.addActionListener(e -> {
-            StringBuilder sb = new StringBuilder();
-            try {
-                deserializeGameSaves.deserializeGameSaves();
-                loadSaveSelection.loadSaveSelection(true, false);
-
-            } catch (IOException ex) {
-                throw new RuntimeException(ex);
-            }
-            ArrayList<String> newSaves = new ArrayList<>();
-            newSaves = deserializeGameSaves.getDeserializedGameSaves();
-            serializeGameSaves.setGameSaves(newSaves);
-            try {
-                int theSelection = loadSaveSelection.containInBounds(loadSaveSelection.getLoadSaveSelection());
-
-                serializeGameSaves.deleteSaveAndSerializeRemainingSaves(theSelection);
-
-                // This code block from chatgpt
-                File file = new File(deserializeGameSaves.getDeserializedGameSaves().get(theSelection));
-                System.out.println(deserializeGameSaves.getDeserializedGameSaves().get(theSelection));
-                if (file.exists()) {
-                    file.delete();
-                }
-
-                newSaves.remove(theSelection);
-                if (deserializeGameSaves.getDeserializedGameSaves().size() == 0) {
+                if (deserializeGameSaves == null || deserializeGameSaves.getDeserializedGameSaves() == null || deserializeGameSaves.getDeserializedGameSaves().isEmpty()) {
                     setLoadSaveButtonsEnabled(false);
                     mySelect.setText("NO SAVES");
                 } else {
                     setLoadSaveButtonsEnabled(true);
-                    if (theSelection >= deserializeGameSaves.getDeserializedGameSaves().size()) {
+                }
+                deserializeGameSaves.deserializeGameSaves();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
 
-                        theSelection -= 1;
+            try {
+                loadSaveSelection.loadSaveSelection(true, false);
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+            mySelect.setText(deserializeGameSaves.getDeserializedGameSaves().get(loadSaveSelection.getLoadSaveSelection()).toString());
+
+
+        });
+        myDelete.addActionListener(e -> {
+//            StringBuilder sb = new StringBuilder();
+//            try {
+//                deserializeGameSaves.deserializeGameSaves();
+//                loadSaveSelection.loadSaveSelection(true, false);
+//
+//            } catch (IOException ex) {
+//                throw new RuntimeException(ex);
+//            }
+
+            try {
+//                int theSelection = loadSaveSelection.containInBounds(loadSaveSelection.getLoadSaveSelection());
+//                deserializeGameSaves.getDeserializedGameSaves().get(loadSaveSelection.getLoadSaveSelection())
+
+                if (deserializeGameSaves == null || deserializeGameSaves.getDeserializedGameSaves() == null || deserializeGameSaves.getDeserializedGameSaves().isEmpty()) {
+                    setLoadSaveButtonsEnabled(false);
+                    mySelect.setText("NO SAVES");
+                } else {
+
+                    setLoadSaveButtonsEnabled(true);
+                    int theFileToDelete = loadSaveSelection.getLoadSaveSelection();
+
+                    // This code block from chatgpt
+                    File file = new File(deserializeGameSaves.getDeserializedGameSaves().get(theFileToDelete));
+                    System.out.println(deserializeGameSaves.getDeserializedGameSaves().get(theFileToDelete));
+                    if (file.exists()) {
+                        file.delete();
                     }
-                    mySelect.setText(deserializeGameSaves.getDeserializedGameSaves().get(theSelection).toString());
+                    serializeGameSaves.deleteSaveAndSerializeRemainingSaves(theFileToDelete);
+
+                    myLeftSelect.getAction();
                     deserializeGameSaves.deserializeGameSaves();
+                    if (deserializeGameSaves == null || deserializeGameSaves.getDeserializedGameSaves() == null || deserializeGameSaves.getDeserializedGameSaves().isEmpty()) {
+                        setLoadSaveButtonsEnabled(false);
+                        mySelect.setText("NO SAVES");
+                    } else {
+
+                        mySelect.setText(deserializeGameSaves.getDeserializedGameSaves().get(loadSaveSelection.getLoadSaveSelection()).toString());
+                    }
+
+//                    try {
+//                        loadSaveSelection.loadSaveSelection(true, false);
+//                    } catch (IOException ex) {
+//                        throw new RuntimeException(ex);
+//                    }
+//                    serializeGameSaves.deleteSaveAndSerializeRemainingSaves(theFileToDelete);
+//
+//                    deserializeGameSaves.deserializeGameSaves();
+//                    int theSelection = loadSaveSelection.getLoadSaveSelection();
+////                    theSelection -= 1;
+////                    theSelection = loadSaveSelection.containInBounds(theSelection);
+//                    mySelect.setText(deserializeGameSaves.getDeserializedGameSaves().get(loadSaveSelection.getLoadSaveSelection()).toString());
                 }
 
             } catch (IOException ex) {

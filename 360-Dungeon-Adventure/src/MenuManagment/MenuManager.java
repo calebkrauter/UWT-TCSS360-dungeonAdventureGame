@@ -232,7 +232,8 @@ public class MenuManager extends JPanel {
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
-            mySelect.setText(deserializeGameSaves.getDeserializedGameSaves().get(loadSaveSelection.getLoadSaveSelection()).toString());
+            int theSelection = loadSaveSelection.containInBounds(loadSaveSelection.getLoadSaveSelection());
+            mySelect.setText(deserializeGameSaves.getDeserializedGameSaves().get(theSelection).toString());
 
 
         });

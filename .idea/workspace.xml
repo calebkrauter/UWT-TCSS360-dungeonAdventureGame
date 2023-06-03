@@ -4,31 +4,57 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="Additions to MapManager">
-      <change afterPath="$PROJECT_DIR$/src/View/map/CollisionTile.java" afterDir="false" />
+    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="deleted mapManager and moved the 1 method to roommanager. Cleaned up all instances of mapGenerator and only use 1. CollisionTile Class that has hitbox and boolean.">
+      <change afterPath="$PROJECT_DIR$/MainMenu.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TreasureHunt.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game-saves.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mainMenu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/AboutAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/AppendExtension.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/CreditsAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/EasyModeAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/GoBackAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/HardModeAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/HeroSelection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/LoadAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/LoadButtonAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/LoadSaveSelection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/MapSizeChange.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/MusicPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/OptionsButtonAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/PlayAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/PlayButtonAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/StartAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/ToggleMusicChange.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/UpdateSlider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/VolumeChange.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ChangeMenuAttributes/DisableMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ChangeMenuAttributes/EnableMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/ComponentGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/ModifyInsets.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LoadSave/CheckFileValidity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LoadSave/DeserializeGameSaves.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LoadSave/DeserializeMapGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LoadSave/SerializeGameSaves.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LoadSave/SerializeMapGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MenuManagment/AddCharacterSelectorPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MenuManagment/CharacterSelectorMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MenuManagment/GUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MenuManagment/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MenuManagment/MenuManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MenuManagment/OptionsMenuPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MenuManagment/ScreenData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/RoomTiles/closedDoorRoom.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/RoomTiles/openDoorRoom.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/RoomTiles/openDoorRoom.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/TextMaps/doorRoom.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/TextMaps/doorRoom.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/TextMaps/intersectionPath.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/TextMaps/intersectionPath.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/TextMaps/openDoorRoom.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/TextMaps/openDoorRoom.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/TextMaps/walls.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/TextMaps/walls.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/TextMaps/xPath.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/TextMaps/xPath.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/TextMaps/yPath.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/TextMaps/yPath.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ItemSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ItemSetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MapManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/entity/Archer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/entity/Archer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/entity/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/entity/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/entity/StartHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/entity/StartHero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/entity/Stevey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/entity/Stevey.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/map/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/map/Room.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/map/RoomManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/map/RoomManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GamePanel.java" afterDir="false" />
     </list>
-    <list id="ff8a1f12-e31b-4acb-8e38-ce3f58b732c1" name="Changes by James" comment="">
-      <change beforePath="$PROJECT_DIR$/src/View/map/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/map/Room.java" afterDir="false" />
+    <list id="ff8a1f12-e31b-4acb-8e38-ce3f58b732c1" name="Changes by James" comment="" />
+    <list id="c9d39182-ef57-426f-855e-eb4806e1b925" name="Changes by Kraut" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Model/MapGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MapGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Main.java" afterDir="false" />
     </list>
-    <list id="c9d39182-ef57-426f-855e-eb4806e1b925" name="Changes by Kraut" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,11 +112,12 @@
     </option>
   </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/View/map/Room.java">
+    <file path="$PROJECT_DIR$/src/Controller/GamePanel.java">
       <ranges>
-        <range start1="8" end1="9" start2="8" end2="9" changelist="d91291d8-a8e4-4500-8d53-d60e74afbf0b" />
-        <range start1="20" end1="21" start2="20" end2="21" changelist="ff8a1f12-e31b-4acb-8e38-ce3f58b732c1" />
-        <range start1="24" end1="25" start2="24" end2="25" changelist="d91291d8-a8e4-4500-8d53-d60e74afbf0b" />
+        <range start1="2" end1="2" start2="2" end2="3" changelist="c9d39182-ef57-426f-855e-eb4806e1b925" />
+        <range start1="94" end1="95" start2="95" end2="96" changelist="d91291d8-a8e4-4500-8d53-d60e74afbf0b" />
+        <range start1="104" end1="104" start2="105" end2="106" changelist="c9d39182-ef57-426f-855e-eb4806e1b925" />
+        <range start1="111" end1="111" start2="113" end2="114" changelist="d91291d8-a8e4-4500-8d53-d60e74afbf0b" />
       </ranges>
     </file>
   </component>
@@ -103,24 +130,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Makai-Development2&quot;,
-    &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/makaimartinez/IdeaProjects/360-Dungeon-Adventure&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Makai-Development2",
+    "ignore.preview.features.used": "true",
+    "last_opened_file_path": "/Users/makaimartinez/IdeaProjects",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Model.Object" />
@@ -129,15 +157,36 @@
       <recent name="View.map" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/.." />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/res/TextMaps" />
       <recent name="$PROJECT_DIR$/res/RoomTiles" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/res/TextMaps" />
       <recent name="$PROJECT_DIR$/res/Object" />
-      <recent name="$PROJECT_DIR$/res/hero/Stevey" />
-      <recent name="$PROJECT_DIR$/res/hero/Archer" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MenuManagment.Main" />
+      <module name="360-Dungeon-Adventure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="MenuManagment.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -175,7 +224,8 @@
       <workItem from="1685430142767" duration="477000" />
       <workItem from="1685440511501" duration="8361000" />
       <workItem from="1685542019895" duration="611000" />
-      <workItem from="1685583895316" duration="12232000" />
+      <workItem from="1685583895316" duration="12400000" />
+      <workItem from="1685759755572" duration="5037000" />
     </task>
     <task id="LOCAL-00001" summary="100% successfully interprets randomly generated maps for the display.">
       <created>1684131979650</created>
@@ -401,7 +451,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685583993385</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="deleted mapManager and moved the 1 method to roommanager. Cleaned up all instances of mapGenerator and only use 1. CollisionTile Class that has hitbox and boolean.">
+      <created>1685596297368</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1685596297368</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -419,7 +476,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="code base." />
     <MESSAGE value="code base bug fixes." />
     <MESSAGE value="code base final bug fixes?" />
     <MESSAGE value="trying to get things to work" />
@@ -444,17 +500,7 @@
     <MESSAGE value="room" />
     <MESSAGE value="Moving code to different classes to make more sense. Additions to MapManager and CollisionHandler." />
     <MESSAGE value="Additions to MapManager" />
-    <option name="LAST_COMMIT_MESSAGE" value="Additions to MapManager" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/View/map/RoomManager.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="deleted mapManager and moved the 1 method to roommanager. Cleaned up all instances of mapGenerator and only use 1. CollisionTile Class that has hitbox and boolean." />
+    <option name="LAST_COMMIT_MESSAGE" value="deleted mapManager and moved the 1 method to roommanager. Cleaned up all instances of mapGenerator and only use 1. CollisionTile Class that has hitbox and boolean." />
   </component>
 </project>

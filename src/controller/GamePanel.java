@@ -92,7 +92,7 @@ public class GamePanel extends JPanel implements Runnable{
 
     // ASSETS
     public ParentItem myItems[] = new ParentItem[10];
-    public ItemSetter myItemSetter = new ItemSetter(this, myRoomManager);
+    public ItemSetter myItemSetter;
     private ItemDisplay myItemDisplay;
 
 
@@ -109,6 +109,7 @@ public class GamePanel extends JPanel implements Runnable{
         // some form of getHeroType() method from menu!!
         myHero = myArcher;
 
+        myItemSetter = new ItemSetter(this, myRoomManager);
         myCollisionHandler = new CollisionHandler(this);
         myHeroDisplay = new HeroDisplay(this, myKeyHandler, myHero, myCollisionHandler);
         myItemDisplay = new ItemDisplay(this);

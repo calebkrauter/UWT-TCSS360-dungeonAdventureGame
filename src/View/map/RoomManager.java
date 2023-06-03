@@ -13,11 +13,13 @@ public class RoomManager {
 
     private GamePanel myGamePanel;
 
+    /**
+     * array of room objects made by map generator.
+     */
     private Room[] room;
 
     /**
-     * EX:
-     *
+     * the map made by map generator
      */
     private String[][] myWorldMap;
 
@@ -83,7 +85,7 @@ public class RoomManager {
         collisionWorldMapMaxRows = myGamePanel.myWorldMapMaxRow * textFileMaxRows;
         myCollisionWorldMap = new CollisionTile[collisionWorldMapMaxCols][collisionWorldMapMaxRows];
         createCollisionWorldMap();
-        printCollisionMap();
+//        printCollisionMap();
     }
 
     /**
@@ -142,9 +144,7 @@ public class RoomManager {
      * Sets the room's collision map and image.
      */
     private void setRooms(){
-
         try{
-
             // "#" = walls = tile[0]
             room[0] = new Room();
             room[0].setRoomImage(ImageIO.read(new File("res/RoomTiles/wall.png")));
@@ -194,42 +194,42 @@ public class RoomManager {
             for(int j = 0; j < myGamePanel.myWorldMapMaxCol; j++){
                 if (myWorldMap[i][j].equals("#")) {
                     theRoomType = 0;
-                    addRoomToCollisionWorldMap(theRoomType, i, j);
+//                    addRoomToCollisionWorldMap(theRoomType, i, j);
                 }
                 if (myWorldMap[i][j].equals("|")) {
                     theRoomType = 1;
-                    addRoomToCollisionWorldMap(theRoomType, i, j);
+//                    addRoomToCollisionWorldMap(theRoomType, i, j);
                 }
                 if (myWorldMap[i][j].equals("-")) {
                     theRoomType = 2;
-                    addRoomToCollisionWorldMap(theRoomType, i, j);
+//                    addRoomToCollisionWorldMap(theRoomType, i, j);
                 }
                 if (myWorldMap[i][j].equals("O")) {
                     theRoomType = 3;
-                    addRoomToCollisionWorldMap(theRoomType, i, j);
+//                    addRoomToCollisionWorldMap(theRoomType, i, j);
                 }
                 if (myWorldMap[i][j].equals("S")) {
                     theRoomType = 4;
-                    addRoomToCollisionWorldMap(theRoomType, i, j);
+//                    addRoomToCollisionWorldMap(theRoomType, i, j);
                 }
                 if (myWorldMap[i][j].equals("E")) {
                     theRoomType = 5;
-                    addRoomToCollisionWorldMap(theRoomType, i, j);
+//                    addRoomToCollisionWorldMap(theRoomType, i, j);
                 }
                 if (myWorldMap[i][j].equals("[")) {
                     theRoomType = 6;
-                    addRoomToCollisionWorldMap(theRoomType, i, j);
+//                    addRoomToCollisionWorldMap(theRoomType, i, j);
                 }
             }
         }
     }
 
     public void addRoomToCollisionWorldMap(int theRoomType, int theRoomCol, int theRoomRow) {
-        for(int k = theRoomCol * textFileMaxCols; k < collisionWorldMapMaxRows; k++) {
-            for (int l = theRoomRow * textFileMaxRows; l < collisionWorldMapMaxCols; l++) {
-                myCollisionWorldMap[l][k] = room[theRoomType].getCollisionMap()[l][k];
-            }
-        }
+//        for(int k = theRoomCol * textFileMaxCols; k < collisionWorldMapMaxRows; k++) {
+//            for (int l = theRoomRow * textFileMaxRows; l < collisionWorldMapMaxCols; l++) {
+//                myCollisionWorldMap[l][k] = room[theRoomType].getCollisionMap()[l][k];
+//            }
+//        }
     }
 
 

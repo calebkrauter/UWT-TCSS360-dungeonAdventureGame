@@ -16,9 +16,7 @@ public class Room {
         return myRoomImage;
     }
 
-     //= new boolean[textFileMaxCols][textFileMaxRows]
-
-    public void setCollisionMap(boolean[][] theCollisionMap){
+    public void setCollisionMap(CollisionTile[][] theCollisionMap){
         myCollisionMap = theCollisionMap;
     }
 

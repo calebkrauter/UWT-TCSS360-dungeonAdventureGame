@@ -2,6 +2,7 @@
 package MenuManagment;
 
 import Actions.MusicPlayer;
+import Actions.PlayButtonSound;
 import Controller.GamePanel;
 import LoadSave.SerializeMapGenerator;
 
@@ -70,6 +71,7 @@ public class GUI {
         JMenu menu = new JMenu("THE LOST PILLARS OF OOP");
         JButton mainMenuButton = new JButton("Main Menu");
         mainMenuButton.addActionListener(e -> {
+            new PlayButtonSound();
 
             setPlayGame(false);
             try {
@@ -88,6 +90,8 @@ public class GUI {
         JButton saveButton = new JButton("SAVE");
         saveButton.addActionListener(e -> {
             new SerializeMapGenerator(myGameStateFile);
+            new PlayButtonSound();
+
             System.out.println("Serialized " + myGameStateFile + " ... SAVING");
         });
         menu.add(mainMenuButton);

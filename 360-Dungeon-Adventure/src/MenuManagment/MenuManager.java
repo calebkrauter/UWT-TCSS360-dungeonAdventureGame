@@ -14,7 +14,11 @@ import javax.imageio.ImageIO;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import java.awt.*;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -190,11 +194,15 @@ public class MenuManager extends JPanel {
 
     private void addLoadSaveActions() throws IOException {
         new EnableMenu(loadSaveSelectionComponents);
-        myBackButton.addActionListener(e -> new GoBackAction(loadSaveSelectionComponents, mainMenuComponents));
+        myBackButton.addActionListener(e -> {
+            new PlayButtonSound();
+            new GoBackAction(loadSaveSelectionComponents, mainMenuComponents);
+        });
         LoadSaveSelection loadSaveSelection = new LoadSaveSelection();
         SerializeGameSaves serializeGameSaves = new SerializeGameSaves();
 
         myLeftSelect.addActionListener(e -> {
+            new PlayButtonSound();
             try {
                 if (deserializeGameSaves == null || deserializeGameSaves.getDeserializedGameSaves() == null || deserializeGameSaves.getDeserializedGameSaves().isEmpty()) {
                     setLoadSaveButtonsEnabled(false);
@@ -217,6 +225,7 @@ public class MenuManager extends JPanel {
 
         });
         mySelect.addActionListener(e -> {
+            new PlayButtonSound();
             try {
                 if (deserializeGameSaves == null || deserializeGameSaves.getDeserializedGameSaves() == null || deserializeGameSaves.getDeserializedGameSaves().isEmpty()) {
                     setLoadSaveButtonsEnabled(false);
@@ -248,6 +257,7 @@ public class MenuManager extends JPanel {
         });
 
         myRightSelect.addActionListener(e -> {
+            new PlayButtonSound();
             try {
                 if (deserializeGameSaves == null || deserializeGameSaves.getDeserializedGameSaves() == null || deserializeGameSaves.getDeserializedGameSaves().isEmpty()) {
                     setLoadSaveButtonsEnabled(false);
@@ -271,6 +281,7 @@ public class MenuManager extends JPanel {
 
         });
         myDelete.addActionListener(e -> {
+            new PlayButtonSound();
 
             try {
                 if (deserializeGameSaves == null || deserializeGameSaves.getDeserializedGameSaves() == null || deserializeGameSaves.getDeserializedGameSaves().isEmpty()) {
@@ -378,6 +389,7 @@ public class MenuManager extends JPanel {
 
     private void addMainMenuActions() {
         myMainPlayButton.addActionListener(e -> {
+            new PlayButtonSound();
             new DisableMenu(mainMenuComponents);
             try {
                 addCharacterSelectMenu();
@@ -387,6 +399,7 @@ public class MenuManager extends JPanel {
 
         });
         myMainLoadButton.addActionListener(e -> {
+            new PlayButtonSound();
             new DisableMenu(mainMenuComponents);
             try {
                 addLoadSaveSelectMenu();
@@ -402,6 +415,7 @@ public class MenuManager extends JPanel {
             }
         });
         myMainOptionsButton.addActionListener(e -> {
+            new PlayButtonSound();
             try {
                 new OptionsButtonAction(mainMenuComponents);
             } catch (IOException ex) {
@@ -427,6 +441,7 @@ public class MenuManager extends JPanel {
         setShownCharacter(true);
         HeroSelection heroSelection = new HeroSelection();
         myLeftSelect.addActionListener(e -> {
+            new PlayButtonSound();
             try {
                 new HeroSelection(true, false);
             } catch (IOException ex) {
@@ -435,10 +450,12 @@ public class MenuManager extends JPanel {
             repaint();
         });
         mySelect.addActionListener(e -> {
+            new PlayButtonSound();
             heroSelection.setHeroSelected(true);
             addGamePlayMenu();
         });
         myRightSelect.addActionListener(e -> {
+            new PlayButtonSound();
             try {
                 new HeroSelection(false, true);
             } catch (IOException ex) {
@@ -447,6 +464,7 @@ public class MenuManager extends JPanel {
             repaint();
         });
         myBackButton.addActionListener(e -> {
+            new PlayButtonSound();
             new GoBackAction(characterSelectionComponents, mainMenuComponents);
             setShownCharacter(false);
         });
@@ -469,7 +487,6 @@ public class MenuManager extends JPanel {
 
 
         gamePlayMenuComponents = new JComponent[] {myMapSizeSlider, myEasyModeButton, myHardModeButton, myGameStateField, myStartButton, myBackButton};
-
         for (int i = 0; i < gamePlayMenuComponents.length; i++) {
             this.add(gamePlayMenuComponents[i], gamePlayComponentMaker.getMyButtonConstraints()[i]);
         }
@@ -485,14 +502,43 @@ public class MenuManager extends JPanel {
         HardModeAction hardModeAction = new HardModeAction();
         myMapSizeSlider.addChangeListener(e -> new MapSizeChange(myMapSizeSlider));
         myEasyModeButton.addActionListener(e -> {
+            new PlayButtonSound();
             easyModeAction.setEasyMode(true);
             hardModeAction.setHardMode(false);
         });
         myHardModeButton.addActionListener(e -> {
+            new PlayButtonSound();
             easyModeAction.setEasyMode(false);
             hardModeAction.setHardMode(true);
         });
+        myGameStateField.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                new PlayButtonSound();
+
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                new PlayButtonSound();
+
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                new PlayButtonSound();
+
+            }
+        });
+
+        myGameStateField.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                myGameStateField.selectAll();
+            }
+        });
         myStartButton.addActionListener(e -> {
+            new PlayButtonSound();
             gameSaveName = myGameStateField.getText();
             CheckFileValidity checkFileValidity = new CheckFileValidity();
             checkFileValidity.checkAlreadyExists(gameSaveName);
@@ -525,6 +571,7 @@ public class MenuManager extends JPanel {
         });
 
         myBackButton.addActionListener(e -> {
+            new PlayButtonSound();
             new GoBackAction(gamePlayMenuComponents, characterSelectionComponents);
             setShownCharacter(true);
             repaint();
@@ -564,6 +611,7 @@ public class MenuManager extends JPanel {
             }
         });
         myMusicToggle.addActionListener(e -> {
+            new PlayButtonSound();
             try {
                 if (myMusicToggle.isSelected()) {
                     new ToggleMusicChange(myMusicToggle, "MainMenu.wav");
@@ -583,6 +631,7 @@ public class MenuManager extends JPanel {
             }
         });
         myAboutButton.addActionListener(e -> {
+            new PlayButtonSound();
             try {
                 new AboutAction();
             } catch (FileNotFoundException ex) {
@@ -591,8 +640,14 @@ public class MenuManager extends JPanel {
                 throw new RuntimeException(ex);
             }
         });
-        myCreditsButton.addActionListener(e -> new CreditsAction());
-        myBackButton.addActionListener(e -> new GoBackAction(optionsMenuComponents, mainMenuComponents));
+        myCreditsButton.addActionListener(e -> {
+            new PlayButtonSound();
+            new CreditsAction();
+        });
+        myBackButton.addActionListener(e -> {
+            new PlayButtonSound();
+            new GoBackAction(optionsMenuComponents, mainMenuComponents);
+        });
     }
 
     public void setShownCharacter(boolean theCharacterIsShown) {

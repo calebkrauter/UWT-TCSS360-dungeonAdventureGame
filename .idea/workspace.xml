@@ -4,56 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="deleted mapManager and moved the 1 method to roommanager. Cleaned up all instances of mapGenerator and only use 1. CollisionTile Class that has hitbox and boolean.">
-      <change afterPath="$PROJECT_DIR$/MainMenu.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TreasureHunt.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/game-saves.ser" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mainMenu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Actions/AboutAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Actions/AppendExtension.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Actions/CreditsAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Actions/EasyModeAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Actions/GoBackAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Actions/HardModeAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Actions/HeroSelection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Actions/LoadAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Actions/LoadButtonAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Actions/LoadSaveSelection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Actions/MapSizeChange.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Actions/MusicPlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Actions/OptionsButtonAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Actions/PlayAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Actions/PlayButtonAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Actions/StartAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Actions/ToggleMusicChange.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Actions/UpdateSlider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Actions/VolumeChange.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ChangeMenuAttributes/DisableMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ChangeMenuAttributes/EnableMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/ComponentGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/ModifyInsets.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LoadSave/CheckFileValidity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LoadSave/DeserializeGameSaves.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LoadSave/DeserializeMapGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LoadSave/SerializeGameSaves.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LoadSave/SerializeMapGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MenuManagment/AddCharacterSelectorPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MenuManagment/CharacterSelectorMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MenuManagment/GUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MenuManagment/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MenuManagment/MenuManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MenuManagment/OptionsMenuPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MenuManagment/ScreenData.java" afterDir="false" />
+    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="starting to add caleb's menu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/map/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/map/Room.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/map/RoomManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/map/RoomManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GamePanel.java" afterDir="false" />
     </list>
     <list id="ff8a1f12-e31b-4acb-8e38-ce3f58b732c1" name="Changes by James" comment="" />
     <list id="c9d39182-ef57-426f-855e-eb4806e1b925" name="Changes by Kraut" comment="">
       <change beforePath="$PROJECT_DIR$/src/Model/MapGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MapGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,15 +69,9 @@
       </UrlAndAccount>
     </option>
   </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/Controller/GamePanel.java">
-      <ranges>
-        <range start1="2" end1="2" start2="2" end2="3" changelist="c9d39182-ef57-426f-855e-eb4806e1b925" />
-        <range start1="94" end1="95" start2="95" end2="96" changelist="d91291d8-a8e4-4500-8d53-d60e74afbf0b" />
-        <range start1="104" end1="104" start2="105" end2="106" changelist="c9d39182-ef57-426f-855e-eb4806e1b925" />
-        <range start1="111" end1="111" start2="113" end2="114" changelist="d91291d8-a8e4-4500-8d53-d60e74afbf0b" />
-      </ranges>
-    </file>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar:///Library/Java/JavaVirtualMachines/jdk-19.jdk/Contents/Home/lib/src.zip!/java.desktop/javax/imageio/ImageIO.java" root0="SKIP_INSPECTION" />
+    <setting file="jar:///Library/Java/JavaVirtualMachines/jdk-19.jdk/Contents/Home/lib/src.zip!/java.desktop/javax/swing/JComponent.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -225,7 +177,7 @@
       <workItem from="1685440511501" duration="8361000" />
       <workItem from="1685542019895" duration="611000" />
       <workItem from="1685583895316" duration="12400000" />
-      <workItem from="1685759755572" duration="5037000" />
+      <workItem from="1685759755572" duration="10657000" />
     </task>
     <task id="LOCAL-00001" summary="100% successfully interprets randomly generated maps for the display.">
       <created>1684131979650</created>
@@ -458,7 +410,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685596297368</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="starting to add caleb's menu">
+      <created>1685765170568</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1685765170568</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -476,7 +435,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="code base bug fixes." />
     <MESSAGE value="code base final bug fixes?" />
     <MESSAGE value="trying to get things to work" />
     <MESSAGE value="final bug fixes?" />
@@ -501,6 +459,22 @@
     <MESSAGE value="Moving code to different classes to make more sense. Additions to MapManager and CollisionHandler." />
     <MESSAGE value="Additions to MapManager" />
     <MESSAGE value="deleted mapManager and moved the 1 method to roommanager. Cleaned up all instances of mapGenerator and only use 1. CollisionTile Class that has hitbox and boolean." />
-    <option name="LAST_COMMIT_MESSAGE" value="deleted mapManager and moved the 1 method to roommanager. Cleaned up all instances of mapGenerator and only use 1. CollisionTile Class that has hitbox and boolean." />
+    <MESSAGE value="starting to add caleb's menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="starting to add caleb's menu" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/View/map/RoomManager.java</url>
+          <line>190</line>
+          <properties class="View.map.RoomManager" method="createCollisionWorldMap">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

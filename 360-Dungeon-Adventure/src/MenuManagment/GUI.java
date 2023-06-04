@@ -2,7 +2,8 @@
 package MenuManagment;
 
 import Actions.MusicPlayer;
-import Actions.PlayButtonSound;
+import Actions.buttonSound;
+import Actions.VolumeChange;
 import Controller.GamePanel;
 import LoadSave.SerializeMapGenerator;
 
@@ -21,6 +22,7 @@ public class GUI {
     String myGameStateFile = "";
     private String MAIN_MENU_MUSIC = "MainMenu.wav";
     MusicPlayer musicPlayer;
+    JSlider volumeChangeSlider;
     public GUI() throws IOException, UnsupportedAudioFileException, LineUnavailableException, ClassNotFoundException {
         screenData = new ScreenData(this.myJFrame.getWidth(), this.myJFrame.getHeight());
         this.newMenu = new MenuManager(this.myJFrame);
@@ -38,6 +40,7 @@ public class GUI {
     void loadGui() throws IOException, ClassNotFoundException, UnsupportedAudioFileException, LineUnavailableException {
         this.myJFrame.setDefaultCloseOperation(3);
         this.myJFrame.setMinimumSize(new Dimension(850, 850));
+        myJFrame.setResizable(false);
         GamePanel myGamePanel = null;
         if (getPlayGame()) {
             myGamePanel = new GamePanel(myGameStateFile);
@@ -49,6 +52,7 @@ public class GUI {
             myGamePanel.startGameThread();
 
         } else {
+            val = 0;
             firstPlay++;
             if (firstPlay == 1) {
                 newMenu.startInGameMusic(MAIN_MENU_MUSIC);
@@ -71,11 +75,12 @@ public class GUI {
         JMenu menu = new JMenu("THE LOST PILLARS OF OOP");
         JButton mainMenuButton = new JButton("Main Menu");
         mainMenuButton.addActionListener(e -> {
-            new PlayButtonSound();
+            new buttonSound();
 
             setPlayGame(false);
             try {
                 loadGui();
+                val = 1;
                 new MenuManager().startInGameMusic(MAIN_MENU_MUSIC);
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
@@ -90,17 +95,41 @@ public class GUI {
         JButton saveButton = new JButton("SAVE");
         saveButton.addActionListener(e -> {
             new SerializeMapGenerator(myGameStateFile);
-            new PlayButtonSound();
+            new buttonSound();
 
             System.out.println("Serialized " + myGameStateFile + " ... SAVING");
         });
+        volumeChangeSlider = new JSlider();
+        volumeChangeSlider.setMaximum(6);
+        volumeChangeSlider.setMinimum(-80);
+        if (getPlayGame()) {
+            val = 0;
+            setSlider();
+        }
+        volumeChangeSlider.addChangeListener(e -> {
+            try {
+                new VolumeChange(volumeChangeSlider.getValue());
+            } catch (LineUnavailableException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+
         menu.add(mainMenuButton);
         menu.add(saveButton);
 
+        JMenu audioMenu = new JMenu("MUSIC");
+        audioMenu.add(volumeChangeSlider);
+
         jMenuBar.add(menu);
+        jMenuBar.add(audioMenu);
     }
     JMenuBar jMenuBar;
-
+    static int val = 0;
+    private void setSlider() {
+        if (val == 1) {
+            volumeChangeSlider.setValue(new VolumeChange().getMusicVolume());
+        }
+    }
     private void setPlayGame(boolean thePlayGame) {
         myPlayGame = thePlayGame;
     }

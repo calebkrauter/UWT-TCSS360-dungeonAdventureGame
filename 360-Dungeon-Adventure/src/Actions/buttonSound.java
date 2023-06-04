@@ -4,9 +4,9 @@ import javax.sound.sampled.*;
 import java.io.File;
 import java.io.IOException;
 
-public class PlayButtonSound {
+public class buttonSound {
 
-    public PlayButtonSound() {
+    public buttonSound() {
         try {
             playButtonSound();
         } catch (LineUnavailableException e) {

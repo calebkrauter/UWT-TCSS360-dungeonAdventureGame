@@ -532,12 +532,14 @@ public class MenuManager extends JPanel {
             new ButtonSound();
             gameSaveName = myGameStateField.getText();
             CheckFileValidity checkFileValidity = new CheckFileValidity();
+            System.out.println(gameSaveName);
             checkFileValidity.checkAlreadyExists(gameSaveName);
             gameSaveName = checkFileValidity.checkValidLength(gameSaveName);
             String gameStateFile = new AppendExtension().appendExtension(gameSaveName);
             SerializeMapGenerator serializeMapGenerator = new SerializeMapGenerator(gameStateFile);
             SerializeGameSaves serializeGameSaves = new SerializeGameSaves();
             try {
+                System.out.println(gameStateFile);
                 serializeGameSaves.serializeGameSaves(gameStateFile);
             } catch (IOException ex) {
                 throw new RuntimeException(ex);

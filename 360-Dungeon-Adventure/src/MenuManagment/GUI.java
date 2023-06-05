@@ -1,8 +1,8 @@
 
 package MenuManagment;
 
-import Actions.MusicPlayer;
 import Actions.ButtonSound;
+import Actions.MusicPlayer;
 import Actions.VolumeChange;
 import Controller.GamePanel;
 import LoadSave.SerializeMapGenerator;
@@ -49,6 +49,7 @@ public class GUI {
             addMenuBar();
             myJFrame.setJMenuBar(jMenuBar);
             myGamePanel.requestFocus();
+            myGamePanel.SetupGame();
             myGamePanel.startGameThread();
 
         } else {

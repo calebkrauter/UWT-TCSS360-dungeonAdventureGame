@@ -35,7 +35,7 @@ public class MapGenerator implements Serializable {
     private String[][] mapLayout;
     private Random random = new Random();
     static int recursiveCallsCounter = 0; // A counter used to end recursive calls to free up calls stack.
-    private boolean myEasyMode = false;
+    private boolean myEasyMode = true;
 
     // | vertical path
     // - horizontal path
@@ -122,11 +122,7 @@ public class MapGenerator implements Serializable {
         if (mapLayout[theRows][theCols] == X_PATH && mapLayout[theRows + 1][theCols] == Y_PATH
                 || mapLayout[theRows][theCols] == X_PATH && mapLayout[theRows - 1][theCols] == Y_PATH
                 || mapLayout[theRows][theCols] == Y_PATH && mapLayout[theRows][theCols + 1] == X_PATH
-                || mapLayout[theRows][theCols] == Y_PATH && mapLayout[theRows][theCols - 1] == X_PATH
-                || mapLayout[theRows][theCols] == X_PATH && mapLayout[theRows + 1][theCols] == DOOR
-                || mapLayout[theRows][theCols] == X_PATH && mapLayout[theRows - 1][theCols] == DOOR
-                || mapLayout[theRows][theCols] == Y_PATH && mapLayout[theRows][theCols + 1] == DOOR
-                || mapLayout[theRows][theCols] == Y_PATH && mapLayout[theRows][theCols - 1] == DOOR) {
+                || mapLayout[theRows][theCols] == Y_PATH && mapLayout[theRows][theCols - 1] == X_PATH) {
             mapLayout[theRows][theCols] = INTERSECTION;
         }
     }

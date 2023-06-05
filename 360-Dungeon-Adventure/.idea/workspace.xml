@@ -4,211 +4,58 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="trying to get things to work">
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/MainMenu.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/TreasureHunt.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/TreasureTest.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/mainMenu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/man1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/man2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/man3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/man4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/man5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/paths/intersectionPath.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/paths/openDoorRoom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/paths/walls.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/paths/xPath.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/paths/xypath.xcf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/paths/yPath.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Buttons/blueSheet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/Archer/ArcherDown1 copy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/Archer/ArcherDown2 copy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/Archer/ArcherLeft1 copy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/Archer/ArcherRight1 copy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/Archer/ArcherUp1 copy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/Archer/ArcherUp2 copy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/Stevey/SteveyDown1 copy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/Stevey/SteveyDown2 copy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/Stevey/SteveyLeft1 copy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/Stevey/SteveyRight1 copy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/Stevey/SteveyUp1 copy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/Stevey/SteveyUp2 copy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/down1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/down2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/left1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/right1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/up1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/up2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Items/Door/BottomDoor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Items/Door/LeftDoor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Items/Door/RightDoor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Items/Door/TopDoor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Items/HealthPotion.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Items/Key.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Items/SpeedPotion.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Monster/Gremlin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Monster/Ogre.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Monster/Skeleton.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/RoomTiles/intersection.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/RoomTiles/openDoorRoom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/RoomTiles/wall.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/RoomTiles/xPath.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/RoomTiles/yPath.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/TextMaps/doorRoom.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/TextMaps/intersectionPath.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/TextMaps/openDoorRoom.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/TextMaps/walls.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/TextMaps/xPath.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/TextMaps/yPath.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Actions/AboutAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Actions/AppendExtension.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Actions/ButtonSound.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Actions/CreditsAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Actions/EasyModeAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Actions/GoBackAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Actions/HardModeAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Actions/HeroSelection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Actions/LoadSaveSelection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Actions/MapSizeChange.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Actions/MusicPlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Actions/OptionsButtonAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Actions/ToggleMusicChange.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Actions/UpdateSlider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Actions/VolumeChange.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/ChangeMenuAttributes/DisableMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/ChangeMenuAttributes/EnableMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Components/ComponentGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Components/ModifyInsets.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Controller/CollisionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Controller/GamePanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Controller/ItemSetter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Controller/KeyHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Controller/MouseHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/LoadSave/CheckFileValidity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/LoadSave/DeserializeGameSaves.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/LoadSave/DeserializeMapGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/LoadSave/SerializeGameSaves.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/LoadSave/SerializeMapGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/MenuManagment/GUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/MenuManagment/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/MenuManagment/MenuManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/MenuManagment/ScreenData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Model/Item/BottomDoor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Model/Item/HealthPotion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Model/Item/Key.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Model/Item/LeftDoor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Model/Item/ParentItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Model/Item/RightDoor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Model/Item/SpeedPotion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Model/Item/TopDoor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Model/MapGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Model/entity/Archer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Model/entity/Entity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Model/entity/Hero.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Model/entity/StartHero.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Model/entity/Stevey.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/View/HeroDisplay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/View/ItemDisplay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/View/map/CollisionTile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/View/map/Room.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/View/map/RoomManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/typeWriterSound.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game File Name.ser" beforeDir="false" afterPath="$PROJECT_DIR$/Game File Name.ser" afterDir="false" />
+    <list default="true" id="0df212bb-e81b-4d49-8840-12ee792b8347" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure/aaa.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure/aaa.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure/game-saves.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure/game-saves.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure/paths/intersectionPath.png" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure/paths/intersectionPath.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure/paths/openDoorRoom.png" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure/paths/openDoorRoom.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure/paths/walls.png" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure/paths/walls.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure/paths/xPath.png" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure/paths/xPath.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure/paths/xypath.xcf" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure/paths/xypath.xcf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure/paths/yPath.png" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure/paths/yPath.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure/src/Controller/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure/src/Controller/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure/src/Controller/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure/src/Controller/KeyHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure/src/Controller/MouseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure/src/Controller/MouseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure/src/MenuManagment/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure/src/MenuManagment/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure/src/MenuManagment/MenuManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure/src/MenuManagment/MenuManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure/src/Model/MapGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure/src/Model/MapGenerator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CodeInsightWorkspaceSettings">
-    <option name="optimizeImportsOnTheFly" value="true" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Rebase.Settings">
-    <option name="NEW_BASE" value="origin/Makai-Development" />
-  </component>
   <component name="Git.Settings">
-    <excluded-from-favorite>
-      <branch-storage>
-        <map>
-          <entry type="LOCAL">
-            <value>
-              <list>
-                <branch-info repo="$PROJECT_DIR$" source="main" />
-              </list>
-            </value>
-          </entry>
-        </map>
-      </branch-storage>
-    </excluded-from-favorite>
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="Makai-Development" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2PolAmz3H6RoZBEmYAwJBAWcDh8" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="2QnNx5ZM7FzkYDKUbXffBvLhWxN" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Makai-Development2",
-    "ignore.preview.features.used": "true",
-    "last_opened_file_path": "C:/Users/Kraut/Documents/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure/src",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+    "last_opened_file_path": "C:/Users/Kraut/Documents/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure"
   }
 }]]></component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="Controller" />
-      <recent name="Model" />
-      <recent name="View.map" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Kraut\Documents\Workspace\360-Dungeon-Adventure\360-Dungeon-Adventure\src" />
-      <recent name="C:\Users\Kraut\Documents\Workspace\360-Dungeon-Adventure\360-Dungeon-Adventure\src\Controller" />
-      <recent name="C:\Users\Kraut\Documents\Workspace\360-Dungeon-Adventure\360-Dungeon-Adventure" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Kraut\Documents\Workspace\360-Dungeon-Adventure\360-Dungeon-Adventure" />
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/src/Model" />
-      <recent name="$PROJECT_DIR$/res/room tiles" />
+      <recent name="C:\Users\Kraut\Documents\Workspace\360-Dungeon-Adventure\DungeonAdventureDemo\src" />
+      <recent name="C:\Users\Kraut\Documents\Workspace\360-Dungeon-Adventure\DungeonAdventureDemo" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MenuManagment.Main">
-    <configuration name="MainOld" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Controller.MainOld" />
-      <module name="360-Dungeon-Adventure" />
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Controller.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Controller.Main" />
+      <module name="DungeonAdventureDemo" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Controller.*" />
@@ -219,22 +66,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MapGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Model.MapGenerator" />
-      <module name="360-Dungeon-Adventure" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MenuManagment.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MenuManagment.Main" />
-      <module name="360-Dungeon-Adventure" />
+      <module name="DungeonAdventureDemo" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="MenuManagment.*" />
@@ -247,134 +81,20 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MenuManagment.Main" />
-        <item itemvalue="Application.MapGenerator" />
-        <item itemvalue="Application.MainOld" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Controller.Main" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="" />
-      <created>1684131895812</created>
+      <changelist id="0df212bb-e81b-4d49-8840-12ee792b8347" name="Changes" comment="" />
+      <created>1685985633839</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1684131895812</updated>
-      <workItem from="1684131901435" duration="84000" />
-      <workItem from="1684189363572" duration="2940000" />
-      <workItem from="1684192323648" duration="840000" />
-      <workItem from="1684193281077" duration="841000" />
-      <workItem from="1684208689520" duration="173000" />
-      <workItem from="1684209482135" duration="619000" />
-      <workItem from="1684210114658" duration="137000" />
-      <workItem from="1684210284240" duration="763000" />
-      <workItem from="1684211722908" duration="2119000" />
-      <workItem from="1684216216193" duration="1143000" />
+      <updated>1685985633839</updated>
     </task>
-    <task id="LOCAL-00001" summary="100% successfully interprets randomly generated maps for the display.">
-      <created>1684131979650</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1684131979650</updated>
-    </task>
-    <task id="LOCAL-00002" summary="100% successfully working camera.">
-      <created>1684192040369</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1684192040369</updated>
-    </task>
-    <task id="LOCAL-00003" summary="100% successfully working camera.">
-      <created>1684193625661</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1684193625661</updated>
-    </task>
-    <task id="LOCAL-00004" summary="code base.">
-      <created>1684210962487</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1684210962487</updated>
-    </task>
-    <task id="LOCAL-00005" summary="code base bug fixes.">
-      <created>1684214208986</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1684214208986</updated>
-    </task>
-    <task id="LOCAL-00006" summary="code base final bug fixes?">
-      <created>1684215963137</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1684215963137</updated>
-    </task>
-    <task id="LOCAL-00007" summary="code base final bug fixes?">
-      <created>1684215976471</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1684215976471</updated>
-    </task>
-    <task id="LOCAL-00008" summary="trying to get things to work">
-      <created>1684217060404</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1684217060404</updated>
-    </task>
-    <task id="LOCAL-00009" summary="trying to get things to work">
-      <created>1684217207692</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1684217207692</updated>
-    </task>
-    <option name="localTasksCounter" value="10" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="100% successfully interprets randomly generated maps for the display." />
-    <MESSAGE value="100% successfully working camera." />
-    <MESSAGE value="code base." />
-    <MESSAGE value="code base bug fixes." />
-    <MESSAGE value="code base final bug fixes?" />
-    <MESSAGE value="trying to get things to work" />
-    <option name="LAST_COMMIT_MESSAGE" value="trying to get things to work" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LoadSave/CheckFileValidity.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/360_Dungeon_Adventure$MenuManagment_Main.ic" NAME="MenuManagment.Main Coverage Results" MODIFIED="1685943245790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>MenuManagment.*</FILTER>
-    </SUITE>
   </component>
 </project>

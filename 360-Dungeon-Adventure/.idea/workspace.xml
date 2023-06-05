@@ -5,32 +5,117 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="trying to get things to work">
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/MainMenu.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/TreasureHunt.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/TreasureTest.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/mainMenu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/man1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/man2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/man3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/man4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/man5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/paths/intersectionPath.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/paths/openDoorRoom.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/paths/walls.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/paths/xPath.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/paths/xypath.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/paths/yPath.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Buttons/blueSheet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/Archer/ArcherDown1 copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/Archer/ArcherDown2 copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/Archer/ArcherLeft1 copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/Archer/ArcherRight1 copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/Archer/ArcherUp1 copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/Archer/ArcherUp2 copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/Stevey/SteveyDown1 copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/Stevey/SteveyDown2 copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/Stevey/SteveyLeft1 copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/Stevey/SteveyRight1 copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/Stevey/SteveyUp1 copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/Stevey/SteveyUp2 copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/down1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/down2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/left1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/right1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/up1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Hero/up2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Items/Door/BottomDoor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Items/Door/LeftDoor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Items/Door/RightDoor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Items/Door/TopDoor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Items/HealthPotion.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Items/Key.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Items/SpeedPotion.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Monster/Gremlin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Monster/Ogre.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/Monster/Skeleton.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/RoomTiles/intersection.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/RoomTiles/openDoorRoom.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/RoomTiles/wall.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/RoomTiles/xPath.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/RoomTiles/yPath.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/TextMaps/doorRoom.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/TextMaps/intersectionPath.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/TextMaps/openDoorRoom.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/TextMaps/walls.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/TextMaps/xPath.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/res/TextMaps/yPath.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Actions/AboutAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Actions/AppendExtension.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Actions/ButtonSound.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Actions/CreditsAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Actions/EasyModeAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Actions/GoBackAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Actions/HardModeAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Actions/HeroSelection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Actions/LoadSaveSelection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Actions/MapSizeChange.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Actions/MusicPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Actions/OptionsButtonAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Actions/ToggleMusicChange.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Actions/UpdateSlider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Actions/VolumeChange.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/ChangeMenuAttributes/DisableMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/ChangeMenuAttributes/EnableMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Components/ComponentGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Components/ModifyInsets.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Controller/CollisionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Controller/GamePanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Controller/ItemSetter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Controller/KeyHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Controller/MouseHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/LoadSave/CheckFileValidity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/LoadSave/DeserializeGameSaves.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/LoadSave/DeserializeMapGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/LoadSave/SerializeGameSaves.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/LoadSave/SerializeMapGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/MenuManagment/GUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/MenuManagment/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/MenuManagment/MenuManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/MenuManagment/ScreenData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Model/Item/BottomDoor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Model/Item/HealthPotion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Model/Item/Key.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Model/Item/LeftDoor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Model/Item/ParentItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Model/Item/RightDoor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Model/Item/SpeedPotion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Model/Item/TopDoor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Model/MapGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Model/entity/Archer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Model/entity/Entity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Model/entity/Hero.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Model/entity/StartHero.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/Model/entity/Stevey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/View/HeroDisplay.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/View/ItemDisplay.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/View/map/CollisionTile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/View/map/Room.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/src/View/map/RoomManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DungeonAdventureDemo/typeWriterSound.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game File Na.ser" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Game File Name.ser" beforeDir="false" afterPath="$PROJECT_DIR$/Game File Name.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game-saves.ser" beforeDir="false" afterPath="$PROJECT_DIR$/game-saves.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Actions/CreditsAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/CreditsAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Actions/EasyModeAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/EasyModeAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Actions/GoBackAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/GoBackAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Actions/HardModeAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/HardModeAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Actions/HeroSelection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/HeroSelection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Actions/LoadAction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Actions/LoadButtonAction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Actions/LoadSaveSelection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/LoadSaveSelection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Actions/MapSizeChange.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/MapSizeChange.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Actions/MusicPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/MusicPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Actions/OptionsButtonAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/OptionsButtonAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Actions/PlayButtonAction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Actions/StartAction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Actions/ToggleMusicChange.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/ToggleMusicChange.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Actions/UpdateSlider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/UpdateSlider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Actions/VolumeChange.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/VolumeChange.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Actions/buttonSound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/ButtonSound.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuManagment/AddCharacterSelectorPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuManagment/CharacterSelectorMenu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuManagment/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuManagment/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuManagment/MenuManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuManagment/MenuManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuManagment/OptionsMenuPanel.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +175,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "Makai-Development2",
     "ignore.preview.features.used": "true",
-    "last_opened_file_path": "C:/Users/Kraut/Documents/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure",
+    "last_opened_file_path": "C:/Users/Kraut/Documents/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure/src",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -108,8 +193,9 @@
       <recent name="View.map" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Kraut\Documents\Workspace\360-Dungeon-Adventure\360-Dungeon-Adventure" />
       <recent name="C:\Users\Kraut\Documents\Workspace\360-Dungeon-Adventure\360-Dungeon-Adventure\src" />
+      <recent name="C:\Users\Kraut\Documents\Workspace\360-Dungeon-Adventure\360-Dungeon-Adventure\src\Controller" />
+      <recent name="C:\Users\Kraut\Documents\Workspace\360-Dungeon-Adventure\360-Dungeon-Adventure" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">

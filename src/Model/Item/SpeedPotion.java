@@ -9,7 +9,7 @@ public class SpeedPotion extends ParentItem {
     public SpeedPotion() {
         setObjectName("Speed Potion");
         try {
-            setObjectImage(ImageIO.read(new File("res/Object/SpeedPotion.png")));
+            setObjectImage(ImageIO.read(new File("res/Items/SpeedPotion.png")));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

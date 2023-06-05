@@ -9,7 +9,7 @@ public class Key extends ParentItem {
     public Key() {
         setObjectName("Key");
         try {
-            setObjectImage(ImageIO.read(new File("res/Object/Key.png")));
+            setObjectImage(ImageIO.read(new File("res/Items/Key.png")));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

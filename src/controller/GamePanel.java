@@ -13,8 +13,9 @@ import View.map.RoomManager;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Point2D;
+import java.io.IOException;
 
-public class GamePanel extends JPanel implements Runnable{
+public class GamePanel extends JPanel implements Runnable {
 
     // SCREEN SETTINGS
 
@@ -83,34 +84,33 @@ public class GamePanel extends JPanel implements Runnable{
     public Hero myStarterHero = new StartHero(this, myKeyHandler);
     public Hero myStevey = new Stevey(this, myKeyHandler);
     public Hero myArcher = new Archer(this, myKeyHandler);
-
     private HeroDisplay myHeroDisplay;
 
 
 
 
-
     // ASSETS
-    public ParentItem myItems[] = new ParentItem[10];
+    public ParentItem myItems[] = new ParentItem[50]; // change num items based on map???
     public ItemSetter myItemSetter;
     private ItemDisplay myItemDisplay;
 
 
     // constructor for game panel
-    public GamePanel() {
+    public GamePanel(String theGameFile) throws IOException, ClassNotFoundException {
 
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
         this.setBackground(Color.black);
 
         myMapGenerator = new MapGenerator();
         setMapValues();
+
         myRoomManager = new RoomManager(this, myWorldMap);
 
         // some form of getHeroType() method from menu!!
         myHero = myArcher;
 
         myItemSetter = new ItemSetter(this, myRoomManager);
-        myCollisionHandler = new CollisionHandler(this);
+        myCollisionHandler = new CollisionHandler(this, myRoomManager);
         myHeroDisplay = new HeroDisplay(this, myKeyHandler, myHero, myCollisionHandler);
         myItemDisplay = new ItemDisplay(this);
 
@@ -128,6 +128,10 @@ public class GamePanel extends JPanel implements Runnable{
         this.setFocusable(true);
 
     }
+
+    public String[][] getWorldMap(){
+        return myWorldMap;
+    }
     public void setMapValues(){
         myWorldMap = myMapGenerator.getMap();
         // should be changeable by the view
@@ -137,20 +141,16 @@ public class GamePanel extends JPanel implements Runnable{
         myWorldMapWidth = ROOM_SIZE * myWorldMapMaxCol;
         myWorldHeight = ROOM_SIZE * myWorldMapMaxRow;
     }
-    public String[][] getWorldMap(){
-        return myWorldMap;
-    }
 
     public void SetupGame(){
-        myItemSetter.setObject();
-
+        myItemSetter.setStartItems();
+        myItemSetter.setKeys();
         // Sets character's position to center of start room
         Point2D thePoint = new Point2D.Float(0, 0);
         thePoint = myRoomManager.getStartPoint();
         myHero.setWorldX((int) thePoint.getX() * ROOM_SIZE + ROOM_SIZE/2 - TILE_SIZE/2);
         myHero.setWorldY((int) thePoint.getX() * ROOM_SIZE + ROOM_SIZE/2 - TILE_SIZE/2);
     }
-
 
     public void startGameThread(){
 

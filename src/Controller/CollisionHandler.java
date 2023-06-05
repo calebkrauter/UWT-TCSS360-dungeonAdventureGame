@@ -1,11 +1,13 @@
 package Controller;
 
 import Model.entity.Entity;
+import View.map.RoomManager;
 
 public class CollisionHandler {
-
+    private RoomManager myRoomManager;
     private GamePanel myGamePanel;
-    public CollisionHandler(GamePanel theGP){
+    public CollisionHandler(GamePanel theGP, RoomManager theRM){
+        this.myRoomManager = theRM;
         this.myGamePanel = theGP;
     }
     public void checkTile(Entity theEntity){
@@ -36,7 +38,8 @@ public class CollisionHandler {
                 // now we can find out what tile the player is trying to step into
                 // 2 possible tiles
                 // this does not yet work because we do not have an underlying collision map of rectangles or int's.
-                //tileNum1 = myGamePanel.myRoomManager.getCollisionMapTileNum(new int[hitboxLeftCol][hitboxTopRow]);
+                //tileNum1 = myGamePanel.myRoomManager.getWorldCollisionMap
+
                 //tileNum2 = myGamePanel.myRoomManager.getCollisionMapTileNum(new int[hitboxRightCol][hitboxTopRow]);
                 break;
             case "down":

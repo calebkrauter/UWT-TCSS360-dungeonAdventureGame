@@ -36,19 +36,17 @@ public class LoadSaveSelection implements Serializable {
         }
 
     }
-    public int containInBounds(int theI) {
+    public int containInBounds(int theI) throws IOException {
+        deserializeGameSaves.deserializeGameSaves();
         if (deserializeGameSaves.getDeserializedGameSaves() != null) {
 
             if (theI < 0 || i < 0) {
-                theI = deserializeGameSaves.getDeserializedGameSaves().size() - 1;
-                i = theI;
-            } else if (theI >= deserializeGameSaves.getDeserializedGameSaves().size() - 1) {
-                theI = 0;
+                i = deserializeGameSaves.getDeserializedGameSaves().size() - 1;
             } if (i > deserializeGameSaves.getDeserializedGameSaves().size() - 1) {
                 i = 0;
             }
         }
-        return theI;
+        return i;
 
     }
     private void setLoadSaveSelection(int theSaveSelection) {

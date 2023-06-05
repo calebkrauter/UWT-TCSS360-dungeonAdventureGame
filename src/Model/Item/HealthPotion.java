@@ -9,7 +9,7 @@ public class HealthPotion extends ParentItem {
     public HealthPotion() {
         setObjectName("Health Potion");
         try {
-            setObjectImage(ImageIO.read(new File("res/Object/HealthPotion.png")));
+            setObjectImage(ImageIO.read(new File("res/Items/HealthPotion.png")));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

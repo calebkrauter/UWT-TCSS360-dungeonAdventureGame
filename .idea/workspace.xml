@@ -4,9 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="starting to add caleb's menu">
+    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="still working on collision but this version doesnt crash.">
+      <change afterPath="$PROJECT_DIR$/res/Items/Door/doorItemBottom.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Items/Door/doorItemLeft.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Items/Door/doorItemRight.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Items/Door/doorItemTop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Monster/Gremlin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Monster/Ogre.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Monster/Skeleton.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Actions/buttonSound.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/typeWriterSound.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game-saves.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainMenu.png" beforeDir="false" afterPath="$PROJECT_DIR$/mainMenu.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Object/HealthPotion.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/Items/HealthPotion.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Object/Key.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/Items/Key.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/Object/SpeedPotion.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/Items/SpeedPotion.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/LoadSaveSelection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/LoadSaveSelection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/PlayAction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/StartAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/StartAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CollisionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CollisionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ItemSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ItemSetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoadSave/SerializeGameSaves.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoadSave/SerializeGameSaves.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoadSave/SerializeMapGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoadSave/SerializeMapGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MenuManagment/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuManagment/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MenuManagment/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MenuManagment/MenuManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuManagment/MenuManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Item/HealthPotion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Item/HealthPotion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Item/Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Item/Key.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Item/SpeedPotion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Item/SpeedPotion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/MenuButton.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/map/RoomManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/map/RoomManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Main.java" afterDir="false" />
     </list>
     <list id="ff8a1f12-e31b-4acb-8e38-ce3f58b732c1" name="Changes by James" comment="" />
     <list id="c9d39182-ef57-426f-855e-eb4806e1b925" name="Changes by Kraut" comment="">
@@ -73,6 +103,26 @@
     <setting file="jar:///Library/Java/JavaVirtualMachines/jdk-19.jdk/Contents/Home/lib/src.zip!/java.desktop/javax/imageio/ImageIO.java" root0="SKIP_INSPECTION" />
     <setting file="jar:///Library/Java/JavaVirtualMachines/jdk-19.jdk/Contents/Home/lib/src.zip!/java.desktop/javax/swing/JComponent.java" root0="SKIP_INSPECTION" />
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/Controller/GamePanel.java">
+      <ranges>
+        <range start1="2" end1="2" start2="2" end2="3" changelist="c9d39182-ef57-426f-855e-eb4806e1b925" />
+        <range start1="15" end1="15" start2="16" end2="17" changelist="d91291d8-a8e4-4500-8d53-d60e74afbf0b" />
+        <range start1="16" end1="17" start2="18" end2="19" changelist="d91291d8-a8e4-4500-8d53-d60e74afbf0b" />
+        <range start1="85" end1="86" start2="87" end2="87" changelist="d91291d8-a8e4-4500-8d53-d60e74afbf0b" />
+        <range start1="91" end1="92" start2="92" end2="92" changelist="d91291d8-a8e4-4500-8d53-d60e74afbf0b" />
+        <range start1="93" end1="94" start2="93" end2="94" changelist="d91291d8-a8e4-4500-8d53-d60e74afbf0b" />
+        <range start1="99" end1="100" start2="99" end2="100" changelist="d91291d8-a8e4-4500-8d53-d60e74afbf0b" />
+        <range start1="104" end1="104" start2="104" end2="105" changelist="c9d39182-ef57-426f-855e-eb4806e1b925" />
+        <range start1="106" end1="106" start2="107" end2="108" changelist="d91291d8-a8e4-4500-8d53-d60e74afbf0b" />
+        <range start1="112" end1="113" start2="114" end2="115" changelist="d91291d8-a8e4-4500-8d53-d60e74afbf0b" />
+        <range start1="130" end1="130" start2="132" end2="136" changelist="d91291d8-a8e4-4500-8d53-d60e74afbf0b" />
+        <range start1="139" end1="142" start2="145" end2="145" changelist="d91291d8-a8e4-4500-8d53-d60e74afbf0b" />
+        <range start1="144" end1="146" start2="147" end2="149" changelist="d91291d8-a8e4-4500-8d53-d60e74afbf0b" />
+        <range start1="152" end1="153" start2="155" end2="155" changelist="d91291d8-a8e4-4500-8d53-d60e74afbf0b" />
+      </ranges>
+    </file>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -113,11 +163,11 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/res/RoomTiles" />
-      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/Controller" />
+      <recent name="$PROJECT_DIR$/res/Monster" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/res/TextMaps" />
-      <recent name="$PROJECT_DIR$/res/Object" />
+      <recent name="$PROJECT_DIR$/res/Items/Door" />
+      <recent name="$PROJECT_DIR$/res/RoomTiles" />
     </key>
   </component>
   <component name="RunManager">
@@ -177,7 +227,7 @@
       <workItem from="1685440511501" duration="8361000" />
       <workItem from="1685542019895" duration="611000" />
       <workItem from="1685583895316" duration="12400000" />
-      <workItem from="1685759755572" duration="10657000" />
+      <workItem from="1685759755572" duration="23762000" />
     </task>
     <task id="LOCAL-00001" summary="100% successfully interprets randomly generated maps for the display.">
       <created>1684131979650</created>
@@ -417,7 +467,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685765170568</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="still working on collision but this version doesnt crash.">
+      <created>1685916622128</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1685916622128</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -435,7 +492,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="code base final bug fixes?" />
     <MESSAGE value="trying to get things to work" />
     <MESSAGE value="final bug fixes?" />
     <MESSAGE value="adding door rooms display." />
@@ -460,19 +516,20 @@
     <MESSAGE value="Additions to MapManager" />
     <MESSAGE value="deleted mapManager and moved the 1 method to roommanager. Cleaned up all instances of mapGenerator and only use 1. CollisionTile Class that has hitbox and boolean." />
     <MESSAGE value="starting to add caleb's menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="starting to add caleb's menu" />
+    <MESSAGE value="still working on collision but this version doesnt crash." />
+    <option name="LAST_COMMIT_MESSAGE" value="still working on collision but this version doesnt crash." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/View/map/RoomManager.java</url>
-          <line>190</line>
-          <properties class="View.map.RoomManager" method="createCollisionWorldMap">
+          <url>file://$PROJECT_DIR$/src/Controller/ItemSetter.java</url>
+          <line>43</line>
+          <properties class="Controller.ItemSetter" method="setKeys">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="11" />
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

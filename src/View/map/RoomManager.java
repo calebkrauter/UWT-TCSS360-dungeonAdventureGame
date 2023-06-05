@@ -38,8 +38,8 @@ public class RoomManager {
     private int collisionWorldMapMaxRows;
     public CollisionTile myCollisionWorldMap[][];
 
-    private Point2D myStartPoint = new Point2D.Float(0, 0);
 
+    private Point2D myStartPoint = new Point2D.Float(0, 0);
     private Point2D myEndPoint = new Point2D.Float(0, 0);
     private final java.util.List<Point2D> DoorRoomPositions = new ArrayList<Point2D>();
     private final java.util.List<Point2D> IntersectionRoomPositions = new ArrayList<Point2D>();
@@ -80,9 +80,9 @@ public class RoomManager {
 
         // get room Col and Row coordinates for each room type and store in their variables
         loadRoomPositions();
-
         collisionWorldMapMaxCols = myGamePanel.myWorldMapMaxCol * textFileMaxCols; // 10 * 8 = 80
         collisionWorldMapMaxRows = myGamePanel.myWorldMapMaxRow * textFileMaxRows; // 10 * 8 = 80
+
         myCollisionWorldMap = new CollisionTile[collisionWorldMapMaxCols][collisionWorldMapMaxRows];
         createCollisionWorldMap();
         printCollisionMap();
@@ -179,7 +179,7 @@ public class RoomManager {
             // "[" = door = tile[6]
             room[6] = new Room();
             room[6].setRoomImage(ImageIO.read(new File("res/RoomTiles/openDoorRoom.png")));
-            room[6].setCollisionMap(myClosedDoorCollisionMap);
+            room[6].setCollisionMap(myOpenDoorRoomCollisionMap);
 
 
         } catch (IOException e) {
@@ -192,31 +192,31 @@ public class RoomManager {
         int theRoomType;
         for(int row = 0; row < myGamePanel.myWorldMapMaxRow; row++){
             for(int col = 0; col < myGamePanel.myWorldMapMaxCol; col++){
-                if (myWorldMap[col][row].equals("#")) {
+                if (myWorldMap[row][col].equals("#")) { // reverse row/col here bc thats how the map is made.
                     theRoomType = 0;
                     addRoomToCollisionWorldMap(theRoomType, row, col);
                 }
-                if (myWorldMap[col][row].equals("|")) {
+                if (myWorldMap[row][col].equals("|")) {
                     theRoomType = 1;
                     addRoomToCollisionWorldMap(theRoomType, row, col);
                 }
-                if (myWorldMap[col][row].equals("-")) {
+                if (myWorldMap[row][col].equals("-")) {
                     theRoomType = 2;
                     addRoomToCollisionWorldMap(theRoomType, row, col);
                 }
-                if (myWorldMap[col][row].equals("O")) {
+                if (myWorldMap[row][col].equals("O")) {
                     theRoomType = 3;
                     addRoomToCollisionWorldMap(theRoomType, row, col);
                 }
-                if (myWorldMap[col][row].equals("S")) {
+                if (myWorldMap[row][col].equals("S")) {
                     theRoomType = 4;
                     addRoomToCollisionWorldMap(theRoomType, row, col);
                 }
-                if (myWorldMap[col][row].equals("E")) {
+                if (myWorldMap[row][col].equals("E")) {
                     theRoomType = 5;
                     addRoomToCollisionWorldMap(theRoomType, row, col);
                 }
-                if (myWorldMap[col][row].equals("[")) {
+                if (myWorldMap[row][col].equals("[")) {
                     theRoomType = 6;
                     addRoomToCollisionWorldMap(theRoomType, row, col);
                 }
@@ -228,17 +228,13 @@ public class RoomManager {
         int maxCol = textFileMaxCols;   // 8
         int maxRow = textFileMaxRows;   // 8
 
-        // if we are not on the first room at 0,0 we need to adjust the maxCol and maxRow of the surrent room.
-        if (theRoomCol != 0){
-            maxCol *= theRoomCol + 1;
-        }
-        if (theRoomRow != 0){
-            maxRow *= theRoomRow + 1;
-        }
+        maxCol *= (theRoomCol + 1);
+        maxRow *= (theRoomRow + 1);
+
         int i = 0;
-        for(int k = theRoomCol * textFileMaxCols; k < maxCol; k++) {
+        for(int k = theRoomRow * textFileMaxRows  ; k < maxRow; k++) {
             int j = 0;
-            for (int l = theRoomRow * textFileMaxRows; l <  maxRow; l++) {
+            for (int l = theRoomCol * textFileMaxCols; l <  maxCol; l++) {
                 myCollisionWorldMap[l][k] = room[theRoomType].getCollisionMap()[j][i];
                 j++;
             }
@@ -251,8 +247,8 @@ public class RoomManager {
      * Prints the world collision map in 1's and 0's in the console. For testing purposes.
      */
     public void printCollisionMap() {
-        for(int row = 0; row < myGamePanel.myWorldMapMaxRow; row++){
-            for(int col = 0; col < myGamePanel.myWorldMapMaxCol; col++) {
+        for(int row = 0; row < collisionWorldMapMaxRows; row++){
+            for(int col = 0; col < collisionWorldMapMaxCols; col++) {
                 System.out.print(myCollisionWorldMap[col][row].toString());
             }
             System.out.println();

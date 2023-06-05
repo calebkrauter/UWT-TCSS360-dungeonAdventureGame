@@ -2,34 +2,48 @@
 
 package Controller;
 
+import MenuManagment.GUI;
+import MenuManagment.MenuManager;
+import MenuManagment.ScreenData;
+
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JFrame;
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) {
 
-        JFrame myWindow = new JFrame();
-        myWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        myWindow.setResizable(false);
-        myWindow.setTitle("Dungeon Adventure");
+    private static final JFrame myJFrame = new JFrame();
+    private MenuManager newMenu;
+    ScreenData screenData;
+    boolean myPlayGame = false;
+    public static String myGameStateFile = "";
 
-        GamePanel myGamePanel = new GamePanel();
-        myWindow.add(myGamePanel);
-        // Request that this component gets input focus.
+    public static void main(String[] args)  throws IOException, UnsupportedAudioFileException, LineUnavailableException, ClassNotFoundException {
+
+        if (!(new File("game-saves.ser").exists())) {
+            new File("game-saves.ser").createNewFile();
+        }
+//        new SerializeGameSaves().serializeGameSaves();
+//        new GUI();
+        myJFrame.setDefaultCloseOperation(3);
+        myJFrame.setMinimumSize(new Dimension(850, 850));
+        myJFrame.setResizable(false);
+        GamePanel myGamePanel = null;
+        myGamePanel = new GamePanel(myGameStateFile);
+        myJFrame.getContentPane().removeAll();
+        myJFrame.add(myGamePanel);
         myGamePanel.requestFocus();
-        // so we can see it
-        myWindow.pack();
-
-
-
-
-        myWindow.setLocationRelativeTo(null);
-        myWindow.setVisible(true);
 
         // sets the objects
         myGamePanel.SetupGame();
 
         myGamePanel.startGameThread();
 
-
+        myJFrame.pack();
+        myJFrame.setVisible(true);
+        myJFrame.setLocationRelativeTo(null);
     }
 }

@@ -5,23 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0df212bb-e81b-4d49-8840-12ee792b8347" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure/aaa.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure/aaa.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure/game-saves.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure/game-saves.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure/paths/intersectionPath.png" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure/paths/intersectionPath.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure/paths/openDoorRoom.png" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure/paths/openDoorRoom.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure/paths/walls.png" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure/paths/walls.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure/paths/xPath.png" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure/paths/xPath.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure/paths/xypath.xcf" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure/paths/xypath.xcf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure/paths/yPath.png" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure/paths/yPath.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure/src/Controller/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure/src/Controller/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure/src/Controller/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure/src/Controller/KeyHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure/src/Controller/MouseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure/src/Controller/MouseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure/src/MenuManagment/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure/src/MenuManagment/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure/src/MenuManagment/MenuManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure/src/MenuManagment/MenuManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../360-Dungeon-Adventure/src/Model/MapGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-Adventure/src/Model/MapGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game File Na.ser" beforeDir="false" afterPath="$PROJECT_DIR$/Game File Na.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game File Name.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game-saves.ser" beforeDir="false" afterPath="$PROJECT_DIR$/game-saves.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/man1.png" beforeDir="false" afterPath="$PROJECT_DIR$/man1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/HeroSelection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/HeroSelection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ComponentGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ComponentGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoadSave/SerializeMapGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoadSave/SerializeMapGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MenuManagment/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuManagment/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MenuManagment/MenuManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuManagment/MenuManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/MapGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MapGenerator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,15 +35,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/Kraut/Documents/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Kraut/Documents/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Kraut\Documents\Workspace\360-Dungeon-Adventure\360-Dungeon-Adventure" />
       <recent name="C:\Users\Kraut\Documents\Workspace\360-Dungeon-Adventure\DungeonAdventureDemo\src" />
       <recent name="C:\Users\Kraut\Documents\Workspace\360-Dungeon-Adventure\DungeonAdventureDemo" />
     </key>

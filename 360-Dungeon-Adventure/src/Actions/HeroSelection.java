@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class HeroSelection {
     private static int myHeroSelection = 0;
-    private static int i = 1;
+    private static int i = 0;
     private static boolean mySelectedHero = false;
     public HeroSelection() {
 

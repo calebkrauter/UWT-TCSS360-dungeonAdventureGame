@@ -9,11 +9,21 @@ import java.io.ObjectOutputStream;
 
 public class SerializeMapGenerator {
 
+    public SerializeMapGenerator(String theGameStateFile, int theRows, int theCols, boolean theEasyMode) {
+
+//        setGameSaves(theGameStateFile);
+        try {
+            serializeMapGenerator(theGameStateFile, theRows, theCols, theEasyMode);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
     public SerializeMapGenerator(String theGameStateFile) {
 
 //        setGameSaves(theGameStateFile);
         try {
-            serializeMapGenerator(theGameStateFile);
+            // Passing in dummy values for the rows and cols because they won't get used in this call.
+            serializeMapGenerator(theGameStateFile, 10, 10, false);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -22,19 +32,16 @@ public class SerializeMapGenerator {
 
     }
 
-    private void serializeMapGenerator(String theGameStateFile) throws IOException {
-        MapGenerator user = null;
+    private void serializeMapGenerator(String theGameStateFile, int theRows, int theCols, boolean theEasyMode) throws IOException {
+        MapGenerator mapGenerator = null;
         if (new File(theGameStateFile).exists() == false) {
             new File(theGameStateFile).createNewFile();
         } else {
             DeserializeMapGenerator deserializeMapGenerator = new DeserializeMapGenerator(theGameStateFile);
-            user = deserializeMapGenerator.getMyMapGenerator();
-            System.out.println("Keep current map and serialize");
-
+            mapGenerator = deserializeMapGenerator.getMyMapGenerator();
         }
-        if (user == null) {
-            System.out.println("MAKE NEW MAP CUZ OLD IS LOST");
-            user = new MapGenerator();
+        if (mapGenerator == null) {
+            mapGenerator = new MapGenerator(theRows, theCols, theEasyMode);
         }
 
         CheckFileValidity checkFileValidity = new CheckFileValidity();
@@ -48,7 +55,7 @@ public class SerializeMapGenerator {
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
 
 
-        objectOutputStream.writeObject(user);
+        objectOutputStream.writeObject(mapGenerator);
         objectOutputStream.close();
         fileOutputStream.close();
 

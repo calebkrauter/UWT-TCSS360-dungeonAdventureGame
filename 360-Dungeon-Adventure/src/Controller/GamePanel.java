@@ -1,6 +1,7 @@
 package Controller;
 
 import LoadSave.DeserializeMapGenerator;
+import MenuManagment.MenuManager;
 import Model.Item.ParentItem;
 import Model.MapGenerator;
 import Model.entity.Archer;
@@ -97,7 +98,7 @@ public class GamePanel extends JPanel implements Runnable {
 
 
     // constructor for game panel
-    public GamePanel(String theGameFile) throws IOException, ClassNotFoundException {
+    public GamePanel(String theGameFile, int theSelection) throws IOException, ClassNotFoundException {
 
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
         this.setBackground(Color.black);
@@ -109,7 +110,14 @@ public class GamePanel extends JPanel implements Runnable {
         myRoomManager = new RoomManager(this, myWorldMap);
 
         // some form of getHeroType() method from menu!!
-        myHero = myArcher;
+        if (theSelection == 0) {
+            myHero = myStevey;
+        } else if (theSelection == 1) {
+            myHero = myArcher;
+        } else if (theSelection == 2) {
+            myHero = myStarterHero;
+        }
+
 
         myItemSetter = new ItemSetter(this, myRoomManager);
         myCollisionHandler = new CollisionHandler(this, myRoomManager);

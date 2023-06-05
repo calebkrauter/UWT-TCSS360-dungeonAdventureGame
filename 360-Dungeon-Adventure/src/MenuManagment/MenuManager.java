@@ -43,6 +43,7 @@ public class MenuManager extends JPanel {
     final private int SLIDER = 2;
     final private int CHECK_BOX = 3;
     final private int TEXT_FIELD = 4;
+    final private int LABEL = 5;
     //    final private int anchor, iPAD x, iPAD Y, INSET LEFT RIGHT TOP BOTTOM
     final private int GO_LEFT = 65;
     final private int GO_RIGHT = 99;
@@ -100,6 +101,7 @@ public class MenuManager extends JPanel {
     final BufferedImage hero2 = ImageIO.read(new File("man4.png"));
     final BufferedImage hero3 = ImageIO.read(new File("man5.png"));
     BufferedImage[] characters = new BufferedImage[] {hero1, hero2, hero3};
+    String[] characterNames = new String[] {"Stevy", "Linky", "FRED"};
     HeroSelection heroSelection = new HeroSelection();
     ToggleMusicChange toggleMusicChange;
     MusicPlayer musicPlayer = new MusicPlayer();
@@ -121,7 +123,7 @@ public class MenuManager extends JPanel {
         myOptionMenuTitles = new String[]{"Volume", "Audio on/off", "Music on/off", "About", "Credits", "<--BACK"};
         characterSelectTitles = new String[]{"<--BACK", "<--", "SELECT", "-->"};
         loadGameTitles = new String[]{"<--BACK", "<--", "SELECT", "-->", "DELETE"};
-        gameplayMenuTitles = new String[]{"MAP_SIZE_SLIDER", "EASY", "HARD", "Game File Name", "START!", "<--BACK"};
+        gameplayMenuTitles = new String[]{"Map Size:", "SIZE", "MAP_SIZE_SLIDER", "EASY", "HARD", "Game File Name", "START!", "<--BACK"};
         screenData = new ScreenData();
         addMainMenu();
     }
@@ -150,6 +152,8 @@ public class MenuManager extends JPanel {
         mySelect = (JButton) characterSelection.getComponents()[2][BUTTON];
         myRightSelect = (JButton) characterSelection.getComponents()[3][BUTTON];
         characterSelectionComponents = new JComponent[] {myBackButton, myLeftSelect, mySelect, myRightSelect};
+
+        mySelect.setText(characterNames[getHeroSelection()]);
         for (int i = 0; i < characterSelectionComponents.length; i++) {
             this.add(characterSelectionComponents[i], characterSelection.getMyButtonConstraints()[i]);
         }
@@ -234,7 +238,7 @@ public class MenuManager extends JPanel {
 
             System.out.println(deserializeGameSaves.getDeserializedGameSaves().get(loadSaveSelection.getLoadSaveSelection()).toString());
             try {
-                new GUI(true, deserializeGameSaves.getDeserializedGameSaves().get(loadSaveSelection.getLoadSaveSelection()).toString());
+                new GUI(true, deserializeGameSaves.getDeserializedGameSaves().get(loadSaveSelection.getLoadSaveSelection()).toString(), getHeroSelection());
             } catch (UnsupportedAudioFileException ex) {
                 throw new RuntimeException(ex);
             } catch (LineUnavailableException ex) {
@@ -430,6 +434,7 @@ public class MenuManager extends JPanel {
         AtomicBoolean goLeft = new AtomicBoolean(true);
         AtomicBoolean goRight = new AtomicBoolean(false);
         setShownCharacter(true);
+        repaint();
         HeroSelection heroSelection = new HeroSelection();
         myLeftSelect.addActionListener(e -> {
             new ButtonSound();
@@ -461,23 +466,31 @@ public class MenuManager extends JPanel {
             repaint();
         });
     }
-
+    JLabel myMapSizeInfoLabel;
+    JLabel myMapSizeLabel;
     private void addGamePlayMenu() {
         setMyTitles(gameplayMenuTitles);
         modifyInsets.setInsets(this.getHeight()/2 - 200, 0, 0, 0);
-
         ComponentGenerator gamePlayComponentMaker = new ComponentGenerator(getMyTitles(), GridBagConstraints.PAGE_START, modifyInsets.getMyInsetTop(), modifyInsets.getMyInsetLeft(), modifyInsets.getMyInsetBottom(), modifyInsets.getMyInsetRight(), GO_DOWN);
-        myMapSizeSlider = (JSlider) gamePlayComponentMaker.getComponents()[0][SLIDER];
-        myMapSizeSlider.setMaximum(1000);
-        myMapSizeSlider.setMinimum(0);
-        myEasyModeButton = (JButton) gamePlayComponentMaker.getComponents()[1][BUTTON];
-        myHardModeButton = (JButton) gamePlayComponentMaker.getComponents()[2][BUTTON];
-        myGameStateField = (JTextField) gamePlayComponentMaker.getComponents()[3][TEXT_FIELD];
-        myStartButton = (JButton) gamePlayComponentMaker.getComponents()[4][BUTTON];
-        myBackButton = (JButton) gamePlayComponentMaker.getComponents()[5][BUTTON];
+        myMapSizeInfoLabel = (JLabel) gamePlayComponentMaker.getComponents()[0][LABEL];
+        Font font = myMapSizeInfoLabel.getFont();
+        Font boldFont = font.deriveFont(Font.BOLD, 25);
+        myMapSizeInfoLabel.setFont(boldFont);
+        myMapSizeLabel = (JLabel) gamePlayComponentMaker.getComponents()[1][LABEL];
+        myMapSizeLabel.setFont(boldFont);
+        myMapSizeInfoLabel.setHorizontalAlignment((int) CENTER_ALIGNMENT);
+        myMapSizeLabel.setHorizontalAlignment((int) CENTER_ALIGNMENT);
+        myMapSizeSlider = (JSlider) gamePlayComponentMaker.getComponents()[2][SLIDER];
+        myMapSizeSlider.setMaximum(500);
+        myMapSizeSlider.setMinimum(10);
+        myEasyModeButton = (JButton) gamePlayComponentMaker.getComponents()[3][BUTTON];
+        myHardModeButton = (JButton) gamePlayComponentMaker.getComponents()[4][BUTTON];
+        myGameStateField = (JTextField) gamePlayComponentMaker.getComponents()[5][TEXT_FIELD];
+        myStartButton = (JButton) gamePlayComponentMaker.getComponents()[6][BUTTON];
+        myBackButton = (JButton) gamePlayComponentMaker.getComponents()[7][BUTTON];
 
 
-        gamePlayMenuComponents = new JComponent[] {myMapSizeSlider, myEasyModeButton, myHardModeButton, myGameStateField, myStartButton, myBackButton};
+        gamePlayMenuComponents = new JComponent[] {myMapSizeInfoLabel, myMapSizeLabel, myMapSizeSlider, myEasyModeButton, myHardModeButton, myGameStateField, myStartButton, myBackButton};
         for (int i = 0; i < gamePlayMenuComponents.length; i++) {
             this.add(gamePlayMenuComponents[i], gamePlayComponentMaker.getMyButtonConstraints()[i]);
         }
@@ -491,16 +504,17 @@ public class MenuManager extends JPanel {
         setShownCharacter(false);
         EasyModeAction easyModeAction = new EasyModeAction();
         HardModeAction hardModeAction = new HardModeAction();
-        myMapSizeSlider.addChangeListener(e -> new MapSizeChange(myMapSizeSlider));
+        myMapSizeSlider.addChangeListener(e -> {
+            new MapSizeChange(myMapSizeSlider);
+            myMapSizeLabel.setText(myMapSizeSlider.getValue() + " x " + myMapSizeSlider.getValue());
+        });
         myEasyModeButton.addActionListener(e -> {
             new ButtonSound();
             easyModeAction.setEasyMode(true);
-            hardModeAction.setHardMode(false);
         });
         myHardModeButton.addActionListener(e -> {
             new ButtonSound();
             easyModeAction.setEasyMode(false);
-            hardModeAction.setHardMode(true);
         });
         myGameStateField.getDocument().addDocumentListener(new DocumentListener() {
             @Override
@@ -536,7 +550,7 @@ public class MenuManager extends JPanel {
             checkFileValidity.checkAlreadyExists(gameSaveName);
             gameSaveName = checkFileValidity.checkValidLength(gameSaveName);
             String gameStateFile = new AppendExtension().appendExtension(gameSaveName);
-            SerializeMapGenerator serializeMapGenerator = new SerializeMapGenerator(gameStateFile);
+            SerializeMapGenerator serializeMapGenerator = new SerializeMapGenerator(gameStateFile, myMapSizeSlider.getValue(), myMapSizeSlider.getValue(), easyModeAction.getEasyMode());
             SerializeGameSaves serializeGameSaves = new SerializeGameSaves();
             try {
                 System.out.println(gameStateFile);
@@ -546,7 +560,7 @@ public class MenuManager extends JPanel {
             }
             new DisableMenu(gamePlayMenuComponents);
             try {
-                new GUI(true, gameStateFile);
+                new GUI(true, gameStateFile, getHeroSelection());
             } catch (UnsupportedAudioFileException ex) {
                 throw new RuntimeException(ex);
             } catch (LineUnavailableException ex) {
@@ -654,16 +668,28 @@ public class MenuManager extends JPanel {
         if (getShownCharacter()) {
             if (heroSelection.getHeroSelection() == 0) {
                 image = characters[heroSelection.getHeroSelection()];
+                setHeroSelection(heroSelection.getHeroSelection());
+                mySelect.setText(characterNames[getHeroSelection()]);
+
             } else if (heroSelection.getHeroSelection() == 1) {
-
                 image = characters[heroSelection.getHeroSelection()];
+                setHeroSelection(heroSelection.getHeroSelection());
+                mySelect.setText(characterNames[getHeroSelection()]);
             } else if (heroSelection.getHeroSelection() == 2) {
-
                 image = characters[heroSelection.getHeroSelection()];
+                setHeroSelection(heroSelection.getHeroSelection());
+                mySelect.setText(characterNames[getHeroSelection()]);
             }
             g.drawImage(image,(this.getWidth() - image.getWidth(null)) / 2 - 20,
                     (this.getHeight() - image.getHeight(null)) / 2 - 20, 100, 100, null);
 
         }
+    }
+    static int mySelection = 0;
+    private void setHeroSelection(int theSelection) {
+        mySelection = theSelection;
+    }
+    private int getHeroSelection() {
+        return mySelection;
     }
 }

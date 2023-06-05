@@ -2,6 +2,7 @@
 package MenuManagment;
 
 import Actions.ButtonSound;
+import Actions.HeroSelection;
 import Actions.MusicPlayer;
 import Actions.VolumeChange;
 import Controller.GamePanel;
@@ -23,15 +24,17 @@ public class GUI {
     private String MAIN_MENU_MUSIC = "MainMenu.wav";
     MusicPlayer musicPlayer;
     JSlider volumeChangeSlider;
+    private int myHeroSelection;
     public GUI() throws IOException, UnsupportedAudioFileException, LineUnavailableException, ClassNotFoundException {
         screenData = new ScreenData(this.myJFrame.getWidth(), this.myJFrame.getHeight());
         newMenu = new MenuManager(this.myJFrame);
         loadGui();
         musicPlayer = new MusicPlayer();
     }
-    public GUI(boolean thePlayGame, String theGameStateFile) throws UnsupportedAudioFileException, LineUnavailableException, IOException, ClassNotFoundException {
+    public GUI(boolean thePlayGame, String theGameStateFile, int theSelection) throws UnsupportedAudioFileException, LineUnavailableException, IOException, ClassNotFoundException {
         myPlayGame = thePlayGame;
         myGameStateFile = theGameStateFile;
+        myHeroSelection = theSelection;
         setPlayGame(thePlayGame);
         loadGui();
     }
@@ -43,7 +46,7 @@ public class GUI {
         myJFrame.setResizable(false);
         GamePanel myGamePanel = null;
         if (getPlayGame()) {
-            myGamePanel = new GamePanel(myGameStateFile);
+            myGamePanel = new GamePanel(myGameStateFile, myHeroSelection);
             myJFrame.getContentPane().removeAll();
             myJFrame.add(myGamePanel);
             addMenuBar();

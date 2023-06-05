@@ -1,8 +1,9 @@
 package Model;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class MapGenerator {
+public class MapGenerator implements Serializable {
 
     final private int LEFT_BOUND = 1;
     final private int BOTTOM_BOUND = 2;

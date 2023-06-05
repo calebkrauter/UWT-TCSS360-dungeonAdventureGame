@@ -1,5 +1,6 @@
 package Controller;
 
+import LoadSave.DeserializeMapGenerator;
 import Model.Item.ParentItem;
 import Model.MapGenerator;
 import Model.entity.Archer;
@@ -101,6 +102,7 @@ public class GamePanel extends JPanel implements Runnable {
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
         this.setBackground(Color.black);
 
+//        myMapGenerator = new DeserializeMapGenerator(theGameFile).getMyMapGenerator();
         myMapGenerator = new MapGenerator();
         setMapValues();
 

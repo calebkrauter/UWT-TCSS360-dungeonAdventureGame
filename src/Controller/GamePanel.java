@@ -1,12 +1,18 @@
 package Controller;
 
+import Model.Item.ParentItem;
 import Model.MapGenerator;
+import Model.entity.Archer;
 import Model.entity.Hero;
-import View.map.TileManager;
+import Model.entity.StartHero;
+import Model.entity.Stevey;
 import View.HeroDisplay;
+import View.ItemDisplay;
+import View.map.RoomManager;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.geom.Point2D;
 
 public class GamePanel extends JPanel implements Runnable{
 
@@ -54,13 +60,35 @@ public class GamePanel extends JPanel implements Runnable{
     // implementing runnable is key to using thread.
     private Thread myGameThread;
 
+    private MapManager myMapManager = new MapManager();
 
-    private TileManager myTileManager = new TileManager(this);
+    private CollisionHandler myCollisionHandler = new CollisionHandler(this);
+
+    // set to public rn for the collisionHandler class
+    public RoomManager myRoomManager = new RoomManager(this, myMapManager);
     private KeyHandler myKeyHandler = new KeyHandler();
     private MouseHandler myMouseHandler = new MouseHandler();
-    public Hero myHero = new Hero(this, myKeyHandler);
 
-    private HeroDisplay myHeroDisplay = new HeroDisplay(this, myKeyHandler, myHero);
+
+
+
+
+
+    // THIS IS WHERE PICKING A CHARACTER FROM MENU NEEDS TO BE IMPLEMENTED:
+    public Hero myHero;
+
+    // Character types
+    public Hero myStarterHero = new StartHero(this, myKeyHandler);
+    public Hero myStevey = new Stevey(this, myKeyHandler);
+    public Hero myArcher = new Archer(this, myKeyHandler);
+
+    private HeroDisplay myHeroDisplay;
+
+    // ASSETS
+    public ParentItem myItems[] = new ParentItem[10];
+    public ItemSetter myItemSetter = new ItemSetter(this, myMapManager);
+    private ItemDisplay myItemDisplay;
+
 
     int FPS = 60;
 
@@ -70,6 +98,11 @@ public class GamePanel extends JPanel implements Runnable{
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
         this.setBackground(Color.black);
 
+        // some form of getHeroType() method from menu!!
+        myHero = myArcher;
+
+        myHeroDisplay = new HeroDisplay(this, myKeyHandler, myHero, myCollisionHandler);
+        myItemDisplay = new ItemDisplay(this);
         // improves the game's rendering because all the drawing from this component
         // will be done in an offscreen painting buffer.
         this.setDoubleBuffered(true);
@@ -85,6 +118,16 @@ public class GamePanel extends JPanel implements Runnable{
 
     }
 
+    public void SetupGame(){
+        myItemSetter.setObject();
+
+        // Sets character's position to center of start room
+        Point2D thePoint = new Point2D.Float(0, 0);
+        thePoint = myMapManager.getStartPoint();
+        myHero.setWorldX((int) thePoint.getX() * ROOM_SIZE + ROOM_SIZE/2 - TILE_SIZE/2);
+        myHero.setWorldY((int) thePoint.getX() * ROOM_SIZE + ROOM_SIZE/2 - TILE_SIZE/2);
+    }
+
 
     public void startGameThread(){
 
@@ -92,8 +135,6 @@ public class GamePanel extends JPanel implements Runnable{
         // the thread constructor.
         myGameThread = new Thread(this);
         myGameThread.start();
-
-
     }
 
     // DELTA / ACCUMULATOR GAME LOOP
@@ -148,11 +189,21 @@ public class GamePanel extends JPanel implements Runnable{
     // paint the current state.
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
+        Graphics2D g2 = (Graphics2D) g;        // allows us to use additional functions
 
-        // allows us to use additional functions such as....
-        Graphics2D g2 = (Graphics2D) g;
 
-        myTileManager.draw(g2);
+
+        // ROOMS
+        myRoomManager.draw(g2);
+
+        // ITEMS
+        for(int i = 0; i < myItems.length; i++) {
+            if(myItems[i] != null){
+                myItemDisplay.draw(g2, myItems[i]);
+            }
+        }
+
+        //THE PLAYER
         myHeroDisplay.draw(g2);
 
         // good practice to save memory.

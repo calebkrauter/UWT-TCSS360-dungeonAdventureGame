@@ -10,7 +10,7 @@ import java.io.File;
 import java.io.IOException;
 
 
-public class Hero extends Entity {
+public abstract class Hero extends Entity {
 
     KeyHandler keyH;
     GamePanel gp;
@@ -36,6 +36,9 @@ public class Hero extends Entity {
         myScreenX = (gp.screenWidth / 2) - (gp.TILE_SIZE/2);
         myScreenY = (gp.screenHeight / 2) - (gp.TILE_SIZE/2);;
 
+        // can be changed, we don't want hitbox as big as character
+        Rectangle solidHitBox = new Rectangle(theGP.TILE_SIZE/8, theGP.TILE_SIZE/4, theGP.TILE_SIZE * 3/4, theGP.TILE_SIZE* 3/4);
+        setHitBox(solidHitBox);
 
         setDefaultValues();
         getHeroImage();
@@ -111,19 +114,22 @@ public class Hero extends Entity {
         try {
             // only have two sprite pngs so its the same two in each direction. Need to make more
             // Need to make more later on.
-            up1 = ImageIO.read(new File("res/hero/up1.png"));
-            up2 = ImageIO.read(new File("res/hero/up2.png"));
-            down1 = ImageIO.read(new File("res/hero/down1.png"));
-            down2 = ImageIO.read(new File("res/hero/down2.png"));
-            left1 = ImageIO.read(new File("res/hero/left1.png"));
-            left2 = ImageIO.read(new File("res/hero/left1.png"));
-            right1 = ImageIO.read(new File("res/hero/right1.png"));
-            right2 = ImageIO.read(new File("res/hero/right1.png"));
+            setImageUp1(ImageIO.read(new File("res/hero/up1.png")));
+            setImageUp2(ImageIO.read(new File("res/hero/up2.png")));
+            setImageDown1(ImageIO.read(new File("res/hero/down1.png")));
+            setImageDown2(ImageIO.read(new File("res/hero/down2.png")));
+            setImagLeft1(ImageIO.read(new File("res/hero/left1.png")));
+            setImageLeft2(ImageIO.read(new File("res/hero/left1.png")));
+            setImageRight1(ImageIO.read(new File("res/hero/right1.png")));
+            setImageRight2(ImageIO.read(new File("res/hero/right1.png")));
 
-        }catch(IOException e) {
+        } catch(IOException e) {
             e.printStackTrace();
         }
 
     }
+
+
+
 
 }

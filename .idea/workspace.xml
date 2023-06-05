@@ -5,7 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="Added txt files for text maps and worked on tile manager for collision">
+      <change afterPath="$PROJECT_DIR$/res/Enemies/Gremlin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Enemies/Ogre.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Enemies/Skeleton2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Object/doorItemBottom.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Object/doorItemLeft.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Object/doorItemRight.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Object/doorItemTop.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/360-Dungeon-Adventure.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/360-Dungeon-Adventure.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/entity/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/entity/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/entity/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/HeroDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/HeroDisplay.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,9 +100,10 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\James\IdeaProjects\360-Dungeon-Adventure\res\Text Maps" />
+      <recent name="C:\Users\James\IdeaProjects\360-Dungeon-Adventure\res\Object" />
+      <recent name="C:\Users\James\IdeaProjects\360-Dungeon-Adventure\res\Enemies" />
       <recent name="$PROJECT_DIR$/res/room tiles" />
       <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/src/Model" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

@@ -1,20 +1,25 @@
 package Model.entity;
+
+import java.awt.*;
 import java.awt.image.BufferedImage;
 
 // Parent
-public class Entity {
+public abstract class Entity {
 
     // Player position on world map
-    public int myWorldX, myWorldY;
-    public int mySpeed;
-    public BufferedImage up1, up2, down1, down2, left1, left2, right1, right2;
+    private int myWorldX, myWorldY;
+    private int mySpeed;
+    private BufferedImage up1, up2, down1, down2, left1, left2, right1, right2;
     private String myEntityName;
-    public String myDirection;
+    private String myDirection;
 
     // after how many updates should the sprite change?
     public int spriteCounter = 0;
     // number of sprite images is the max
     public int spriteNum = 1;
+
+    public Rectangle myHitBox;
+    public boolean collisionActive = false;
 
     private int myHealthPoints = 75;
 
@@ -90,7 +95,68 @@ public class Entity {
         return myHitChance;
     }
 
+    public void setImageUp1(BufferedImage theBufferedImage) {
+        up1 = theBufferedImage;
+    }
+    public void setImageUp2(BufferedImage theBufferedImage) {
+        up2 = theBufferedImage;
+    }
+    public void setImageDown1(BufferedImage theBufferedImage) {
+        down1= theBufferedImage;
+    }
+    public void setImageDown2(BufferedImage theBufferedImage) {
+        down2 = theBufferedImage;
+    }
+    public void setImagLeft1(BufferedImage theBufferedImage) {
+        left1 = theBufferedImage;
+    }
+    public void setImageLeft2(BufferedImage theBufferedImage) {
+        left2 = theBufferedImage;
+    }
+    public void setImageRight1(BufferedImage theBufferedImage) {
+        right1 = theBufferedImage;
+    }
+    public void setImageRight2(BufferedImage theBufferedImage) {
+        right2 = theBufferedImage;
+    }
 
+    public BufferedImage getImageUp1() {
+        return up1;
+    }
+    public BufferedImage getImageUp2() {
+        return up2;
+    }
+    public BufferedImage getImageDown1() {
+        return down1;
+    }
+    public BufferedImage getImageDown2() {
+        return down2;
+    }
+    public BufferedImage getImageLeft1() {
+        return left1;
+    }
+    public BufferedImage getImageLeft2() {
+        return left2;
+    }
+    public BufferedImage getImageRight1() {
+        return right1;
+    }
+    public BufferedImage getImageRight2() {
+        return right2;
+    }
+
+    public Rectangle getHitBox() {
+        return myHitBox;
+    }
+    public void setHitBox(Rectangle theHitBox) {
+        myHitBox = theHitBox;
+    }
+    public boolean getCollisionActive(){
+        return collisionActive;
+    }
+    public void setCollisionActive(boolean thecollisionActive){
+        collisionActive = thecollisionActive;
+    }
 
 //    // Overriding toString() method of String class
 //    @Override

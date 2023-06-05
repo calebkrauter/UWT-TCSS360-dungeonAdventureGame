@@ -19,12 +19,15 @@ public class Main {
         // so we can see it
         myWindow.pack();
 
-        //MapGenerator myMapGenerator = new MapGenerator();
 
 
 
         myWindow.setLocationRelativeTo(null);
         myWindow.setVisible(true);
+
+        // sets the objects
+        myGamePanel.SetupGame();
+
         myGamePanel.startGameThread();
 
 

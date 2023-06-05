@@ -1,5 +1,6 @@
 package View;
 
+import Controller.CollisionHandler;
 import Controller.GamePanel;
 import Controller.KeyHandler;
 import Model.entity.Hero;
@@ -9,12 +10,15 @@ import java.awt.image.BufferedImage;
 
 public class HeroDisplay {
     KeyHandler myKeyHandler;
+    CollisionHandler myCollisionHandler;
     GamePanel myGamePanel;
     Hero myHero;
-    public HeroDisplay(GamePanel theGP, KeyHandler theKeyH, Hero theHero) {
+
+    public HeroDisplay(GamePanel theGP, KeyHandler theKeyH, Hero theHero, CollisionHandler theCollisionHandler) {
         this.myGamePanel = theGP;
         this.myKeyHandler = theKeyH;
         this.myHero = theHero;
+        this.myCollisionHandler = theCollisionHandler;
     }
 
 
@@ -46,6 +50,10 @@ public class HeroDisplay {
                 myHero.setDirection("right");
                 myHero.setWorldX(tempWorldX + myHero.getSpeed());
             }
+
+            myHero.setCollisionActive(false);
+            myCollisionHandler.checkTile(myHero); //pass hero class as an entity
+
             myHero.spriteCounter++;
             // every 12 frames player image changes
             if(myHero.spriteCounter > 12) {
@@ -71,30 +79,30 @@ public class HeroDisplay {
 
         if (myHero.getDirection().equals("up")){
             if(myHero.spriteNum == 1){
-                image = myHero.up1;
+                image = myHero.getImageUp1();
             } else if (myHero.spriteNum == 2){
-                image = myHero.up2;
+                image = myHero.getImageUp2();
             }
         }
         else if (myHero.getDirection().equals("down")){
             if(myHero.spriteNum == 1){
-                image = myHero.down1;
+                image = myHero.getImageDown1();
             } else if (myHero.spriteNum == 2){
-                image = myHero.down2;
+                image = myHero.getImageDown2();
             }
         }
         else if (myHero.getDirection().equals("left")){
             if(myHero.spriteNum == 1){
-                image = myHero.left1;
+                image = myHero.getImageLeft1();
             } else if (myHero.spriteNum == 2){
-                image = myHero.left2;
+                image = myHero.getImageLeft2();
             }
         }
         else if (myHero.getDirection().equals("right")){
             if(myHero.spriteNum == 1){
-                image = myHero.right1;
+                image = myHero.getImageRight1();
             } else if (myHero.spriteNum == 2){
-                image = myHero.right2;
+                image = myHero.getImageRight2();
             }
         }
 

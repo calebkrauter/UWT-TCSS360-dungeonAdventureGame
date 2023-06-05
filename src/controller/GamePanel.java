@@ -91,7 +91,7 @@ public class GamePanel extends JPanel implements Runnable {
 
 
     // ASSETS
-    public ParentItem myItems[] = new ParentItem[50]; // change num items based on map???
+    public ParentItem myItems[] = new ParentItem[200]; // change num items based on map???
     public ItemSetter myItemSetter;
     private ItemDisplay myItemDisplay;
 
@@ -147,6 +147,7 @@ public class GamePanel extends JPanel implements Runnable {
     public void SetupGame(){
         myItemSetter.setStartItems();
         myItemSetter.setKeys();
+        myItemSetter.setDoors();
         // Sets character's position to center of start room
         Point2D thePoint = new Point2D.Float(0, 0);
         thePoint = myRoomManager.getStartPoint();

@@ -1,8 +1,6 @@
 package Controller;
 
-import Model.Item.HealthPotion;
-import Model.Item.Key;
-import Model.Item.SpeedPotion;
+import Model.Item.*;
 import View.map.RoomManager;
 
 import java.awt.geom.Point2D;
@@ -50,11 +48,44 @@ public class ItemSetter {
 
             myGamePanel.myItems[place] = new Key();
 
-            // below x and y are revrsed due to how the map is made
+            // below getx and gety are reversed due to how the map is made
             myGamePanel.myItems[place].setWorldY((int) thePoint.getX() *  myGamePanel.ROOM_SIZE +  myGamePanel.ROOM_SIZE/2 -  myGamePanel.TILE_SIZE/2);
             myGamePanel.myItems[place].setWorldX((int) thePoint.getY() *  myGamePanel.ROOM_SIZE +  myGamePanel.ROOM_SIZE/2 -  myGamePanel.TILE_SIZE/2);
 
             myNumExistingItems += 1;
+            place = myNumExistingItems;
+
+        }
+    }
+
+    public void setDoors() {
+        List<Point2D> thePoints;
+        thePoints = myRoomManager.getDoorRoomPositions();
+        int place = getNumExistingItems();
+
+        for (int i = 0; i < thePoints.size(); i++) {
+            Point2D thePoint = thePoints.get(i);
+
+            myGamePanel.myItems[place] = new TopDoor();
+            myGamePanel.myItems[place + 1] = new BottomDoor();
+            myGamePanel.myItems[place + 2] = new LeftDoor();
+            myGamePanel.myItems[place + 3] = new RightDoor();
+
+
+            // below getx and gety are reversed due to how the map is made
+            myGamePanel.myItems[place].setWorldY((int) thePoint.getX() *  myGamePanel.ROOM_SIZE);
+            myGamePanel.myItems[place].setWorldX((int) thePoint.getY() *  myGamePanel.ROOM_SIZE  + (4 * myGamePanel.TILE_SIZE) - 16);
+
+            myGamePanel.myItems[place + 1].setWorldY((int) thePoint.getX() *  myGamePanel.ROOM_SIZE + (8 * myGamePanel.TILE_SIZE) - 32);
+            myGamePanel.myItems[place + 1].setWorldX((int) thePoint.getY() *  myGamePanel.ROOM_SIZE  + (4 * myGamePanel.TILE_SIZE) - 16);
+
+            myGamePanel.myItems[place + 2].setWorldY((int) thePoint.getX() *  myGamePanel.ROOM_SIZE + (4 * myGamePanel.TILE_SIZE) - 16);
+            myGamePanel.myItems[place + 2].setWorldX((int) thePoint.getY() *  myGamePanel.ROOM_SIZE);
+
+            myGamePanel.myItems[place + 3].setWorldY((int) thePoint.getX() *  myGamePanel.ROOM_SIZE + (4 * myGamePanel.TILE_SIZE) - 16);
+            myGamePanel.myItems[place + 3].setWorldX((int) thePoint.getY() *  myGamePanel.ROOM_SIZE + (8 * myGamePanel.TILE_SIZE) - 32);
+
+            myNumExistingItems += 4;
             place = myNumExistingItems;
 
         }

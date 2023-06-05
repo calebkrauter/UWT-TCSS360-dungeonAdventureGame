@@ -28,6 +28,7 @@ public class Main {
         }
 //        new SerializeGameSaves().serializeGameSaves();
 //        new GUI();
+
         myJFrame.setDefaultCloseOperation(3);
         myJFrame.setMinimumSize(new Dimension(850, 850));
         myJFrame.setResizable(false);

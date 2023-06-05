@@ -186,7 +186,7 @@ public class MenuManager extends JPanel {
     private void addLoadSaveActions() throws IOException {
         new EnableMenu(loadSaveSelectionComponents);
         myBackButton.addActionListener(e -> {
-            new buttonSound();
+            new ButtonSound();
             new GoBackAction(loadSaveSelectionComponents, mainMenuComponents);
 
         });
@@ -194,7 +194,7 @@ public class MenuManager extends JPanel {
         SerializeGameSaves serializeGameSaves = new SerializeGameSaves();
 
         myLeftSelect.addActionListener(e -> {
-            new buttonSound();
+            new ButtonSound();
             try {
                 if (deserializeGameSaves == null || deserializeGameSaves.getDeserializedGameSaves() == null || deserializeGameSaves.getDeserializedGameSaves().isEmpty()) {
                     setLoadSaveButtonsEnabled(false);
@@ -217,7 +217,7 @@ public class MenuManager extends JPanel {
 
         });
         mySelect.addActionListener(e -> {
-            new buttonSound();
+            new ButtonSound();
             try {
                 if (deserializeGameSaves == null || deserializeGameSaves.getDeserializedGameSaves() == null || deserializeGameSaves.getDeserializedGameSaves().isEmpty()) {
                     setLoadSaveButtonsEnabled(false);
@@ -249,7 +249,7 @@ public class MenuManager extends JPanel {
         });
 
         myRightSelect.addActionListener(e -> {
-            new buttonSound();
+            new ButtonSound();
             try {
                 if (deserializeGameSaves == null || deserializeGameSaves.getDeserializedGameSaves() == null || deserializeGameSaves.getDeserializedGameSaves().isEmpty()) {
                     setLoadSaveButtonsEnabled(false);
@@ -273,7 +273,7 @@ public class MenuManager extends JPanel {
 
         });
         myDelete.addActionListener(e -> {
-            new buttonSound();
+            new ButtonSound();
 
             try {
                 if (deserializeGameSaves == null || deserializeGameSaves.getDeserializedGameSaves() == null || deserializeGameSaves.getDeserializedGameSaves().isEmpty()) {
@@ -367,7 +367,7 @@ public class MenuManager extends JPanel {
         setMusicPlayedFirstTime(NOT_FIRST_TIME_PLAYED);
 
         myMusicToggle.setSelected(true);
-        toggleMusicChange.setMyMusicToggleSelected(true);
+        toggleMusicChange.setMusicToggleSelected(true);
         addOptionsActions();
     }
     public void updateAudioSettings() {
@@ -375,13 +375,13 @@ public class MenuManager extends JPanel {
 
         toggleMusicChange = new ToggleMusicChange(myMusicToggle);
         if (getMusicPlayedFirstTimeState() == FIRST_TIME_PLAYED) {
-            updateSlider.setMyVolumeSlider();
+            updateSlider.setVolumeSlider();
         }
     }
 
     private void addMainMenuActions() {
         myMainPlayButton.addActionListener(e -> {
-            new buttonSound();
+            new ButtonSound();
             new DisableMenu(mainMenuComponents);
             try {
                 addCharacterSelectMenu();
@@ -391,7 +391,7 @@ public class MenuManager extends JPanel {
 
         });
         myMainLoadButton.addActionListener(e -> {
-            new buttonSound();
+            new ButtonSound();
             new DisableMenu(mainMenuComponents);
             try {
                 addLoadSaveSelectMenu();
@@ -407,7 +407,7 @@ public class MenuManager extends JPanel {
             }
         });
         myMainOptionsButton.addActionListener(e -> {
-            new buttonSound();
+            new ButtonSound();
             try {
                 new OptionsButtonAction(mainMenuComponents);
             } catch (IOException ex) {
@@ -429,11 +429,10 @@ public class MenuManager extends JPanel {
         int i = 0;
         AtomicBoolean goLeft = new AtomicBoolean(true);
         AtomicBoolean goRight = new AtomicBoolean(false);
-        this.add(new AddCharacterSelectorPanel());
         setShownCharacter(true);
         HeroSelection heroSelection = new HeroSelection();
         myLeftSelect.addActionListener(e -> {
-            new buttonSound();
+            new ButtonSound();
             try {
                 new HeroSelection(true, false);
             } catch (IOException ex) {
@@ -442,12 +441,12 @@ public class MenuManager extends JPanel {
             repaint();
         });
         mySelect.addActionListener(e -> {
-            new buttonSound();
+            new ButtonSound();
             heroSelection.setHeroSelected(true);
             addGamePlayMenu();
         });
         myRightSelect.addActionListener(e -> {
-            new buttonSound();
+            new ButtonSound();
             try {
                 new HeroSelection(false, true);
             } catch (IOException ex) {
@@ -456,7 +455,7 @@ public class MenuManager extends JPanel {
             repaint();
         });
         myBackButton.addActionListener(e -> {
-            new buttonSound();
+            new ButtonSound();
             new GoBackAction(characterSelectionComponents, mainMenuComponents);
             setShownCharacter(false);
             repaint();
@@ -467,8 +466,7 @@ public class MenuManager extends JPanel {
         setMyTitles(gameplayMenuTitles);
         modifyInsets.setInsets(this.getHeight()/2 - 200, 0, 0, 0);
 
-        ComponentGenerator gamePlayComponentMaker = new ComponentGenerator(getMyTitles(), GridBagConstraints.PAGE_START, modifyInsets.getMyInsetTop(), modifyInsets.getMyInsetLeft(), modifyInsets.getMyInsetBottom(), modifyInsets.getMyInsetRight(), GO_DOWN
-        );
+        ComponentGenerator gamePlayComponentMaker = new ComponentGenerator(getMyTitles(), GridBagConstraints.PAGE_START, modifyInsets.getMyInsetTop(), modifyInsets.getMyInsetLeft(), modifyInsets.getMyInsetBottom(), modifyInsets.getMyInsetRight(), GO_DOWN);
         myMapSizeSlider = (JSlider) gamePlayComponentMaker.getComponents()[0][SLIDER];
         myMapSizeSlider.setMaximum(1000);
         myMapSizeSlider.setMinimum(0);
@@ -495,31 +493,31 @@ public class MenuManager extends JPanel {
         HardModeAction hardModeAction = new HardModeAction();
         myMapSizeSlider.addChangeListener(e -> new MapSizeChange(myMapSizeSlider));
         myEasyModeButton.addActionListener(e -> {
-            new buttonSound();
+            new ButtonSound();
             easyModeAction.setEasyMode(true);
             hardModeAction.setHardMode(false);
         });
         myHardModeButton.addActionListener(e -> {
-            new buttonSound();
+            new ButtonSound();
             easyModeAction.setEasyMode(false);
             hardModeAction.setHardMode(true);
         });
         myGameStateField.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
-                new buttonSound();
+                new ButtonSound();
 
             }
 
             @Override
             public void removeUpdate(DocumentEvent e) {
-                new buttonSound();
+                new ButtonSound();
 
             }
 
             @Override
             public void changedUpdate(DocumentEvent e) {
-                new buttonSound();
+                new ButtonSound();
 
             }
         });
@@ -531,7 +529,7 @@ public class MenuManager extends JPanel {
             }
         });
         myStartButton.addActionListener(e -> {
-            new buttonSound();
+            new ButtonSound();
             gameSaveName = myGameStateField.getText();
             CheckFileValidity checkFileValidity = new CheckFileValidity();
             checkFileValidity.checkAlreadyExists(gameSaveName);
@@ -560,7 +558,7 @@ public class MenuManager extends JPanel {
         });
 
         myBackButton.addActionListener(e -> {
-            new buttonSound();
+            new ButtonSound();
             new GoBackAction(gamePlayMenuComponents, characterSelectionComponents);
             setShownCharacter(true);
             repaint();
@@ -600,7 +598,7 @@ public class MenuManager extends JPanel {
             }
         });
         myMusicToggle.addActionListener(e -> {
-            new buttonSound();
+            new ButtonSound();
             try {
                 if (myMusicToggle.isSelected()) {
                     new ToggleMusicChange(myMusicToggle, "MainMenu.wav");
@@ -620,7 +618,7 @@ public class MenuManager extends JPanel {
             }
         });
         myAboutButton.addActionListener(e -> {
-            new buttonSound();
+            new ButtonSound();
             try {
                 new AboutAction();
             } catch (FileNotFoundException ex) {
@@ -630,11 +628,11 @@ public class MenuManager extends JPanel {
             }
         });
         myCreditsButton.addActionListener(e -> {
-            new buttonSound();
+            new ButtonSound();
             new CreditsAction();
         });
         myBackButton.addActionListener(e -> {
-            new buttonSound();
+            new ButtonSound();
             new GoBackAction(optionsMenuComponents, mainMenuComponents);
         });
     }

@@ -2,7 +2,7 @@
 package MenuManagment;
 
 import Actions.MusicPlayer;
-import Actions.buttonSound;
+import Actions.ButtonSound;
 import Actions.VolumeChange;
 import Controller.GamePanel;
 import LoadSave.SerializeMapGenerator;
@@ -25,8 +25,8 @@ public class GUI {
     JSlider volumeChangeSlider;
     public GUI() throws IOException, UnsupportedAudioFileException, LineUnavailableException, ClassNotFoundException {
         screenData = new ScreenData(this.myJFrame.getWidth(), this.myJFrame.getHeight());
-        this.newMenu = new MenuManager(this.myJFrame);
-        this.loadGui();
+        newMenu = new MenuManager(this.myJFrame);
+        loadGui();
         musicPlayer = new MusicPlayer();
     }
     public GUI(boolean thePlayGame, String theGameStateFile) throws UnsupportedAudioFileException, LineUnavailableException, IOException, ClassNotFoundException {
@@ -75,7 +75,7 @@ public class GUI {
         JMenu menu = new JMenu("THE LOST PILLARS OF OOP");
         JButton mainMenuButton = new JButton("Main Menu");
         mainMenuButton.addActionListener(e -> {
-            new buttonSound();
+            new ButtonSound();
 
             setPlayGame(false);
             try {
@@ -95,7 +95,7 @@ public class GUI {
         JButton saveButton = new JButton("SAVE");
         saveButton.addActionListener(e -> {
             new SerializeMapGenerator(myGameStateFile);
-            new buttonSound();
+            new ButtonSound();
 
             System.out.println("Serialized " + myGameStateFile + " ... SAVING");
         });

@@ -5,16 +5,9 @@ import java.io.File;
 import java.io.IOException;
 
 public class MusicPlayer {
-    String myMusic;
-    AudioInputStream audioStream;
+    private AudioInputStream audioStream;
     // Make getter for clip
-    public static Clip clip;
-
-    public MusicPlayer(String theMusic) throws IOException, UnsupportedAudioFileException, LineUnavailableException {
-        myMusic = theMusic;
-        playMusic(myMusic);
-    }
-
+    private static Clip clip;
     public MusicPlayer() {
 
     }

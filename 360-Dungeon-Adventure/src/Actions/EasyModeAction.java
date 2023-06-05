@@ -1,7 +1,7 @@
 package Actions;
 
 public class EasyModeAction {
-    static boolean myEasyGameMode = false;
+    private static boolean myEasyGameMode = false;
     public EasyModeAction() {
 
     }

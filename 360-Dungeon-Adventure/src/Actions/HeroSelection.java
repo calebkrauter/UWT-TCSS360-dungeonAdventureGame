@@ -4,21 +4,21 @@ package Actions;
 import java.io.IOException;
 
 public class HeroSelection {
-    static int myHeroSelection = 0;
-    static int i = 1;
-    static boolean mySelectedHero = false;
+    private static int myHeroSelection = 0;
+    private static int i = 1;
+    private static boolean mySelectedHero = false;
     public HeroSelection() {
 
     }
 
-    public HeroSelection(boolean goLeft, boolean goRight) throws IOException {
-        if (goLeft) {
+    public HeroSelection(boolean theGoLeft, boolean theGoRight) throws IOException {
+        if (theGoLeft) {
             --i;
             this.containInBounds();
             this.setHeroSelection(i);
         }
 
-        if (goRight) {
+        if (theGoRight) {
             ++i;
             this.containInBounds();
             this.setHeroSelection(i);

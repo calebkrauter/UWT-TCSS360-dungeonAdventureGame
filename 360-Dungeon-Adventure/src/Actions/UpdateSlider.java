@@ -4,8 +4,8 @@ import javax.swing.*;
 
 public class UpdateSlider {
 
-    static JSlider myVolumeSlider;
-    VolumeChange volumeChange;
+    private static JSlider myVolumeSlider;
+    private VolumeChange volumeChange;
     public UpdateSlider(JSlider theVolumeSlider) {
         myVolumeSlider = theVolumeSlider;
         volumeChange = new VolumeChange();
@@ -14,10 +14,10 @@ public class UpdateSlider {
 
     }
 
-    public void setMyVolumeSlider() {
+    public void setVolumeSlider() {
         myVolumeSlider.setValue(volumeChange.getMusicVolume());
     }
-    public int getMyVolumeSlider() {
+    public int getVolumeSlider() {
        return myVolumeSlider.getValue();
     }
 }

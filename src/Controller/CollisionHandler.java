@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.entity.Entity;
+import View.map.CollisionTile;
 import View.map.RoomManager;
 
 public class CollisionHandler {
@@ -23,30 +24,53 @@ public class CollisionHandler {
         int  hitboxBottomWorldY = theEntity.getWorldY() + theEntity.getHitBox().y + theEntity.getHitBox().height;
 
         // based on coordinates, find Col and Row
-        int hitboxLeftCol = hitboxLeftWorldX/ myGamePanel.TILE_SIZE;
-        int hitboxRightCol = hitboxRightWorldX/ myGamePanel.TILE_SIZE;
-        int hitboxTopRow = hitboxTopWorldY/ myGamePanel.TILE_SIZE;
-        int hitboxBottomRow = hitboxBottomWorldY/ myGamePanel.TILE_SIZE;
+        int hitboxLeftCol = hitboxLeftWorldX/ myGamePanel.COLLISION_TILE_SIZE;
+        int hitboxRightCol = hitboxRightWorldX/ myGamePanel.COLLISION_TILE_SIZE;
+        int hitboxTopRow = hitboxTopWorldY/ myGamePanel.COLLISION_TILE_SIZE;
+        int hitboxBottomRow = hitboxBottomWorldY/ myGamePanel.COLLISION_TILE_SIZE;
 
-        int tileNum1, tileNum2;
+        CollisionTile tileNum1, tileNum2;
 
         switch(theEntity.getDirection()) {
             case "up":
                 // we use + entity.speed to predict where the hitbox will move
-                hitboxTopRow = (hitboxTopWorldY - theEntity.getSpeed()) / myGamePanel.TILE_SIZE;
+                hitboxTopRow = (hitboxTopWorldY - theEntity.getSpeed()) / myGamePanel.COLLISION_TILE_SIZE;
 
                 // now we can find out what tile the player is trying to step into
                 // 2 possible tiles
-                // this does not yet work because we do not have an underlying collision map of rectangles or int's.
-                //tileNum1 = myGamePanel.myRoomManager.getWorldCollisionMap
+                tileNum1 = myRoomManager.getCollisionWorldMap()[hitboxLeftCol][hitboxTopRow];
+                tileNum2 = myRoomManager.getCollisionWorldMap()[hitboxRightCol][hitboxTopRow];
 
-                //tileNum2 = myGamePanel.myRoomManager.getCollisionMapTileNum(new int[hitboxRightCol][hitboxTopRow]);
+                if (tileNum1.getCollision() || tileNum2.getCollision()){
+                    theEntity.collisionActive = true;
+                }
                 break;
             case "down":
+                hitboxBottomRow = (hitboxBottomWorldY + theEntity.getSpeed()) / myGamePanel.COLLISION_TILE_SIZE;
+                tileNum1 = myRoomManager.getCollisionWorldMap()[hitboxLeftCol][hitboxBottomRow];
+                tileNum2 = myRoomManager.getCollisionWorldMap()[hitboxRightCol][hitboxBottomRow];
+
+                if (tileNum1.getCollision() || tileNum2.getCollision()){
+                    theEntity.collisionActive = true;
+                }
                 break;
             case "left":
+                hitboxLeftCol = (hitboxLeftWorldX - theEntity.getSpeed()) / myGamePanel.COLLISION_TILE_SIZE;
+                tileNum1 = myRoomManager.getCollisionWorldMap()[hitboxLeftCol][hitboxTopRow];
+                tileNum2 = myRoomManager.getCollisionWorldMap()[hitboxLeftCol][hitboxBottomRow];
+
+                if (tileNum1.getCollision() || tileNum2.getCollision()){
+                    theEntity.collisionActive = true;
+                }
                 break;
             case "right":
+                hitboxRightCol = (hitboxRightWorldX + theEntity.getSpeed()) / myGamePanel.COLLISION_TILE_SIZE;
+                tileNum1 = myRoomManager.getCollisionWorldMap()[hitboxRightCol][hitboxTopRow];
+                tileNum2 = myRoomManager.getCollisionWorldMap()[hitboxRightCol][hitboxBottomRow];
+
+                if (tileNum1.getCollision() || tileNum2.getCollision()){
+                    theEntity.collisionActive = true;
+                }
                 break;
         }
 

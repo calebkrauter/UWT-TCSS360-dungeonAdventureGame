@@ -36,23 +36,41 @@ public class HeroDisplay {
 
             if(myKeyHandler.upPressed == true){
                 myHero.setDirection("up");
-                myHero.setWorldY(tempWorldY - myHero.getSpeed());
             }
             else if(myKeyHandler.downPressed == true){
                 myHero.setDirection("down");
-                myHero.setWorldY(tempWorldY + myHero.getSpeed());
             }
             else if(myKeyHandler.leftPressed == true){
                 myHero.setDirection("left");
-                myHero.setWorldX(tempWorldX - myHero.getSpeed());
             }
             else if(myKeyHandler.rightPressed == true){
                 myHero.setDirection("right");
-                myHero.setWorldX(tempWorldX + myHero.getSpeed());
             }
 
+            // Check collision
             myHero.setCollisionActive(false);
-            myCollisionHandler.checkTile(myHero); //pass hero class as an entity
+            myCollisionHandler.checkTile(myHero); // pass hero class as an entity
+
+            // if collision is false player can move
+            if (myHero.getCollisionActive() == false) {
+
+                switch (myHero.getDirection()) {
+                    case "up":
+                        myHero.setWorldY(tempWorldY - myHero.getSpeed());
+                        break;
+                    case "down":
+                        myHero.setWorldY(tempWorldY + myHero.getSpeed());
+                        break;
+                    case "left":
+                        myHero.setWorldX(tempWorldX - myHero.getSpeed());
+                        break;
+                    case "right":
+                        myHero.setWorldX(tempWorldX + myHero.getSpeed());
+                        break;
+
+                }
+            }
+
 
             myHero.spriteCounter++;
             // every 12 frames player image changes

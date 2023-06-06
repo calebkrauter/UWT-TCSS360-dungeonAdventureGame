@@ -1,13 +1,7 @@
-package Model.entity;
+package Model.Entity;
 
-import Controller.GamePanel;
+import Controller.GameLoop;
 import Controller.KeyHandler;
-
-import javax.imageio.ImageIO;
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 
 
 public class StartHero extends Hero {
@@ -20,7 +14,7 @@ public class StartHero extends Hero {
     private int mySpecialChance = 30; // 30% percent
     private int mySpecialDamage = 80;
 
-    public StartHero(GamePanel theGP, KeyHandler theKeyH) {
+    public StartHero(GameLoop theGP, KeyHandler theKeyH) {
         super(theGP, theKeyH);
         setDefaultValues();
     }
@@ -31,8 +25,8 @@ public class StartHero extends Hero {
         // Will eventually be set to center of start room. This would be the coordinate of the room
         // times the room size plus half the room size on both x and y.
         // EX: StartRoom = [1, 3], worldX = (1 * 400) + 200, worldY = (3 * 400) + 200
-        setWorldX(gp.myWorldMapMaxCol / 2);
-        setWorldY(gp.myWorldMapMaxRow / 2);
+        setWorldX(myGameLoop.myWorldMapMaxCol / 2);
+        setWorldY(myGameLoop.myWorldMapMaxRow / 2);
         setSpeed(4);
         //starting direction can vary.
         setDirection("down");
@@ -49,6 +43,5 @@ public class StartHero extends Hero {
         setBlockChance(myBlockChance); // 20% percent
         setSpecialChance(mySpecialChance); // 40% percent
         setSpecialDamage(mySpecialDamage);
-        getHeroImage();
     }
 }

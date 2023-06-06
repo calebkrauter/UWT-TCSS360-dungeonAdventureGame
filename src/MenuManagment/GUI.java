@@ -4,7 +4,7 @@ package MenuManagment;
 import Actions.MusicPlayer;
 import Actions.buttonSound;
 import Actions.VolumeChange;
-import Controller.GamePanel;
+import Controller.GameLoop;
 import LoadSave.SerializeMapGenerator;
 
 import javax.sound.sampled.LineUnavailableException;
@@ -41,19 +41,19 @@ public class GUI {
         this.myJFrame.setDefaultCloseOperation(3);
         this.myJFrame.setMinimumSize(new Dimension(850, 850));
         myJFrame.setResizable(false);
-        GamePanel myGamePanel = null;
+        GameLoop myGameLoop = null;
         if (getPlayGame()) {
-            myGamePanel = new GamePanel(myGameStateFile);
+            myGameLoop = new GameLoop(myGameStateFile);
             myJFrame.getContentPane().removeAll();
-            myJFrame.add(myGamePanel);
+            myJFrame.add(myGameLoop);
             addMenuBar();
             myJFrame.setJMenuBar(jMenuBar);
-            myGamePanel.requestFocus();
+            myGameLoop.requestFocus();
 
             // sets the objects
-            myGamePanel.SetupGame();
+            myGameLoop.SetupGame();
 
-            myGamePanel.startGameThread();
+            myGameLoop.startGameThread();
 
         } else {
             val = 0;

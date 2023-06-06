@@ -2,7 +2,7 @@ package Model.Item;
 
 import java.awt.image.BufferedImage;
 
-public class ParentItem {
+public abstract class ParentItem {
 
     private BufferedImage myObjectImage;
     private String myObjectName;

@@ -1,12 +1,9 @@
 package Controller;
 
-import LoadSave.DeserializeMapGenerator;
+import Model.Entity.*;
 import Model.Item.ParentItem;
 import Model.MapGenerator;
-import Model.entity.Archer;
-import Model.entity.Hero;
-import Model.entity.StartHero;
-import Model.entity.Stevey;
+import View.EntityDisplay;
 import View.HeroDisplay;
 import View.ItemDisplay;
 import View.map.RoomManager;
@@ -16,7 +13,7 @@ import java.awt.*;
 import java.awt.geom.Point2D;
 import java.io.IOException;
 
-public class GamePanel extends JPanel implements Runnable {
+public class GameLoop extends JPanel implements Runnable {
 
     // SCREEN SETTINGS
 
@@ -92,12 +89,15 @@ public class GamePanel extends JPanel implements Runnable {
 
     // ASSETS
     public ParentItem myItems[] = new ParentItem[200]; // change num items based on map???
-    public ItemSetter myItemSetter;
+    private ItemSetter myItemSetter;
     private ItemDisplay myItemDisplay;
 
+    public Entity myEntities[] = new Entity[30];
+    private EntitySetter myEntitySetter;
+    private EntityDisplay myEntityDisplay;
 
     // constructor for game panel
-    public GamePanel(String theGameFile) throws IOException, ClassNotFoundException {
+    public GameLoop(String theGameFile) throws IOException, ClassNotFoundException {
 
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
         this.setBackground(Color.black);
@@ -112,9 +112,13 @@ public class GamePanel extends JPanel implements Runnable {
         myHero = myArcher;
 
         myItemSetter = new ItemSetter(this, myRoomManager);
+        myEntitySetter = new EntitySetter(this, myRoomManager);
+
         myCollisionHandler = new CollisionHandler(this, myRoomManager);
+
         myHeroDisplay = new HeroDisplay(this, myKeyHandler, myHero, myCollisionHandler);
         myItemDisplay = new ItemDisplay(this);
+        myEntityDisplay = new EntityDisplay(this);
 
         // improves the game's rendering because all the drawing from this component
         // will be done in an offscreen painting buffer.
@@ -145,14 +149,16 @@ public class GamePanel extends JPanel implements Runnable {
     }
 
     public void SetupGame(){
+
+        // set up items
         myItemSetter.setStartItems();
         myItemSetter.setKeys();
         myItemSetter.setDoors();
-        // Sets character's position to center of start room
-        Point2D thePoint = new Point2D.Float(0, 0);
-        thePoint = myRoomManager.getStartPoint();
-        myHero.setWorldX((int) thePoint.getX() * ROOM_SIZE + ROOM_SIZE/2 - TILE_SIZE/2);
-        myHero.setWorldY((int) thePoint.getX() * ROOM_SIZE + ROOM_SIZE/2 - TILE_SIZE/2);
+
+
+        // set up entities
+        myEntitySetter.setOgres();
+        myEntitySetter.setHero();
     }
 
     public void startGameThread(){
@@ -226,6 +232,13 @@ public class GamePanel extends JPanel implements Runnable {
         for(int i = 0; i < myItems.length; i++) {
             if(myItems[i] != null){
                 myItemDisplay.draw(g2, myItems[i]);
+            }
+        }
+
+        // ENTITIES
+        for (int i = 0; i < myEntities.length; i++) {
+            if(myEntities[i] != null){
+                myEntityDisplay.draw(g2, myEntities[i]);
             }
         }
 

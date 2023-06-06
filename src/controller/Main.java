@@ -2,9 +2,9 @@
 
 package Controller;
 
-import MenuManagment.GUI;
-import MenuManagment.MenuManager;
-import MenuManagment.ScreenData;
+//import MenuManagment.GUI;
+//import MenuManagment.MenuManager;
+//import MenuManagment.ScreenData;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
@@ -16,8 +16,8 @@ import java.io.IOException;
 public class Main {
 
     private static final JFrame myJFrame = new JFrame();
-    private MenuManager newMenu;
-    ScreenData screenData;
+//    private MenuManager newMenu;
+//    ScreenData screenData;
     boolean myPlayGame = false;
     public static String myGameStateFile = "";
 
@@ -32,16 +32,16 @@ public class Main {
         myJFrame.setDefaultCloseOperation(3);
         myJFrame.setMinimumSize(new Dimension(850, 850));
         myJFrame.setResizable(false);
-        GamePanel myGamePanel = null;
-        myGamePanel = new GamePanel(myGameStateFile);
+        GameLoop myGameLoop = null;
+        myGameLoop = new GameLoop(myGameStateFile);
         myJFrame.getContentPane().removeAll();
-        myJFrame.add(myGamePanel);
-        myGamePanel.requestFocus();
+        myJFrame.add(myGameLoop);
+        myGameLoop.requestFocus();
 
         // sets the objects
-        myGamePanel.SetupGame();
+        myGameLoop.SetupGame();
 
-        myGamePanel.startGameThread();
+        myGameLoop.startGameThread();
 
         myJFrame.pack();
         myJFrame.setVisible(true);

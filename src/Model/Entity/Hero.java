@@ -1,11 +1,10 @@
-package Model.entity;
+package Model.Entity;
 
-import Controller.GamePanel;
+import Controller.GameLoop;
 import Controller.KeyHandler;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
@@ -13,7 +12,7 @@ import java.io.IOException;
 public abstract class Hero extends Entity {
 
     KeyHandler keyH;
-    GamePanel gp;
+    GameLoop myGameLoop;
 
     private final int myScreenX;
     private final int myScreenY;
@@ -29,19 +28,19 @@ public abstract class Hero extends Entity {
 
     private int mySpecialDamage = 0;
 
-    public Hero (GamePanel theGP, KeyHandler theKeyH){
-        this.gp = theGP;
+    public Hero (GameLoop theGP, KeyHandler theKeyH){
+        this.myGameLoop = theGP;
         this.keyH = theKeyH;
 
-        myScreenX = (gp.screenWidth / 2) - (gp.TILE_SIZE/2);
-        myScreenY = (gp.screenHeight / 2) - (gp.TILE_SIZE/2);;
+        myScreenX = (myGameLoop.screenWidth / 2) - (myGameLoop.TILE_SIZE/2);
+        myScreenY = (myGameLoop.screenHeight / 2) - (myGameLoop.TILE_SIZE/2);;
 
         // can be changed, we don't want hitbox as big as character
         Rectangle solidHitBox = new Rectangle(theGP.TILE_SIZE/8, theGP.TILE_SIZE/4, theGP.TILE_SIZE * 3/4, theGP.TILE_SIZE* 3/4);
         setHitBox(solidHitBox);
 
         setDefaultValues();
-        getHeroImage();
+        setHeroImages();
     }
 
     // set the Hero's default values.
@@ -50,8 +49,8 @@ public abstract class Hero extends Entity {
         // Will eventually be set to center of start room. This would be the coordinate of the room
         // times the room size plus half the room size on both x and y.
         // EX: StartRoom = [1, 3], worldX = (1 * 400) + 200, worldY = (3 * 400) + 200
-        setWorldX(gp.myWorldMapMaxCol / 2);
-        setWorldY(gp.myWorldMapMaxRow / 2);
+        setWorldX(myGameLoop.myWorldMapMaxCol / 2);
+        setWorldY(myGameLoop.myWorldMapMaxRow / 2);
         setSpeed(4);
         //starting direction can vary.
         setDirection("down");
@@ -109,7 +108,7 @@ public abstract class Hero extends Entity {
         return mySpecialDamage;
     }
 
-    public void getHeroImage() {
+    public void setHeroImages() {
 
         try {
             // only have two sprite pngs so its the same two in each direction. Need to make more

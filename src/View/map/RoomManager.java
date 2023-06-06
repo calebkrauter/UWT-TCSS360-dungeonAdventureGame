@@ -1,6 +1,6 @@
 package View.map;
 
-import Controller.GamePanel;
+import Controller.GameLoop;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -11,7 +11,7 @@ import java.util.List;
 
 public class RoomManager {
 
-    private GamePanel myGamePanel;
+    private GameLoop myGameLoop;
 
     /**
      * array of room objects made by map generator.
@@ -46,9 +46,9 @@ public class RoomManager {
     private final java.util.List<Point2D> XPathRoomPositions = new ArrayList<Point2D>();
     private final List<Point2D> YPathRoomPositions = new ArrayList<Point2D>();
 
-    public RoomManager(GamePanel theGamePanel,  String[][] theWorldMap){
+    public RoomManager(GameLoop theGameLoop, String[][] theWorldMap){
 
-        this.myGamePanel = theGamePanel;
+        this.myGameLoop = theGameLoop;
 
         // "10" is max number of different tiles
         room = new Room[10];
@@ -80,8 +80,8 @@ public class RoomManager {
 
         // get room Col and Row coordinates for each room type and store in their variables
         loadRoomPositions();
-        collisionWorldMapMaxCols = myGamePanel.myWorldMapMaxCol * textFileMaxCols; // 10 * 8 = 80
-        collisionWorldMapMaxRows = myGamePanel.myWorldMapMaxRow * textFileMaxRows; // 10 * 8 = 80
+        collisionWorldMapMaxCols = myGameLoop.myWorldMapMaxCol * textFileMaxCols; // 10 * 8 = 80
+        collisionWorldMapMaxRows = myGameLoop.myWorldMapMaxRow * textFileMaxRows; // 10 * 8 = 80
 
         myCollisionWorldMap = new CollisionTile[collisionWorldMapMaxCols][collisionWorldMapMaxRows];
         createCollisionWorldMap();
@@ -113,7 +113,7 @@ public class RoomManager {
                     int num = Integer.parseInt(numbers[col]);
 
                     CollisionTile myCollisionTile = new CollisionTile();
-                    Rectangle TileHitBox= new Rectangle(col, row, myGamePanel.COLLISION_TILE_SIZE, myGamePanel.COLLISION_TILE_SIZE);
+                    Rectangle TileHitBox= new Rectangle(col, row, myGameLoop.COLLISION_TILE_SIZE, myGameLoop.COLLISION_TILE_SIZE);
                     myCollisionTile.setTileHitBox(TileHitBox);
 
                     if (num == 1) {
@@ -190,8 +190,8 @@ public class RoomManager {
     //
     public void createCollisionWorldMap() {
         int theRoomType;
-        for(int row = 0; row < myGamePanel.myWorldMapMaxRow; row++){
-            for(int col = 0; col < myGamePanel.myWorldMapMaxCol; col++){
+        for(int row = 0; row < myGameLoop.myWorldMapMaxRow; row++){
+            for(int col = 0; col < myGameLoop.myWorldMapMaxCol; col++){
                 if (myWorldMap[row][col].equals("#")) { // reverse row/col here bc thats how the map is made.
                     theRoomType = 0;
                     addRoomToCollisionWorldMap(theRoomType, row, col);
@@ -272,50 +272,50 @@ public class RoomManager {
         int mapCol = 0;
         int mapRow = 0;
 
-        while(mapCol < myGamePanel.myWorldMapMaxCol && mapRow < myGamePanel.myWorldMapMaxRow) {
+        while(mapCol < myGameLoop.myWorldMapMaxCol && mapRow < myGameLoop.myWorldMapMaxRow) {
 
-            int mapX = mapCol * myGamePanel.ROOM_SIZE;
-            int mapY = mapRow * myGamePanel.ROOM_SIZE;
+            int mapX = mapCol * myGameLoop.ROOM_SIZE;
+            int mapY = mapRow * myGameLoop.ROOM_SIZE;
 
             // currently the player's position is always at the center of the screen
             // the center is
-            int screenX = mapX - myGamePanel.myHero.getWorldX() + myGamePanel.myHero.getScreenX();
-            int screenY = mapY - myGamePanel.myHero.getWorldY() + myGamePanel.myHero.getScreenY();
+            int screenX = mapX - myGameLoop.myHero.getWorldX() + myGameLoop.myHero.getScreenX();
+            int screenY = mapY - myGameLoop.myHero.getWorldY() + myGameLoop.myHero.getScreenY();
 
 
             // create a boundary from the center in both directions based on player
             // screenX or screenY. This is essentially render distance
-            if(mapX + myGamePanel.ROOM_SIZE > myGamePanel.myHero.getWorldX() - myGamePanel.myHero.getScreenX() &&
-               mapX - myGamePanel.ROOM_SIZE < myGamePanel.myHero.getWorldX() + myGamePanel.myHero.getScreenX() &&
-               mapY + myGamePanel.ROOM_SIZE > myGamePanel.myHero.getWorldY() - myGamePanel.myHero.getScreenY() &&
-               mapY - myGamePanel.ROOM_SIZE < myGamePanel.myHero.getWorldY() + myGamePanel.myHero.getScreenY()) {
+            if(mapX + myGameLoop.ROOM_SIZE > myGameLoop.myHero.getWorldX() - myGameLoop.myHero.getScreenX() &&
+               mapX - myGameLoop.ROOM_SIZE < myGameLoop.myHero.getWorldX() + myGameLoop.myHero.getScreenX() &&
+               mapY + myGameLoop.ROOM_SIZE > myGameLoop.myHero.getWorldY() - myGameLoop.myHero.getScreenY() &&
+               mapY - myGameLoop.ROOM_SIZE < myGameLoop.myHero.getWorldY() + myGameLoop.myHero.getScreenY()) {
 
                 if (myWorldMap[mapRow][mapCol].equals("#")) { // #777474 grey color
-                    g2.drawImage(room[0].getRoomImage(), screenX, screenY, myGamePanel.ROOM_SIZE, myGamePanel.ROOM_SIZE, null);
+                    g2.drawImage(room[0].getRoomImage(), screenX, screenY, myGameLoop.ROOM_SIZE, myGameLoop.ROOM_SIZE, null);
                 }
                 if (myWorldMap[mapRow][mapCol].equals("|")) {
-                    g2.drawImage(room[1].getRoomImage(), screenX, screenY, myGamePanel.ROOM_SIZE, myGamePanel.ROOM_SIZE, null);
+                    g2.drawImage(room[1].getRoomImage(), screenX, screenY, myGameLoop.ROOM_SIZE, myGameLoop.ROOM_SIZE, null);
                 }
                 if (myWorldMap[mapRow][mapCol].equals("-")) {
-                    g2.drawImage(room[2].getRoomImage(), screenX, screenY, myGamePanel.ROOM_SIZE, myGamePanel.ROOM_SIZE, null);
+                    g2.drawImage(room[2].getRoomImage(), screenX, screenY, myGameLoop.ROOM_SIZE, myGameLoop.ROOM_SIZE, null);
                 }
                 if (myWorldMap[mapRow][mapCol].equals("O")) {
-                    g2.drawImage(room[3].getRoomImage(), screenX, screenY, myGamePanel.ROOM_SIZE, myGamePanel.ROOM_SIZE, null);
+                    g2.drawImage(room[3].getRoomImage(), screenX, screenY, myGameLoop.ROOM_SIZE, myGameLoop.ROOM_SIZE, null);
                 }
                 if (myWorldMap[mapRow][mapCol].equals("S")) {
-                    g2.drawImage(room[4].getRoomImage(), screenX, screenY, myGamePanel.ROOM_SIZE, myGamePanel.ROOM_SIZE, null);
+                    g2.drawImage(room[4].getRoomImage(), screenX, screenY, myGameLoop.ROOM_SIZE, myGameLoop.ROOM_SIZE, null);
                 }
                 if (myWorldMap[mapRow][mapCol].equals("E")) {
-                    g2.drawImage(room[5].getRoomImage(), screenX, screenY, myGamePanel.ROOM_SIZE, myGamePanel.ROOM_SIZE, null);
+                    g2.drawImage(room[5].getRoomImage(), screenX, screenY, myGameLoop.ROOM_SIZE, myGameLoop.ROOM_SIZE, null);
                 }
                 if (myWorldMap[mapRow][mapCol].equals("[")) {
-                    g2.drawImage(room[6].getRoomImage(), screenX, screenY, myGamePanel.ROOM_SIZE, myGamePanel.ROOM_SIZE, null);
+                    g2.drawImage(room[6].getRoomImage(), screenX, screenY, myGameLoop.ROOM_SIZE, myGameLoop.ROOM_SIZE, null);
                 }
             }
 
             // increase column by 1 each time until 16 then reset column count, go to next row.
             mapCol++;
-            if (mapCol == myGamePanel.myWorldMapMaxCol) {
+            if (mapCol == myGameLoop.myWorldMapMaxCol) {
                 mapCol = 0;
                 mapRow++;
             }
@@ -326,25 +326,25 @@ public class RoomManager {
      * Saves the coordinates of each kind of room into it's designated list or point variable.
      */
     private void loadRoomPositions(){
-        for(int i = 0; i < myGamePanel.myWorldMapMaxRow; i++){
-            for(int j = 0; j < myGamePanel.myWorldMapMaxCol; j++){
+        for(int i = 0; i < myGameLoop.myWorldMapMaxRow; i++){
+            for(int j = 0; j < myGameLoop.myWorldMapMaxCol; j++){
                 Point2D thePoint = new Point2D.Float(i, j);
-                if (myGamePanel.getWorldMap()[i][j].equals("|")) {
+                if (myGameLoop.getWorldMap()[i][j].equals("|")) {
                     YPathRoomPositions.add(thePoint);
                 }
-                if (myGamePanel.getWorldMap()[i][j].equals("-")) {
+                if (myGameLoop.getWorldMap()[i][j].equals("-")) {
                     XPathRoomPositions.add(thePoint);
                 }
-                if (myGamePanel.getWorldMap()[i][j].equals("O")) {
+                if (myGameLoop.getWorldMap()[i][j].equals("O")) {
                     IntersectionRoomPositions.add(thePoint);
                 }
-                if (myGamePanel.getWorldMap()[i][j].equals("S")) {
+                if (myGameLoop.getWorldMap()[i][j].equals("S")) {
                     myStartPoint.setLocation(thePoint);
                 }
-                if (myGamePanel.getWorldMap()[i][j].equals("E")) {
+                if (myGameLoop.getWorldMap()[i][j].equals("E")) {
                     myEndPoint.setLocation(thePoint);
                 }
-                if (myGamePanel.getWorldMap()[i][j].equals("[")) {
+                if (myGameLoop.getWorldMap()[i][j].equals("[")) {
                     DoorRoomPositions.add(thePoint);
                 }
             }

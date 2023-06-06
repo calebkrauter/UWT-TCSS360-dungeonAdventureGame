@@ -69,8 +69,7 @@ public class CollisionHandler {
                 tileNum2 = myRoomManager.getCollisionWorldMap()[hitboxRightCol][hitboxBottomRow];
 
                 if (tileNum1.getCollision() || tileNum2.getCollision()){
-                    theEntity.setCollision(true);
-                }
+                    theEntity.setCollision(true);}
                 break;
         }
 

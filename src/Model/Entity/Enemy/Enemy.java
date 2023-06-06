@@ -19,7 +19,7 @@ public abstract class Enemy extends Entity {
     public Enemy (){
 
         // can be changed, we don't want hitbox as big as character
-        Rectangle solidHitBox = new Rectangle(TILE_SIZE, TILE_SIZE, TILE_SIZE, TILE_SIZE);
+        Rectangle solidHitBox = new Rectangle(0, 0, 3 * TILE_SIZE, 3 * TILE_SIZE);
         setHitBox(solidHitBox);
 
         setDefaultValues();

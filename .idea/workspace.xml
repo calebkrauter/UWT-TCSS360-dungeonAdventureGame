@@ -4,29 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="added door items for each direction, 4 door objects are created and correctly placed in each door room.">
-      <change afterPath="$PROJECT_DIR$/src/Controller/EntitySetter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/GameLoop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Entity/Enemy/Enemy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Entity/Enemy/Gremlin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Entity/Enemy/Ogre.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Entity/Enemy/Skeleton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/View/EntityDisplay.java" afterDir="false" />
+    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="added Enemy class and 3 monster types: ogre, skeleton, gremlin. Added entity display and setter.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CollisionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CollisionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ItemSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ItemSetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuManagment/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuManagment/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Item/ParentItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Item/ParentItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/entity/Archer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Archer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/entity/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/entity/StartHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/StartHero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/entity/Stevey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Stevey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/HeroDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/HeroDisplay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/ItemDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ItemDisplay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/map/RoomManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/map/RoomManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/GamePanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/EntitySetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EntitySetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/GameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GameLoop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Enemy/Enemy.java" afterDir="false" />
     </list>
     <list id="ff8a1f12-e31b-4acb-8e38-ce3f58b732c1" name="Changes by James" comment="" />
     <list id="c9d39182-ef57-426f-855e-eb4806e1b925" name="Changes by Kraut" comment="Changes by Kraut" />
@@ -209,7 +192,7 @@
       <workItem from="1685542019895" duration="611000" />
       <workItem from="1685583895316" duration="12400000" />
       <workItem from="1685759755572" duration="31468000" />
-      <workItem from="1686032504220" duration="14460000" />
+      <workItem from="1686032504220" duration="16106000" />
     </task>
     <task id="LOCAL-00001" summary="100% successfully interprets randomly generated maps for the display.">
       <created>1684131979650</created>
@@ -484,7 +467,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685952246179</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="added Enemy class and 3 monster types: ogre, skeleton, gremlin. Added entity display and setter.">
+      <created>1686053681623</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1686053681623</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -502,7 +492,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Some additions to entity and Hero data. Added a rendering distance." />
     <MESSAGE value="Added a rendering distance." />
     <MESSAGE value="Added setters and getters as well as  fields for the &quot;hero&quot; and &quot;entity&quot; classes." />
     <MESSAGE value="test" />
@@ -527,6 +516,7 @@
     <MESSAGE value="Changes by Kraut" />
     <MESSAGE value="WORKING COLLISION" />
     <MESSAGE value="added door items for each direction, 4 door objects are created and correctly placed in each door room." />
-    <option name="LAST_COMMIT_MESSAGE" value="added door items for each direction, 4 door objects are created and correctly placed in each door room." />
+    <MESSAGE value="added Enemy class and 3 monster types: ogre, skeleton, gremlin. Added entity display and setter." />
+    <option name="LAST_COMMIT_MESSAGE" value="added Enemy class and 3 monster types: ogre, skeleton, gremlin. Added entity display and setter." />
   </component>
 </project>

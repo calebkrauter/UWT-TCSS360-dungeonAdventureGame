@@ -92,7 +92,7 @@ public class GameLoop extends JPanel implements Runnable {
     private ItemSetter myItemSetter;
     private ItemDisplay myItemDisplay;
 
-    public Entity myEntities[] = new Entity[30];
+    public Entity myEntities[] = new Entity[200];
     private EntitySetter myEntitySetter;
     private EntityDisplay myEntityDisplay;
 
@@ -158,6 +158,8 @@ public class GameLoop extends JPanel implements Runnable {
 
         // set up entities
         myEntitySetter.setOgres();
+        myEntitySetter.setGremlins();
+        myEntitySetter.setSkeletons();
         myEntitySetter.setHero();
     }
 

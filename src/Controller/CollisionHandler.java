@@ -4,6 +4,8 @@ import Model.Entity.Entity;
 import View.map.CollisionTile;
 import View.map.RoomManager;
 
+import java.awt.*;
+
 public class CollisionHandler {
     private RoomManager myRoomManager;
     private GameLoop myGameLoop;
@@ -41,7 +43,7 @@ public class CollisionHandler {
                 tileNum1 = myRoomManager.getCollisionWorldMap()[hitboxLeftCol][hitboxTopRow];
                 tileNum2 = myRoomManager.getCollisionWorldMap()[hitboxRightCol][hitboxTopRow];
 
-                if (tileNum1.getCollision() || tileNum2.getCollision()){
+                if (tileNum1.getCollision() || tileNum2.getCollision()) {
                     theEntity.setCollision(true);
                 }
                 break;
@@ -50,7 +52,7 @@ public class CollisionHandler {
                 tileNum1 = myRoomManager.getCollisionWorldMap()[hitboxLeftCol][hitboxBottomRow];
                 tileNum2 = myRoomManager.getCollisionWorldMap()[hitboxRightCol][hitboxBottomRow];
 
-                if (tileNum1.getCollision() || tileNum2.getCollision()){
+                if (tileNum1.getCollision() || tileNum2.getCollision()) {
                     theEntity.setCollision(true);
                 }
                 break;
@@ -59,7 +61,7 @@ public class CollisionHandler {
                 tileNum1 = myRoomManager.getCollisionWorldMap()[hitboxLeftCol][hitboxTopRow];
                 tileNum2 = myRoomManager.getCollisionWorldMap()[hitboxLeftCol][hitboxBottomRow];
 
-                if (tileNum1.getCollision() || tileNum2.getCollision()){
+                if (tileNum1.getCollision() || tileNum2.getCollision()) {
                     theEntity.setCollision(true);
                 }
                 break;
@@ -68,10 +70,78 @@ public class CollisionHandler {
                 tileNum1 = myRoomManager.getCollisionWorldMap()[hitboxRightCol][hitboxTopRow];
                 tileNum2 = myRoomManager.getCollisionWorldMap()[hitboxRightCol][hitboxBottomRow];
 
-                if (tileNum1.getCollision() || tileNum2.getCollision()){
-                    theEntity.setCollision(true);}
+                if (tileNum1.getCollision() || tileNum2.getCollision()) {
+                    theEntity.setCollision(true);
+                }
                 break;
         }
+    }
 
+    /**
+     *
+     * Check if player is hitting a item, if it is return index of object.
+     *
+     * @param theEntity
+     * @param isPlayer
+     * @return
+     */
+    public int checkItem(Entity theEntity, boolean isPlayer){
+        int index = 999;
+
+        for (int i = 0; i < myGameLoop.myItems.length; i++){
+
+            if(myGameLoop.myItems[i] != null){
+
+                // DO NOT USE "SET..." ON ANY OF THE DATA BELOW. ONLY USE GET.
+
+                // get copy of the entity's hitbox position
+                Rectangle newHitbox = theEntity.getHitBox();
+                newHitbox.x += theEntity.getWorldX();
+                newHitbox.y += theEntity.getWorldY();
+
+                // get copy of the item hitbox position
+                Rectangle newitemHitbox = myGameLoop.myItems[i].getItemHitbox();
+                newitemHitbox.x += myGameLoop.myItems[i].getWorldX();
+                newitemHitbox.y += myGameLoop.myItems[i].getWorldY();
+
+                switch(theEntity.getDirection()) {  // check entity's direction
+                    case "up":
+                        newHitbox.y -= theEntity.getSpeed();
+                        if(newHitbox.intersects(newitemHitbox)) {
+                            System.out.println("up collision");
+                        }
+                        break;
+                    case "down":
+                        newHitbox.y += theEntity.getSpeed();
+                        if(newHitbox.intersects(newitemHitbox)) {
+                            System.out.println("down collision");
+                        }
+                        break;
+                    case "left":
+                        newHitbox.x -= theEntity.getSpeed();
+                        if(newHitbox.intersects(newitemHitbox)) {
+                            System.out.println("left collision");
+                        }
+                        break;
+                    case "right":
+                        newHitbox.x += theEntity.getSpeed();
+                        if(newHitbox.intersects(newitemHitbox)) {
+                            System.out.println("right collision");
+                        }
+                        break;
+                }
+
+                // reset to default values
+                newHitbox.x = theEntity.getHitboxDefaultX();
+                newHitbox.y = theEntity.getHitboxDefaultY();
+                theEntity.setHitBox(newHitbox);
+
+                newitemHitbox.x = myGameLoop.myItems[i].getHitboxDefaultX();
+                newitemHitbox.y = myGameLoop.myItems[i].getHitboxDefaultY();
+                myGameLoop.myItems[i].setItemHitbox(newitemHitbox);
+
+            }
+        }
+        return index;
     }
 }

@@ -47,9 +47,12 @@ public class HeroDisplay {
                 myHero.setDirection("right");
             }
 
-            // Check collision
+            // Check tile collision
             myHero.setCollision(false);
             myCollisionHandler.checkTile(myHero); // pass hero class as an Entity
+
+            // Check item collision
+            int myItemIndex = myCollisionHandler.checkItem(myHero, true); // pass hero class as an Entity
 
             // if collision is false player can move
             if (myHero.getCollision() == false) {

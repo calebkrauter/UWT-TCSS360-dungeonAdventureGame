@@ -12,6 +12,7 @@ public class TopDoor extends ParentItem{
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        setCollision(true);
     }
 
 }

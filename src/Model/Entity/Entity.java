@@ -23,6 +23,8 @@ public abstract class Entity {
     private int myMaxDamage = 0;
     private int myHitChance = 0;
 
+    private int myHitboxDefaultX;
+    private int myHitboxDefaultY;
 
     public int getWorldX(){
         return myWorldX;
@@ -145,6 +147,17 @@ public abstract class Entity {
     }
     public void setHitBox(Rectangle theHitBox) {
         myHitBox = theHitBox;
+    }
+
+    public int getHitboxDefaultX(){ return myHitboxDefaultX;}
+
+    public void setHitboxDefaultX(int theX) {
+        myHitboxDefaultX = theX;
+    }
+    public int getHitboxDefaultY(){ return myHitboxDefaultX;}
+
+    public void setHitboxDefaultY(int theY) {
+        myHitboxDefaultY = theY;
     }
     public boolean getCollision(){
         return myCollision;

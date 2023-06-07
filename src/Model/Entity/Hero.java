@@ -35,17 +35,18 @@ public abstract class Hero extends Entity {
         myScreenX = (myGameLoop.screenWidth / 2) - (myGameLoop.TILE_SIZE/2);
         myScreenY = (myGameLoop.screenHeight / 2) - (myGameLoop.TILE_SIZE/2);;
 
-        // can be changed, we don't want hitbox as big as character
-        Rectangle solidHitBox = new Rectangle(theGP.TILE_SIZE/8, theGP.TILE_SIZE/4, theGP.TILE_SIZE * 3/4, theGP.TILE_SIZE* 3/4);
+        // can be changed, we don't want hitbox as big as character So hit box top left corner is at (8, 16) width is 32 height is 32
+        // !!Do not move this or it will cause problems (values being null)!!
+        Rectangle solidHitBox = new Rectangle(myGameLoop.TILE_SIZE/3, myGameLoop.TILE_SIZE/4, myGameLoop.TILE_SIZE * 3/4, myGameLoop.TILE_SIZE* 3/4);
+        setHitboxDefaultX(solidHitBox.x);
+        setHitboxDefaultY(solidHitBox.y);
         setHitBox(solidHitBox);
 
         setDefaultValues();
-        setHeroImages();
     }
 
     // set the Hero's default values.
     public void setDefaultValues(){
-
         // Will eventually be set to center of start room. This would be the coordinate of the room
         // times the room size plus half the room size on both x and y.
         // EX: StartRoom = [1, 3], worldX = (1 * 400) + 200, worldY = (3 * 400) + 200
@@ -54,7 +55,7 @@ public abstract class Hero extends Entity {
         setSpeed(4);
         //starting direction can vary.
         setDirection("down");
-
+        setHeroImages();
     }
 
     public int getScreenX(){

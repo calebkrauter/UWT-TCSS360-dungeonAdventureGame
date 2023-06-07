@@ -108,25 +108,46 @@ public class CollisionHandler {
                     case "up":
                         newHitbox.y -= theEntity.getSpeed();
                         if(newHitbox.intersects(newitemHitbox)) {
-                            System.out.println("up collision");
+                            if (myGameLoop.myItems[i].getCollision()) {
+                                theEntity.setCollision(true);
+                            }
+                            // this is so that non-playable characters like monsters don't pick up items.
+                            if (isPlayer) {
+                                index = i;
+                            }
                         }
                         break;
                     case "down":
                         newHitbox.y += theEntity.getSpeed();
                         if(newHitbox.intersects(newitemHitbox)) {
-                            System.out.println("down collision");
+                            if (myGameLoop.myItems[i].getCollision()) {
+                                theEntity.setCollision(true);
+                            }
+                            if (isPlayer) {
+                                index = i;
+                            }
                         }
                         break;
                     case "left":
                         newHitbox.x -= theEntity.getSpeed();
                         if(newHitbox.intersects(newitemHitbox)) {
-                            System.out.println("left collision");
+                            if (myGameLoop.myItems[i].getCollision()) {
+                                theEntity.setCollision(true);
+                            }
+                            if (isPlayer) {
+                                index = i;
+                            }
                         }
                         break;
                     case "right":
                         newHitbox.x += theEntity.getSpeed();
                         if(newHitbox.intersects(newitemHitbox)) {
-                            System.out.println("right collision");
+                            if (myGameLoop.myItems[i].getCollision()) {
+                                theEntity.setCollision(true);
+                            }
+                            if (isPlayer) {
+                                index = i;
+                            }
                         }
                         break;
                 }

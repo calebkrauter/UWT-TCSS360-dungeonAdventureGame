@@ -33,22 +33,22 @@ public class MouseHandler implements MouseListener, MouseMotionListener {
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        System.out.println("Mouse Entered!");
+//        System.out.println("Mouse Entered!");
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-        System.out.println("Mouse Exited!");
+//        System.out.println("Mouse Exited!");
     }
 
     @Override
     public void mouseDragged(MouseEvent e) {
-        System.out.println("Mouse Dragged!");
+//        System.out.println("Mouse Dragged!");
     }
 
     @Override
     public void mouseMoved(MouseEvent e) {
-        System.out.println("Mouse Moved!");
+//        System.out.println("Mouse Moved!");
     }
     //    @Override
 //    public void mouseOver(MouseEvent e) {

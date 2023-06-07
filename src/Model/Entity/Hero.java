@@ -109,6 +109,16 @@ public abstract class Hero extends Entity {
         return mySpecialDamage;
     }
 
+    public void pickUpItem(int index){
+
+        // if index is not 999 we touched an object. 999 can be any index not used initem array
+        if(index != 999) {
+            myGameLoop.myItems[index] = null;   // delete item
+
+        }
+
+    }
+
     public void setHeroImages() {
 
         try {

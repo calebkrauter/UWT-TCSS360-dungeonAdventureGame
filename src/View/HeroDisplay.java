@@ -53,6 +53,7 @@ public class HeroDisplay {
 
             // Check item collision
             int myItemIndex = myCollisionHandler.checkItem(myHero, true); // pass hero class as an Entity
+            myHero.pickUpItem(myItemIndex);
 
             // if collision is false player can move
             if (myHero.getCollision() == false) {

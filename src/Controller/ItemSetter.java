@@ -5,6 +5,7 @@ import View.map.RoomManager;
 
 import java.awt.geom.Point2D;
 import java.util.List;
+import java.util.Random;
 
 public class ItemSetter {
     GameLoop myGameLoop;
@@ -52,8 +53,6 @@ public class ItemSetter {
             myGameLoop.myItems[place].setWorldY((int) thePoint.getX() *  myGameLoop.ROOM_SIZE +  myGameLoop.ROOM_SIZE/2 -  myGameLoop.TILE_SIZE/2);
             myGameLoop.myItems[place].setWorldX((int) thePoint.getY() *  myGameLoop.ROOM_SIZE +  myGameLoop.ROOM_SIZE/2 -  myGameLoop.TILE_SIZE/2);
 
-            myNumExistingItems += 1;
-            place = myNumExistingItems;
 
         }
     }
@@ -89,9 +88,55 @@ public class ItemSetter {
             place = myNumExistingItems;
 
         }
+    }
 
+    public void setPillars() {
+        List<Point2D> thePoints;
+        thePoints = myRoomManager.getDoorRoomPositions();
+        int place = getNumExistingItems();
+
+        // create 4 pillars
+        myGameLoop.myItems[place] = new Pillar();
+        myGameLoop.myItems[place + 1] = new Pillar();
+        myGameLoop.myItems[place + 2] = new Pillar();
+        myGameLoop.myItems[place + 3] = new Pillar();
+
+        // pillars can be in any room except start and end. This leaves
+        // xPath, Ypath, intersections, and door rooms (4 types)
+        // get a random number representing room type
+        Random rand = new Random();
+        for (int i = 0; i < 4; i++){
+            int roomType = rand.nextInt(4); // generates random numbers in the range 0 to 4 - 1.
+            // 0-3 is 4 diff options
+            int roomNumber = 0;
+            if(roomType == 0) { // door rooms
+                // set the list on points equal to the room type
+                thePoints = myRoomManager.getDoorRoomPositions();
+            }
+            else if(roomType == 1) { // xpath
+                thePoints = myRoomManager.getXPathRoomPositions();
+            }
+            else if(roomType == 2) { // ypath
+                thePoints = myRoomManager.getYPathRoomPositions();
+            }
+            else if(roomType == 3) { // intersection
+                thePoints = myRoomManager.getIntersectionRoomPositions();
+            }
+            // We now have a list of points representing the different rooms of a randomly selected room type
+
+            // Next get a random point in the list
+            roomNumber = rand.nextInt(thePoints.size());
+            Point2D thePoint = thePoints.get(roomNumber);
+
+            myGameLoop.myItems[place].setWorldY((int) thePoint.getX() *  myGameLoop.ROOM_SIZE +  myGameLoop.ROOM_SIZE/2 -  myGameLoop.TILE_SIZE/2 + myGameLoop.TILE_SIZE);
+            myGameLoop.myItems[place].setWorldX((int) thePoint.getY() *  myGameLoop.ROOM_SIZE +  myGameLoop.ROOM_SIZE/2 -  myGameLoop.TILE_SIZE/2);
+
+            myNumExistingItems += 1;
+            place = myNumExistingItems;
+        }
 
     }
+
 
     public int getNumExistingItems() {
         return myNumExistingItems;

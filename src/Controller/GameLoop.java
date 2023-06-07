@@ -154,6 +154,7 @@ public class GameLoop extends JPanel implements Runnable {
         myItemSetter.setStartItems();
         myItemSetter.setKeys();
         myItemSetter.setDoors();
+        myItemSetter.setPillars();
 
 
         // set up entities

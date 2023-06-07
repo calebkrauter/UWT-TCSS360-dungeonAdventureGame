@@ -85,7 +85,7 @@ public class RoomManager {
 
         myCollisionWorldMap = new CollisionTile[collisionWorldMapMaxCols][collisionWorldMapMaxRows];
         createCollisionWorldMap();
-        printCollisionMap();
+//        printCollisionMap();
     }
 
     /**

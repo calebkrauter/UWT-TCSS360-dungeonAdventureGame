@@ -16,11 +16,13 @@ public abstract class Hero extends Entity {
 
     private final int myScreenX;
     private final int myScreenY;
-    private int myNumHealingPotions = 0;
+    private int myNumHealthPotions = 0;
 
     private int myNumSpeedPotions = 0;
 
     private int myNumKeys = 0;
+
+    private int myNumPillars = 0;
 
     private int myBlockChance = 0;
 
@@ -65,12 +67,12 @@ public abstract class Hero extends Entity {
         return myScreenY;
     }
 
-    public void setNumHealingPotions(int theNumPotions){
-        myNumHealingPotions = theNumPotions;
+    public void setNumHealthPotions(int theNumPotions){
+        myNumHealthPotions = theNumPotions;
     }
 
-    public int getNumHealingPotions() {
-        return myNumHealingPotions;
+    public int getNumHealthPotions() {
+        return myNumHealthPotions;
     }
 
     public void setNumSpeedPotions(int theNumPotions){
@@ -86,6 +88,9 @@ public abstract class Hero extends Entity {
     public int getNumKeys() {
         return myNumKeys;
     }
+    public void setNumPillars(int theNumPillars) { myNumPillars = theNumPillars; }
+
+    public int getNumPillars() { return myNumPillars; }
 
     public void setBlockChance(int theChance){
         myBlockChance = theChance;
@@ -109,12 +114,40 @@ public abstract class Hero extends Entity {
         return mySpecialDamage;
     }
 
-    public void pickUpItem(int index){
+    /**
+     * The collision cctions for different items.
+     *
+     * @param theIndex the index of the item in the array of all world items
+     */
+    public void pickUpItem(int theIndex){
 
         // if index is not 999 we touched an object. 999 can be any index not used initem array
-        if(index != 999) {
-            myGameLoop.myItems[index] = null;   // delete item
-
+        if(theIndex != 999) {
+            String itemName = myGameLoop.myItems[theIndex].getObjectName();
+            switch (itemName) {
+                case "Key":
+                    setNumKeys(getNumKeys() + 4);   // add items to inventory
+                    myGameLoop.myItems[theIndex] = null;   // delete item from the map
+                    break;
+                case "LeftDoor", "RightDoor", "TopDoor", "BottomDoor":
+                    if(getNumKeys() >= 1) {
+                        setNumKeys(getNumKeys() - 1);   // delete a key from inventory
+                        myGameLoop.myItems[theIndex] = null;   // delete door from the map
+                    }
+                    break;
+                case "Speed Potion":
+                    setNumSpeedPotions(getNumSpeedPotions() + 1);
+                    myGameLoop.myItems[theIndex] = null;   // delete from the map
+                    break;
+                case "Health Potion":
+                    setNumHealthPotions(getNumHealthPotions() + 1);
+                    myGameLoop.myItems[theIndex] = null;   // delete from the map
+                    break;
+                case "Pillar":
+                    setNumHealthPotions(getNumPillars() + 1);
+                    myGameLoop.myItems[theIndex] = null;   // delete from the map
+                    break;
+            }
         }
 
     }

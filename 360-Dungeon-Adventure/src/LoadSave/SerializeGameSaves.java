@@ -15,23 +15,17 @@ public class SerializeGameSaves {
     }
 
     public void serializeGameSaves(String theGameStateFile) throws IOException {
-        DeserializeGameSaves deserializeGameSaves = null;
-        if (myGameSaves == null || myGameSaves.isEmpty()) {
+        DeserializeGameSaves deserializeGameSaves = new DeserializeGameSaves();
+        deserializeGameSaves.deserializeGameSaves();
+        myGameSaves = deserializeGameSaves.getDeserializedGameSaves();
+        if (myGameSaves == null) {
             myGameSaves = new ArrayList<>();
-
-        } else {
-            deserializeGameSaves = new DeserializeGameSaves();
-            deserializeGameSaves.deserializeGameSaves();
-            myGameSaves = deserializeGameSaves.getDeserializedGameSaves();
         }
+//        myGameSaves = null;
         theGameStateFile = new CheckFileValidity().checkThatFileIsNotSavesFile(theGameStateFile);
-        if (!(myGameSaves.contains(theGameStateFile))) {
+        if (!(deserializeGameSaves.getDeserializedGameSaves().contains(theGameStateFile))) {
             setGameSavesByFile(theGameStateFile);
         }
-
-
-
-//        myGameSaves = null;
         FileOutputStream fileOutputStream = new FileOutputStream("game-saves.ser");
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
 

@@ -64,7 +64,6 @@
       <change beforePath="$PROJECT_DIR$/paths/xPath.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/paths/xypath.xcf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/paths/yPath.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LoadSave/SerializeGameSaves.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoadSave/SerializeGameSaves.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ss.ser" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/sss.ser" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/uyuuuu.ser" beforeDir="false" />
@@ -88,15 +87,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;/Users/calebkrauter/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure/src/Model/entity&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/calebkrauter/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure/src/Model&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_directory_selection": "/Users/calebkrauter/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure/src/Model/entity",
+    "last_opened_file_path": "/Users/calebkrauter/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure/src/Model"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Model" />
@@ -162,7 +161,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/Controller/ItemSetter.java</url>
           <line>15</line>
-          <properties class="Controller.ItemSetter">
+          <properties class="Controller.ItemSetter" method="&lt;init&gt;">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>

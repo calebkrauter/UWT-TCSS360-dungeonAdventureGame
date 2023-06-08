@@ -36,9 +36,12 @@ public class SQLStuff {
         // DELETES the table contents so that it doesn't duplicate.
         updateTableWithQuery("DELETE FROM monsterData");
         updateTableWithQuery(initialQuery);
+        initTable();
         fillTable();
         displayTable();
-        printTestData();
+//        printTestData();
+        // For testing
+        setMonsterData(SKELTON, IMAGE_FILE, "LOLOL");
     }
 
     private void setupTable() {
@@ -74,7 +77,10 @@ public class SQLStuff {
 //        System.out.println( "Created table successfully" );
     }
 
-    private void fillTable() {
+    public void fillTable() {
+        // This setter is used here to prove that data from the arraylist
+        // is getting put in the data base so that when it prints it should update to HERO.
+//        setMonsterData(GREMLIN, MONSTER_TYPE, "HERO");
         String gremlinQuery = "INSERT INTO monsterData (" +
                 "MONSTER_TYPE, " +
                 "IMAGE_FILE, " +
@@ -83,12 +89,13 @@ public class SQLStuff {
                 "MAX_DAMAGE, " +
                 "DEFAULT_HEALTH)" +
                 " VALUES " +
-                "('Gremlin', " +
-                "'res/Monster/Gremlin.png', " +
-                "'80', " +
-                "'30', " +
-                "'60', " +
-                "'150')";
+                "('" + getMonsterData(GREMLIN, MONSTER_TYPE) + "', " +
+                "'" + getMonsterData(GREMLIN, IMAGE_FILE) + "', " +
+                "'" + getMonsterData(GREMLIN, HIT_CHANCE) + "', " +
+                "'" + getMonsterData(GREMLIN, MIN_DAMAGE) + "', " +
+                "'" + getMonsterData(GREMLIN, MAX_DAMAGE) + "', " +
+                "'" + getMonsterData(GREMLIN, DEFAULT_HEALTH) + "'" +
+                ")";
         String skeletonQuery = "INSERT INTO monsterData (" +
                 "MONSTER_TYPE, " +
                 "IMAGE_FILE, " +
@@ -97,12 +104,13 @@ public class SQLStuff {
                 "MAX_DAMAGE, " +
                 "DEFAULT_HEALTH)" +
                 " VALUES " +
-                "('Skeleton', " +
-                "'res/Monster/Skeleton.png', " +
-                "'50', " +
-                "'50', " +
-                "'65', " +
-                "'200')";
+                "('" + getMonsterData(SKELTON, MONSTER_TYPE) + "', " +
+                "'" + getMonsterData(SKELTON, IMAGE_FILE) + "', " +
+                "'" + getMonsterData(SKELTON, HIT_CHANCE) + "', " +
+                "'" + getMonsterData(SKELTON, MIN_DAMAGE) + "', " +
+                "'" + getMonsterData(SKELTON, MAX_DAMAGE) + "', " +
+                "'" + getMonsterData(SKELTON, DEFAULT_HEALTH) + "'" +
+                ")";
         String ogreQuery = "INSERT INTO monsterData (" +
                 "MONSTER_TYPE, " +
                 "IMAGE_FILE, " +
@@ -111,17 +119,54 @@ public class SQLStuff {
                 "MAX_DAMAGE, " +
                 "DEFAULT_HEALTH)" +
                 " VALUES " +
-                "('Ogre', " +
-                "'res/Monster/Ogre.png', " +
-                "'80', " +
-                "'30', " +
-                "'55', " +
-                "'100')";
+                "('" + getMonsterData(OGRE, MONSTER_TYPE) + "', " +
+                "'" + getMonsterData(OGRE, IMAGE_FILE) + "', " +
+                "'" + getMonsterData(OGRE, HIT_CHANCE) + "', " +
+                "'" + getMonsterData(OGRE, MIN_DAMAGE) + "', " +
+                "'" + getMonsterData(OGRE, MAX_DAMAGE) + "', " +
+                "'" + getMonsterData(OGRE, DEFAULT_HEALTH) + "'" +
+                ")";
 
         updateTableWithQuery(gremlinQuery);
         updateTableWithQuery(skeletonQuery);
         updateTableWithQuery(ogreQuery);
 
+    }
+
+    ArrayList<ArrayList<Object>> initMonsters;
+    private void initTable() {
+        initMonsters = new ArrayList<>();
+        ArrayList<Object> gremlin = new ArrayList<>();
+        ArrayList<Object> skeleton = new ArrayList<>();
+        ArrayList<Object> ogre = new ArrayList<>();
+        gremlin.add("Gremlin");
+        gremlin.add("res/Monster/Gremlin.png");
+        gremlin.add(80);
+        gremlin.add(30);
+        gremlin.add(60);
+        gremlin.add(150);
+        initMonsters.add(gremlin);
+        skeleton.add("Skeleton");
+        skeleton.add("res/Monster/skeleton.png");
+        skeleton.add(50);
+        skeleton.add(50);
+        skeleton.add(65);
+        skeleton.add(200);
+        initMonsters.add(skeleton);
+        ogre.add("Ogre");
+        ogre.add("res/Monster/Ogre.png");
+        ogre.add(80);
+        ogre.add(30);
+        ogre.add(55);
+        ogre.add(100);
+        initMonsters.add(ogre);
+
+        myMonsters = initMonsters;
+        for (ArrayList<Object> monster: myMonsters) {
+            myMonsterStats = monster;
+        }
+
+//        System.out.println(myMonsters.get(GREMLIN).get(IMAGE_FILE));
     }
 
     private void monsterData() {
@@ -135,25 +180,13 @@ public class SQLStuff {
 
     public void setMonsterData(int theMonsterCode, int theStatCode, Object theStat) {
         myMonsters.get(theMonsterCode).set(theStatCode, theStat);
+        updateTableWithQuery("DELETE FROM monsterData");
+        fillTable();
     }
     public Object getMonsterData(int theMonsterCode, int theStatCode) {
         return myMonsters.get(theMonsterCode).get(theStatCode);
     }
 
-    // This method is to test that the correct data is being accessed acurately.
-    public void printTestData() {
-        System.out.println();
-        System.out.println();
-
-        String theStat = getMonsterData(SKELTON, MIN_DAMAGE).toString();
-        System.out.println("Stat from getter SKELTON, MIN_DAMAGE : " + theStat);
-
-        System.out.println();
-        System.out.println();
-        setMonsterData(SKELTON, MIN_DAMAGE, 10);
-        theStat = getMonsterData(SKELTON, MIN_DAMAGE).toString();
-        System.out.println("updated stat SKELTON, MIN_DAMAGE, : " + theStat);
-    }
     private void displayTable() {
         System.out.println("TABLE");
         initialQuery = "SELECT * FROM monsterData";
@@ -181,12 +214,12 @@ public class SQLStuff {
 
                 myMonsters.add(myMonsterStats);
                 System.out.print(
-                        monsterType + ", "
-                        + imageFile + ", "
-                        + hitChance + ", "
-                        + minDamage + ", "
-                        + maxDamage + ", "
-                        + defaultHealth);
+                        myMonsters.get(theMonster).get(MONSTER_TYPE) + ", "
+                        + myMonsters.get(theMonster).get(IMAGE_FILE) + ", "
+                        + myMonsters.get(theMonster).get(HIT_CHANCE) + ", "
+                        + myMonsters.get(theMonster).get(MIN_DAMAGE) + ", "
+                        + myMonsters.get(theMonster).get(MAX_DAMAGE) + ", "
+                        + myMonsters.get(theMonster).get(DEFAULT_HEALTH));
                 System.out.println();
                 theMonster++;
             }

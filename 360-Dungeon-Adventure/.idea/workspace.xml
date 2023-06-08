@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0df212bb-e81b-4d49-8840-12ee792b8347" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/seteevee.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game-saves.ser" beforeDir="false" afterPath="$PROJECT_DIR$/game-saves.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../sql/src/SQLRes/monsterData.db" beforeDir="false" afterPath="$PROJECT_DIR$/../sql/src/SQLRes/monsterData.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../sql/src/SQLStuff.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sql/src/SQLStuff.java" afterDir="false" />
     </list>
@@ -27,15 +30,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;/Users/calebkrauter/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure/src/Model/entity&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Kraut/Documents/Workspace/SQLiteInClassDemoSpring23&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_directory_selection": "/Users/calebkrauter/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure/src/Model/entity",
+    "last_opened_file_path": "C:/Users/Kraut/Documents/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Model" />

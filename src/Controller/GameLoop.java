@@ -1,3 +1,5 @@
+// Makai Martinez 6/7/2023 TCSS 360 A
+
 package Controller;
 
 import Model.Entity.*;
@@ -17,9 +19,6 @@ public class GameLoop extends JPanel implements Runnable {
 
     // SCREEN SETTINGS
 
-    // many tiles are 16x16 pixels, some use more but this is just for practice.
-    final int MIN_TILE_SIZE = 12;   // using 12 to get a 48 x 48 character
-
     // size of our game screen. How many tiles can be displayed on a single
     // screen both horizontally and vertically?
     public final int maxScreenCol = 16;
@@ -29,12 +28,14 @@ public class GameLoop extends JPanel implements Runnable {
 
     private int FPS = 60;
 
+    // many tiles are 16x16 pixels, some use more but this is just for practice.
+    final int MIN_TILE_SIZE = 12;   // using 12 to get a 48 x 48 character
+
     // 48x48 View tile. Needs to be public so entities can access.
     public final int TILE_SIZE = MIN_TILE_SIZE * SCALE;
 
-    // A collision tile is 50 x 50 pixel rectangle
-    public final int COLLISION_TILE_SIZE = 50;
-
+    // A collision tile is 50 x 50 pixel rectangle (because room visuals are 400x400, and collision txt files are 8x8). 8 * 50 = 400
+    public final int COLLISION_TILE_SIZE = (int) 12.25 * SCALE;
 
     // 760 pixels
     public final int screenWidth = TILE_SIZE * maxScreenCol;
@@ -43,16 +44,22 @@ public class GameLoop extends JPanel implements Runnable {
 
 
     // MAP SETTINGS
+
+    // ROOM
     final int MIN_ROOM_SIZE = 100;    // num pixels
     public final int ROOM_SIZE = MIN_ROOM_SIZE * SCALE;
-    public int myWorldMapMaxCol;
-    public int myWorldMapMaxRow;
 
-    private int myWorldMapWidth;
-    private int myWorldHeight;
+    private final MapGenerator myMapGenerator = new MapGenerator();
+    private String[][] myWorldMap = myMapGenerator.getMap();
 
-    private String[][] myWorldMap;
+    // below should be changeable by the view but should change the map generation which would
+    // then reflect in these two values below
+    public int myWorldMapMaxCol = myMapGenerator.getMyMaxCols();
+    public int myWorldMapMaxRow = myMapGenerator.getMyMaxRows();
 
+    // size in pixels (400 * # of Columns)
+    private int myWorldMapWidth = ROOM_SIZE * myWorldMapMaxCol;
+    private int myWorldHeight = ROOM_SIZE * myWorldMapMaxRow;
 
 
 
@@ -62,8 +69,6 @@ public class GameLoop extends JPanel implements Runnable {
     // implementing runnable is key to using thread.
     private Thread myGameThread;
 
-
-    private final MapGenerator myMapGenerator;
     private RoomManager myRoomManager;
 
 
@@ -75,7 +80,7 @@ public class GameLoop extends JPanel implements Runnable {
 
 
 
-    // THIS IS WHERE PICKING A CHARACTER FROM MENU NEEDS TO BE IMPLEMENTED:
+    // THIS CLASS IS WHERE THE START MENU COMMUNICATING WHAT CHARACTER IS INSTANTIATED NEEDS TO BE IMPLEMENTED:
     public Hero myHero;
 
     // Character types
@@ -88,13 +93,14 @@ public class GameLoop extends JPanel implements Runnable {
 
 
     // ASSETS
-    public ParentItem myItems[] = new ParentItem[200]; // change num items based on map???
+    public ParentItem myItems[] = new ParentItem[(myWorldMapMaxCol/10) * 300];   // for every 10 columns we add to the map add 300 item indexes.]; // change num items based on map???
     private ItemSetter myItemSetter;
     private ItemDisplay myItemDisplay;
 
-    public Entity myEntities[] = new Entity[200];
+    public Entity myEntities[] = new Entity[(myWorldMapMaxCol/10) * 150];
     private EntitySetter myEntitySetter;
     private EntityDisplay myEntityDisplay;
+
 
     // constructor for game panel
     public GameLoop(String theGameFile) throws IOException, ClassNotFoundException {
@@ -103,9 +109,6 @@ public class GameLoop extends JPanel implements Runnable {
         this.setBackground(Color.black);
 
 //        myMapGenerator = new DeserializeMapGenerator(theGameFile).getMyMapGenerator();
-        myMapGenerator = new MapGenerator();
-        setMapValues();
-
         myRoomManager = new RoomManager(this, myWorldMap);
 
         // some form of getHeroType() method from menu!!
@@ -119,6 +122,9 @@ public class GameLoop extends JPanel implements Runnable {
         myHeroDisplay = new HeroDisplay(this, myKeyHandler, myHero, myCollisionHandler);
         myItemDisplay = new ItemDisplay(this);
         myEntityDisplay = new EntityDisplay(this);
+
+        // sets the objects
+        SetupGame();
 
         // improves the game's rendering because all the drawing from this component
         // will be done in an offscreen painting buffer.
@@ -137,15 +143,6 @@ public class GameLoop extends JPanel implements Runnable {
 
     public String[][] getWorldMap(){
         return myWorldMap;
-    }
-    public void setMapValues(){
-        myWorldMap = myMapGenerator.getMap();
-        // should be changeable by the view
-        myWorldMapMaxCol = myMapGenerator.getMyMaxCols();
-        myWorldMapMaxRow = myMapGenerator.getMyMaxRows();
-        // in pixels (400 * # of Columns)
-        myWorldMapWidth = ROOM_SIZE * myWorldMapMaxCol;
-        myWorldHeight = ROOM_SIZE * myWorldMapMaxRow;
     }
 
     public void SetupGame(){

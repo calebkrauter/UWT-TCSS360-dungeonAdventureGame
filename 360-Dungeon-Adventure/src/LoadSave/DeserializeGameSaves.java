@@ -15,7 +15,6 @@ public class DeserializeGameSaves {
 
     public void deserializeGameSaves() throws IOException {
         ArrayList<String> deserializedGameSaves = null;
-
         FileInputStream fileInputStream = null;
         try {
             fileInputStream = new FileInputStream("game-saves.ser");

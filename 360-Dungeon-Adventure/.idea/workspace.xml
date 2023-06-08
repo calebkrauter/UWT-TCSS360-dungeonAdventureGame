@@ -8,65 +8,25 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/123nkahsklj.ser" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/COOLENESS.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/CollisionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/EntitySetter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/GameLoop.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/ItemSetter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/KeyHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/MouseHandler.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Game File Na.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game File Name.ser" beforeDir="false" afterPath="$PROJECT_DIR$/Game File Name.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game File Name.ser" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Game File dd.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Entity/Archer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Entity/Enemy/Enemy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Entity/Enemy/Gremlin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Entity/Enemy/Ogre.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Entity/Enemy/Skeleton.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Entity/Entity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Entity/Hero.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Entity/StartHero.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Entity/Stevey.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Item/BottomDoor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Item/HealthPotion.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Item/Key.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Item/LeftDoor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Item/ParentItem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Item/Pillar.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Item/RightDoor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Item/SpeedPotion.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Item/TopDoor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/MapGenerator.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/TOOOY.ser" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/aaGame File Name.ser" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/aaa.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aaaa.ser" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/abs.ser" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/adsadsasdafe.ser" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/asdasaaaame.ser" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/aslakddddName.ser" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/d.ser" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ddda.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dddd.ser" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/game-saves.ser" beforeDir="false" afterPath="$PROJECT_DIR$/game-saves.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gobbildygoookme.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/iooole Name.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kkp.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lego.ser" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lkblhlkhhlhlk.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/llkl.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/llle.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nn.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oooome.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/paths/intersectionPath.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/paths/openDoorRoom.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/paths/walls.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/paths/xPath.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/paths/xypath.xcf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/paths/yPath.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sa.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoadSave/DeserializeGameSaves.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoadSave/DeserializeGameSaves.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoadSave/SerializeGameSaves.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoadSave/SerializeGameSaves.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ss.ser" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/sss.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uyuuuu.ser" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +53,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_directory_selection": "/Users/calebkrauter/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure/src/Model/entity",
-    "last_opened_file_path": "/Users/calebkrauter/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure/src/Model"
+    "last_opened_file_path": "C:/Users/Kraut/Documents/Workspace/SQLiteInClassDemoSpring23"
   }
 }]]></component>
   <component name="RecentsManager">

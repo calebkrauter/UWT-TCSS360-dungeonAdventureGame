@@ -17,11 +17,11 @@ public class SerializeGameSaves {
     public void serializeGameSaves(String theGameStateFile) throws IOException {
         DeserializeGameSaves deserializeGameSaves = new DeserializeGameSaves();
         deserializeGameSaves.deserializeGameSaves();
+
         myGameSaves = deserializeGameSaves.getDeserializedGameSaves();
         if (myGameSaves == null) {
             myGameSaves = new ArrayList<>();
         }
-//        myGameSaves = null;
         theGameStateFile = new CheckFileValidity().checkThatFileIsNotSavesFile(theGameStateFile);
         if (!(deserializeGameSaves.getDeserializedGameSaves().contains(theGameStateFile))) {
             setGameSavesByFile(theGameStateFile);

@@ -6,11 +6,11 @@ import javax.swing.*;
 import java.io.IOException;
 
 public class ToggleMusicChange {
-    JToggleButton myMusicToggle;
-    MusicPlayer musicPlayer;
-    String myMusic;
-    VolumeChange volumeChange;
-    UpdateSlider updateSlider;
+    private JToggleButton myMusicToggle;
+    private MusicPlayer musicPlayer;
+    private String myMusic;
+    private VolumeChange volumeChange;
+    private UpdateSlider updateSlider;
     public ToggleMusicChange(JToggleButton theMusicToggle, String theMusic) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
         myMusicToggle = theMusicToggle;
         musicPlayer = new MusicPlayer();
@@ -28,7 +28,7 @@ public class ToggleMusicChange {
     private void toggleMusicChange() throws IOException, UnsupportedAudioFileException, LineUnavailableException {
         if (myMusicToggle.isSelected()) {
             musicPlayer.playMusic(myMusic);
-            int curVolume = updateSlider.getMyVolumeSlider();
+            int curVolume = updateSlider.getVolumeSlider();
             volumeChange.setVolumeChange((curVolume));
         } else {
             musicPlayer.stopMusic();
@@ -41,7 +41,7 @@ public class ToggleMusicChange {
         }
     }
 
-    public void setMyMusicToggleSelected(boolean theSelectValue) {
+    public void setMusicToggleSelected(boolean theSelectValue) {
         myMusicToggle.setSelected(theSelectValue);
     }
 }

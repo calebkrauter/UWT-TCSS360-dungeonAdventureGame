@@ -10,12 +10,12 @@ public class MapGenerator implements Serializable {
     final private int RIGHT_BOUND = 3;
     final private int TOP_BOUND = 4;
     final private int NOT_ADJACENT_TO_BOUND = 99;
-    private int myMaxRows = 10;
-    private int myMaxCols = 10;
+    private int myMaxRows = 0;
+    private int myMaxCols = 0;
     final private int MIN_COL_IN_BOUNDS = 1;
     final private int MIN_ROW_IN_BOUNDS = 1;
-    final private int MAX_COL_IN_BOUNDS = myMaxCols - 1;
-    final private int MAX_ROW_IN_BOUNDS = myMaxRows - 1;
+    private int MAX_COL_IN_BOUNDS = 0;
+    private int MAX_ROW_IN_BOUNDS = 0;
     final private int MIN_NUM_OF_DOORS = 4;
     private int myStartCol = MIN_COL_IN_BOUNDS;
     private int myStartRow = MIN_ROW_IN_BOUNDS;
@@ -36,6 +36,7 @@ public class MapGenerator implements Serializable {
     private Random random = new Random();
     static int recursiveCallsCounter = 0; // A counter used to end recursive calls to free up calls stack.
     private boolean myEasyMode = true;
+    private static final long serialVersionUID = -5157423109753889269L;
 
     // | vertical path
     // - horizontal path
@@ -45,11 +46,16 @@ public class MapGenerator implements Serializable {
     /**
      * MapGenrator Constructor
      */
-    public MapGenerator() {
+    public MapGenerator(int theRows, int theCols, boolean theEasyMode) {
+        myMaxRows = theRows;
+        myMaxCols = theCols;
+        MAX_ROW_IN_BOUNDS = myMaxRows - 1;
+        MAX_COL_IN_BOUNDS = myMaxCols - 1;
         mapLayout = new String[myMaxRows][myMaxCols];
         addBoundSymbols();
         setStart();
         setEnd();
+        myEasyMode = theEasyMode;
         generatePaths();
         if (myEasyMode) {
             ensureValidPath();

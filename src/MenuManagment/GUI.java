@@ -1,8 +1,8 @@
 
 package MenuManagment;
 
+import Actions.ButtonSound;
 import Actions.MusicPlayer;
-import Actions.buttonSound;
 import Actions.VolumeChange;
 import Controller.GameLoop;
 import LoadSave.SerializeMapGenerator;
@@ -23,15 +23,17 @@ public class GUI {
     private String MAIN_MENU_MUSIC = "MainMenu.wav";
     MusicPlayer musicPlayer;
     JSlider volumeChangeSlider;
+    private int myHeroSelection;
     public GUI() throws IOException, UnsupportedAudioFileException, LineUnavailableException, ClassNotFoundException {
         screenData = new ScreenData(this.myJFrame.getWidth(), this.myJFrame.getHeight());
-        this.newMenu = new MenuManager(this.myJFrame);
-        this.loadGui();
+        newMenu = new MenuManager(this.myJFrame);
+        loadGui();
         musicPlayer = new MusicPlayer();
     }
-    public GUI(boolean thePlayGame, String theGameStateFile) throws UnsupportedAudioFileException, LineUnavailableException, IOException, ClassNotFoundException {
+    public GUI(boolean thePlayGame, String theGameStateFile, int theSelection) throws UnsupportedAudioFileException, LineUnavailableException, IOException, ClassNotFoundException {
         myPlayGame = thePlayGame;
         myGameStateFile = theGameStateFile;
+        myHeroSelection = theSelection;
         setPlayGame(thePlayGame);
         loadGui();
     }
@@ -43,16 +45,12 @@ public class GUI {
         myJFrame.setResizable(false);
         GameLoop myGameLoop = null;
         if (getPlayGame()) {
-            myGameLoop = new GameLoop(myGameStateFile);
+            myGameLoop = new GameLoop(myGameStateFile, myHeroSelection);
             myJFrame.getContentPane().removeAll();
             myJFrame.add(myGameLoop);
             addMenuBar();
             myJFrame.setJMenuBar(jMenuBar);
             myGameLoop.requestFocus();
-
-            // sets the objects
-            myGameLoop.SetupGame();
-
             myGameLoop.startGameThread();
 
         } else {
@@ -79,7 +77,7 @@ public class GUI {
         JMenu menu = new JMenu("THE LOST PILLARS OF OOP");
         JButton mainMenuButton = new JButton("Main Menu");
         mainMenuButton.addActionListener(e -> {
-            new buttonSound();
+            new ButtonSound();
 
             setPlayGame(false);
             try {
@@ -99,7 +97,7 @@ public class GUI {
         JButton saveButton = new JButton("SAVE");
         saveButton.addActionListener(e -> {
             new SerializeMapGenerator(myGameStateFile);
-            new buttonSound();
+            new ButtonSound();
 
             System.out.println("Serialized " + myGameStateFile + " ... SAVING");
         });

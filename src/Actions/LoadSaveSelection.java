@@ -7,19 +7,19 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class LoadSaveSelection implements Serializable {
-    static int mySaveSelection = 0;
-    static int i = 0;
-    static boolean mySelectedSave = false;
-    static DeserializeGameSaves deserializeGameSaves;
-    ArrayList<String> mySaves;
+    private static int mySaveSelection = 0;
+    private static int i = 0;
+    private static boolean mySelectedSave = false;
+    private static DeserializeGameSaves deserializeGameSaves;
+    private ArrayList<String> mySaves;
     public LoadSaveSelection() throws IOException {
         deserializeGameSaves = new DeserializeGameSaves();
         deserializeGameSaves.deserializeGameSaves();
         mySaves = deserializeGameSaves.getDeserializedGameSaves();
     }
 
-    public void loadSaveSelection(boolean goLeft, boolean goRight) throws IOException {
-        if (goLeft) {
+    public void loadSaveSelection(boolean theGoLeft, boolean theGoRight) throws IOException {
+        if (theGoLeft) {
             --i;
             containInBounds(i);
             System.out.println(i);
@@ -27,7 +27,7 @@ public class LoadSaveSelection implements Serializable {
             this.setLoadSaveSelection(i);
         }
 
-        if (goRight) {
+        if (theGoRight) {
             ++i;
             containInBounds(i);
             System.out.println(i);
@@ -56,17 +56,4 @@ public class LoadSaveSelection implements Serializable {
     public int getLoadSaveSelection() {
         return mySaveSelection;
     }
-
-    public void setLoadSaveSelected(boolean theSelectedSave) {
-        mySelectedSave = theSelectedSave;
-    }
-
-    public boolean getLoadSaveSelected() {
-        return mySelectedSave;
-    }
-
-
-
-
-
 }

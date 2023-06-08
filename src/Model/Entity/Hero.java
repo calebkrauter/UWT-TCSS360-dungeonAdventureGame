@@ -4,6 +4,7 @@ import Controller.GameLoop;
 import Controller.KeyHandler;
 
 import javax.imageio.ImageIO;
+import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
@@ -119,6 +120,7 @@ public abstract class Hero extends Entity {
      *
      * @param theIndex the index of the item in the array of all world items
      */
+    static int val = 0;
     public void pickUpItem(int theIndex){
 
         // if index is not 999 we touched an object. 999 can be any index not used initem array
@@ -152,6 +154,35 @@ public abstract class Hero extends Entity {
 
     }
 
+//    private void addInteractWithDoorPane(int theIndex) {
+//        int openDoorOption = new JOptionPane().showOptionDialog(new JFrame(), "You have "
+//                + getNumKeys() + " keys left would you like to use one to open the door?", "ARE YOU SURE?????!!!",
+//                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+//
+//        if (openDoorOption == JOptionPane.YES_OPTION) {
+//            setNumKeys(getNumKeys() - 1);   // delete a key from inventory
+//            myGameLoop.myItems[theIndex] = null;   // delete door from the map
+//        } else if (openDoorOption == JOptionPane.NO_OPTION) {
+//        }
+//        val = 0;
+//    }
+
+//    private void moveHeroBack() {
+//        switch(getDirection()) {
+//            case "up":
+//                setWorldY(getWorldY() + myGameLoop.ROOM_SIZE/2);
+//                break;
+//            case "down":
+//                setWorldY(getWorldY() - myGameLoop.ROOM_SIZE/2);
+//                break;
+//            case "left":
+//                setWorldX(getWorldX() + myGameLoop.ROOM_SIZE/2);
+//                break;
+//            case "right":
+//                setWorldX(getWorldX() - myGameLoop.ROOM_SIZE/2);
+//                break;
+//        }
+//    }
     public void setHeroImages() {
 
         try {

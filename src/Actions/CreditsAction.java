@@ -4,7 +4,7 @@ import javax.swing.*;
 
 public class CreditsAction {
     public CreditsAction() {
-        this.creditsAction();
+        creditsAction();
     }
 
     private void creditsAction() {

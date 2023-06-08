@@ -43,9 +43,9 @@ public class RoomManager {
 
     private Point2D myStartPoint = new Point2D.Float(0, 0);
     private Point2D myEndPoint = new Point2D.Float(0, 0);
-    private final java.util.List<Point2D> DoorRoomPositions = new ArrayList<Point2D>();
-    private final java.util.List<Point2D> IntersectionRoomPositions = new ArrayList<Point2D>();
-    private final java.util.List<Point2D> XPathRoomPositions = new ArrayList<Point2D>();
+    private final List<Point2D> DoorRoomPositions = new ArrayList<Point2D>();
+    private final List<Point2D> IntersectionRoomPositions = new ArrayList<Point2D>();
+    private final List<Point2D> XPathRoomPositions = new ArrayList<Point2D>();
     private final List<Point2D> YPathRoomPositions = new ArrayList<Point2D>();
 
     public RoomManager(GameLoop theGameLoop, String[][] theWorldMap){

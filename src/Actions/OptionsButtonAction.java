@@ -7,8 +7,8 @@ import javax.swing.*;
 import java.io.IOException;
 
 public class OptionsButtonAction {
-    MenuManager menuManager;
-    JComponent[] myMainMenuComponents;
+    private MenuManager menuManager;
+    private JComponent[] myMainMenuComponents;
 
     public OptionsButtonAction(JComponent[] theMainMenuComponents) throws IOException {
         myMainMenuComponents = theMainMenuComponents;

@@ -21,7 +21,7 @@ public class StartHero extends Hero {
     public void setDefaultValues(){
 
         // Start of the copied code:
-
+        setHeroImages();
         // Will eventually be set to center of start room. This would be the coordinate of the room
         // times the room size plus half the room size on both x and y.
         // EX: StartRoom = [1, 3], worldX = (1 * 400) + 200, worldY = (3 * 400) + 200

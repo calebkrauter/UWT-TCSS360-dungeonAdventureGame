@@ -1,8 +1,8 @@
 package Controller;
 
+import Model.Entity.Enemy.Gremlin;
 import Model.Entity.Enemy.Ogre;
 import Model.Entity.Enemy.Skeleton;
-import Model.Entity.Enemy.Gremlin;
 import View.map.RoomManager;
 
 import java.awt.geom.Point2D;

@@ -7,8 +7,8 @@ public class VolumeChange {
 
     private static FloatControl gainControl;
     private static int myMusicVolume;
-    float gain;
-    static MusicPlayer musicPlayer;
+    private float gain;
+    private static MusicPlayer musicPlayer;
     public VolumeChange(int theMusicVolume) throws LineUnavailableException {
         musicPlayer = new MusicPlayer();
         myMusicVolume = theMusicVolume;

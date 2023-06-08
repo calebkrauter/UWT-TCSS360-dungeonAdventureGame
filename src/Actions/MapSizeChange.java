@@ -3,7 +3,7 @@ package Actions;
 import javax.swing.*;
 
 public class MapSizeChange {
-    static JSlider myMapSizeSlider;
+    private static JSlider myMapSizeSlider;
     public MapSizeChange(JSlider theMapSizeSlider) {
         myMapSizeSlider = theMapSizeSlider;
         System.out.println(myMapSizeSlider.getValue());

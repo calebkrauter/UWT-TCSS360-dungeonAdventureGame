@@ -4,11 +4,74 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="Added Pillar item and randomly place them in the map.">
+    <list default="true" id="d91291d8-a8e4-4500-8d53-d60e74afbf0b" name="Changes" comment="collision tiles are scalable, number of array slots are scaled by map size for entity and item list.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/GameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GameLoop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/HeroDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/HeroDisplay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/map/RoomManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/map/RoomManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/AboutAction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/AppendExtension.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/CreditsAction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/EasyModeAction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/GoBackAction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/HardModeAction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/HeroSelection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/LoadAction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/LoadButtonAction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/LoadSaveSelection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/MapSizeChange.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/MusicPlayer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/OptionsButtonAction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/PlayButtonAction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/StartAction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/ToggleMusicChange.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/UpdateSlider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/VolumeChange.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/buttonSound.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChangeMenuAttributes/DisableMenu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChangeMenuAttributes/EnableMenu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ComponentGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ModifyInsets.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CollisionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/EntitySetter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/GameLoop.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ItemSetter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoadSave/CheckFileValidity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoadSave/DeserializeGameSaves.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoadSave/DeserializeMapGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoadSave/SerializeGameSaves.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoadSave/SerializeMapGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MenuManagment/AddCharacterSelectorPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MenuManagment/CharacterSelectorMenu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MenuManagment/GUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MenuManagment/MenuManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MenuManagment/OptionsMenuPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MenuManagment/ScreenData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Archer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Enemy/Enemy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Enemy/Gremlin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Enemy/Ogre.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Enemy/Skeleton.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Entity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Hero.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/StartHero.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Stevey.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Item/BottomDoor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Item/HealthPotion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Item/Key.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Item/LeftDoor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Item/ParentItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Item/Pillar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Item/RightDoor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Item/SpeedPotion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Item/TopDoor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/MapGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/EntityDisplay.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/HeroDisplay.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/ItemDisplay.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/map/CollisionTile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/map/Room.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/map/RoomManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/KeyHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/MouseHandler.java" beforeDir="false" />
     </list>
     <list id="ff8a1f12-e31b-4acb-8e38-ce3f58b732c1" name="Changes by James" comment="" />
     <list id="c9d39182-ef57-426f-855e-eb4806e1b925" name="Changes by Kraut" comment="Changes by Kraut" />
@@ -113,14 +176,14 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/out" />
+      <recent name="$PROJECT_DIR$/src/MenuManagment" />
       <recent name="$PROJECT_DIR$/res/Items" />
       <recent name="$PROJECT_DIR$/src/Controller" />
-      <recent name="$PROJECT_DIR$/res/Monster" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/res/Items/Door" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Controller.Main">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Controller.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Controller.Main" />
       <module name="360-Dungeon-Adventure" />
@@ -149,8 +212,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Controller.Main" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Controller.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -197,7 +260,10 @@
       <workItem from="1686125177048" duration="55000" />
       <workItem from="1686153743930" duration="13743000" />
       <workItem from="1686169862896" duration="1215000" />
-      <workItem from="1686181606293" duration="2275000" />
+      <workItem from="1686181606293" duration="2731000" />
+      <workItem from="1686192577499" duration="1545000" />
+      <workItem from="1686196184047" duration="617000" />
+      <workItem from="1686201809602" duration="348000" />
     </task>
     <task id="LOCAL-00001" summary="100% successfully interprets randomly generated maps for the display.">
       <created>1684131979650</created>
@@ -507,7 +573,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686171013588</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="collision tiles are scalable, number of array slots are scaled by map size for entity and item list.">
+      <created>1686184038324</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1686184038324</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -525,7 +598,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added &quot;Archer&quot; class as well as it's images and  values. Setters and getters for all direction images in &quot;Entity&quot; Class. Adjusting The gamePanel to the changes. NOTE: Still cannot get new images to display." />
     <MESSAGE value="fixed image display issues for archer" />
     <MESSAGE value="Added hero classes &quot;stevey&quot; and &quot;starter&quot;" />
     <MESSAGE value="finished all 3 characters and their stats. Starting to add objects like keys" />
@@ -550,7 +622,8 @@
     <MESSAGE value="Collision with items is tracked and prints to the console when intersecting." />
     <MESSAGE value="Collision with any item deletes it" />
     <MESSAGE value="Added Pillar item and randomly place them in the map." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Pillar item and randomly place them in the map." />
+    <MESSAGE value="collision tiles are scalable, number of array slots are scaled by map size for entity and item list." />
+    <option name="LAST_COMMIT_MESSAGE" value="collision tiles are scalable, number of array slots are scaled by map size for entity and item list." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

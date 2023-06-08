@@ -2,7 +2,7 @@
 package Actions;
 
 public class HardModeAction {
-    static boolean myHardGameMode = false;
+    private static boolean myHardGameMode = false;
     public HardModeAction() {
 
     }

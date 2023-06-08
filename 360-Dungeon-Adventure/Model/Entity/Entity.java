@@ -1,4 +1,4 @@
-package Model.entity;
+package Model.Entity;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -6,28 +6,25 @@ import java.awt.image.BufferedImage;
 // Parent
 public abstract class Entity {
 
+    private BufferedImage up1, up2, down1, down2, left1, left2, right1, right2;
+    private Rectangle myHitBox;
+    private boolean myCollision = false;
+    private String myEntityName;
+    private String myDirection;
     // Player position on world map
     private int myWorldX, myWorldY;
     private int mySpeed;
-    private BufferedImage up1, up2, down1, down2, left1, left2, right1, right2;
-    private String myEntityName;
-    private String myDirection;
-
     // after how many updates should the sprite change?
-    public int spriteCounter = 0;
+    public int mySpriteCounter = 0;
     // number of sprite images is the max
-    public int spriteNum = 1;
-
-    public Rectangle myHitBox;
-    public boolean collisionActive = false;
-
+    public int mySpriteNum = 1;
     private int myHealthPoints = 75;
-
     private int myMinDamage = 0;
-
     private int myMaxDamage = 0;
-
     private int myHitChance = 0;
+
+    private int myHitboxDefaultX;
+    private int myHitboxDefaultY;
 
     public int getWorldX(){
         return myWorldX;
@@ -151,11 +148,22 @@ public abstract class Entity {
     public void setHitBox(Rectangle theHitBox) {
         myHitBox = theHitBox;
     }
-    public boolean getCollisionActive(){
-        return collisionActive;
+
+    public int getHitboxDefaultX(){ return myHitboxDefaultX;}
+
+    public void setHitboxDefaultX(int theX) {
+        myHitboxDefaultX = theX;
     }
-    public void setCollisionActive(boolean thecollisionActive){
-        collisionActive = thecollisionActive;
+    public int getHitboxDefaultY(){ return myHitboxDefaultX;}
+
+    public void setHitboxDefaultY(int theY) {
+        myHitboxDefaultY = theY;
+    }
+    public boolean getCollision(){
+        return myCollision;
+    }
+    public void setCollision(boolean hasCollision){
+        myCollision = hasCollision;
     }
 
 //    // Overriding toString() method of String class

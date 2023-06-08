@@ -82,6 +82,8 @@ public class ComponentGenerator {
             this.setMyConstraints(this.myConstraints);
 
             // Easily update buttons with titles
+            // TODO
+            // For future, TELL don't ASK regarding instanceof...
             if (this.manyComponents[i][this.myButtonCode] instanceof JButton) {
                 ((JButton) this.manyComponents[i][this.myButtonCode]).setText(this.myTitles[i]);
             }

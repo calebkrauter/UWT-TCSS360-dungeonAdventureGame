@@ -1,9 +1,11 @@
+// Makai Martinez 6/7/2023 TCSS 360 A
+
 package View;
 
 import Controller.CollisionHandler;
-import Controller.GamePanel;
+import Controller.GameLoop;
 import Controller.KeyHandler;
-import Model.entity.Hero;
+import Model.Entity.Hero;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -11,11 +13,11 @@ import java.awt.image.BufferedImage;
 public class HeroDisplay {
     KeyHandler myKeyHandler;
     CollisionHandler myCollisionHandler;
-    GamePanel myGamePanel;
+    GameLoop myGameLoop;
     Hero myHero;
 
-    public HeroDisplay(GamePanel theGP, KeyHandler theKeyH, Hero theHero, CollisionHandler theCollisionHandler) {
-        this.myGamePanel = theGP;
+    public HeroDisplay(GameLoop theGP, KeyHandler theKeyH, Hero theHero, CollisionHandler theCollisionHandler) {
+        this.myGameLoop = theGP;
         this.myKeyHandler = theKeyH;
         this.myHero = theHero;
         this.myCollisionHandler = theCollisionHandler;
@@ -47,12 +49,16 @@ public class HeroDisplay {
                 myHero.setDirection("right");
             }
 
-            // Check collision
-            myHero.setCollisionActive(false);
-            myCollisionHandler.checkTile(myHero); // pass hero class as an entity
+            // Check tile collision
+            myHero.setCollision(false);
+            myCollisionHandler.checkTile(myHero); // pass hero class as an Entity
+
+            // Check item collision
+            int myItemIndex = myCollisionHandler.checkItem(myHero, true); // pass hero class as an Entity
+            myHero.pickUpItem(myItemIndex);
 
             // if collision is false player can move
-            if (myHero.getCollisionActive() == false) {
+            if (myHero.getCollision() == false) {
 
                 switch (myHero.getDirection()) {
                     case "up":
@@ -72,15 +78,15 @@ public class HeroDisplay {
             }
 
 
-            myHero.spriteCounter++;
+            myHero.mySpriteCounter++;
             // every 12 frames player image changes
-            if(myHero.spriteCounter > 12) {
-                if(myHero.spriteNum == 1){
-                    myHero.spriteNum = 2;
-                } else if (myHero.spriteNum == 2) {
-                    myHero.spriteNum = 1;
+            if(myHero.mySpriteCounter > 12) {
+                if(myHero.mySpriteNum == 1){
+                    myHero.mySpriteNum = 2;
+                } else if (myHero.mySpriteNum == 2) {
+                    myHero.mySpriteNum = 1;
                 }
-                myHero.spriteCounter = 0;
+                myHero.mySpriteCounter = 0;
             }
         }
 
@@ -96,36 +102,36 @@ public class HeroDisplay {
         BufferedImage image = null;
 
         if (myHero.getDirection().equals("up")){
-            if(myHero.spriteNum == 1){
+            if(myHero.mySpriteNum == 1){
                 image = myHero.getImageUp1();
-            } else if (myHero.spriteNum == 2){
+            } else if (myHero.mySpriteNum == 2){
                 image = myHero.getImageUp2();
             }
         }
         else if (myHero.getDirection().equals("down")){
-            if(myHero.spriteNum == 1){
+            if(myHero.mySpriteNum == 1){
                 image = myHero.getImageDown1();
-            } else if (myHero.spriteNum == 2){
+            } else if (myHero.mySpriteNum == 2){
                 image = myHero.getImageDown2();
             }
         }
         else if (myHero.getDirection().equals("left")){
-            if(myHero.spriteNum == 1){
+            if(myHero.mySpriteNum == 1){
                 image = myHero.getImageLeft1();
-            } else if (myHero.spriteNum == 2){
+            } else if (myHero.mySpriteNum == 2){
                 image = myHero.getImageLeft2();
             }
         }
         else if (myHero.getDirection().equals("right")){
-            if(myHero.spriteNum == 1){
+            if(myHero.mySpriteNum == 1){
                 image = myHero.getImageRight1();
-            } else if (myHero.spriteNum == 2){
+            } else if (myHero.mySpriteNum == 2){
                 image = myHero.getImageRight2();
             }
         }
 
         // g2.drawImage(image, positionX, positionY, dimensionX, dimensionY, ImageObserver);
-        g2.drawImage(image, myHero.getScreenX(), myHero.getScreenY(), myGamePanel.TILE_SIZE, myGamePanel.TILE_SIZE, null);
+        g2.drawImage(image, myHero.getScreenX(), myHero.getScreenY(), myGameLoop.TILE_SIZE, myGameLoop.TILE_SIZE, null);
 
 
     }

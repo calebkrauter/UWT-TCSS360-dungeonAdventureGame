@@ -2,10 +2,9 @@
 package MenuManagment;
 
 import Actions.ButtonSound;
-import Actions.HeroSelection;
 import Actions.MusicPlayer;
 import Actions.VolumeChange;
-import Controller.GamePanel;
+import Controller.GameLoop;
 import LoadSave.SerializeMapGenerator;
 
 import javax.sound.sampled.LineUnavailableException;
@@ -44,16 +43,15 @@ public class GUI {
         this.myJFrame.setDefaultCloseOperation(3);
         this.myJFrame.setMinimumSize(new Dimension(850, 850));
         myJFrame.setResizable(false);
-        GamePanel myGamePanel = null;
+        GameLoop myGameLoop = null;
         if (getPlayGame()) {
-            myGamePanel = new GamePanel(myGameStateFile, myHeroSelection);
+            myGameLoop = new GameLoop(myGameStateFile, myHeroSelection);
             myJFrame.getContentPane().removeAll();
-            myJFrame.add(myGamePanel);
+            myJFrame.add(myGameLoop);
             addMenuBar();
             myJFrame.setJMenuBar(jMenuBar);
-            myGamePanel.requestFocus();
-            myGamePanel.SetupGame();
-            myGamePanel.startGameThread();
+            myGameLoop.requestFocus();
+            myGameLoop.startGameThread();
 
         } else {
             val = 0;

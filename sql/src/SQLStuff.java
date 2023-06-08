@@ -10,6 +10,25 @@ import java.util.ArrayList;
 public class SQLStuff {
     private SQLiteDataSource myDS;
     private String initialQuery;
+    // Ogre, skeleton, gremlin
+// Should I make these static?
+    private ArrayList<ArrayList<Object>> myMonsters;
+    private ArrayList<Object> myMonsterStats;
+    // These fields are made public because they are codes
+    // that are intended to be used outside of this class. They have a single
+    // purpose which is clearly defined as being an index to arraylists.
+    // Because they are necessary outside of this class and misusing them would not
+    // likely result in misuse of the program functionality, they are made public to be
+    // used more conveniently outside of this class.
+    public static final int MONSTER_TYPE = 0;
+    public static final int IMAGE_FILE = 1;
+    public static final int HIT_CHANCE = 2;
+    public static final int MIN_DAMAGE = 3;
+    public static final int MAX_DAMAGE = 4;
+    public static final int DEFAULT_HEALTH = 5;
+    public static final int GREMLIN = 0;
+    public static final int SKELTON = 1;
+    public static final int OGRE = 2;
     public SQLStuff() {
         setupTable();
         myDS = null;
@@ -21,6 +40,7 @@ public class SQLStuff {
         displayTable();
         printTestData();
     }
+
     private void setupTable() {
         initialQuery = "CREATE TABLE IF NOT EXISTS monsterData ( " +
                 "MONSTER_TYPE TEXT NOT NULL, " +
@@ -30,7 +50,6 @@ public class SQLStuff {
                 "MAX_DAMAGE TEXT NOT NULL, " +
                 "DEFAULT_HEALTH TEXT NOT NULL)";
     }
-
     public void getDBConnection() {
         try {
             myDS = new SQLiteDataSource();
@@ -40,7 +59,7 @@ public class SQLStuff {
             System.exit(0);
         }
     }
-// Ogre, skeleton, gremlin
+
 
     private void updateTableWithQuery(String theQuery) {
         // TEST Table build
@@ -104,24 +123,6 @@ public class SQLStuff {
         updateTableWithQuery(ogreQuery);
 
     }
-
-    ArrayList<ArrayList<Object>> myMonsters;
-    ArrayList<Object> myMonsterStats;
-    // These fields are made public because they are codes
-    // that are intended to be used outside of this class. They have a single
-    // purpose which is clearly defined as being an index to arraylists.
-    // Because they are necessary outside of this class and misusing them would not
-    // likely result in misuse of the program functionality, they are made public to be
-    // used more conveniently outside of this class.
-    public static final int MONSTER_TYPE = 0;
-    public static final int IMAGE_FILE = 1;
-    public static final int HIT_CHANCE = 2;
-    public static final int MIN_DAMAGE = 3;
-    public static final int MAX_DAMAGE = 4;
-    public static final int DEFAULT_HEALTH = 5;
-    public static final int GREMLIN = 0;
-    public static final int SKELTON = 1;
-    public static final int OGRE = 2;
 
     private void monsterData() {
         for (ArrayList<Object> monster: myMonsters) {

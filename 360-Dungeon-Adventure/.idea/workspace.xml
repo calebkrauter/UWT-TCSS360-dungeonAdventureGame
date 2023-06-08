@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0df212bb-e81b-4d49-8840-12ee792b8347" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../sql/src/SQLRes/monsterData.db" beforeDir="false" afterPath="$PROJECT_DIR$/../sql/src/SQLRes/monsterData.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../sql/src/SQLStuff.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sql/src/SQLStuff.java" afterDir="false" />
     </list>

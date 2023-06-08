@@ -5,78 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0df212bb-e81b-4d49-8840-12ee792b8347" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/CollisionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/EntitySetter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/ItemSetter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/KeyHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/MouseHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/Entity/Enemy/Enemy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/Entity/Enemy/Gremlin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/Entity/Enemy/Ogre.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/Entity/Enemy/Skeleton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/Entity/Hero.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/Item/BottomDoor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/Item/HealthPotion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/Item/Key.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/Item/LeftDoor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/Item/ParentItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/Item/Pillar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/Item/RightDoor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/Item/SpeedPotion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/Item/TopDoor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/MapGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/View/EntityDisplay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/View/HeroDisplay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/View/ItemDisplay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/View/map/CollisionTile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/View/map/Room.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/View/map/RoomManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/Items/Pillar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/EntitySetter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/GameLoop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Entity/Archer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Entity/Enemy/Enemy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Entity/Enemy/Gremlin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Entity/Enemy/Ogre.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Entity/Enemy/Skeleton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Entity/Entity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Entity/Hero.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Entity/StartHero.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Entity/Stevey.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Item/Pillar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/View/EntityDisplay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game-saves.ser" beforeDir="false" afterPath="$PROJECT_DIR$/game-saves.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/TextMaps/doorRoom.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/TextMaps/doorRoom.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/TextMaps/intersectionPath.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/TextMaps/intersectionPath.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/TextMaps/openDoorRoom.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/TextMaps/openDoorRoom.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/TextMaps/walls.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/TextMaps/walls.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/TextMaps/xPath.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/TextMaps/xPath.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/TextMaps/yPath.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/TextMaps/yPath.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ComponentGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ComponentGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CollisionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CollisionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/GameLoop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ItemSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ItemSetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MouseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MouseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuManagment/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuManagment/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Item/BottomDoor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Item/BottomDoor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Item/LeftDoor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Item/LeftDoor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Item/ParentItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Item/ParentItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Item/RightDoor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Item/RightDoor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Item/TopDoor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Item/TopDoor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/entity/Archer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Entity/Archer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Entity/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/entity/Hero.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/entity/StartHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Entity/StartHero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/entity/Stevey.java" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Entity/Stevey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/HeroDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/HeroDisplay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/ItemDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ItemDisplay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/map/RoomManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/map/RoomManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,8 +32,15 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "STABLE-MAKAI",
     "last_directory_selection": "/Users/calebkrauter/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure/src/Model/entity",
-    "last_opened_file_path": "/Users/calebkrauter/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure/src/Model"
+    "last_opened_file_path": "/Users/makaimartinez/IdeaProjects/360-Dungeon-Adventure/360-Dungeon-Adventure",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -157,8 +94,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1685985633839</updated>
+      <workItem from="1686202943235" duration="369000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

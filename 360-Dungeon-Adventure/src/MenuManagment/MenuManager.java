@@ -97,9 +97,9 @@ public class MenuManager extends JPanel {
     }
     final BufferedImage mainImage = ImageIO.read(new File("mainMenu.png"));
 
-    final BufferedImage hero1 = ImageIO.read(new File("man1.png"));
-    final BufferedImage hero2 = ImageIO.read(new File("man4.png"));
-    final BufferedImage hero3 = ImageIO.read(new File("man5.png"));
+    final BufferedImage hero1 = ImageIO.read(new File("res/Hero/Stevey/SteveyDown1 copy.png"));
+    final BufferedImage hero2 = ImageIO.read(new File("res/Hero/Archer/ArcherDown1 copy.png"));
+    final BufferedImage hero3 = ImageIO.read(new File("res/Hero/down1.png"));
     BufferedImage[] characters = new BufferedImage[] {hero1, hero2, hero3};
     String[] characterNames = new String[] {"Stevy", "Linky", "FRED"};
     HeroSelection heroSelection = new HeroSelection();

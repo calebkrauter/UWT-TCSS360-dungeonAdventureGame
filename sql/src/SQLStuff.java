@@ -12,6 +12,8 @@ public class SQLStuff {
         setupTable();
         myDS = null;
         getDBConnection();
+        // DELETES the table contents so that it doesn't duplicate.
+        updateTableWithQuery("DELETE FROM monsterData");
         updateTableWithQuery(initialQuery);
         fillTable();
         displayTable();
@@ -42,12 +44,12 @@ public class SQLStuff {
         try (Connection connection = myDS.getConnection();
              Statement statement = connection.createStatement()) {
             int returnValue = statement.executeUpdate(theQuery);
-            System.out.println("executeUpdate() returned " + returnValue);
+//            System.out.println("executeUpdate() returned " + returnValue);
         } catch (SQLException e) {
              e.printStackTrace();
              System.exit(0);
         }
-        System.out.println( "Created table successfully" );
+//        System.out.println( "Created table successfully" );
     }
 
     private void fillTable() {
@@ -65,7 +67,39 @@ public class SQLStuff {
                 "'30', " +
                 "'60', " +
                 "'150')";
+        String skeletonQuery = "INSERT INTO monsterData (" +
+                "MONSTER_TYPE, " +
+                "IMAGE_FILE, " +
+                "HIT_CHANCE, " +
+                "MIN_DAMAGE, " +
+                "MAX_DAMAGE, " +
+                "DEFAULT_HEALTH)" +
+                " VALUES " +
+                "('Skeleton', " +
+                "'res/Monster/Skeleton.png', " +
+                "'50', " +
+                "'50', " +
+                "'65', " +
+                "'200')";
+        String ogreQuery = "INSERT INTO monsterData (" +
+                "MONSTER_TYPE, " +
+                "IMAGE_FILE, " +
+                "HIT_CHANCE, " +
+                "MIN_DAMAGE, " +
+                "MAX_DAMAGE, " +
+                "DEFAULT_HEALTH)" +
+                " VALUES " +
+                "('Ogre', " +
+                "'res/Monster/Ogre.png', " +
+                "'80', " +
+                "'30', " +
+                "'55', " +
+                "'100')";
+
         updateTableWithQuery(gremlinQuery);
+        updateTableWithQuery(skeletonQuery);
+        updateTableWithQuery(ogreQuery);
+
     }
 
     private void displayTable() {
@@ -91,6 +125,7 @@ public class SQLStuff {
                         + minDamage + ", "
                         + maxDamage + ", "
                         + defaultHealth);
+                System.out.println();
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

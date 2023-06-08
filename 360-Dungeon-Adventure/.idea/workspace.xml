@@ -6,27 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0df212bb-e81b-4d49-8840-12ee792b8347" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/123nkahsklj.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/COOLENESS.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game File Na.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game File Name.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game File dd.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TOOOY.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aaGame File Name.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aaa.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/abs.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adsadsasdafe.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/asdasaaaame.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aslakddddName.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/d.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddda.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game-saves.ser" beforeDir="false" afterPath="$PROJECT_DIR$/game-saves.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lkblhlkhhlhlk.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sa.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LoadSave/DeserializeGameSaves.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoadSave/DeserializeGameSaves.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LoadSave/SerializeGameSaves.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoadSave/SerializeGameSaves.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sss.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sql/src/SQLRes/monsterData.db" beforeDir="false" afterPath="$PROJECT_DIR$/../sql/src/SQLRes/monsterData.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sql/src/SQLStuff.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sql/src/SQLStuff.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,15 +28,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_directory_selection": "/Users/calebkrauter/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure/src/Model/entity",
-    "last_opened_file_path": "C:/Users/Kraut/Documents/Workspace/SQLiteInClassDemoSpring23"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;/Users/calebkrauter/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure/src/Model/entity&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Kraut/Documents/Workspace/SQLiteInClassDemoSpring23&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Model" />

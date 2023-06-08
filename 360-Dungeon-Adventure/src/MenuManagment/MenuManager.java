@@ -545,10 +545,13 @@ public class MenuManager extends JPanel {
         myStartButton.addActionListener(e -> {
             new ButtonSound();
             gameSaveName = myGameStateField.getText();
-            CheckFileValidity checkFileValidity = new CheckFileValidity();
-            System.out.println(gameSaveName);
-            checkFileValidity.checkAlreadyExists(gameSaveName);
-            gameSaveName = checkFileValidity.checkValidLength(gameSaveName);
+            if (deserializeGameSaves.getDeserializedGameSaves() != null && !(deserializeGameSaves.getDeserializedGameSaves().isEmpty())) {
+
+                CheckFileValidity checkFileValidity = new CheckFileValidity();
+                System.out.println(gameSaveName);
+                checkFileValidity.checkAlreadyExists(gameSaveName);
+                gameSaveName = checkFileValidity.checkValidLength(gameSaveName);
+            }
             String gameStateFile = new AppendExtension().appendExtension(gameSaveName);
             SerializeMapGenerator serializeMapGenerator = new SerializeMapGenerator(gameStateFile, myMapSizeSlider.getValue(), myMapSizeSlider.getValue(), easyModeAction.getEasyMode());
             SerializeGameSaves serializeGameSaves = new SerializeGameSaves();

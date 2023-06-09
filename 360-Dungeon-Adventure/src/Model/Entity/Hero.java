@@ -12,7 +12,10 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 
-
+/**
+ * Makai
+ * Caleb
+ */
 public abstract class Hero extends Entity {
 
     KeyHandler keyH;
@@ -64,6 +67,9 @@ public abstract class Hero extends Entity {
         setHeroImages();
     }
 
+    public int getDefaultSpeed() {
+        return 4;
+    }
     public int getScreenX(){
         return myScreenX;
     }

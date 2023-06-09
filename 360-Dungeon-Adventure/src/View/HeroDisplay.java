@@ -6,10 +6,13 @@ import Controller.CollisionHandler;
 import Controller.GameLoop;
 import Controller.KeyHandler;
 import Model.Entity.Enemy.Monster;
+import Model.Entity.Entity;
 import Model.Entity.Hero;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Caleb Krauter
@@ -21,7 +24,7 @@ public class HeroDisplay {
     CollisionHandler myCollisionHandler;
     GameLoop myGameLoop;
     Hero myHero;
-
+    boolean fightEnd = false;
     public HeroDisplay(GameLoop theGP, KeyHandler theKeyH, Hero theHero, CollisionHandler theCollisionHandler) {
         this.myGameLoop = theGP;
         this.myKeyHandler = theKeyH;
@@ -62,9 +65,16 @@ public class HeroDisplay {
             // Check item collision
             int myItemIndex = myCollisionHandler.checkItem(myHero, true); // pass hero class as an Entity
             myHero.pickUpItem(myItemIndex);
-            if (myCollisionHandler.checkMonster(myHero, true)) {
-                System.out.println("COLLIDED");
-            }
+            fightEnd = myCollisionHandler.checkMonster(myHero);
+//            if (fightEnd) {
+//                myHero.setSpeed(0);
+//
+//                startTimer();
+//
+//            }
+            myHero.setSpeed(myHero.getDefaultSpeed());
+
+
             // if collision is false player can move
             if (myHero.getCollision() == false) {
 
@@ -101,7 +111,20 @@ public class HeroDisplay {
 
 
     }
+    private void startTimer() {
 
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                // Code to be executed after 5 seconds
+
+                timer.cancel(); // Cancel the timer after it expires
+                fightEnd = false;
+                myHero.setSpeed(0);
+            }
+        }, 3000);
+    }
     public void draw(Graphics2D g2){
 //        test rectangle
 //        g2.setColor(Color.white);

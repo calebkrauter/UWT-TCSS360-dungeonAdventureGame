@@ -3,6 +3,7 @@ import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import Actions.interactionSound;
 import Controller.DB.MonsterStatsDB;
 import Model.Entity.Entity;
 import View.map.CollisionTile;
@@ -84,9 +85,12 @@ public class CollisionHandler {
 
     boolean dialogShown = false;
     // TODO update names in this method
-    public boolean checkMonster(Entity theEntity, boolean isPlayer) {
+    public boolean checkMonster(Entity theEntity) {
         int index = 999;
         boolean characterCollide = false;
+        if (fightEnd) {
+            startTimer(theEntity);
+        }
         for (int i = 0; i < myGameLoop.myEntities.length; i++){
 
             if(myGameLoop.myEntities[i] != null){
@@ -106,19 +110,39 @@ public class CollisionHandler {
                 switch(theEntity.getDirection()) {  // check entity's direction
                     case "up":
                         newHitbox.y -= theEntity.getSpeed();
+                        if (getOut) {
+                            getOut = false;
+                            fightEnd = true;
+                            break;
+                        }
                         fightActionOption(newHitbox, newitemHitbox, theEntity, i, characterCollide);
                         break;
                     case "down":
                         newHitbox.y += theEntity.getSpeed();
+                        if (getOut) {
+                            getOut = false;
+                            fightEnd = true;
+                            break;
+                        }
                         fightActionOption(newHitbox, newitemHitbox, theEntity, i, characterCollide);
                         break;
                     case "left":
                         newHitbox.x -= theEntity.getSpeed();
+                        if (getOut) {
+                            getOut = false;
+                            fightEnd = true;
+                            break;
+                        }
                         fightActionOption(newHitbox, newitemHitbox, theEntity, i, characterCollide);
 
                         break;
                     case "right":
                         newHitbox.x += theEntity.getSpeed();
+                        if (getOut) {
+                            getOut = false;
+                            fightEnd = true;
+                            break;
+                        }
                         fightActionOption(newHitbox, newitemHitbox, theEntity, i, characterCollide);
                         break;
                 }
@@ -128,15 +152,18 @@ public class CollisionHandler {
                 newHitbox.y = theEntity.getHitboxDefaultY();
                 theEntity.setHitBox(newHitbox);
 
-                newitemHitbox.x = myGameLoop.myEntities[i].getHitboxDefaultX();
-                newitemHitbox.y = myGameLoop.myEntities[i].getHitboxDefaultY();
-                myGameLoop.myEntities[i].setHitBox(newitemHitbox);
+                if (myGameLoop.myEntities[i] != null) {
+
+                    newitemHitbox.x = myGameLoop.myEntities[i].getHitboxDefaultX();
+                    newitemHitbox.y = myGameLoop.myEntities[i].getHitboxDefaultY();
+                    myGameLoop.myEntities[i].setHitBox(newitemHitbox);
+                }
 
             }
         }
 
 
-        return characterCollide;
+        return fightEnd;
     }
 
     private void fightActionOption(Rectangle newHitbox, Rectangle newitemHitbox, Entity theEntity, int i, boolean characterCollide){
@@ -144,59 +171,137 @@ public class CollisionHandler {
             if (myGameLoop.myEntities[i].getCollision()) {
                 theEntity.setCollision(true);
                 characterCollide = true;
-                if (!dialogShown) {
+                if (!dialogShown && !blockDialogShown) {
                     popUpFight(theEntity, i);
                 }
             }
         }
     }
-    private void startTimer() {
+    private void startTimer(Entity theEntity) {
+        dialogShown = true;
+
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
                 // Code to be executed after 5 seconds
                 dialogShown = false;
+                blockDialogShown = false;
+                getOut = false;
                 timer.cancel(); // Cancel the timer after it expires
+
+                fightEnd = false;
+
             }
         }, 3000);
     }
-    private void popUpFight(Entity theEntity, int i) {
-        dialogShown = true;
-        int fightOption = JOptionPane.showOptionDialog(
-                null,
-                "DO YOU WISH TO FIGHT?",
-                "Confirmation",
-                JOptionPane.YES_NO_OPTION,
-                JOptionPane.QUESTION_MESSAGE,
-                null,
-                null,
-                null
-        );
 
-        // Process the selected option
-        if (fightOption == JOptionPane.YES_OPTION) {
-            doFight(theEntity, myGameLoop.myEntities, i);
-            System.out.println("FIGHT");
-            startTimer();
-        } else if (fightOption == JOptionPane.NO_OPTION) {
-            theEntity.setCollision(false);
-            startTimer();
+    private boolean leave = false;
+
+
+    private void popUpFight(Entity theEntity, int i) {
+
+        leave = false;
+        //
+//        while (theEntity.getHealth() > 0 || myGameLoop.myEntities[i].getHealth() > 0 || !leave) {
+            leave = false;
+            dialogShown = true;
+            int fightOption = JOptionPane.showOptionDialog(
+                    null,
+                    "DO YOU WISH TO FIGHT? Your health: " + theEntity.getHealth() + "\nMONSTER "
+                            + myGameLoop.myEntities[i].getEntityName() + " health: "
+                            + myGameLoop.myEntities[i].getHealth() + "\nYour hit chance: " + theEntity.getHitChance() + ", your damage is between " + theEntity.getMinDamage() + " and " + theEntity.getMaxDamage()
+                            + "\n" + myGameLoop.myEntities[i].getEntityName() + " damage is between " +  myGameLoop.myEntities[i].getMinDamage() + " and " + myGameLoop.myEntities[i].getMaxDamage(),
+                    "3 second cool down on approaching this MONSTER.",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    null,
+                    null
+            );
+
+            // Process the selected option
+            if (fightOption == JOptionPane.YES_OPTION) {
+                leave = false;
+
+                doFight(theEntity, myGameLoop.myEntities, i);
+                System.out.println("FIGHT");
+                dialogShown = false;
+
+            } else if (fightOption == JOptionPane.NO_OPTION) {
+                leave = true;
+                theEntity.setCollision(false);
+                startTimer(theEntity);
+            }
         }
-    }
+//    }
+
+    private boolean blockDialogShown = false;
+    private final String DEATH_SOUND = "deathSound.wav";
+    boolean getOut = false;
+    boolean fightEnd = false;
     private void doFight(Entity theEntity, Entity[] myEntities, int i) {
+        getOut = false;
+
+        blockDialogShown = false;
         Random random = new Random();
-        int chance = random.nextInt(0, 5);
+        int chance = random.nextInt(0, 15);
         // TODO use a whlie loop to decrease health in enemy or player until one is dead.
-        if (chance > 2) {
+        // Hit chance could be 80 or 70, so now there is a 7 or 8 out of 10 chance to hit enemy,
+        // the rest 2 or 3 to 10 is enemy attack chance and 10 to 12 is block chance.
+        int playerDamage = new Random().nextInt(theEntity.getMinDamage(), theEntity.getMaxDamage());
+        int monsterDamage = new Random().nextInt(myGameLoop.myEntities[i].getMinDamage(), myGameLoop.myEntities[i].getMaxDamage());
+        if (chance <= theEntity.getHitChance()/10) {
             // Updates a gremlin health when it gets hit.
             MonsterStatsDB monsterStatsDB = new MonsterStatsDB();
             monsterStatsDB.setMonsterStat(monsterStatsDB.GREMLIN, monsterStatsDB.DEFAULT_HEALTH, 45);
             System.out.println(myEntities[i].getEntityName());
+            myEntities[i].setHealth(myEntities[i].getHealth() - playerDamage);
+            if (myEntities[i].getHealth() <= 0) {
+                myGameLoop.myEntities[i] = null;
+                new interactionSound(DEATH_SOUND);
+                new JOptionPane().showMessageDialog(null, "YOU DEFEATED THE MONSTER!!!", "YOU WON.", JOptionPane.PLAIN_MESSAGE);
+                leave = true;
+                theEntity.setCollision(false);
+
+                startTimer(theEntity);
+            }
+        } else if (chance > theEntity.getHitChance()/10 && chance <= 12){
+            // Chance that enemy hits player
+            theEntity.setHealth(theEntity.getHealth() - monsterDamage);
+            if (theEntity.getHealth() <= 0) {
+
+                new interactionSound(DEATH_SOUND);
+                new JOptionPane().showMessageDialog(null, "GAME OVER, to respawn load game and find your save.", "YOU LOST.", JOptionPane.PLAIN_MESSAGE);
+                System.exit(0);
+            }
         } else {
-            // Updates player health when it gets hit.
-            theEntity.setHealth(56);
+            blockDialogShown = true;
+            dialogShown = true;
+            // Block
+            int leaveOption = JOptionPane.showOptionDialog(
+                    null,
+                    "You lucky adventurer, you blocked, would you like to leave?",
+                    "3 second cool down on approaching this MONSTER.",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    null,
+                    null
+            );
+            if (leaveOption == JOptionPane.YES_OPTION) {
+                leave = true;
+                theEntity.setCollision(false);
+                startTimer(theEntity);
+            } else {
+                leave = false;
+
+                doFight(theEntity, myGameLoop.myEntities, i);
+                System.out.println("FIGHT");
+                dialogShown = false;
+            }
         }
+
     }
 
 

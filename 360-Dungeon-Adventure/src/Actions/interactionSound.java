@@ -4,11 +4,11 @@ import javax.sound.sampled.*;
 import java.io.File;
 import java.io.IOException;
 
-public class ButtonSound {
+public class interactionSound {
 
-    public ButtonSound() {
+    public interactionSound(String theSound) {
         try {
-            playButtonSound();
+            playSound(theSound);
         } catch (LineUnavailableException e) {
             throw new RuntimeException(e);
         } catch (UnsupportedAudioFileException e) {
@@ -18,8 +18,8 @@ public class ButtonSound {
         }
     }
 
-    private void playButtonSound() throws LineUnavailableException, UnsupportedAudioFileException, IOException {
-        AudioInputStream audioStream = AudioSystem.getAudioInputStream(new File("typeWriterSound.wav"));
+    private void playSound(String theSound) throws LineUnavailableException, UnsupportedAudioFileException, IOException {
+        AudioInputStream audioStream = AudioSystem.getAudioInputStream(new File(theSound));
         Clip clip = AudioSystem.getClip();
         clip.open(audioStream);
         clip.start();

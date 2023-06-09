@@ -1,7 +1,7 @@
 
 package MenuManagment;
 
-import Actions.ButtonSound;
+import Actions.interactionSound;
 import Actions.MusicPlayer;
 import Actions.VolumeChange;
 import Controller.GameLoop;
@@ -21,6 +21,8 @@ public class GUI {
     boolean myPlayGame = false;
     String myGameStateFile = "";
     private String MAIN_MENU_MUSIC = "MainMenu.wav";
+    private final String buttonSound = "typeWriterSound.wav";
+
     MusicPlayer musicPlayer;
     JSlider volumeChangeSlider;
     private int myHeroSelection;
@@ -77,7 +79,7 @@ public class GUI {
         JMenu menu = new JMenu("THE LOST PILLARS OF OOP");
         JButton mainMenuButton = new JButton("Main Menu");
         mainMenuButton.addActionListener(e -> {
-            new ButtonSound();
+            new interactionSound(buttonSound);
 
             setPlayGame(false);
             try {
@@ -97,7 +99,7 @@ public class GUI {
         JButton saveButton = new JButton("SAVE");
         saveButton.addActionListener(e -> {
             new SerializeMapGenerator(myGameStateFile);
-            new ButtonSound();
+            new interactionSound(buttonSound);
 
             System.out.println("Serialized " + myGameStateFile + " ... SAVING");
         });

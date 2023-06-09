@@ -106,7 +106,7 @@ public class MenuManager extends JPanel {
     static boolean myShownCharacter = false;
     DeserializeGameSaves deserializeGameSaves;
     JButton myDelete;
-
+    private final String buttonSound = "typeWriterSound.wav";
 
     private static int musicPlayedFirstTime = 0;
 
@@ -188,7 +188,7 @@ public class MenuManager extends JPanel {
     private void addLoadSaveActions() throws IOException {
         new EnableMenu(loadSaveSelectionComponents);
         myBackButton.addActionListener(e -> {
-            new ButtonSound();
+            new interactionSound(buttonSound);
             new GoBackAction(loadSaveSelectionComponents, mainMenuComponents);
 
         });
@@ -196,7 +196,7 @@ public class MenuManager extends JPanel {
         SerializeGameSaves serializeGameSaves = new SerializeGameSaves();
 
         myLeftSelect.addActionListener(e -> {
-            new ButtonSound();
+            new interactionSound(buttonSound);
             try {
                 if (deserializeGameSaves == null || deserializeGameSaves.getDeserializedGameSaves() == null || deserializeGameSaves.getDeserializedGameSaves().isEmpty()) {
                     setLoadSaveButtonsEnabled(false);
@@ -219,7 +219,7 @@ public class MenuManager extends JPanel {
 
         });
         mySelect.addActionListener(e -> {
-            new ButtonSound();
+            new interactionSound(buttonSound);
             try {
                 if (deserializeGameSaves == null || deserializeGameSaves.getDeserializedGameSaves() == null || deserializeGameSaves.getDeserializedGameSaves().isEmpty()) {
                     setLoadSaveButtonsEnabled(false);
@@ -251,7 +251,7 @@ public class MenuManager extends JPanel {
         });
 
         myRightSelect.addActionListener(e -> {
-            new ButtonSound();
+            new interactionSound(buttonSound);
             try {
                 if (deserializeGameSaves == null || deserializeGameSaves.getDeserializedGameSaves() == null || deserializeGameSaves.getDeserializedGameSaves().isEmpty()) {
                     setLoadSaveButtonsEnabled(false);
@@ -275,7 +275,7 @@ public class MenuManager extends JPanel {
 
         });
         myDelete.addActionListener(e -> {
-            new ButtonSound();
+            new interactionSound(buttonSound);
 
             try {
                 if (deserializeGameSaves == null || deserializeGameSaves.getDeserializedGameSaves() == null || deserializeGameSaves.getDeserializedGameSaves().isEmpty()) {
@@ -379,7 +379,7 @@ public class MenuManager extends JPanel {
 
     private void addMainMenuActions() {
         myMainPlayButton.addActionListener(e -> {
-            new ButtonSound();
+            new interactionSound(buttonSound);
             new DisableMenu(mainMenuComponents);
             try {
                 addCharacterSelectMenu();
@@ -389,7 +389,7 @@ public class MenuManager extends JPanel {
 
         });
         myMainLoadButton.addActionListener(e -> {
-            new ButtonSound();
+            new interactionSound(buttonSound);
             new DisableMenu(mainMenuComponents);
             try {
                 addLoadSaveSelectMenu();
@@ -405,7 +405,7 @@ public class MenuManager extends JPanel {
             }
         });
         myMainOptionsButton.addActionListener(e -> {
-            new ButtonSound();
+            new interactionSound(buttonSound);
             try {
                 new OptionsButtonAction(mainMenuComponents);
             } catch (IOException ex) {
@@ -431,7 +431,7 @@ public class MenuManager extends JPanel {
         repaint();
         HeroSelection heroSelection = new HeroSelection();
         myLeftSelect.addActionListener(e -> {
-            new ButtonSound();
+            new interactionSound(buttonSound);
             try {
                 new HeroSelection(true, false);
             } catch (IOException ex) {
@@ -440,12 +440,12 @@ public class MenuManager extends JPanel {
             repaint();
         });
         mySelect.addActionListener(e -> {
-            new ButtonSound();
+            new interactionSound(buttonSound);
             heroSelection.setHeroSelected(true);
             addGamePlayMenu();
         });
         myRightSelect.addActionListener(e -> {
-            new ButtonSound();
+            new interactionSound(buttonSound);
             try {
                 new HeroSelection(false, true);
             } catch (IOException ex) {
@@ -454,7 +454,7 @@ public class MenuManager extends JPanel {
             repaint();
         });
         myBackButton.addActionListener(e -> {
-            new ButtonSound();
+            new interactionSound(buttonSound);
             new GoBackAction(characterSelectionComponents, mainMenuComponents);
             setShownCharacter(false);
             repaint();
@@ -491,29 +491,29 @@ public class MenuManager extends JPanel {
         HardModeAction hardModeAction = new HardModeAction();
 
         myEasyModeButton.addActionListener(e -> {
-            new ButtonSound();
+            new interactionSound(buttonSound);
             easyModeAction.setEasyMode(true);
         });
         myHardModeButton.addActionListener(e -> {
-            new ButtonSound();
+            new interactionSound(buttonSound);
             easyModeAction.setEasyMode(false);
         });
         myGameStateField.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
-                new ButtonSound();
+                new interactionSound(buttonSound);
 
             }
 
             @Override
             public void removeUpdate(DocumentEvent e) {
-                new ButtonSound();
+                new interactionSound(buttonSound);
 
             }
 
             @Override
             public void changedUpdate(DocumentEvent e) {
-                new ButtonSound();
+                new interactionSound(buttonSound);
 
             }
         });
@@ -525,7 +525,7 @@ public class MenuManager extends JPanel {
             }
         });
         myStartButton.addActionListener(e -> {
-            new ButtonSound();
+            new interactionSound(buttonSound);
             gameSaveName = myGameStateField.getText();
             CheckFileValidity checkFileValidity = new CheckFileValidity();
             System.out.println(gameSaveName);
@@ -556,7 +556,7 @@ public class MenuManager extends JPanel {
         });
 
         myBackButton.addActionListener(e -> {
-            new ButtonSound();
+            new interactionSound(buttonSound);
             new GoBackAction(gamePlayMenuComponents, characterSelectionComponents);
             setShownCharacter(true);
             repaint();
@@ -596,7 +596,7 @@ public class MenuManager extends JPanel {
             }
         });
         myAboutButton.addActionListener(e -> {
-            new ButtonSound();
+            new interactionSound(buttonSound);
             try {
                 new AboutAction();
             } catch (FileNotFoundException ex) {
@@ -606,11 +606,11 @@ public class MenuManager extends JPanel {
             }
         });
         myCreditsButton.addActionListener(e -> {
-            new ButtonSound();
+            new interactionSound(buttonSound);
             new CreditsAction();
         });
         myBackButton.addActionListener(e -> {
-            new ButtonSound();
+            new interactionSound(buttonSound);
             new GoBackAction(optionsMenuComponents, mainMenuComponents);
         });
     }

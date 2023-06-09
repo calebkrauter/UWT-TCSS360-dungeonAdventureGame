@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0df212bb-e81b-4d49-8840-12ee792b8347" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/deathSound.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game-saves.ser" beforeDir="false" afterPath="$PROJECT_DIR$/game-saves.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DungeonAdventure/Controller/DB/SQLRes/monsterData.db" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DungeonAdventure/Controller/DB/SQLRes/monsterData.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Actions/ToggleMusicChange.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/ToggleMusicChange.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/ButtonSound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/interactionSound.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CollisionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CollisionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DB/SQLRes/monsterData.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DB/SQLRes/monsterData.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MenuManagment/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuManagment/GUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MenuManagment/MenuManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuManagment/MenuManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/HeroDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/HeroDisplay.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,26 +36,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
-    &quot;last_directory_selection&quot;: &quot;/Users/calebkrauter/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure/src/Model/entity&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Kraut/Documents/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure/src/Controller/DB/SQLRes/sqlite-jdbc-3.32.3.2.jar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15722656&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "jdk.selected.JAVA_MODULE": "19",
+    "last_directory_selection": "/Users/calebkrauter/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure/src/Model/entity",
+    "last_opened_file_path": "C:/Users/Kraut/Documents/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15722656",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Kraut\Documents\Workspace\360-Dungeon-Adventure\360-Dungeon-Adventure" />
       <recent name="C:\Users\Kraut\Documents\Workspace\360-Dungeon-Adventure\360-Dungeon-Adventure\src\Controller\DB" />
       <recent name="$PROJECT_DIR$/src/Model" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/View" />
-      <recent name="$PROJECT_DIR$/src/Model/entity" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">

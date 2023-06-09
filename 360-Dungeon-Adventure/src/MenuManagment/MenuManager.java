@@ -64,7 +64,6 @@ public class MenuManager extends JPanel {
     JButton myLeftSelect;
     JButton mySelect;
     JButton myRightSelect;
-    JSlider myMapSizeSlider;
     JSlider myVolumeSlider;
     JToggleButton myMusicToggle;
     JButton myAboutButton;
@@ -123,7 +122,7 @@ public class MenuManager extends JPanel {
         myOptionMenuTitles = new String[]{"Volume", "Audio on/off", "Music on/off", "About", "Credits", "<--BACK"};
         characterSelectTitles = new String[]{"<--BACK", "<--", "SELECT", "-->"};
         loadGameTitles = new String[]{"<--BACK", "<--", "SELECT", "-->", "DELETE"};
-        gameplayMenuTitles = new String[]{"Map Size:", "SIZE", "MAP_SIZE_SLIDER", "EASY", "HARD", "Game File Name", "START!", "<--BACK"};
+        gameplayMenuTitles = new String[]{"EASY", "HARD", "Game File Name", "START!", "<--BACK"};
         screenData = new ScreenData();
         addMainMenu();
     }
@@ -472,25 +471,16 @@ public class MenuManager extends JPanel {
         setMyTitles(gameplayMenuTitles);
         modifyInsets.setInsets(this.getHeight()/2 - 200, 0, 0, 0);
         ComponentGenerator gamePlayComponentMaker = new ComponentGenerator(getMyTitles(), GridBagConstraints.PAGE_START, modifyInsets.getMyInsetTop(), modifyInsets.getMyInsetLeft(), modifyInsets.getMyInsetBottom(), modifyInsets.getMyInsetRight(), GO_DOWN);
-        myMapSizeInfoLabel = (JLabel) gamePlayComponentMaker.getComponents()[0][LABEL];
-        Font font = myMapSizeInfoLabel.getFont();
-        Font boldFont = font.deriveFont(Font.BOLD, 25);
-        myMapSizeInfoLabel.setFont(boldFont);
-        myMapSizeLabel = (JLabel) gamePlayComponentMaker.getComponents()[1][LABEL];
-        myMapSizeLabel.setFont(boldFont);
-        myMapSizeInfoLabel.setHorizontalAlignment((int) CENTER_ALIGNMENT);
-        myMapSizeLabel.setHorizontalAlignment((int) CENTER_ALIGNMENT);
-        myMapSizeSlider = (JSlider) gamePlayComponentMaker.getComponents()[2][SLIDER];
-        myMapSizeSlider.setMaximum(500);
-        myMapSizeSlider.setMinimum(10);
-        myEasyModeButton = (JButton) gamePlayComponentMaker.getComponents()[3][BUTTON];
-        myHardModeButton = (JButton) gamePlayComponentMaker.getComponents()[4][BUTTON];
-        myGameStateField = (JTextField) gamePlayComponentMaker.getComponents()[5][TEXT_FIELD];
-        myStartButton = (JButton) gamePlayComponentMaker.getComponents()[6][BUTTON];
-        myBackButton = (JButton) gamePlayComponentMaker.getComponents()[7][BUTTON];
+
+        // Easy mode provides a chance that there will be less paths overall and generates a simple path from start to end.
+        myEasyModeButton = (JButton) gamePlayComponentMaker.getComponents()[0][BUTTON];
+        myHardModeButton = (JButton) gamePlayComponentMaker.getComponents()[1][BUTTON];
+        myGameStateField = (JTextField) gamePlayComponentMaker.getComponents()[2][TEXT_FIELD];
+        myStartButton = (JButton) gamePlayComponentMaker.getComponents()[3][BUTTON];
+        myBackButton = (JButton) gamePlayComponentMaker.getComponents()[4][BUTTON];
 
 
-        gamePlayMenuComponents = new JComponent[] {myMapSizeInfoLabel, myMapSizeLabel, myMapSizeSlider, myEasyModeButton, myHardModeButton, myGameStateField, myStartButton, myBackButton};
+        gamePlayMenuComponents = new JComponent[] {myEasyModeButton, myHardModeButton, myGameStateField, myStartButton, myBackButton};
         for (int i = 0; i < gamePlayMenuComponents.length; i++) {
             this.add(gamePlayMenuComponents[i], gamePlayComponentMaker.getMyButtonConstraints()[i]);
         }
@@ -504,10 +494,7 @@ public class MenuManager extends JPanel {
         setShownCharacter(false);
         EasyModeAction easyModeAction = new EasyModeAction();
         HardModeAction hardModeAction = new HardModeAction();
-        myMapSizeSlider.addChangeListener(e -> {
-            new MapSizeChange(myMapSizeSlider);
-            myMapSizeLabel.setText(myMapSizeSlider.getValue() + " x " + myMapSizeSlider.getValue());
-        });
+
         myEasyModeButton.addActionListener(e -> {
             new ButtonSound();
             easyModeAction.setEasyMode(true);
@@ -550,7 +537,7 @@ public class MenuManager extends JPanel {
             checkFileValidity.checkAlreadyExists(gameSaveName);
             gameSaveName = checkFileValidity.checkValidLength(gameSaveName);
             String gameStateFile = new AppendExtension().appendExtension(gameSaveName);
-            SerializeMapGenerator serializeMapGenerator = new SerializeMapGenerator(gameStateFile, myMapSizeSlider.getValue(), myMapSizeSlider.getValue(), easyModeAction.getEasyMode());
+            SerializeMapGenerator serializeMapGenerator = new SerializeMapGenerator(gameStateFile, easyModeAction.getEasyMode());
             SerializeGameSaves serializeGameSaves = new SerializeGameSaves();
             try {
                 System.out.println(gameStateFile);

@@ -46,9 +46,9 @@ public class MapGenerator implements Serializable {
     /**
      * MapGenrator Constructor
      */
-    public MapGenerator(int theRows, int theCols, boolean theEasyMode) {
-        myMaxRows = theRows;
-        myMaxCols = theCols;
+    public MapGenerator(boolean theEasyMode) {
+        myMaxRows = 10;
+        myMaxCols = 10;
         MAX_ROW_IN_BOUNDS = myMaxRows - 1;
         MAX_COL_IN_BOUNDS = myMaxCols - 1;
         mapLayout = new String[myMaxRows][myMaxCols];

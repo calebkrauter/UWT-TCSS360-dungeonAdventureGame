@@ -9,11 +9,11 @@ import java.io.ObjectOutputStream;
 
 public class SerializeMapGenerator {
 
-    public SerializeMapGenerator(String theGameStateFile, int theRows, int theCols, boolean theEasyMode) {
+    public SerializeMapGenerator(String theGameStateFile, boolean theEasyMode) {
 
 //        setGameSaves(theGameStateFile);
         try {
-            serializeMapGenerator(theGameStateFile, theRows, theCols, theEasyMode);
+            serializeMapGenerator(theGameStateFile, theEasyMode);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -23,7 +23,7 @@ public class SerializeMapGenerator {
 //        setGameSaves(theGameStateFile);
         try {
             // Passing in dummy values for the rows and cols because they won't get used in this call.
-            serializeMapGenerator(theGameStateFile, 10, 10, false);
+            serializeMapGenerator(theGameStateFile, false);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -32,7 +32,7 @@ public class SerializeMapGenerator {
 
     }
 
-    private void serializeMapGenerator(String theGameStateFile, int theRows, int theCols, boolean theEasyMode) throws IOException {
+    private void serializeMapGenerator(String theGameStateFile, boolean theEasyMode) throws IOException {
         MapGenerator mapGenerator = null;
         if (new File(theGameStateFile).exists() == false) {
             new File(theGameStateFile).createNewFile();
@@ -41,7 +41,7 @@ public class SerializeMapGenerator {
             mapGenerator = deserializeMapGenerator.getMyMapGenerator();
         }
         if (mapGenerator == null) {
-            mapGenerator = new MapGenerator(theRows, theCols, theEasyMode);
+            mapGenerator = new MapGenerator(theEasyMode);
         }
 
         CheckFileValidity checkFileValidity = new CheckFileValidity();

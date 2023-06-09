@@ -81,7 +81,7 @@ public class MenuManager extends JPanel {
     ScreenData screenData;
     JComponent[] gamePlayMenuComponents;
     JTextField myGameStateField;
-    UpdateSlider updateSlider;
+    UpdateMusicSlider updateMusicSlider;
     JComponent[] loadSaveSelectionComponents;
 
     public MenuManager() throws IOException {
@@ -102,7 +102,6 @@ public class MenuManager extends JPanel {
     BufferedImage[] characters = new BufferedImage[] {hero1, hero2, hero3};
     String[] characterNames = new String[] {"Stevy", "Linky", "FRED"};
     HeroSelection heroSelection = new HeroSelection();
-    ToggleMusicChange toggleMusicChange;
     MusicPlayer musicPlayer = new MusicPlayer();
     static boolean myShownCharacter = false;
     DeserializeGameSaves deserializeGameSaves;
@@ -119,7 +118,7 @@ public class MenuManager extends JPanel {
         modifyInsets = new ModifyInsets();
         myJframe = theJFrame;
         mainMenuTitles = new String[]{"Play New Game", "Load Game Save", "Options"};
-        myOptionMenuTitles = new String[]{"Volume", "Audio on/off", "Music on/off", "About", "Credits", "<--BACK"};
+        myOptionMenuTitles = new String[]{"Volume", "About", "Credits", "<--BACK"};
         characterSelectTitles = new String[]{"<--BACK", "<--", "SELECT", "-->"};
         loadGameTitles = new String[]{"<--BACK", "<--", "SELECT", "-->", "DELETE"};
         gameplayMenuTitles = new String[]{"EASY", "HARD", "Game File Name", "START!", "<--BACK"};
@@ -355,12 +354,11 @@ public class MenuManager extends JPanel {
         myVolumeSlider = (JSlider) optionButton.getComponents()[0][SLIDER];
         myVolumeSlider.setMinimum(-80);
         myVolumeSlider.setMaximum(6);
-        myMusicToggle = (JToggleButton) optionButton.getComponents()[2][TOGGLE_BUTTON];
-        myAboutButton = (JButton) optionButton.getComponents()[3][BUTTON];
-        myCreditsButton = (JButton) optionButton.getComponents()[4][BUTTON];
-        myBackButton = (JButton) optionButton.getComponents()[5][BUTTON];
+        myAboutButton = (JButton) optionButton.getComponents()[1][BUTTON];
+        myCreditsButton = (JButton) optionButton.getComponents()[2][BUTTON];
+        myBackButton = (JButton) optionButton.getComponents()[3][BUTTON];
 
-        optionsMenuComponents = new JComponent[] {myVolumeSlider, myMusicToggle, myAboutButton, myCreditsButton, myBackButton};
+        optionsMenuComponents = new JComponent[] {myVolumeSlider, myAboutButton, myCreditsButton, myBackButton};
 
         for (int i = 0; i < optionsMenuComponents.length; i++) {
             this.add(optionsMenuComponents[i], optionButton.getMyButtonConstraints()[i]);
@@ -369,16 +367,13 @@ public class MenuManager extends JPanel {
         updateAudioSettings();
         setMusicPlayedFirstTime(NOT_FIRST_TIME_PLAYED);
 
-        myMusicToggle.setSelected(true);
-        toggleMusicChange.setMusicToggleSelected(true);
         addOptionsActions();
     }
     public void updateAudioSettings() {
-        updateSlider = new UpdateSlider(myVolumeSlider);
+        updateMusicSlider = new UpdateMusicSlider(myVolumeSlider);
 
-        toggleMusicChange = new ToggleMusicChange(myMusicToggle);
         if (getMusicPlayedFirstTimeState() == FIRST_TIME_PLAYED) {
-            updateSlider.setVolumeSlider();
+            updateMusicSlider.setVolumeSlider();
         }
     }
 
@@ -597,26 +592,6 @@ public class MenuManager extends JPanel {
             try {
                 new VolumeChange(myVolumeSlider.getValue());
             } catch (LineUnavailableException ex) {
-                throw new RuntimeException(ex);
-            }
-        });
-        myMusicToggle.addActionListener(e -> {
-            new ButtonSound();
-            try {
-                if (myMusicToggle.isSelected()) {
-                    new ToggleMusicChange(myMusicToggle, "MainMenu.wav");
-                    setMusicPlayedFirstTime(NOT_FIRST_TIME_PLAYED);
-                    updateAudioSettings();
-                } else {
-                    setMusicPlayedFirstTime(NOT_FIRST_TIME_PLAYED);
-                    updateAudioSettings();
-                    musicPlayer.stopMusic();
-                }
-            } catch (UnsupportedAudioFileException ex) {
-                throw new RuntimeException(ex);
-            } catch (LineUnavailableException ex) {
-                throw new RuntimeException(ex);
-            } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
         });

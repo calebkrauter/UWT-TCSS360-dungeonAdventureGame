@@ -1,23 +1,27 @@
 package Controller;
 
-import Model.Entity.Enemy.Gremlin;
-import Model.Entity.Enemy.Ogre;
-import Model.Entity.Enemy.Skeleton;
+
+import Controller.DB.MonsterStatsDB;
+import Model.Entity.Enemy.Monster;
 import View.map.RoomManager;
 
 import java.awt.geom.Point2D;
 import java.util.List;
-
+/**
+ * @author Caleb Krauter
+ * @author Makai
+ */
 public class EntitySetter {
 
     GameLoop myGameLoop;
     RoomManager myRoomManager;
     private int myNumEntitys;
-
+    private MonsterStatsDB myMonsterStatsDB;
     public EntitySetter(GameLoop theGP, RoomManager theRoomManager) {
         this.myGameLoop = theGP;
         this.myRoomManager = theRoomManager;
         myNumEntitys = 0;
+        myMonsterStatsDB = new MonsterStatsDB();
     }
 
     /**
@@ -40,7 +44,7 @@ public class EntitySetter {
         for (int i = 0; i < thePoints.size(); i++) {
             Point2D thePoint = thePoints.get(i);
 
-            myGameLoop.myEntities[place] = new Ogre();
+            myGameLoop.myEntities[place] = new Monster(myMonsterStatsDB.getMonsterStat(myMonsterStatsDB.OGRE, myMonsterStatsDB.MONSTER_TYPE), myMonsterStatsDB);
 
             // below getx and gety are reversed due to how the map is made
             myGameLoop.myEntities[place].setWorldY((int) thePoint.getX() *  myGameLoop.ROOM_SIZE +  myGameLoop.ROOM_SIZE/2 -  myGameLoop.TILE_SIZE/2);
@@ -62,7 +66,7 @@ public class EntitySetter {
         for (int i = 0; i < thePoints.size(); i++) {
             Point2D thePoint = thePoints.get(i);
 
-            myGameLoop.myEntities[place] = new Skeleton();
+            myGameLoop.myEntities[place] = new Monster(myMonsterStatsDB.getMonsterStat(myMonsterStatsDB.SKELTON, myMonsterStatsDB.MONSTER_TYPE), myMonsterStatsDB);
 
             // below getx and gety are reversed due to how the map is made
             myGameLoop.myEntities[place].setWorldY((int) thePoint.getX() *  myGameLoop.ROOM_SIZE +  myGameLoop.ROOM_SIZE/2 -  myGameLoop.TILE_SIZE/2);
@@ -81,8 +85,8 @@ public class EntitySetter {
         for (int i = 0; i < thePoints.size(); i++) {
             Point2D thePoint = thePoints.get(i);
 
-            myGameLoop.myEntities[place] = new Gremlin();
-            myGameLoop.myEntities[place + 1] = new Gremlin();
+            myGameLoop.myEntities[place] = new Monster(myMonsterStatsDB.getMonsterStat(myMonsterStatsDB.GREMLIN, myMonsterStatsDB.MONSTER_TYPE), myMonsterStatsDB);
+            myGameLoop.myEntities[place + 1] = new Monster(myMonsterStatsDB.getMonsterStat(myMonsterStatsDB.GREMLIN, myMonsterStatsDB.MONSTER_TYPE), myMonsterStatsDB);
 
 
             // below getx and gety are reversed due to how the map is made

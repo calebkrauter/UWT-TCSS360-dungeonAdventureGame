@@ -5,11 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0df212bb-e81b-4d49-8840-12ee792b8347" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/seteevee.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ bhvnGame File Name.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DungeonAdventure360/DungeonAdventure360.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DungeonAdventure360/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aasa.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aassaaa.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asaaaaaaaaaaaa.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asaaaass.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aswwww.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/DB/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/DB/MonsterStatsDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/DB/SQLRes/monsterData.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ssasa.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sssssssss.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../360-Dungeon-AdventureCopy/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../360-Dungeon-AdventureCopy/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../360-Dungeon-AdventureCopy/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../360-Dungeon-AdventureCopy/360-Dungeon-AdventureCopy.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sql/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DungeonAdventureDemo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DungeonAdventure.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game-saves.ser" beforeDir="false" afterPath="$PROJECT_DIR$/game-saves.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sql/src/SQLRes/monsterData.db" beforeDir="false" afterPath="$PROJECT_DIR$/../sql/src/SQLRes/monsterData.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sql/src/SQLStuff.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sql/src/SQLStuff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/EntitySetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EntitySetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Enemy/Monster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Enemy/Gremlin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Enemy/Gremlin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Enemy/Ogre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Enemy/Ogre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Enemy/Skeleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Enemy/Skeleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sql/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sql/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sql/src/SQLStuff.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sql/src/monsterStatsDB.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,23 +59,27 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "jdk.selected.JAVA_MODULE": "19",
     "last_directory_selection": "/Users/calebkrauter/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure/src/Model/entity",
-    "last_opened_file_path": "C:/Users/Kraut/Documents/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure"
+    "last_opened_file_path": "C:/Users/Kraut/Documents/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure/src/Controller/DB/SQLRes/sqlite-jdbc-3.32.3.2.jar",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15722656",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Kraut\Documents\Workspace\360-Dungeon-Adventure\360-Dungeon-Adventure\src\Controller\DB" />
       <recent name="$PROJECT_DIR$/src/Model" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/View" />
       <recent name="$PROJECT_DIR$/src/Model/entity" />
-      <recent name="$PROJECT_DIR$/src/Controller" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Controller.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Controller.Main" />
-      <module name="DungeonAdventureDemo" />
+      <module name="DungeonAdventure" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Controller.*" />
@@ -64,13 +92,26 @@
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MenuManagment.Main" />
-      <module name="DungeonAdventureDemo" />
+      <module name="DungeonAdventure" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="MenuManagment.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="DungeonAdventure" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="DungeonAdventure" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

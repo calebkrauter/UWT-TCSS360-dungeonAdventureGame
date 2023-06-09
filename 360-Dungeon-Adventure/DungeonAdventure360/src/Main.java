@@ -1,5 +1,5 @@
 public class Main {
     public static void main(String[] args) {
-        new monsterStatsDB();
+        System.out.println("Hello world!");
     }
 }

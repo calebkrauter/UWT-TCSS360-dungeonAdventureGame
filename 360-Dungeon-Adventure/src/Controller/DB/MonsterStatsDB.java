@@ -1,19 +1,23 @@
+package Controller.DB;
+
 import org.sqlite.SQLiteDataSource;
 
-import java.lang.reflect.Type;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-
-public class SQLStuff {
+/**
+ * @author Caleb Krauter
+ */
+public class MonsterStatsDB {
     private SQLiteDataSource myDS;
     private String initialQuery;
     // Ogre, skeleton, gremlin
 // Should I make these static?
     private ArrayList<ArrayList<Object>> myMonsters;
     private ArrayList<Object> myMonsterStats;
+    private ArrayList<ArrayList<Object>> initMonsters;
     // These fields are made public because they are codes
     // that are intended to be used outside of this class. They have a single
     // purpose which is clearly defined as being an index to arraylists.
@@ -29,22 +33,23 @@ public class SQLStuff {
     public static final int GREMLIN = 0;
     public static final int SKELTON = 1;
     public static final int OGRE = 2;
-    public SQLStuff() {
-        setupTable();
+
+    public MonsterStatsDB() {
+        setupInitTableQuery();
         myDS = null;
         getDBConnection();
         // DELETES the table contents so that it doesn't duplicate.
         updateTableWithQuery("DELETE FROM monsterData");
         updateTableWithQuery(initialQuery);
-        initTable();
+        initStatsForDB();
         fillTable();
-        displayTable();
+        retrieveDataFromDB();
 //        printTestData();
         // For testing
-        setMonsterData(SKELTON, IMAGE_FILE, "LOLOL");
+//        setMonsterStat(SKELTON, IMAGE_FILE, "LOLOL");
     }
 
-    private void setupTable() {
+    private void setupInitTableQuery() {
         initialQuery = "CREATE TABLE IF NOT EXISTS monsterData ( " +
                 "MONSTER_TYPE TEXT NOT NULL, " +
                 "IMAGE_FILE NAME TEXT NOT NULL, " +
@@ -53,10 +58,10 @@ public class SQLStuff {
                 "MAX_DAMAGE TEXT NOT NULL, " +
                 "DEFAULT_HEALTH TEXT NOT NULL)";
     }
-    public void getDBConnection() {
+    private void getDBConnection() {
         try {
             myDS = new SQLiteDataSource();
-            myDS.setUrl("jdbc:sqlite:src/SQLRes/monsterData.db");
+            myDS.setUrl("jdbc:sqlite:src/Controller/DB/SQLRes/monsterData.db");
         } catch (Exception e) {
             e.printStackTrace();
             System.exit(0);
@@ -77,10 +82,10 @@ public class SQLStuff {
 //        System.out.println( "Created table successfully" );
     }
 
-    public void fillTable() {
+    private void fillTable() {
         // This setter is used here to prove that data from the arraylist
         // is getting put in the data base so that when it prints it should update to HERO.
-//        setMonsterData(GREMLIN, MONSTER_TYPE, "HERO");
+//        setMonsterStat(GREMLIN, MONSTER_TYPE, "HERO");
         String gremlinQuery = "INSERT INTO monsterData (" +
                 "MONSTER_TYPE, " +
                 "IMAGE_FILE, " +
@@ -89,12 +94,12 @@ public class SQLStuff {
                 "MAX_DAMAGE, " +
                 "DEFAULT_HEALTH)" +
                 " VALUES " +
-                "('" + getMonsterData(GREMLIN, MONSTER_TYPE) + "', " +
-                "'" + getMonsterData(GREMLIN, IMAGE_FILE) + "', " +
-                "'" + getMonsterData(GREMLIN, HIT_CHANCE) + "', " +
-                "'" + getMonsterData(GREMLIN, MIN_DAMAGE) + "', " +
-                "'" + getMonsterData(GREMLIN, MAX_DAMAGE) + "', " +
-                "'" + getMonsterData(GREMLIN, DEFAULT_HEALTH) + "'" +
+                "('" + getMonsterStat(GREMLIN, MONSTER_TYPE) + "', " +
+                "'" + getMonsterStat(GREMLIN, IMAGE_FILE) + "', " +
+                "'" + getMonsterStat(GREMLIN, HIT_CHANCE) + "', " +
+                "'" + getMonsterStat(GREMLIN, MIN_DAMAGE) + "', " +
+                "'" + getMonsterStat(GREMLIN, MAX_DAMAGE) + "', " +
+                "'" + getMonsterStat(GREMLIN, DEFAULT_HEALTH) + "'" +
                 ")";
         String skeletonQuery = "INSERT INTO monsterData (" +
                 "MONSTER_TYPE, " +
@@ -104,12 +109,12 @@ public class SQLStuff {
                 "MAX_DAMAGE, " +
                 "DEFAULT_HEALTH)" +
                 " VALUES " +
-                "('" + getMonsterData(SKELTON, MONSTER_TYPE) + "', " +
-                "'" + getMonsterData(SKELTON, IMAGE_FILE) + "', " +
-                "'" + getMonsterData(SKELTON, HIT_CHANCE) + "', " +
-                "'" + getMonsterData(SKELTON, MIN_DAMAGE) + "', " +
-                "'" + getMonsterData(SKELTON, MAX_DAMAGE) + "', " +
-                "'" + getMonsterData(SKELTON, DEFAULT_HEALTH) + "'" +
+                "('" + getMonsterStat(SKELTON, MONSTER_TYPE) + "', " +
+                "'" + getMonsterStat(SKELTON, IMAGE_FILE) + "', " +
+                "'" + getMonsterStat(SKELTON, HIT_CHANCE) + "', " +
+                "'" + getMonsterStat(SKELTON, MIN_DAMAGE) + "', " +
+                "'" + getMonsterStat(SKELTON, MAX_DAMAGE) + "', " +
+                "'" + getMonsterStat(SKELTON, DEFAULT_HEALTH) + "'" +
                 ")";
         String ogreQuery = "INSERT INTO monsterData (" +
                 "MONSTER_TYPE, " +
@@ -119,12 +124,12 @@ public class SQLStuff {
                 "MAX_DAMAGE, " +
                 "DEFAULT_HEALTH)" +
                 " VALUES " +
-                "('" + getMonsterData(OGRE, MONSTER_TYPE) + "', " +
-                "'" + getMonsterData(OGRE, IMAGE_FILE) + "', " +
-                "'" + getMonsterData(OGRE, HIT_CHANCE) + "', " +
-                "'" + getMonsterData(OGRE, MIN_DAMAGE) + "', " +
-                "'" + getMonsterData(OGRE, MAX_DAMAGE) + "', " +
-                "'" + getMonsterData(OGRE, DEFAULT_HEALTH) + "'" +
+                "('" + getMonsterStat(OGRE, MONSTER_TYPE) + "', " +
+                "'" + getMonsterStat(OGRE, IMAGE_FILE) + "', " +
+                "'" + getMonsterStat(OGRE, HIT_CHANCE) + "', " +
+                "'" + getMonsterStat(OGRE, MIN_DAMAGE) + "', " +
+                "'" + getMonsterStat(OGRE, MAX_DAMAGE) + "', " +
+                "'" + getMonsterStat(OGRE, DEFAULT_HEALTH) + "'" +
                 ")";
 
         updateTableWithQuery(gremlinQuery);
@@ -133,8 +138,7 @@ public class SQLStuff {
 
     }
 
-    ArrayList<ArrayList<Object>> initMonsters;
-    private void initTable() {
+    private void initStatsForDB() {
         initMonsters = new ArrayList<>();
         ArrayList<Object> gremlin = new ArrayList<>();
         ArrayList<Object> skeleton = new ArrayList<>();
@@ -165,11 +169,10 @@ public class SQLStuff {
         for (ArrayList<Object> monster: myMonsters) {
             myMonsterStats = monster;
         }
-
 //        System.out.println(myMonsters.get(GREMLIN).get(IMAGE_FILE));
     }
 
-    private void monsterData() {
+    public void printMonsterData() {
         for (ArrayList<Object> monster: myMonsters) {
             System.out.println();
             for (Object stat: monster) {
@@ -178,16 +181,16 @@ public class SQLStuff {
         }
     }
 
-    public void setMonsterData(int theMonsterCode, int theStatCode, Object theStat) {
+    public void setMonsterStat(int theMonsterCode, int theStatCode, Object theStat) {
         myMonsters.get(theMonsterCode).set(theStatCode, theStat);
         updateTableWithQuery("DELETE FROM monsterData");
         fillTable();
     }
-    public Object getMonsterData(int theMonsterCode, int theStatCode) {
+    public Object getMonsterStat(int theMonsterCode, int theStatCode) {
         return myMonsters.get(theMonsterCode).get(theStatCode);
     }
 
-    private void displayTable() {
+    private void retrieveDataFromDB() {
         System.out.println("TABLE");
         initialQuery = "SELECT * FROM monsterData";
         myMonsters = new ArrayList<>();
@@ -226,6 +229,6 @@ public class SQLStuff {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        monsterData();
+        printMonsterData();
     }
 }

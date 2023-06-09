@@ -1,6 +1,7 @@
 package Model.Entity.Enemy;
 
 import Controller.DB.MonsterStatsDB;
+import Controller.EntitySetter;
 import Controller.GameLoop;
 import Model.Entity.Entity;
 
@@ -9,7 +10,6 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.Objects;
 
 /**
  * @author Caleb Krauter
@@ -26,16 +26,16 @@ public class Monster extends Entity {
     GameLoop myGameLoop;
     private String myMonsterType;
     private MonsterStatsDB myMonsterStatsDB;
+    private EntitySetter myEntitySetter;
     public Monster(Object theMonsterType, MonsterStatsDB theMonsterStatsDB){
         myMonsterType = (String) theMonsterType;
         myMonsterStatsDB = theMonsterStatsDB;
         // can be changed, we don't want hitbox as big as character
-        Rectangle solidHitBox = new Rectangle(0, 0, 3 * TILE_SIZE, 3 * TILE_SIZE);
+        Rectangle solidHitBox = new Rectangle(0, 0, TILE_SIZE, TILE_SIZE);
         setHitBox(solidHitBox);
         setDefaultValues();
     }
 
-        // set the Hero's default values.
     public void setDefaultValues(){
         String skeletonName = (String) myMonsterStatsDB.getMonsterStat(myMonsterStatsDB.SKELTON, myMonsterStatsDB.MONSTER_TYPE);
         String ogreName = (String) myMonsterStatsDB.getMonsterStat(myMonsterStatsDB.OGRE, myMonsterStatsDB.MONSTER_TYPE);
@@ -53,6 +53,22 @@ public class Monster extends Entity {
         setDirection("down");
         setCollision(true);
     }
+//    public void interactWithMonsters() {
+//
+//        int enemyX = myEntitySetter.getOgresWorldX();
+//        int enemyY = myEntitySetter.getOgresWorldY();
+//                isWithinRadius(enemyX, enemyY, 16);
+//    }
+//    private boolean isWithinRadius(int x, int y, double radius) {
+//        double distance = distanceTo(x, y);
+//        return distance <= radius;
+//    }
+//    private double distanceTo(int theX, int theY) {
+//        int dX = getWorldX() - theX;
+//        int dY= getWorldY() - theY;
+//        // Euclidean distance between the two points TO implement proximity sensor
+//        return Math.sqrt(dX * dX + dY * dY);
+//    }
 
     private void setSkeletonStats() {
         setEntityName((String) myMonsterStatsDB.getMonsterStat(myMonsterStatsDB.SKELTON, myMonsterStatsDB.MONSTER_TYPE));

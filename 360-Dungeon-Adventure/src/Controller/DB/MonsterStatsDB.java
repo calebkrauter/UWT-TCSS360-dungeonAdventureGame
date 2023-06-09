@@ -191,7 +191,7 @@ public class MonsterStatsDB {
     }
 
     private void retrieveDataFromDB() {
-        System.out.println("TABLE");
+//        System.out.println("TABLE");
         initialQuery = "SELECT * FROM monsterData";
         myMonsters = new ArrayList<>();
         try (Connection connection = myDS.getConnection();
@@ -216,14 +216,14 @@ public class MonsterStatsDB {
                 myMonsterStats.add(defaultHealth);
 
                 myMonsters.add(myMonsterStats);
-                System.out.print(
-                        myMonsters.get(theMonster).get(MONSTER_TYPE) + ", "
-                        + myMonsters.get(theMonster).get(IMAGE_FILE) + ", "
-                        + myMonsters.get(theMonster).get(HIT_CHANCE) + ", "
-                        + myMonsters.get(theMonster).get(MIN_DAMAGE) + ", "
-                        + myMonsters.get(theMonster).get(MAX_DAMAGE) + ", "
-                        + myMonsters.get(theMonster).get(DEFAULT_HEALTH));
-                System.out.println();
+//                System.out.print(
+//                        myMonsters.get(theMonster).get(MONSTER_TYPE) + ", "
+//                        + myMonsters.get(theMonster).get(IMAGE_FILE) + ", "
+//                        + myMonsters.get(theMonster).get(HIT_CHANCE) + ", "
+//                        + myMonsters.get(theMonster).get(MIN_DAMAGE) + ", "
+//                        + myMonsters.get(theMonster).get(MAX_DAMAGE) + ", "
+//                        + myMonsters.get(theMonster).get(DEFAULT_HEALTH));
+//                System.out.println();
                 theMonster++;
             }
         } catch (SQLException e) {

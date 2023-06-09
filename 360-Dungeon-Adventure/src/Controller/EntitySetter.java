@@ -47,14 +47,27 @@ public class EntitySetter {
             myGameLoop.myEntities[place] = new Monster(myMonsterStatsDB.getMonsterStat(myMonsterStatsDB.OGRE, myMonsterStatsDB.MONSTER_TYPE), myMonsterStatsDB);
 
             // below getx and gety are reversed due to how the map is made
-            myGameLoop.myEntities[place].setWorldY((int) thePoint.getX() *  myGameLoop.ROOM_SIZE +  myGameLoop.ROOM_SIZE/2 -  myGameLoop.TILE_SIZE/2);
             myGameLoop.myEntities[place].setWorldX((int) thePoint.getY() *  myGameLoop.ROOM_SIZE +  myGameLoop.ROOM_SIZE/2 -  myGameLoop.TILE_SIZE/2);
-
+            myGameLoop.myEntities[place].setWorldY((int) thePoint.getX() *  myGameLoop.ROOM_SIZE +  myGameLoop.ROOM_SIZE/2 -  myGameLoop.TILE_SIZE/2);
+            setOgresPosition(myGameLoop.myEntities[place].getWorldX(), myGameLoop.myEntities[place].getWorldY());
             myNumEntitys += 1;
             place = myNumEntitys;
 
         }
     }
+    int myOgreX;
+    int myOgreY;
+    private void setOgresPosition(int theX, int theY) {
+        myOgreX = theX;
+        myOgreY = theY;
+    }
+    public int getOgresWorldX() {
+        return myOgreX;
+    }
+    public int getOgresWorldY() {
+        return myOgreY;
+    }
+    
 
     /**
      * Sets Skeletons' positions to center of XPath rooms.

@@ -1,7 +1,10 @@
 package Model.Entity;
 
+import Controller.DB.MonsterStatsDB;
+import Controller.EntitySetter;
 import Controller.GameLoop;
 import Controller.KeyHandler;
+import Model.Entity.Enemy.Monster;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -153,6 +156,7 @@ public abstract class Hero extends Entity {
         }
 
     }
+
 
 //    private void addInteractWithDoorPane(int theIndex) {
 //        int openDoorOption = new JOptionPane().showOptionDialog(new JFrame(), "You have "

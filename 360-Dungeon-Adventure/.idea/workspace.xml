@@ -5,35 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0df212bb-e81b-4d49-8840-12ee792b8347" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ bhvnGame File Name.ser" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DungeonAdventure360/DungeonAdventure360.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DungeonAdventure360/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aasa.ser" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aassaaa.ser" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asaaaaaaaaaaaa.ser" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asaaaass.ser" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aswwww.ser" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/DB/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/DB/MonsterStatsDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/DB/SQLRes/monsterData.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ssasa.ser" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sssssssss.ser" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../360-Dungeon-AdventureCopy/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../360-Dungeon-AdventureCopy/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../360-Dungeon-AdventureCopy/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../360-Dungeon-AdventureCopy/360-Dungeon-AdventureCopy.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../sql/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Game File Name.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/a.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aa.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aaaa.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aaaaaaaa.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aame.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aase.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adssssssGame File Na.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ae.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assssme.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/saaaaaaaaa.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/saame.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ssssssssssss.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/w.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/x.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DungeonAdventureDemo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DungeonAdventure.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game-saves.ser" beforeDir="false" afterPath="$PROJECT_DIR$/game-saves.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seteevee.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CollisionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CollisionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DB/MonsterStatsDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DB/MonsterStatsDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DB/SQLRes/monsterData.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DB/SQLRes/monsterData.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/EntitySetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EntitySetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Enemy/Monster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Enemy/Gremlin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Enemy/Gremlin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Enemy/Ogre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Enemy/Ogre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Enemy/Skeleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Enemy/Skeleton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sql/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sql/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sql/src/SQLStuff.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sql/src/monsterStatsDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Enemy/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Enemy/Monster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/HeroDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/HeroDisplay.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,24 +130,9 @@
     </task>
     <servers />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Controller/GameLoop.java</url>
-          <line>135</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/Controller/ItemSetter.java</url>
-          <line>15</line>
-          <properties class="Controller.ItemSetter" method="&lt;init&gt;">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/360_Dungeon_Adventure$Main.ic" NAME="Main Coverage Results" MODIFIED="1686285963447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>MenuManagment.*</FILTER>
+    </SUITE>
   </component>
 </project>

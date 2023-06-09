@@ -5,11 +5,17 @@ package View;
 import Controller.CollisionHandler;
 import Controller.GameLoop;
 import Controller.KeyHandler;
+import Model.Entity.Enemy.Monster;
 import Model.Entity.Hero;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
+/**
+ * Caleb Krauter
+ * Makai
+ * James?
+ */
 public class HeroDisplay {
     KeyHandler myKeyHandler;
     CollisionHandler myCollisionHandler;
@@ -56,7 +62,9 @@ public class HeroDisplay {
             // Check item collision
             int myItemIndex = myCollisionHandler.checkItem(myHero, true); // pass hero class as an Entity
             myHero.pickUpItem(myItemIndex);
-
+            if (myCollisionHandler.checkMonster(myHero, true)) {
+                System.out.println("COLLIDED");
+            }
             // if collision is false player can move
             if (myHero.getCollision() == false) {
 

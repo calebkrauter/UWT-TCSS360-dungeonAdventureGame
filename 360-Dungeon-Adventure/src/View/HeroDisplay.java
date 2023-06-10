@@ -75,6 +75,7 @@ public class HeroDisplay {
             myHero.setSpeed(myHero.getDefaultSpeed());
 
 
+
             // if collision is false player can move
             if (myHero.getCollision() == false) {
 

@@ -170,13 +170,13 @@ public class RoomManager {
 
             // "S" = start = tile[4]
             room[4] = new Room();
-            room[4].setRoomImage(ImageIO.read(new File("res/RoomTiles/openDoorRoom.png")));
+            room[4].setRoomImage(ImageIO.read(new File("res/RoomTiles/startRoom.png")));
             room[4].setCollisionMap(myOpenDoorRoomCollisionMap);
 
             // "E" = end = tile[5]
             room[5] = new Room();
-            room[5].setRoomImage(ImageIO.read(new File("res/RoomTiles/openDoorRoom.png")));
-            room[5].setCollisionMap(myClosedDoorCollisionMap);
+            room[5].setRoomImage(ImageIO.read(new File("res/RoomTiles/endRoom.png")));
+            room[5].setCollisionMap(myOpenDoorRoomCollisionMap);
 
             // "[" = door = tile[6]
             room[6] = new Room();

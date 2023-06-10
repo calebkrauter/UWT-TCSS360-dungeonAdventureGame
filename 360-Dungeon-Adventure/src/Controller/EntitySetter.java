@@ -70,25 +70,33 @@ public class EntitySetter {
     
 
     /**
-     * Sets Skeletons' positions to center of XPath rooms.
+     * Creates and sets 4 skeletons' positions in the end room (the boss)
      */
     public void setSkeletons() {
-        List<Point2D> thePoints;
-        thePoints = myRoomManager.getXPathRoomPositions();
+        Point2D thePoint = myRoomManager.getEndPoint();
         int place = getNumEntitys();  // i was gonna +1 here but it is accounted for because index starts at 0 and num items starts at 1.
-        for (int i = 0; i < thePoints.size(); i++) {
-            Point2D thePoint = thePoints.get(i);
+        myGameLoop.myEntities[place] = new Monster(myMonsterStatsDB.getMonsterStat(myMonsterStatsDB.SKELTON, myMonsterStatsDB.MONSTER_TYPE), myMonsterStatsDB);
+        myGameLoop.myEntities[place + 1] = new Monster(myMonsterStatsDB.getMonsterStat(myMonsterStatsDB.SKELTON, myMonsterStatsDB.MONSTER_TYPE), myMonsterStatsDB);
+        myGameLoop.myEntities[place + 2] = new Monster(myMonsterStatsDB.getMonsterStat(myMonsterStatsDB.SKELTON, myMonsterStatsDB.MONSTER_TYPE), myMonsterStatsDB);
+        myGameLoop.myEntities[place + 3] = new Monster(myMonsterStatsDB.getMonsterStat(myMonsterStatsDB.SKELTON, myMonsterStatsDB.MONSTER_TYPE), myMonsterStatsDB);
 
-            myGameLoop.myEntities[place] = new Monster(myMonsterStatsDB.getMonsterStat(myMonsterStatsDB.SKELTON, myMonsterStatsDB.MONSTER_TYPE), myMonsterStatsDB);
+        myGameLoop.myEntities[place] = new Monster(myMonsterStatsDB.getMonsterStat(myMonsterStatsDB.SKELTON, myMonsterStatsDB.MONSTER_TYPE), myMonsterStatsDB);
+        // Top
+        myGameLoop.myEntities[place].setWorldY((int) thePoint.getX() * myGameLoop.ROOM_SIZE + myGameLoop.TILE_SIZE);
+        myGameLoop.myEntities[place].setWorldX((int) thePoint.getY() * myGameLoop.ROOM_SIZE + myGameLoop.ROOM_SIZE/2 - myGameLoop.TILE_SIZE/2);
+        // Bottom
+        myGameLoop.myEntities[place + 1].setWorldY((int) thePoint.getX() *  myGameLoop.ROOM_SIZE + myGameLoop.ROOM_SIZE - (2 * myGameLoop.TILE_SIZE));
+        myGameLoop.myEntities[place + 1].setWorldX((int) thePoint.getY() *  myGameLoop.ROOM_SIZE + myGameLoop.ROOM_SIZE/2 - myGameLoop.TILE_SIZE/2);
+        // left
+        myGameLoop.myEntities[place + 2].setWorldY((int) thePoint.getX() *  myGameLoop.ROOM_SIZE + myGameLoop.ROOM_SIZE/2 - myGameLoop.TILE_SIZE/2);
+        myGameLoop.myEntities[place + 2].setWorldX((int) thePoint.getY() *  myGameLoop.ROOM_SIZE + myGameLoop.TILE_SIZE);
+        // right
+        myGameLoop.myEntities[place + 3].setWorldY((int) thePoint.getX() *  myGameLoop.ROOM_SIZE + myGameLoop.ROOM_SIZE/2 - myGameLoop.TILE_SIZE/2);
+        myGameLoop.myEntities[place + 3].setWorldX((int) thePoint.getY() *  myGameLoop.ROOM_SIZE + myGameLoop.ROOM_SIZE - (2 * myGameLoop.TILE_SIZE));
 
-            // below getx and gety are reversed due to how the map is made
-            myGameLoop.myEntities[place].setWorldY((int) thePoint.getX() *  myGameLoop.ROOM_SIZE +  myGameLoop.ROOM_SIZE/2 -  myGameLoop.TILE_SIZE/2);
-            myGameLoop.myEntities[place].setWorldX((int) thePoint.getY() *  myGameLoop.ROOM_SIZE +  myGameLoop.ROOM_SIZE/2 -  myGameLoop.TILE_SIZE/2);
+        myNumEntitys += 4;
+        place = myNumEntitys;
 
-            myNumEntitys += 1;
-            place = myNumEntitys;
-
-        }
     }
 
     public void setGremlins() {

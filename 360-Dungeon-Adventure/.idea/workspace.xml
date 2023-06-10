@@ -4,16 +4,82 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0df212bb-e81b-4d49-8840-12ee792b8347" name="Changes" comment="">
+    <list default="true" id="27f8f73f-7178-4dc7-aba6-935ecb596e40" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/res/Items/Door/GoldDoor/GoldBottomDoor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Items/Door/GoldDoor/GoldLeftDoor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Items/Door/GoldDoor/GoldRightDoor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Items/Door/GoldDoor/GoldTopDoor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Items/Door/GoldDoor/doorGold.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Items/Door/RedDoor/RedBottomDoor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Items/Door/RedDoor/RedLeftDoor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Items/Door/RedDoor/RedRightDoor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Items/Door/RedDoor/RedTopDoor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Items/Door/RedDoor/doorRed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/RoomTiles/endRoom.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/RoomTiles/startRoom.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/GameLoop_run_flow.puml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/Item/EndDoor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5.ser" beforeDir="false" afterPath="$PROJECT_DIR$/5.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/EntityDisplay.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/HeroDisplay.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/ItemDisplay.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/map/CollisionTile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/map/Room.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/map/RoomManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a.ser" beforeDir="false" afterPath="$PROJECT_DIR$/a.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aGame File Name.ser" beforeDir="false" afterPath="$PROJECT_DIR$/aGame File Name.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aName.ser" beforeDir="false" afterPath="$PROJECT_DIR$/aName.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aa.ser" beforeDir="false" afterPath="$PROJECT_DIR$/aa.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aaaaaaaa.ser" beforeDir="false" afterPath="$PROJECT_DIR$/aaaaaaaa.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asas.ser" beforeDir="false" afterPath="$PROJECT_DIR$/asas.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asile Name.ser" beforeDir="false" afterPath="$PROJECT_DIR$/asile Name.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ddd Name.ser" beforeDir="false" afterPath="$PROJECT_DIR$/ddd Name.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game-saves.ser" beforeDir="false" afterPath="$PROJECT_DIR$/game-saves.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/man1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/man2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/man3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/man4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/man5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DungeonAdventure/Controller/DB/SQLRes/monsterData.db" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DungeonAdventure/Controller/DB/SQLRes/monsterData.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s.ser" beforeDir="false" afterPath="$PROJECT_DIR$/s.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/UpdateMusicSlider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/UpdateMusicSlider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/interactionSound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/interactionSound.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CollisionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CollisionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/DB/SQLRes/monsterData.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DB/SQLRes/monsterData.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/EntitySetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EntitySetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/GameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GameLoop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ItemSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ItemSetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/KeyHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MouseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MouseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MenuManagment/MenuManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuManagment/MenuManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/HeroDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/HeroDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/map/RoomManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/map/RoomManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssssssssssss.ser" beforeDir="false" afterPath="$PROJECT_DIR$/ssssssssssss.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../360-Dungeon-AdventureCopy/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-AdventureCopy/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../360-Dungeon-AdventureCopy/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-AdventureCopy/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../360-Dungeon-AdventureCopy/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-AdventureCopy/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../360-Dungeon-AdventureCopy/360-Dungeon-AdventureCopy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-AdventureCopy/360-Dungeon-AdventureCopy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sql/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../sql/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sql/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../sql/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sql/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../sql/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sql/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../sql/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sql/sql.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../sql/sql.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="FindBugs-IDEA-Workspace">
     <toolWindowEditorPreview>false</toolWindowEditorPreview>
@@ -29,26 +95,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "19",
-    "last_directory_selection": "/Users/calebkrauter/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure/src/Model/entity",
-    "last_opened_file_path": "C:/Users/Kraut/Documents/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15722656",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
-  }
-}]]></component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;STABLE-MAKAI&quot;,
+    &quot;last_directory_selection&quot;: &quot;/Users/calebkrauter/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure/src/Model/entity&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/makaimartinez/IdeaProjects/360-Dungeon-Adventure/360-Dungeon-Adventure&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot; }
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Kraut\Documents\Workspace\360-Dungeon-Adventure\360-Dungeon-Adventure" />
@@ -56,6 +117,13 @@
       <recent name="$PROJECT_DIR$/src/Model" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/View" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/res/RoomTiles" />
+      <recent name="$PROJECT_DIR$/res/Items/Door/RedDoor" />
+      <recent name="$PROJECT_DIR$/res/Monster" />
+      <recent name="$PROJECT_DIR$/res/Items/Door/GoldDoor" />
+      <recent name="$PROJECT_DIR$/res/Items/Door" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -101,11 +169,26 @@
       <option name="presentableId" value="Default" />
       <updated>1685985633839</updated>
       <workItem from="1686382213207" duration="342000" />
+      <workItem from="1686202943235" duration="369000" />
+      <workItem from="1686203323552" duration="547000" />
+      <workItem from="1686279123654" duration="17978000" />
     </task>
+    <task id="LOCAL-00001" summary="trying to set up new code base">
+      <created>1686203597009</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1686203597009</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="trying to set up new code base" />
+    <option name="LAST_COMMIT_MESSAGE" value="trying to set up new code base" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/360_Dungeon_Adventure$Main.ic" NAME="Main Coverage Results" MODIFIED="1686285963447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

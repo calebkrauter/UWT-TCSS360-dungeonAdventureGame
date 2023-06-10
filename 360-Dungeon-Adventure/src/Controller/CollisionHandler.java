@@ -49,12 +49,13 @@ public class CollisionHandler {
 
     /**
      * A constructor for
-     * @param theGP
+     * @param theGameLoop
      * @param theRM
      */
-    public CollisionHandler(GameLoop theGP, RoomManager theRM){
+
+    public CollisionHandler(GameLoop theGameLoop, RoomManager theRM){
         this.myRoomManager = theRM;
-        this.myGameLoop = theGP;
+        this.myGameLoop = theGameLoop;
     }
     public void checkTile(Entity theEntity){
         // we need world x and y of players hitbox

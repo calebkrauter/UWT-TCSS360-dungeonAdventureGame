@@ -88,12 +88,16 @@ public class GameLoop extends JPanel implements Runnable {
     private ItemSetter myItemSetter;
     private ItemDisplay myItemDisplay;
 
+    // ENTITIES
     public Entity myEntities[];
     private EntitySetter myEntitySetter;
     private EntityDisplay myEntityDisplay;
     private int myGameState = 2;
     public final int PLAY_STATE = 1;
     public final int PAUSE_STATE = 0;
+
+
+
     // constructor for game
     public GameLoop(String theGameFile, int myHeroSelection) throws IOException, ClassNotFoundException {
 
@@ -165,6 +169,7 @@ public class GameLoop extends JPanel implements Runnable {
 
         // set up items
         myItemSetter.setStartItems();
+        myItemSetter.setEndDoors();
         myItemSetter.setKeys();
         myItemSetter.setDoors();
         myItemSetter.setPillars();
@@ -177,6 +182,7 @@ public class GameLoop extends JPanel implements Runnable {
         myEntitySetter.setHero();
 
         setGameState(PLAY_STATE);
+        myGameState = PLAY_STATE;
     }
 
     public void setGameState(int theGameState) {
@@ -232,6 +238,9 @@ public class GameLoop extends JPanel implements Runnable {
 //                drawCount = 0;
 //                timer = 0;
 //            }
+            if(myHero.getNumEndDoorsRemoved() == 4){
+                myGameThread = null;
+            }
 
         }
 
@@ -250,7 +259,17 @@ public class GameLoop extends JPanel implements Runnable {
         if (myGameState == PLAY_STATE) {
             myHeroDisplay.update();
         }
+
+        // only update player stats/display while myGameState is play
+        if(myGameState == PLAY_STATE) {
+            myHeroDisplay.update();
+        }
+        if(myGameState == PAUSE_STATE) {
+            //do nun
+        }
+
     }
+
 
     /**
      * Paint the current state.

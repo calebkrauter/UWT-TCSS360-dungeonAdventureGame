@@ -3,10 +3,18 @@ package Controller;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+/**
+ * @author Makai Martinez
+ * @author Caleb Krauter
+ */
+
 public class KeyHandler implements KeyListener {
 
     public boolean upPressed, downPressed, leftPressed, rightPressed;
-
+    private GameLoop myGameloop;
+    public KeyHandler(GameLoop theGameloop) {
+        myGameloop = theGameloop;
+    }
     @Override
     public void keyTyped(KeyEvent e) {
         //unfinished
@@ -28,6 +36,13 @@ public class KeyHandler implements KeyListener {
         }
         if (code == KeyEvent.VK_D) {
             rightPressed = true;
+        }
+        if (code == KeyEvent.VK_ESCAPE) {
+            if (myGameloop.getGameState() == myGameloop.PLAY_STATE) {
+                myGameloop.setGameState(myGameloop.PAUSE_STATE);
+            } else if (myGameloop.getGameState() == myGameloop.PAUSE_STATE) {
+                myGameloop.setGameState(myGameloop.PLAY_STATE);
+            }
         }
     }
 

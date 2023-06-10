@@ -12,9 +12,46 @@ import View.map.RoomManager;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * @author Makai Martinez
+ * @author Caleb Krauter
+ */
+
+/**
+ * This class handles collisions for the player when the player
+ * interacts with walls, enemies and other entities like items.
+ */
 public class CollisionHandler {
+    /**
+     * Class to manage rooms.
+     */
     private RoomManager myRoomManager;
+    /**
+     * Starts game loop and updates game data for gameplay.
+     */
     private GameLoop myGameLoop;
+    /**
+     * Boolean used for showing if the dialog box is visible that tells the player they blocked.
+     */
+    private boolean blockDialogShown = false;
+    /**
+     * An audio String file used for dying entities.
+     */
+    private final String DEATH_SOUND = "deathSound.wav";
+    /**
+     * A boolean telling if the player is out of a fight.
+     */
+    private boolean getOut = false;
+    /**
+     * A boolean telling if the player is out of a fight.
+     */
+    private boolean fightEnd = false;
+
+    /**
+     * A constructor for
+     * @param theGP
+     * @param theRM
+     */
     public CollisionHandler(GameLoop theGP, RoomManager theRM){
         this.myRoomManager = theRM;
         this.myGameLoop = theGP;
@@ -167,12 +204,19 @@ public class CollisionHandler {
     }
 
     private void fightActionOption(Rectangle newHitbox, Rectangle newitemHitbox, Entity theEntity, int i, boolean characterCollide){
+
         if(newHitbox.intersects(newitemHitbox)) {
             if (myGameLoop.myEntities[i].getCollision()) {
+                myGameLoop.setCombat(true);
                 theEntity.setCollision(true);
                 characterCollide = true;
+                myGameLoop.setGameState(myGameLoop.PAUSE_STATE);
+//                startTimer(theEntity);
                 if (!dialogShown && !blockDialogShown) {
                     popUpFight(theEntity, i);
+                } else {
+                    myGameLoop.setGameState(myGameLoop.PLAY_STATE);
+
                 }
             }
         }
@@ -188,9 +232,17 @@ public class CollisionHandler {
                 dialogShown = false;
                 blockDialogShown = false;
                 getOut = false;
+                getOut = false;
+                fightEnd = false;
+//                KeyHandler keyHandler = new KeyHandler();
+//                keyHandler.upPressed = false;
+//                keyHandler.leftPressed = false;
+//                keyHandler.rightPressed = false;
+//                keyHandler.downPressed = false;
+                myGameLoop.setGameState(myGameLoop.PLAY_STATE);
+                myGameLoop.setCombat(false);
                 timer.cancel(); // Cancel the timer after it expires
 
-                fightEnd = false;
 
             }
         }, 3000);
@@ -232,14 +284,11 @@ public class CollisionHandler {
                 leave = true;
                 theEntity.setCollision(false);
                 startTimer(theEntity);
+                myGameLoop.setCombat(false);
+                myGameLoop.setGameState(myGameLoop.PLAY_STATE);
             }
         }
-//    }
 
-    private boolean blockDialogShown = false;
-    private final String DEATH_SOUND = "deathSound.wav";
-    boolean getOut = false;
-    boolean fightEnd = false;
     private void doFight(Entity theEntity, Entity[] myEntities, int i) {
         getOut = false;
 
@@ -263,9 +312,14 @@ public class CollisionHandler {
                 new JOptionPane().showMessageDialog(null, "YOU DEFEATED THE MONSTER!!!", "YOU WON.", JOptionPane.PLAIN_MESSAGE);
                 leave = true;
                 theEntity.setCollision(false);
-
+                myGameLoop.setCombat(false);
+                myGameLoop.setGameState(myGameLoop.PAUSE_STATE);
                 startTimer(theEntity);
+
+
             }
+            theEntity.setSpeed(0);
+
         } else if (chance > theEntity.getHitChance()/10 && chance <= 12){
             // Chance that enemy hits player
             theEntity.setHealth(theEntity.getHealth() - monsterDamage);
@@ -273,7 +327,11 @@ public class CollisionHandler {
 
                 new interactionSound(DEATH_SOUND);
                 new JOptionPane().showMessageDialog(null, "GAME OVER, to respawn load game and find your save.", "YOU LOST.", JOptionPane.PLAIN_MESSAGE);
+                myGameLoop.setCombat(false);
+                myGameLoop.setGameState(myGameLoop.PLAY_STATE);
+
                 System.exit(0);
+
             }
         } else {
             blockDialogShown = true;
@@ -299,9 +357,13 @@ public class CollisionHandler {
                 doFight(theEntity, myGameLoop.myEntities, i);
                 System.out.println("FIGHT");
                 dialogShown = false;
+                myGameLoop.setCombat(false);
+                myGameLoop.setGameState(myGameLoop.PLAY_STATE);
+
+
             }
         }
-
+        
     }
 
 

@@ -70,7 +70,7 @@ public class GameLoop extends JPanel implements Runnable {
 
     private RoomManager myRoomManager;
     private CollisionHandler myCollisionHandler;
-    private KeyHandler myKeyHandler = new KeyHandler();
+    private KeyHandler myKeyHandler = new KeyHandler(this);
     private MouseHandler myMouseHandler = new MouseHandler();
 
 
@@ -91,8 +91,9 @@ public class GameLoop extends JPanel implements Runnable {
     public Entity myEntities[];
     private EntitySetter myEntitySetter;
     private EntityDisplay myEntityDisplay;
-
-
+    private int myGameState = 2;
+    public final int PLAY_STATE = 1;
+    public final int PAUSE_STATE = 0;
     // constructor for game
     public GameLoop(String theGameFile, int myHeroSelection) throws IOException, ClassNotFoundException {
 
@@ -174,8 +175,16 @@ public class GameLoop extends JPanel implements Runnable {
         myEntitySetter.setGremlins();
         myEntitySetter.setSkeletons();
         myEntitySetter.setHero();
+
+        setGameState(PLAY_STATE);
     }
 
+    public void setGameState(int theGameState) {
+        myGameState = theGameState;
+    }
+    public int getGameState() {
+        return myGameState;
+    }
     public void startGameThread(){
 
         // we instantiate game thread. we pass "this" (the gamepanel class) to
@@ -235,8 +244,12 @@ public class GameLoop extends JPanel implements Runnable {
     /**
      * Update display with changes in player position.
      */
+
+
     public void update (){
-        myHeroDisplay.update();
+        if (myGameState == PLAY_STATE) {
+            myHeroDisplay.update();
+        }
     }
 
     /**
@@ -268,6 +281,25 @@ public class GameLoop extends JPanel implements Runnable {
         //THE PLAYER
         myHeroDisplay.draw(g2);
         // good practice to save memory.
+        if (getGameState() == PAUSE_STATE) {
+            String pauseString = "PAUSE";
+            if (getCombat()) {
+                pauseString = "";
+            }
+
+            g2.setFont(g2.getFont().deriveFont(Font.BOLD, 99f));
+            g2.drawString(pauseString, screenWidth/2, screenHeight/2);
+        }
         g2.dispose();
+
+
+    }
+
+    private boolean myCombat = false;
+    public void setCombat(Boolean theCombat) {
+        myCombat = theCombat;
+    }
+    private boolean getCombat() {
+        return myCombat;
     }
 }

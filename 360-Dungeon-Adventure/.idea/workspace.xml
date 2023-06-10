@@ -5,30 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27f8f73f-7178-4dc7-aba6-935ecb596e40" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Model/MapGeneratorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game-saves.ser" beforeDir="false" afterPath="$PROJECT_DIR$/game-saves.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DungeonAdventure.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DungeonAdventure.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DungeonAdventure/Controller/DB/SQLRes/monsterData.db" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DungeonAdventure/Controller/DB/SQLRes/monsterData.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DungeonAdventure/Controller/GameLoop_run_flow.puml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Actions/LoadSaveSelection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/LoadSaveSelection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Actions/OptionsButtonAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/OptionsButtonAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/AboutAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/AboutAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CollisionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CollisionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/DB/SQLRes/monsterData.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DB/SQLRes/monsterData.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/EntitySetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EntitySetter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/GameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GameLoop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/GameLoop_run_flow.puml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ItemSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ItemSetter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/KeyHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MouseHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LoadSave/CheckFileValidity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LoadSave/CheckFileValidity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LoadSave/DeserializeGameSaves.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LoadSave/DeserializeGameSaves.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LoadSave/DeserializeMapGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LoadSave/DeserializeMapGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LoadSave/SerializeGameSaves.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LoadSave/SerializeGameSaves.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LoadSave/SerializeMapGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LoadSave/SerializeMapGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuManagment/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MenuManagment/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuManagment/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MenuManagment/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuManagment/MenuManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MenuManagment/MenuManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuManagment/ScreenData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MenuManagment/ScreenData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MenuManagment/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MenuManagment/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MenuManagment/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MenuManagment/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MenuManagment/MenuManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MenuManagment/MenuManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MenuManagment/ScreenData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Archer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Archer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Enemy/Gremlin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Enemy/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Enemy/Monster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Enemy/Ogre.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Enemy/Skeleton.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Item/BottomDoor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControllerAndView/Item/BottomDoor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Item/EndDoor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControllerAndView/Item/EndDoor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Item/HealthPotion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControllerAndView/Item/HealthPotion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Item/Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControllerAndView/Item/Key.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Item/LeftDoor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControllerAndView/Item/LeftDoor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Item/ParentItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControllerAndView/Item/ParentItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Item/Pillar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControllerAndView/Item/Pillar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Item/RightDoor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControllerAndView/Item/RightDoor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Item/SpeedPotion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControllerAndView/Item/SpeedPotion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Item/TopDoor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControllerAndView/Item/TopDoor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/MapGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/MapGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/EntityDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControllerAndView/EntityDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/HeroDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControllerAndView/HeroDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/ItemDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControllerAndView/ItemDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/map/CollisionTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControllerAndView/map/CollisionTile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/map/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControllerAndView/map/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/map/RoomManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ControllerAndView/map/RoomManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +53,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -58,18 +73,28 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
     "git-widget-placeholder": "STABLE-MAKAI",
     "last_directory_selection": "/Users/calebkrauter/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure/src/Model/entity",
-    "last_opened_file_path": "/Users/makaimartinez/IdeaProjects/360-Dungeon-Adventure/360-Dungeon-Adventure",
+    "last_opened_file_path": "C:/Users/Kraut/Documents/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure/src/ControllerAndView/DB/SQLRes/sqlite-jdbc-3.32.3.2.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "CodeWithMe",
     "vue.rearranger.settings.migration": "true"
   }
@@ -89,14 +114,20 @@
       <recent name="$PROJECT_DIR$/res/Monster" />
       <recent name="$PROJECT_DIR$/res/Items/Door/GoldDoor" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="Model" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Controller.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Controller.Main" />
+  <component name="RunManager" selected="JUnit.MapGeneratorTest.getMyCurIntersectionCol">
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ControllerAndView.MenuManagment.Main" />
       <module name="DungeonAdventure" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Controller.*" />
+          <option name="PATTERN" value="ControllerAndView.MenuManagment.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -104,23 +135,93 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Controller.MenuManagment.Main" />
+    <configuration name="MapGeneratorTest.getMyCurIntersectionCol" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DungeonAdventure" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Controller.MenuManagment.*" />
+          <option name="PATTERN" value="Model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="Model" />
+      <option name="MAIN_CLASS_NAME" value="Model.MapGeneratorTest" />
+      <option name="METHOD_NAME" value="getMyCurIntersectionCol" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MapGeneratorTest.getMyEndCol" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DungeonAdventure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Model" />
+      <option name="MAIN_CLASS_NAME" value="Model.MapGeneratorTest" />
+      <option name="METHOD_NAME" value="getMyEndCol" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MapGeneratorTest.getMyEndRow" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DungeonAdventure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Model" />
+      <option name="MAIN_CLASS_NAME" value="Model.MapGeneratorTest" />
+      <option name="METHOD_NAME" value="getMyEndRow" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MapGeneratorTest.getMyStartCol" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DungeonAdventure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Model" />
+      <option name="MAIN_CLASS_NAME" value="Model.MapGeneratorTest" />
+      <option name="METHOD_NAME" value="getMyStartCol" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MapGeneratorTest.getMyStartRow" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DungeonAdventure" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Model" />
+      <option name="MAIN_CLASS_NAME" value="Model.MapGeneratorTest" />
+      <option name="METHOD_NAME" value="getMyStartRow" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Controller.Main" />
+        <item itemvalue="JUnit.MapGeneratorTest.getMyCurIntersectionCol" />
+        <item itemvalue="JUnit.MapGeneratorTest.getMyEndRow" />
+        <item itemvalue="JUnit.MapGeneratorTest.getMyEndCol" />
+        <item itemvalue="JUnit.MapGeneratorTest.getMyStartRow" />
+        <item itemvalue="JUnit.MapGeneratorTest.getMyStartCol" />
       </list>
     </recent_temporary>
   </component>
@@ -136,7 +237,7 @@
       <workItem from="1686202943235" duration="369000" />
       <workItem from="1686203323552" duration="547000" />
       <workItem from="1686279123654" duration="17978000" />
-      <workItem from="1686417132090" duration="13829000" />
+      <workItem from="1686417132090" duration="16874000" />
     </task>
     <task id="LOCAL-00001" summary="trying to set up new code base">
       <created>1686203597009</created>

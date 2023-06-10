@@ -6,8 +6,12 @@ import java.awt.event.KeyListener;
 /**
  * @author Makai Martinez
  * @author Caleb Krauter
+ * @version 1.0
  */
 
+/**
+ * Handles keys input.
+ */
 public class KeyHandler implements KeyListener {
 
     /**

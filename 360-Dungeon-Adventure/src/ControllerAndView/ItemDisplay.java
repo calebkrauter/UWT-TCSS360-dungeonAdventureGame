@@ -1,7 +1,7 @@
-package View;
+package ControllerAndView;
 
 import Controller.GameLoop;
-import Model.Item.ParentItem;
+import ControllerAndView.Item.ParentItem;
 
 import java.awt.*;
 

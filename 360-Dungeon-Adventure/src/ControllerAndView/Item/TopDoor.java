@@ -1,17 +1,18 @@
-package Model.Item;
+package ControllerAndView.Item;
 
 import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
 
-public class LeftDoor extends ParentItem{
-    public LeftDoor() {
-        setObjectName("LeftDoor");
+public class TopDoor extends ParentItem{
+    public TopDoor() {
+        setObjectName("TopDoor");
         try {
-            setObjectImage(ImageIO.read(new File("res/Items/Door/LeftDoor.png")));
+            setObjectImage(ImageIO.read(new File("res/Items/Door/TopDoor.png")));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
         setCollision(true);
     }
+
 }

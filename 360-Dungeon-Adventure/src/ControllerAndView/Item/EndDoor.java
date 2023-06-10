@@ -1,4 +1,4 @@
-package Model.Item;
+package ControllerAndView.Item;
 
 public class EndDoor extends ParentItem {
 

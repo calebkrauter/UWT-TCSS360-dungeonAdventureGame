@@ -36,7 +36,8 @@ public class AboutAction {
                             "For example after leaving a battle, if the player is forced in a specific direction," +
                             "\n press the key to move in that direction and let go.\n" +
                             "Also pick up as many health potions as possible and play defensive to beat the bosses.\n" +
-                            "There are ten health potions around the map and one randomly placed speed potion." +
+                            "There are ten health potions around the map and one randomly placed speed potion.\n" +
+                            "GAMEPLAY : WASD for move, ESC for pause." +
                     "\n\nHave fun Matey");
     }
 

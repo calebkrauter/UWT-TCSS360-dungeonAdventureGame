@@ -1,7 +1,11 @@
-package View.map;
+package ControllerAndView.map;
 
 import java.awt.*;
 
+/**
+ * Makai
+ * James
+ */
 public class CollisionTile {
 
     private boolean myCollision;

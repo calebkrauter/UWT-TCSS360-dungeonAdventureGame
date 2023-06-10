@@ -1,4 +1,4 @@
-package Model.Item;
+package ControllerAndView.Item;
 
 import javax.imageio.ImageIO;
 import java.io.File;

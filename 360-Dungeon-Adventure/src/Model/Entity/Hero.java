@@ -1,14 +1,10 @@
 package Model.Entity;
 
-import Controller.DB.MonsterStatsDB;
-import Controller.EntitySetter;
 import Controller.GameLoop;
 import Controller.KeyHandler;
-import Model.Entity.Enemy.Monster;
-import Model.Item.Pillar;
+import ControllerAndView.Item.Pillar;
 
 import javax.imageio.ImageIO;
-import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
@@ -184,7 +180,7 @@ public abstract class Hero extends Entity {
                         myGameLoop.myItems[theIndex] = new Pillar();    // create new pillar in place of end room
                         myGameLoop.myItems[theIndex].setIsCollectible(false);
                         myGameLoop.myItems[theIndex].setCollision(false);
-                        
+
 
                         myGameLoop.myItems[theIndex].setWorldX(worldX);
                         myGameLoop.myItems[theIndex].setWorldY(worldY);

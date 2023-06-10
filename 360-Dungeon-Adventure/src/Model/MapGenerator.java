@@ -501,27 +501,29 @@ public class MapGenerator implements Serializable {
     }
 
     /**
-     * Set the current intersection symbol col.
+     * Set the current intersection symbol col. Made public for unit testing.
      * @param theCol the current col.
      */
-    private void setMyCurIntersectionCol(int theCol) {
+    public void setMyCurIntersectionCol(int theCol) {
         myCurIntersectionCol = theCol;
     }
 
     /**
      * Set the current intersection symbol row.
+     * Made public for unit testing.
      * @param theRow the current row.
      */
-    private void setMyCurIntersectionRow(int theRow) {
+    public void setMyCurIntersectionRow(int theRow) {
         myCurIntersectionRow = theRow;
     }
 
     /**
      * Set the current door-room's position.
+     * Made public for unit testing.
      * @param theRow the current row.
      * @param theCol the current col.
      */
-    private void setMyCurDoorRoom(int theRow, int theCol) {
+    public void setMyCurDoorRoom(int theRow, int theCol) {
         mapLayout[theRow][theCol] = DOOR;
         setMyCurDoorRoomRow(theRow);
         setMyCurDoorRoomCol(theCol);
@@ -529,9 +531,10 @@ public class MapGenerator implements Serializable {
 
     /**
      * Set current door symbol row.
+     * Made public for unit testing.
      * @param theRow the current row.
      */
-    private void setMyCurDoorRoomRow(int theRow) {
+    public void setMyCurDoorRoomRow(int theRow) {
         myCurDoorRoomRow = theRow;
     }
 
@@ -539,7 +542,7 @@ public class MapGenerator implements Serializable {
      * Set current door symbol col.
      * @param theCol the current col.
      */
-    private void setMyCurDoorRoomCol (int theCol) {
+    public void setMyCurDoorRoomCol (int theCol) {
         myCurDoorRoomCol = theCol;
     }
 

@@ -3,7 +3,7 @@ package Controller;
 
 import Controller.DB.MonsterStatsDB;
 import Model.Entity.Enemy.Monster;
-import View.map.RoomManager;
+import ControllerAndView.map.RoomManager;
 
 import java.awt.geom.Point2D;
 import java.util.List;

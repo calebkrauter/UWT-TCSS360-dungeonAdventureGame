@@ -12,8 +12,9 @@ import java.io.File;
 import java.io.IOException;
 
 /**
+ * @author Makai Marteniz
  * @author Caleb Krauter
- * @author Makai
+ * @version 1.0
  */
 public class Monster extends Entity {
 
@@ -53,22 +54,6 @@ public class Monster extends Entity {
         setDirection("down");
         setCollision(true);
     }
-//    public void interactWithMonsters() {
-//
-//        int enemyX = myEntitySetter.getOgresWorldX();
-//        int enemyY = myEntitySetter.getOgresWorldY();
-//                isWithinRadius(enemyX, enemyY, 16);
-//    }
-//    private boolean isWithinRadius(int x, int y, double radius) {
-//        double distance = distanceTo(x, y);
-//        return distance <= radius;
-//    }
-//    private double distanceTo(int theX, int theY) {
-//        int dX = getWorldX() - theX;
-//        int dY= getWorldY() - theY;
-//        // Euclidean distance between the two points TO implement proximity sensor
-//        return Math.sqrt(dX * dX + dY * dY);
-//    }
 
     private void setSkeletonStats() {
         setEntityName((String) myMonsterStatsDB.getMonsterStat(myMonsterStatsDB.SKELTON, myMonsterStatsDB.MONSTER_TYPE));

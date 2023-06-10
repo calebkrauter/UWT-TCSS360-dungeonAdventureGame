@@ -1,7 +1,7 @@
 package Controller;
 
-import Model.Item.*;
-import View.map.RoomManager;
+import ControllerAndView.Item.*;
+import ControllerAndView.map.RoomManager;
 
 import javax.imageio.ImageIO;
 import java.awt.geom.Point2D;

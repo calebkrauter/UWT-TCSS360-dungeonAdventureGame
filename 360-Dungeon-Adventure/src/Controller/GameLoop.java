@@ -4,12 +4,12 @@ package Controller;
 
 import Controller.LoadSave.DeserializeMapGenerator;
 import Model.Entity.*;
-import Model.Item.ParentItem;
+import ControllerAndView.Item.ParentItem;
 import Model.MapGenerator;
-import View.EntityDisplay;
-import View.HeroDisplay;
-import View.ItemDisplay;
-import View.map.RoomManager;
+import ControllerAndView.EntityDisplay;
+import ControllerAndView.HeroDisplay;
+import ControllerAndView.ItemDisplay;
+import ControllerAndView.map.RoomManager;
 
 import javax.swing.*;
 import java.awt.*;

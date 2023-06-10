@@ -1,4 +1,4 @@
-package Model.Item;
+package ControllerAndView.Item;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

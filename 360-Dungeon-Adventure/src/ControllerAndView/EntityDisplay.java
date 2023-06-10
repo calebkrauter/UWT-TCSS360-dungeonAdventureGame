@@ -1,4 +1,4 @@
-package View;
+package ControllerAndView;
 
 import Controller.GameLoop;
 import Model.Entity.Entity;

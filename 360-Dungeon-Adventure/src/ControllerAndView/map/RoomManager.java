@@ -1,6 +1,6 @@
 // Makai Martinez 6/7/2023 TCSS 360 A
 
-package View.map;
+package ControllerAndView.map;
 
 import Controller.GameLoop;
 
@@ -11,6 +11,10 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Makai Marteniz
+ * @author James Lee
+ */
 public class RoomManager {
 
     private GameLoop myGameLoop;

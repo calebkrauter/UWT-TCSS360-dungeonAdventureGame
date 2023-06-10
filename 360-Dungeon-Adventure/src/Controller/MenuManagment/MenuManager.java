@@ -25,90 +25,219 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+/**
+ * @author Caleb Krauter
+ * @version 1.0
+ */
 
-// TODO - add all constraints to a method, use recursion or a for loop
-//      to generate a new button with the constraints and an array to hold the new data
-//      for each button.
-// TODO - main menu, options menu, pause menu, loadSaves Menu, character select menu, difficulty and map size menu
-// TODO - update setinsets in game loop so the buttons move as game is resized.
+/**
+ * Creates and adds menus.
+ */
 public class MenuManager extends JPanel {
-    //    BufferedImage image = ImageIO.read(new File("mainMenu.png"));
-    Dimension myScreenSize;
-    JFrame myJframe;
-    BoxLayout bL;
-    final int CUR_BUTTON = 0;
-    final int CUR_BUTTON_CONSTRAINTS = 1;
+    /**
+     * JFrame.
+     */
+    private JFrame myJframe;
+    /**
+     * Button code for BUTTON.
+     */
     final private int BUTTON = 0;
-    final private int TOGGLE_BUTTON = 1;
+    /**
+     * Button code for SLIDER.
+     */
     final private int SLIDER = 2;
-    final private int CHECK_BOX = 3;
+    /**
+     * Button code for TEXT_FIELD.
+     */
     final private int TEXT_FIELD = 4;
-    final private int LABEL = 5;
-    //    final private int anchor, iPAD x, iPAD Y, INSET LEFT RIGHT TOP BOTTOM
-    final private int GO_LEFT = 65;
+    /**
+     * Button code for GO_RIGHT.
+     */
     final private int GO_RIGHT = 99;
-    final private int GO_UP = -88;
+    /**
+     * Button code for GO_DOWN.
+     */
     final private int GO_DOWN = 90;
-    final private int FIRST_TIME_PLAYED = 0;
+    /**
+     * Button code for NOT_FIRST_TIME_PLAYED.
+     */
     final private int NOT_FIRST_TIME_PLAYED = 1;
+    /**
+     * String for the file of the gameplay music.
+     */
     final private String TREASURE_HUNT_SONG = "TreasureHunt.wav";
-    String gameSaveName;
-    String[] myTitles;
-    ComponentGenerator mainMenuButton;
-    JButton myMainPlayButton;
-    JButton myMainLoadButton;
-    JButton myMainOptionsButton;
-    JButton myStartButton;
-    JButton myLeftSelect;
-    JButton mySelect;
-    JButton myRightSelect;
-    JSlider myVolumeSlider;
-    JToggleButton myMusicToggle;
-    JButton myAboutButton;
-    JButton myCreditsButton;
-    JButton myBackButton;
-    String[] mainMenuTitles;
-    String[] myOptionMenuTitles;
-    String[] characterSelectTitles;
-    String[] loadGameTitles;
-    String[] gameplayMenuTitles;
-    JComponent[] mainMenuComponents;
-    JComponent[] optionsMenuComponents;
-    JComponent[] characterSelectionComponents;
-    ModifyInsets modifyInsets;
-    ScreenData screenData;
-    JComponent[] gamePlayMenuComponents;
-    JTextField myGameStateField;
-    JComponent[] loadSaveSelectionComponents;
+    /**
+     * Game save name.
+     */
+    private String gameSaveName;
+    /**
+     * Titles.
+     */
+    private String[] myTitles;
+    /**
+     * Main menu button.
+     */
+    private ComponentGenerator mainMenuButton;
+    /**
+     * A play button.
+     */
+    private JButton myMainPlayButton;
+    /**
+     * A Load button.
+     */
+    private JButton myMainLoadButton;
+    /**
+     * An Options button.
+     */
+    private JButton myMainOptionsButton;
+    /**
+     * A Start button.
+     */
+    private JButton myStartButton;
+    /**
+     * A leftSelect button.
+     */
+    private JButton myLeftSelect;
+    /**
+     * A select button.
+     */
+    private JButton mySelect;
+    /**
+     * A rightSelect button.
+     */
+    private JButton myRightSelect;
+    /**
+     * Reference to the delete button.
+     */
+    private JButton myDelete;
+    /**
+     * A volume slider.
+     */
+    private JSlider myVolumeSlider;
+    /**
+     * A play button.
+     */
+    private JButton myAboutButton;
+    /**
+     * A play button.
+     */
+    private JButton myCreditsButton;
+    /**
+     * A play button.
+     */
+    private JButton myBackButton;
+    /**
+     * Menu titles.
+     */
+    private String[] mainMenuTitles;
+    /**
+     * Menu titles.
+     */
+    private String[] myOptionMenuTitles;
+    /**
+     * Menu titles.
+     */
+    private String[] characterSelectTitles;
+    /**
+     * Menu titles.
+     */
+    private String[] loadGameTitles;
+    /**
+     * Menu titles.
+     */
+    private String[] gameplayMenuTitles;
+    /**
+     * Menu components.
+     */
+    private JComponent[] mainMenuComponents;
+    /**
+     * Menu components.
+     */
+    private JComponent[] optionsMenuComponents;
+    /**
+     * Menu components.
+     */
+    private JComponent[] characterSelectionComponents;
+    /**
+     * Reference to Mondify Insets.
+     */
+    private ModifyInsets modifyInsets;
 
+    /**
+     * Menu components.
+     */
+    private JComponent[] gamePlayMenuComponents;
+    /**
+     * Text field for game save.
+     */
+    private JTextField myGameStateField;
+    /**
+     * Menu components.
+     */
+    private JComponent[] loadSaveSelectionComponents;
+    /**
+     * Main menu image.
+     */
+    private final BufferedImage mainImage = ImageIO.read(new File("mainMenu.png"));
+    /**
+     * Hero Stevey image.
+     */
+    private final BufferedImage hero1 = ImageIO.read(new File("res/Hero/Stevey/SteveyDown1 copy.png"));
+    /**
+     * Hero Archer image.
+     */
+    private final BufferedImage hero2 = ImageIO.read(new File("res/Hero/Archer/ArcherDown1 copy.png"));
+    /**
+     * Hero Fred image.
+     */
+    private final BufferedImage hero3 = ImageIO.read(new File("res/Hero/down1.png"));
+    /**
+     * Array of heros.
+     */
+    private BufferedImage[] characters = new BufferedImage[] {hero1, hero2, hero3};
+    /**
+     * Array of hero names.
+     */
+    private String[] characterNames = new String[] {"Stevy", "Linky", "FRED"};
+    /**
+     * Hero selection instance.
+     */
+    private HeroSelection heroSelection = new HeroSelection();
+    /**
+     * Music player instance.
+     */
+    private MusicPlayer musicPlayer = new MusicPlayer();
+    /**
+     * Boolean to determine if the character is shown.
+     */
+    private static boolean myShownCharacter = false;
+    /**
+     * Reference to deserialize game saves.
+     */
+    private DeserializeGameSaves deserializeGameSaves;
+    /**
+     * Reference to the button sound.
+     */
+    private final String buttonSound = "typeWriterSound.wav";
+
+    /**
+     * The hero selection.
+     */
+    private static int myHeroSelection = 0;
+
+    /**
+     * Constructor.
+     * @throws IOException
+     */
     public MenuManager() throws IOException {
 
     }
 
-    private void setMyTitles(String[] theTitles) {
-        myTitles = theTitles;
-    }
-    private String[] getMyTitles() {
-        return myTitles;
-    }
-    final BufferedImage mainImage = ImageIO.read(new File("mainMenu.png"));
-
-    final BufferedImage hero1 = ImageIO.read(new File("res/Hero/Stevey/SteveyDown1 copy.png"));
-    final BufferedImage hero2 = ImageIO.read(new File("res/Hero/Archer/ArcherDown1 copy.png"));
-    final BufferedImage hero3 = ImageIO.read(new File("res/Hero/down1.png"));
-    BufferedImage[] characters = new BufferedImage[] {hero1, hero2, hero3};
-    String[] characterNames = new String[] {"Stevy", "Linky", "FRED"};
-    HeroSelection heroSelection = new HeroSelection();
-    MusicPlayer musicPlayer = new MusicPlayer();
-    static boolean myShownCharacter = false;
-    DeserializeGameSaves deserializeGameSaves;
-    JButton myDelete;
-    private final String buttonSound = "typeWriterSound.wav";
-
-    private static int musicPlayedFirstTime = 0;
-
-    // TODO - cleanup code such that each menu has its own class, and there are classes for any actions associated with a given class. Ex, OptionsMenu and OptionsActions.
-
+    /**
+     * Constructor.
+     * @param theJFrame
+     * @throws IOException
+     */
     public MenuManager(JFrame theJFrame) throws IOException {
         deserializeGameSaves = new DeserializeGameSaves();
         this.setLayout(new GridBagLayout());
@@ -119,10 +248,28 @@ public class MenuManager extends JPanel {
         characterSelectTitles = new String[]{"<--BACK", "<--", "SELECT", "-->"};
         loadGameTitles = new String[]{"<--BACK", "<--", "SELECT", "-->", "DELETE"};
         gameplayMenuTitles = new String[]{"Game File Name", "START!", "<--BACK"};
-        screenData = new ScreenData();
         addMainMenu();
     }
 
+    /**
+     * Sets titles.
+     * @param theTitles
+     */
+    private void setMyTitles(String[] theTitles) {
+        myTitles = theTitles;
+    }
+
+    /**
+     * Gets titles.
+     * @return
+     */
+    private String[] getMyTitles() {
+        return myTitles;
+    }
+
+    /**
+     * Adds the main menu.
+     */
     private void addMainMenu() {
         setMyTitles(mainMenuTitles);
         modifyInsets.setInsets(this.getHeight()/2 + 350, 0, 0, 0);
@@ -137,6 +284,11 @@ public class MenuManager extends JPanel {
         this.add(myMainLoadButton, mainMenuButton.getMyButtonConstraints()[1]);
         this.add(myMainOptionsButton, mainMenuButton.getMyButtonConstraints()[2]);
     }
+
+    /**
+     * Adds the character selector menu.
+     * @throws IOException
+     */
     private void addCharacterSelectMenu() throws IOException {
         setMyTitles(characterSelectTitles);
         modifyInsets.setInsets(this.getHeight() - 100, -800, 0, 0);
@@ -156,6 +308,10 @@ public class MenuManager extends JPanel {
         addCharacterSelectionActions();
     }
 
+    /**
+     * Adds the load save selector menu.
+     * @throws IOException
+     */
     private void addLoadSaveSelectMenu() throws IOException {
         setMyTitles(loadGameTitles);
         modifyInsets.setInsets(this.getHeight() - 100, -800, 0, 0);
@@ -182,6 +338,62 @@ public class MenuManager extends JPanel {
         addLoadSaveActions();
     }
 
+    /**
+     * Adds the options' menu.
+     * @throws UnsupportedAudioFileException
+     * @throws LineUnavailableException
+     * @throws IOException
+     */
+    private void addOptionsMenu() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+
+        setMyTitles(myOptionMenuTitles);
+        modifyInsets.setInsets(this.getHeight()/2 - 150, 0, 0, 0);
+
+        ComponentGenerator optionButton = new ComponentGenerator(getMyTitles(), GridBagConstraints.PAGE_START, modifyInsets.getMyInsetTop(), modifyInsets.getMyInsetLeft(), modifyInsets.getMyInsetBottom(), modifyInsets.getMyInsetRight(), GO_DOWN
+        );
+        myVolumeSlider = (JSlider) optionButton.getComponents()[0][SLIDER];
+        myVolumeSlider.setMinimum(-80);
+        myVolumeSlider.setMaximum(6);
+        myAboutButton = (JButton) optionButton.getComponents()[1][BUTTON];
+        myCreditsButton = (JButton) optionButton.getComponents()[2][BUTTON];
+        myBackButton = (JButton) optionButton.getComponents()[3][BUTTON];
+
+        optionsMenuComponents = new JComponent[] {myVolumeSlider, myAboutButton, myCreditsButton, myBackButton};
+
+        for (int i = 0; i < optionsMenuComponents.length; i++) {
+            this.add(optionsMenuComponents[i], optionButton.getMyButtonConstraints()[i]);
+        }
+
+        addOptionsActions();
+    }
+
+    /**
+     * Adds game play menu.
+     */
+    private void addGamePlayMenu() {
+        setMyTitles(gameplayMenuTitles);
+        modifyInsets.setInsets(this.getHeight()/2 - 200, 0, 0, 0);
+        ComponentGenerator gamePlayComponentMaker = new ComponentGenerator(getMyTitles(), GridBagConstraints.PAGE_START, modifyInsets.getMyInsetTop(), modifyInsets.getMyInsetLeft(), modifyInsets.getMyInsetBottom(), modifyInsets.getMyInsetRight(), GO_DOWN);
+
+        // Easy mode provides a chance that there will be less paths overall and generates a simple path from start to end.
+        myGameStateField = (JTextField) gamePlayComponentMaker.getComponents()[0][TEXT_FIELD];
+        myStartButton = (JButton) gamePlayComponentMaker.getComponents()[1][BUTTON];
+        myBackButton = (JButton) gamePlayComponentMaker.getComponents()[2][BUTTON];
+
+
+        gamePlayMenuComponents = new JComponent[] {myGameStateField, myStartButton, myBackButton};
+        for (int i = 0; i < gamePlayMenuComponents.length; i++) {
+            this.add(gamePlayMenuComponents[i], gamePlayComponentMaker.getMyButtonConstraints()[i]);
+        }
+
+        addGamePlayMenuActions();
+
+    }
+
+    /**
+     * Adds the load save actions.
+     * @throws IOException
+     */
     private void addLoadSaveActions() throws IOException {
         new EnableMenu(loadSaveSelectionComponents);
         myBackButton.addActionListener(e -> {
@@ -326,6 +538,11 @@ public class MenuManager extends JPanel {
 
     }
 
+    /**
+     * Checks if index is out of bounds.
+     * @param theSelection
+     * @return theSelection
+     */
     private int indexInBoundsOfList(int theSelection) {
         if (theSelection >= deserializeGameSaves.getDeserializedGameSaves().size()) {
             theSelection = deserializeGameSaves.getDeserializedGameSaves().size()-1;
@@ -335,38 +552,21 @@ public class MenuManager extends JPanel {
         return theSelection;
     }
 
+    /**
+     * Sets the load save buttons enabled.
+     * @param theEnabledValue
+     */
     private void setLoadSaveButtonsEnabled(boolean theEnabledValue) {
         myDelete.setEnabled(theEnabledValue);
         myLeftSelect.setEnabled(theEnabledValue);
         myRightSelect.setEnabled(theEnabledValue);
         mySelect.setEnabled(theEnabledValue);
     }
-    private void addOptionsMenu() throws UnsupportedAudioFileException, LineUnavailableException, IOException {
-
-        setMyTitles(myOptionMenuTitles);
-        modifyInsets.setInsets(this.getHeight()/2 - 150, 0, 0, 0);
-
-        ComponentGenerator optionButton = new ComponentGenerator(getMyTitles(), GridBagConstraints.PAGE_START, modifyInsets.getMyInsetTop(), modifyInsets.getMyInsetLeft(), modifyInsets.getMyInsetBottom(), modifyInsets.getMyInsetRight(), GO_DOWN
-        );
-        myVolumeSlider = (JSlider) optionButton.getComponents()[0][SLIDER];
-        myVolumeSlider.setMinimum(-80);
-        myVolumeSlider.setMaximum(6);
-        myAboutButton = (JButton) optionButton.getComponents()[1][BUTTON];
-        myCreditsButton = (JButton) optionButton.getComponents()[2][BUTTON];
-        myBackButton = (JButton) optionButton.getComponents()[3][BUTTON];
-
-        optionsMenuComponents = new JComponent[] {myVolumeSlider, myAboutButton, myCreditsButton, myBackButton};
-
-        for (int i = 0; i < optionsMenuComponents.length; i++) {
-            this.add(optionsMenuComponents[i], optionButton.getMyButtonConstraints()[i]);
-        }
-
-        setMusicPlayedFirstTime(NOT_FIRST_TIME_PLAYED);
-
-        addOptionsActions();
-    }
 
 
+    /**
+     * Adds main menu actions.
+     */
     private void addMainMenuActions() {
         myMainPlayButton.addActionListener(e -> {
             new interactionSound(buttonSound);
@@ -413,10 +613,10 @@ public class MenuManager extends JPanel {
         });
     }
 
-    private void addCharacterSelectionActions() throws IOException {
-        int i = 0;
-        AtomicBoolean goLeft = new AtomicBoolean(true);
-        AtomicBoolean goRight = new AtomicBoolean(false);
+    /**
+     * Adds character selection actions.
+     */
+    private void addCharacterSelectionActions() {
         setShownCharacter(true);
         repaint();
         HeroSelection heroSelection = new HeroSelection();
@@ -450,27 +650,10 @@ public class MenuManager extends JPanel {
             repaint();
         });
     }
-    JLabel myMapSizeInfoLabel;
-    JLabel myMapSizeLabel;
-    private void addGamePlayMenu() {
-        setMyTitles(gameplayMenuTitles);
-        modifyInsets.setInsets(this.getHeight()/2 - 200, 0, 0, 0);
-        ComponentGenerator gamePlayComponentMaker = new ComponentGenerator(getMyTitles(), GridBagConstraints.PAGE_START, modifyInsets.getMyInsetTop(), modifyInsets.getMyInsetLeft(), modifyInsets.getMyInsetBottom(), modifyInsets.getMyInsetRight(), GO_DOWN);
 
-        // Easy mode provides a chance that there will be less paths overall and generates a simple path from start to end.
-        myGameStateField = (JTextField) gamePlayComponentMaker.getComponents()[0][TEXT_FIELD];
-        myStartButton = (JButton) gamePlayComponentMaker.getComponents()[1][BUTTON];
-        myBackButton = (JButton) gamePlayComponentMaker.getComponents()[2][BUTTON];
-
-
-        gamePlayMenuComponents = new JComponent[] {myGameStateField, myStartButton, myBackButton};
-        for (int i = 0; i < gamePlayMenuComponents.length; i++) {
-            this.add(gamePlayMenuComponents[i], gamePlayComponentMaker.getMyButtonConstraints()[i]);
-        }
-
-        addGamePlayMenuActions();
-
-    }
+    /**
+     * Adds game play menu actions.
+     */
     private void addGamePlayMenuActions() {
         new DisableMenu(characterSelectionComponents);
         new EnableMenu(gamePlayMenuComponents);
@@ -540,9 +723,11 @@ public class MenuManager extends JPanel {
         });
 
     }
-    public void stopInGameMusic() {
-        musicPlayer.getClip().close();
-    }
+
+    /**
+     * Starts in game music
+     * @param theMusic
+     */
     public void startInGameMusic(String theMusic) {
         if (musicPlayer != null && musicPlayer.getClip() != null) {
 
@@ -558,12 +743,10 @@ public class MenuManager extends JPanel {
             throw new RuntimeException(ex);
         }
     }
-    public void setMusicPlayedFirstTime(int thePlayValue) {
-        musicPlayedFirstTime = thePlayValue;
-    }
-    public int getMusicPlayedFirstTimeState() {
-        return musicPlayedFirstTime;
-    }
+
+    /**
+     * Adds options actions.
+     */
     private void addOptionsActions() {
         myVolumeSlider.addChangeListener(e -> {
             try {
@@ -592,12 +775,26 @@ public class MenuManager extends JPanel {
         });
     }
 
+    /**
+     * Sets teh shown character to true or false.
+     * @param theCharacterIsShown
+     */
     public void setShownCharacter(boolean theCharacterIsShown) {
         myShownCharacter = theCharacterIsShown;
     }
+
+    /**
+     * Gets if character is shown.
+     * @return myShownCharacter
+     */
     private boolean getShownCharacter() {
         return myShownCharacter;
     }
+
+    /**
+     * Paints data to the GUI like the menu image and characters.
+     * @param g the <code>Graphics</code> object to protect
+     */
     @Override
     protected void paintComponent(Graphics g) {
         BufferedImage image = hero1;
@@ -624,11 +821,20 @@ public class MenuManager extends JPanel {
 
         }
     }
-    static int mySelection = 0;
+
+    /**
+     * Sets the hero selection.
+     * @param theSelection
+     */
     private void setHeroSelection(int theSelection) {
-        mySelection = theSelection;
+        myHeroSelection = theSelection;
     }
+
+    /**
+     * Gets the hero selection.
+     * @return the hero selection value.
+     */
     private int getHeroSelection() {
-        return mySelection;
+        return myHeroSelection;
     }
 }

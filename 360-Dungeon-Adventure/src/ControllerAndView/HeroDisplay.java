@@ -1,18 +1,14 @@
 // Makai Martinez 6/7/2023 TCSS 360 A
 
-package View;
+package ControllerAndView;
 
 import Controller.CollisionHandler;
 import Controller.GameLoop;
 import Controller.KeyHandler;
-import Model.Entity.Enemy.Monster;
-import Model.Entity.Entity;
 import Model.Entity.Hero;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.util.Timer;
-import java.util.TimerTask;
 
 /**
  * @author Caleb Krauter

@@ -20,14 +20,6 @@ public class Archer extends Hero {
     private int myBlockChance = 20; // 20% percent
     private int mySpecialChance = 40; // 40% percent
     private int mySpecialDamage = 100;
-    private BufferedImage up1;
-    private BufferedImage up2;
-    private BufferedImage down1;
-    private BufferedImage down2;
-    private BufferedImage left1;
-    private BufferedImage left2;
-    private BufferedImage right1;
-    private BufferedImage right2;
 
     public Archer(GameLoop theGP, KeyHandler theKeyH) {
         super(theGP, theKeyH);

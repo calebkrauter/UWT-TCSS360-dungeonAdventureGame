@@ -12,6 +12,11 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
+/**
+ * @author Caleb Krauter
+ * @author Makai Marteniz
+ * @version 1.0
+ */
 
 /**
  * Displays the window and GUI.
@@ -27,26 +32,70 @@ public class GUI {
      */
     private MenuManager newMenu;
     /**
-     * A reference to a class that holds data about the screen.
-     */
-    private ScreenData screenData;
-    /**
      * Used to determine if the main menu should be shown or the map.
      */
     private boolean myPlayGame = false;
-    String myGameStateFile = "";
+    /**
+     * Game file.
+     */
+    private String myGameStateFile = "";
+    /**
+     * Main menu music.
+     */
     private String MAIN_MENU_MUSIC = "MainMenu.wav";
+    /**
+     * Button sound.
+     */
     private final String buttonSound = "typeWriterSound.wav";
 
-    MusicPlayer musicPlayer;
-    JSlider volumeChangeSlider;
+    /**
+     * Reference to music player.
+     */
+    private MusicPlayer musicPlayer;
+    /**
+     * Volume change slider.
+     */
+    private JSlider volumeChangeSlider;
+    /**
+     * Selection of hero.
+     */
     private int myHeroSelection;
+    /**
+     * Variable for which time we have played.
+     */
+    private static int firstPlay = 0;
+    /**
+     * Menu bar.
+     */
+    private JMenuBar jMenuBar;
+    /**
+     * Generic value for updating data in the menu bar.
+     */
+    private static int val = 0;
+
+    /**
+     * Constructor.
+     * @throws IOException
+     * @throws UnsupportedAudioFileException
+     * @throws LineUnavailableException
+     * @throws ClassNotFoundException
+     */
     public GUI() throws IOException, UnsupportedAudioFileException, LineUnavailableException, ClassNotFoundException {
-        screenData = new ScreenData(this.myJFrame.getWidth(), this.myJFrame.getHeight());
         newMenu = new MenuManager(this.myJFrame);
         loadGui();
         musicPlayer = new MusicPlayer();
     }
+
+    /**
+     * Constructor.
+     * @param thePlayGame
+     * @param theGameStateFile
+     * @param theSelection
+     * @throws UnsupportedAudioFileException
+     * @throws LineUnavailableException
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     public GUI(boolean thePlayGame, String theGameStateFile, int theSelection) throws UnsupportedAudioFileException, LineUnavailableException, IOException, ClassNotFoundException {
         myPlayGame = thePlayGame;
         myGameStateFile = theGameStateFile;
@@ -54,8 +103,14 @@ public class GUI {
         setPlayGame(thePlayGame);
         loadGui();
     }
-    static int firstPlay = 0;
 
+    /**
+     * Loads GUI.
+     * @throws IOException
+     * @throws ClassNotFoundException
+     * @throws UnsupportedAudioFileException
+     * @throws LineUnavailableException
+     */
     void loadGui() throws IOException, ClassNotFoundException, UnsupportedAudioFileException, LineUnavailableException {
         this.myJFrame.setDefaultCloseOperation(3);
         this.myJFrame.setMinimumSize(new Dimension(850, 850));
@@ -89,6 +144,10 @@ public class GUI {
         this.myJFrame.setVisible(true);
         myJFrame.setLocationRelativeTo(null);
     }
+
+    /**
+     * Menu bar and buttons.
+     */
     private void addMenuBar() {
         jMenuBar = new JMenuBar();
         JMenu menu = new JMenu("THE LOST PILLARS OF OOP");
@@ -142,17 +201,28 @@ public class GUI {
         jMenuBar.add(menu);
         jMenuBar.add(audioMenu);
     }
-    JMenuBar jMenuBar;
-    static int val = 0;
+
+    /**
+     * Setter for the volume slider.
+     */
     private void setSlider() {
         if (val == 1) {
             volumeChangeSlider.setValue(new VolumeChange().getMusicVolume());
         }
     }
+
+    /**
+     * Setter for play game.
+     * @param thePlayGame
+     */
     private void setPlayGame(boolean thePlayGame) {
         myPlayGame = thePlayGame;
     }
 
+    /**
+     * Getter for play game.
+     * @return
+     */
     public boolean getPlayGame() {
         return myPlayGame;
     }

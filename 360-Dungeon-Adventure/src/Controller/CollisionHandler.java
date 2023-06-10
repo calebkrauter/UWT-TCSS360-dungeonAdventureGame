@@ -6,8 +6,8 @@ import java.util.TimerTask;
 import Actions.interactionSound;
 import Controller.DB.MonsterStatsDB;
 import Model.Entity.Entity;
-import View.map.CollisionTile;
-import View.map.RoomManager;
+import ControllerAndView.map.CollisionTile;
+import ControllerAndView.map.RoomManager;
 
 import javax.swing.*;
 import java.awt.*;

@@ -5,9 +5,13 @@ import java.awt.image.BufferedImage;
 
 public abstract class ParentItem {
 
-    private BufferedImage myObjectImage;
-    private String myObjectName;
+    /**
+     * The Item's image.
+     */
+    private BufferedImage myItemImage;
+    private String myItemName;
     private boolean myCollision = false;
+    private boolean myIsCollectible = true;
     private int myWorldX, myWorldY;
 
     private int myHitboxDefaultX = 0;
@@ -19,17 +23,17 @@ public abstract class ParentItem {
 
 
     public void setObjectImage(BufferedImage theObjectImage){
-        myObjectImage = theObjectImage;
+        myItemImage = theObjectImage;
     }
     public BufferedImage getObjectImage(){
-        return myObjectImage;
+        return myItemImage;
     }
 
     public void setObjectName(String theObjectName){
-        myObjectName = theObjectName;
+        myItemName = theObjectName;
     }
     public String getObjectName(){
-        return myObjectName;
+        return myItemName;
     }
 
     public void setCollision(boolean theCollision) {
@@ -81,6 +85,11 @@ public abstract class ParentItem {
         return myItemHitbox;
     }
 
+    public boolean getIsCollectible() { return myIsCollectible; }
+
+    public void setIsCollectible(boolean theCollectible) {
+        myIsCollectible = theCollectible;
+    }
 
 
 }

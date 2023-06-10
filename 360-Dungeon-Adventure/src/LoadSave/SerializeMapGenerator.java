@@ -9,21 +9,12 @@ import java.io.ObjectOutputStream;
 
 public class SerializeMapGenerator {
 
-    public SerializeMapGenerator(String theGameStateFile, boolean theEasyMode) {
-
-//        setGameSaves(theGameStateFile);
-        try {
-            serializeMapGenerator(theGameStateFile, theEasyMode);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
     public SerializeMapGenerator(String theGameStateFile) {
 
 //        setGameSaves(theGameStateFile);
         try {
             // Passing in dummy values for the rows and cols because they won't get used in this call.
-            serializeMapGenerator(theGameStateFile, false);
+            serializeMapGenerator(theGameStateFile, true);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -46,11 +37,7 @@ public class SerializeMapGenerator {
 
         CheckFileValidity checkFileValidity = new CheckFileValidity();
         theGameStateFile = checkFileValidity.checkThatFileIsNotSavesFile(theGameStateFile);
-        // In case game saves are accidentally overwritten by a new save game.
 
-
-
-//        setGameSaves(theGameStateFile);
         FileOutputStream fileOutputStream = new FileOutputStream(theGameStateFile);
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
 

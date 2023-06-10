@@ -3,8 +3,17 @@ package Actions;
 
 import java.io.IOException;
 
+/**
+ * A class for selecting the hero.
+ */
 public class HeroSelection {
+    /**
+     * The selection.
+     */
     private static int myHeroSelection = 0;
+    /**
+     *
+     */
     private static int i = 0;
     private static boolean mySelectedHero = false;
     public HeroSelection() {

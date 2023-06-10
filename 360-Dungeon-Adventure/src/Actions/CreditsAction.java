@@ -2,11 +2,20 @@ package Actions;
 
 import javax.swing.*;
 
+/**
+ * A popup to display credits.
+ */
 public class CreditsAction {
+    /**
+     * A constructor.
+     */
     public CreditsAction() {
         creditsAction();
     }
 
+    /**
+     * A method to pop up the credits.
+     */
     private void creditsAction() {
         JOptionPane.showMessageDialog(new JFrame(),
                 "Who are we? Caleb, Makai and James, students of UWT as of 2023\n\n" +

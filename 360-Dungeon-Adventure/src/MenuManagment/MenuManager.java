@@ -58,8 +58,6 @@ public class MenuManager extends JPanel {
     JButton myMainPlayButton;
     JButton myMainLoadButton;
     JButton myMainOptionsButton;
-    JButton myEasyModeButton;
-    JButton myHardModeButton;
     JButton myStartButton;
     JButton myLeftSelect;
     JButton mySelect;
@@ -120,7 +118,7 @@ public class MenuManager extends JPanel {
         myOptionMenuTitles = new String[]{"Volume", "About", "Credits", "<--BACK"};
         characterSelectTitles = new String[]{"<--BACK", "<--", "SELECT", "-->"};
         loadGameTitles = new String[]{"<--BACK", "<--", "SELECT", "-->", "DELETE"};
-        gameplayMenuTitles = new String[]{"EASY", "HARD", "Game File Name", "START!", "<--BACK"};
+        gameplayMenuTitles = new String[]{"Game File Name", "START!", "<--BACK"};
         screenData = new ScreenData();
         addMainMenu();
     }
@@ -460,14 +458,12 @@ public class MenuManager extends JPanel {
         ComponentGenerator gamePlayComponentMaker = new ComponentGenerator(getMyTitles(), GridBagConstraints.PAGE_START, modifyInsets.getMyInsetTop(), modifyInsets.getMyInsetLeft(), modifyInsets.getMyInsetBottom(), modifyInsets.getMyInsetRight(), GO_DOWN);
 
         // Easy mode provides a chance that there will be less paths overall and generates a simple path from start to end.
-        myEasyModeButton = (JButton) gamePlayComponentMaker.getComponents()[0][BUTTON];
-        myHardModeButton = (JButton) gamePlayComponentMaker.getComponents()[1][BUTTON];
-        myGameStateField = (JTextField) gamePlayComponentMaker.getComponents()[1][TEXT_FIELD];
-        myStartButton = (JButton) gamePlayComponentMaker.getComponents()[2][BUTTON];
-        myBackButton = (JButton) gamePlayComponentMaker.getComponents()[3][BUTTON];
+        myGameStateField = (JTextField) gamePlayComponentMaker.getComponents()[0][TEXT_FIELD];
+        myStartButton = (JButton) gamePlayComponentMaker.getComponents()[1][BUTTON];
+        myBackButton = (JButton) gamePlayComponentMaker.getComponents()[2][BUTTON];
 
 
-        gamePlayMenuComponents = new JComponent[] {myEasyModeButton, myHardModeButton, myGameStateField, myStartButton, myBackButton};
+        gamePlayMenuComponents = new JComponent[] {myGameStateField, myStartButton, myBackButton};
         for (int i = 0; i < gamePlayMenuComponents.length; i++) {
             this.add(gamePlayMenuComponents[i], gamePlayComponentMaker.getMyButtonConstraints()[i]);
         }
@@ -479,17 +475,6 @@ public class MenuManager extends JPanel {
         new DisableMenu(characterSelectionComponents);
         new EnableMenu(gamePlayMenuComponents);
         setShownCharacter(false);
-        EasyModeAction easyModeAction = new EasyModeAction();
-        HardModeAction hardModeAction = new HardModeAction();
-
-        myEasyModeButton.addActionListener(e -> {
-            new interactionSound(buttonSound);
-            easyModeAction.setEasyMode(true);
-        });
-        myHardModeButton.addActionListener(e -> {
-            new interactionSound(buttonSound);
-            easyModeAction.setEasyMode(false);
-        });
         myGameStateField.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
@@ -524,7 +509,7 @@ public class MenuManager extends JPanel {
             checkFileValidity.checkAlreadyExists(gameSaveName);
             gameSaveName = checkFileValidity.checkValidLength(gameSaveName);
             String gameStateFile = new AppendExtension().appendExtension(gameSaveName);
-            SerializeMapGenerator serializeMapGenerator = new SerializeMapGenerator(gameStateFile, easyModeAction.getEasyMode());
+            SerializeMapGenerator serializeMapGenerator = new SerializeMapGenerator(gameStateFile);
             SerializeGameSaves serializeGameSaves = new SerializeGameSaves();
             try {
                 System.out.println(gameStateFile);

@@ -8,25 +8,23 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game-saves.ser" beforeDir="false" afterPath="$PROJECT_DIR$/game-saves.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DungeonAdventure/Controller/DB/SQLRes/monsterData.db" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DungeonAdventure/Controller/DB/SQLRes/monsterData.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Actions/AboutAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/AboutAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CollisionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CollisionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/AppendExtension.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/AppendExtension.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/CreditsAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/CreditsAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/EasyModeAction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/GoBackAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/GoBackAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/HardModeAction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/HeroSelection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/HeroSelection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/DB/MonsterStatsDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DB/MonsterStatsDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/DB/SQLRes/monsterData.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DB/SQLRes/monsterData.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/GameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GameLoop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuManagment/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuManagment/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoadSave/SerializeMapGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoadSave/SerializeMapGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MenuManagment/MenuManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuManagment/MenuManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/HeroDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/HeroDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Item/ParentItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Item/ParentItem.java" afterDir="false" />
     </list>
     <list id="a933851f-c568-4adf-98b0-80348355eabc" name="Changes by makaimartinez" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Controller/CollisionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CollisionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/GameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GameLoop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ItemSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ItemSetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Archer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Archer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Entity/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Entity/StartHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/StartHero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Stevey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Stevey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/HeroDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/HeroDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Item/ParentItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Item/ParentItem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,68 +45,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/Controller/GameLoop.java">
+    <file path="$PROJECT_DIR$/src/Model/Item/ParentItem.java">
       <ranges>
-        <range start1="175" end1="175" start2="175" end2="177" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
-        <range start1="241" end1="242" start2="243" end2="253" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="248" end1="248" start2="259" end2="269" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="272" end1="272" start2="293" end2="294" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="304" end1="307" start2="326" end2="329" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="316" end1="323" start2="338" end2="345" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/Controller/CollisionHandler.java">
-      <ranges>
-        <range start1="50" end1="53" start2="50" end2="53" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
-        <range start1="54" end1="55" start2="54" end2="54" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
-        <range start1="59" end1="59" start2="58" end2="63" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
-        <range start1="124" end1="127" start2="128" end2="135" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
-        <range start1="128" end1="131" start2="136" end2="137" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="135" end1="137" start2="141" end2="141" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="138" end1="141" start2="142" end2="145" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="147" end1="148" start2="151" end2="152" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="149" end1="150" start2="153" end2="154" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="155" end1="156" start2="159" end2="160" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="158" end1="159" start2="162" end2="163" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="164" end1="165" start2="168" end2="169" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="167" end1="168" start2="171" end2="172" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="173" end1="174" start2="177" end2="178" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="177" end1="178" start2="181" end2="182" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="183" end1="184" start2="187" end2="188" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="188" end1="191" start2="192" end2="195" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="198" end1="199" start2="202" end2="202" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
-        <range start1="201" end1="204" start2="204" end2="204" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
-        <range start1="211" end1="212" start2="211" end2="211" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="236" end1="237" start2="235" end2="235" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="238" end1="243" start2="236" end2="237" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="244" end1="245" start2="238" end2="238" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="260" end1="275" start2="253" end2="268" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="276" end1="279" start2="269" end2="272" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="280" end1="283" start2="273" end2="276" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="284" end1="292" start2="277" end2="284" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="316" end1="317" start2="308" end2="308" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="322" end1="323" start2="313" end2="314" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="331" end1="332" start2="322" end2="322" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="361" end1="362" start2="351" end2="351" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="367" end1="368" start2="356" end2="357" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="370" end1="370" start2="359" end2="360" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/View/HeroDisplay.java">
-      <ranges>
-        <range start1="17" end1="20" start2="17" end2="19" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
-        <range start1="22" end1="22" start2="21" end2="24" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
-        <range start1="23" end1="23" start2="25" end2="29" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
-        <range start1="24" end1="24" start2="30" end2="33" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
-        <range start1="25" end1="25" start2="34" end2="37" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
-        <range start1="26" end1="27" start2="38" end2="48" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
-        <range start1="34" end1="36" start2="55" end2="56" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="38" end1="39" start2="58" end2="62" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
-        <range start1="67" end1="77" start2="90" end2="91" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="98" end1="99" start2="112" end2="112" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="114" end1="115" start2="127" end2="127" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
-        <range start1="116" end1="128" start2="128" end2="132" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
-        <range start1="129" end1="132" start2="133" end2="133" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
+        <range start1="7" end1="9" start2="7" end2="12" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
+        <range start1="10" end1="10" start2="13" end2="14" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
+        <range start1="21" end1="22" start2="25" end2="26" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
+        <range start1="24" end1="25" start2="28" end2="29" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
+        <range start1="28" end1="29" start2="32" end2="33" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="31" end1="32" start2="35" end2="36" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="83" end1="83" start2="87" end2="92" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
       </ranges>
     </file>
   </component>
@@ -200,7 +145,7 @@
       <workItem from="1686202943235" duration="369000" />
       <workItem from="1686203323552" duration="547000" />
       <workItem from="1686279123654" duration="17978000" />
-      <workItem from="1686417132090" duration="8085000" />
+      <workItem from="1686417132090" duration="10100000" />
     </task>
     <task id="LOCAL-00001" summary="trying to set up new code base">
       <created>1686203597009</created>

@@ -75,7 +75,7 @@ public abstract class Entity {
     private int myHitboxDefaultY;
 
     /**
-     * Get the entity's
+     * Get the entity's world x coordinate.
      * @return
      */
     public int getWorldX(){

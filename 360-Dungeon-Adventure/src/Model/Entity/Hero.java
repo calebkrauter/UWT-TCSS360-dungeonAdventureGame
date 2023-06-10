@@ -165,8 +165,10 @@ public abstract class Hero extends Entity {
                     myGameLoop.myItems[theIndex] = null;   // delete from the map
                     break;
                 case "Pillar":
-                    setNumPillars(getNumPillars() + 1);
-                    myGameLoop.myItems[theIndex] = null;   // delete from the map
+                    if (myGameLoop.myItems[theIndex].getIsCollectible()) {
+                        setNumPillars(getNumPillars() + 1);
+                        myGameLoop.myItems[theIndex] = null;   // delete from the map
+                    }
                     break;
                 case "EndDoor":
                     if(getNumPillars() >= 1) {
@@ -180,8 +182,9 @@ public abstract class Hero extends Entity {
                         setNumEndDoorsRemoved(getNumEndDoorsRemoved() + 1);         // add to count of number of doors removed
 
                         myGameLoop.myItems[theIndex] = new Pillar();    // create new pillar in place of end room
-
+                        myGameLoop.myItems[theIndex].setIsCollectible(false);
                         myGameLoop.myItems[theIndex].setCollision(false);
+                        
 
                         myGameLoop.myItems[theIndex].setWorldX(worldX);
                         myGameLoop.myItems[theIndex].setWorldY(worldY);

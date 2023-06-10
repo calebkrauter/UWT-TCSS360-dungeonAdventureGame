@@ -206,7 +206,7 @@ public class GameLoop extends JPanel implements Runnable {
      */
     @Override
     public void run() {
-
+        int run = 0;
         double drawInterval = 1000000000/FPS;
         double delta = 0;
         long lastTime = System.nanoTime();
@@ -234,13 +234,8 @@ public class GameLoop extends JPanel implements Runnable {
 //                drawCount++;
             }
 
-//            // Check fps
-//            if(timer >= 1000000000) {
-//                System.out.println("FPS: " + drawCount);
-//                drawCount = 0;
-//                timer = 0;
-//            }
-            if(myHero.getNumEndDoorsRemoved() == 4){
+            if(myHero.getNumEndDoorsRemoved() == 4 && run == 0){
+                run += 1;
                 new JOptionPane().showMessageDialog(null, "YOU WON. To play again go to the main menu and load a new save.\n"
                         + "If you want to look around at the map go for it.\n " +
                         "MAP SYMOLS\n" +

@@ -2,6 +2,7 @@ package Model.Entity;
 
 import Controller.GameLoop;
 import Controller.KeyHandler;
+import Model.Item.Pillar;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -30,6 +31,8 @@ public abstract class Hero extends Entity {
     private int mySpecialChance = 0;
 
     private int mySpecialDamage = 0;
+
+    private int myNumEndDoorsRemoved = 0;
 
     public Hero (GameLoop theGP, KeyHandler theKeyH){
         this.myGameLoop = theGP;
@@ -115,6 +118,13 @@ public abstract class Hero extends Entity {
         return mySpecialDamage;
     }
 
+    public void setNumEndDoorsRemoved(int theNumDoors){
+        myNumEndDoorsRemoved = theNumDoors;
+    }
+    public int getNumEndDoorsRemoved(){
+        return myNumEndDoorsRemoved;
+    }
+
     /**
      * The collision cctions for different items.
      *
@@ -146,8 +156,30 @@ public abstract class Hero extends Entity {
                     myGameLoop.myItems[theIndex] = null;   // delete from the map
                     break;
                 case "Pillar":
-                    setNumHealthPotions(getNumPillars() + 1);
+                    setNumPillars(getNumPillars() + 1);
                     myGameLoop.myItems[theIndex] = null;   // delete from the map
+
+                    // for testing
+//                    System.out.println("number of pillars in hero inventory: " + getNumPillars());
+
+
+                    break;
+                case "EndDoor":
+                    if(getNumPillars() >= 1) {
+                        setNumPillars(getNumPillars() - 1); // remove pillar to open end door
+//                        int worldX = myGameLoop.myItems[theIndex].getWorldX();
+//                        int worldY = myGameLoop.myItems[theIndex].getWorldY();
+
+                        myGameLoop.myItems[theIndex] = null;    // delete from the map
+                        setNumEndDoorsRemoved(getNumEndDoorsRemoved() + 1);         // add to count of number of doors removed
+
+
+//                        myGameLoop.myItems[theIndex] = new Pillar();    // create new pillar in place of end room
+//                        myGameLoop.myItems[theIndex].setCollision(false);
+//                        myGameLoop.myItems[theIndex].setWorldX(worldX);
+//                        myGameLoop.myItems[theIndex].setWorldY(worldY);
+
+                    }
                     break;
             }
         }

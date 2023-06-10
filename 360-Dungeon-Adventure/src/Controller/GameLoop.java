@@ -70,7 +70,7 @@ public class GameLoop extends JPanel implements Runnable {
 
     private RoomManager myRoomManager;
     private CollisionHandler myCollisionHandler;
-    private KeyHandler myKeyHandler = new KeyHandler();
+    private KeyHandler myKeyHandler = new KeyHandler(this);
     private MouseHandler myMouseHandler = new MouseHandler();
 
 
@@ -88,9 +88,15 @@ public class GameLoop extends JPanel implements Runnable {
     private ItemSetter myItemSetter;
     private ItemDisplay myItemDisplay;
 
+    // ENTITIES
     public Entity myEntities[];
     private EntitySetter myEntitySetter;
     private EntityDisplay myEntityDisplay;
+
+    // GAME STATE
+    public int myGameState;
+    public final int myPlayState = 1;
+    public final int myPauseState = 2;
 
 
     // constructor for game
@@ -164,6 +170,7 @@ public class GameLoop extends JPanel implements Runnable {
 
         // set up items
         myItemSetter.setStartItems();
+        myItemSetter.setEndDoors();
         myItemSetter.setKeys();
         myItemSetter.setDoors();
         myItemSetter.setPillars();
@@ -174,6 +181,8 @@ public class GameLoop extends JPanel implements Runnable {
         myEntitySetter.setGremlins();
         myEntitySetter.setSkeletons();
         myEntitySetter.setHero();
+
+        myGameState = myPlayState;
     }
 
     public void startGameThread(){
@@ -223,6 +232,9 @@ public class GameLoop extends JPanel implements Runnable {
 //                drawCount = 0;
 //                timer = 0;
 //            }
+            if(myHero.getNumEndDoorsRemoved() == 4){
+                myGameThread = null;
+            }
 
         }
 
@@ -236,8 +248,17 @@ public class GameLoop extends JPanel implements Runnable {
      * Update display with changes in player position.
      */
     public void update (){
-        myHeroDisplay.update();
+
+        // only update player stats/display while myGameState is play
+        if(myGameState == myPlayState) {
+            myHeroDisplay.update();
+        }
+        if(myGameState == myPauseState) {
+            //do nun
+        }
+
     }
+
 
     /**
      * Paint the current state.

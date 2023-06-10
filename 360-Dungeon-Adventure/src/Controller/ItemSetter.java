@@ -3,7 +3,10 @@ package Controller;
 import Model.Item.*;
 import View.map.RoomManager;
 
+import javax.imageio.ImageIO;
 import java.awt.geom.Point2D;
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 import java.util.Random;
 
@@ -40,10 +43,14 @@ public class ItemSetter {
 
     }
 
+    /**
+     * Creates a key for each door room and sets each key position to the center of each room.
+     * This Item is created in the Array of all world items variable "myItems".
+     */
     public void setKeys() {
         List<Point2D> thePoints;
         thePoints = myRoomManager.getDoorRoomPositions();
-        int place = getNumExistingItems();  // i was gonna +1 here but it is accounted for because index starts at 0 and num items starts at 1.
+        int place = getNumExistingItems();  // I was gonna +1 here but it is accounted for because index starts at 0 and num items starts at 1.
         for (int i = 0; i < thePoints.size(); i++) {
             Point2D thePoint = thePoints.get(i);
 
@@ -58,6 +65,9 @@ public class ItemSetter {
         }
     }
 
+    /**
+     * Creates 4 doors (1 for each direction) and sets them for each door room.
+     */
     public void setDoors() {
         List<Point2D> thePoints;
         thePoints = myRoomManager.getDoorRoomPositions();
@@ -90,6 +100,55 @@ public class ItemSetter {
 
         }
     }
+
+    /**
+     * Creates and sets the end room's doors' position and image for the end room.
+     */
+    public void setEndDoors() {
+        Point2D thePoint = new Point2D.Float(0, 0);
+        thePoint = myRoomManager.getEndPoint();
+
+        int place = getNumExistingItems();
+
+        myGameLoop.myItems[place] = new EndDoor();
+        myGameLoop.myItems[place + 1] = new EndDoor();
+        myGameLoop.myItems[place + 2] = new EndDoor();
+        myGameLoop.myItems[place + 3] = new EndDoor();
+
+        try {
+            myGameLoop.myItems[place].setObjectImage(ImageIO.read(new File("res/Items/Door/RedDoor/RedTopDoor.png")));
+            myGameLoop.myItems[place + 1].setObjectImage(ImageIO.read(new File("res/Items/Door/RedDoor/RedBottomDoor.png")));
+            myGameLoop.myItems[place + 2].setObjectImage(ImageIO.read(new File("res/Items/Door/RedDoor/RedLeftDoor.png")));
+            myGameLoop.myItems[place + 3].setObjectImage(ImageIO.read(new File("res/Items/Door/RedDoor/RedRightDoor.png")));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        // below getx and gety are reversed due to how the map is made
+        myGameLoop.myItems[place].setWorldY((int) thePoint.getX() *  myGameLoop.ROOM_SIZE);
+        myGameLoop.myItems[place].setWorldX((int) thePoint.getY() *  myGameLoop.ROOM_SIZE  + (4 * myGameLoop.TILE_SIZE) - 16);
+
+        myGameLoop.myItems[place + 1].setWorldY((int) thePoint.getX() *  myGameLoop.ROOM_SIZE + (8 * myGameLoop.TILE_SIZE) - 32);
+        myGameLoop.myItems[place + 1].setWorldX((int) thePoint.getY() *  myGameLoop.ROOM_SIZE  + (4 * myGameLoop.TILE_SIZE) - 16);
+
+        myGameLoop.myItems[place + 2].setWorldY((int) thePoint.getX() *  myGameLoop.ROOM_SIZE + (4 * myGameLoop.TILE_SIZE) - 16);
+        myGameLoop.myItems[place + 2].setWorldX((int) thePoint.getY() *  myGameLoop.ROOM_SIZE);
+
+        myGameLoop.myItems[place + 3].setWorldY((int) thePoint.getX() *  myGameLoop.ROOM_SIZE + (4 * myGameLoop.TILE_SIZE) - 16);
+        myGameLoop.myItems[place + 3].setWorldX((int) thePoint.getY() *  myGameLoop.ROOM_SIZE + (8 * myGameLoop.TILE_SIZE) - 32);
+
+
+        // FOR TESTING
+//        System.out.println("index " + place + " of myItems[] is an " + myGameLoop.myItems[place].getObjectName() + " with coordinates: (" + myGameLoop.myItems[place].getWorldX() + ", " + myGameLoop.myItems[place].getWorldY() + ")");
+//        System.out.println("index " + (place + 1) + " of myItems[] is an " + myGameLoop.myItems[place + 1].getObjectName() + " with coordinates: (" + myGameLoop.myItems[place + 1].getWorldX() + ", " + myGameLoop.myItems[place + 1].getWorldY() + ")");
+//        System.out.println("index " + (place + 2) + " of myItems[] is an " + myGameLoop.myItems[place + 2].getObjectName() + " with coordinates: (" + myGameLoop.myItems[place + 2].getWorldX() + ", " + myGameLoop.myItems[place + 2].getWorldY() + ")");
+//        System.out.println("index " + (place + 3) + " of myItems[] is an " + myGameLoop.myItems[place + 3].getObjectName() + " with coordinates: (" + myGameLoop.myItems[place + 3].getWorldX() + ", " + myGameLoop.myItems[place + 3].getWorldY() + ")");
+
+        myNumExistingItems += 4;
+        place = myNumExistingItems;
+
+    }
+
 
     public void setPillars() {
         List<Point2D> thePoints;

@@ -7,6 +7,10 @@ public class KeyHandler implements KeyListener {
 
     public boolean upPressed, downPressed, leftPressed, rightPressed;
 
+    private GameLoop myGameLoop;
+    public KeyHandler(GameLoop theGameLoop) {
+
+    }
     @Override
     public void keyTyped(KeyEvent e) {
         //unfinished

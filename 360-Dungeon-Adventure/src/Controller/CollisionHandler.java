@@ -203,6 +203,7 @@ public class CollisionHandler {
         return fightEnd;
     }
 
+
     private void fightActionOption(Rectangle newHitbox, Rectangle newitemHitbox, Entity theEntity, int i, boolean characterCollide){
 
         if(newHitbox.intersects(newitemHitbox)) {
@@ -210,7 +211,7 @@ public class CollisionHandler {
                 myGameLoop.setCombat(true);
                 theEntity.setCollision(true);
                 characterCollide = true;
-                myGameLoop.setGameState(myGameLoop.PAUSE_STATE);
+//                myGameLoop.setGameState(myGameLoop.PAUSE_STATE);
 //                startTimer(theEntity);
                 if (!dialogShown && !blockDialogShown) {
                     popUpFight(theEntity, i);

@@ -2,7 +2,7 @@
 
 package Controller;
 
-import LoadSave.DeserializeMapGenerator;
+import Controller.LoadSave.DeserializeMapGenerator;
 import Model.Entity.*;
 import Model.Item.ParentItem;
 import Model.MapGenerator;
@@ -15,90 +15,192 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 
+/**
+ * @author Makai Marteniz
+ * @author Caleb Krauter
+ */
+
 public class GameLoop extends JPanel implements Runnable {
-
-    // SCREEN SETTINGS
-
-    // size of our game screen. How many tiles can be displayed on a single
-    // screen both horizontally and vertically?
+    /**
+     * The max screen columns.
+     */
     public final int maxScreenCol = 16;
+    /**
+     * Max screen rows.
+     */
     public final int maxScreenRow = 12;
 
+    /**
+     * Scale.
+     */
     public final int SCALE = 4;
-
+    /**
+     * FPS.
+     */
     private int FPS = 60;
 
     // many tiles are 16x16 pixels, some use more but this is just for practice.
+    /**
+     * Min size of tile.
+     */
     final int MIN_TILE_SIZE = 12;   // using 12 to get a 48 x 48 character
 
     // 48x48 View tile. Needs to be public so entities can access.
+    /**
+     * Tile size.
+     */
     public final int TILE_SIZE = MIN_TILE_SIZE * SCALE;
 
     // A collision tile is 50 x 50 pixel rectangle (because room visuals are 400x400, and collision txt files are 8x8). 8 * 50 = 400
+    /**
+     * Collision tile size.
+     */
     public final int COLLISION_TILE_SIZE = 50;
 
     // 760 pixels
+    /**
+     * Screen width.
+     */
     public final int screenWidth = TILE_SIZE * maxScreenCol;
     // 576 pixels
+    /**
+     * Screen height.
+     */
     public final int screenHeight = TILE_SIZE * maxScreenRow;
 
-
-
     // MAP SETTINGS
-
     // ROOM
+    /**
+     * Min size for room.
+     */
     final int MIN_ROOM_SIZE = 100;    // num pixels
+    /**
+     * Room size.
+     */
     public final int ROOM_SIZE = MIN_ROOM_SIZE * SCALE;
-
+    /**
+     * A reference to the map generator.
+     */
     private final MapGenerator myMapGenerator;
+    /**
+     * The world map.
+     */
     private final String[][] myWorldMap;
 
     // below should be changeable by the view but should change the map generation which would
     // then reflect in these two values below
+    /**
+     * The max amount of max cols for the world.
+     */
     public int myWorldMapMaxCol;
+    /**
+     * The max amount of max rows for the world.
+     */
     public int myWorldMapMaxRow;
 
     // size in pixels (400 * # of Columns)
+    /**
+     * The world map width.
+     */
     private int myWorldMapWidth;
+    /**
+     * The world map height.
+     */
     private int myWorldHeight;
 
     // We need a game clock
     // 60 fps = 60 updates a second
     // Keeps program running until it is told to stop/
     // implementing runnable is key to using thread.
+    /**
+     * The thread.
+     */
     private Thread myGameThread;
-
+    /**
+     * Refeence to room manager.
+     */
     private RoomManager myRoomManager;
+    /**
+     * Reference to the collision handler.
+     */
     private CollisionHandler myCollisionHandler;
+    /**
+     * An instance of the key handler.
+     */
     private KeyHandler myKeyHandler = new KeyHandler(this);
-    private MouseHandler myMouseHandler = new MouseHandler();
-
-
 
     // THIS CLASS IS WHERE THE START MENU COMMUNICATING WHAT CHARACTER IS INSTANTIATED NEEDS TO BE IMPLEMENTED:
+    /**
+     * A hero.
+     */
     public Hero myHero;
     // Character types
+    /**
+     * The starter hero called Fred.
+     */
     public Hero myStarterHero;
+    /**
+     * Stevey hero.
+     */
     public Hero myStevey;
+    /**
+     * Linky hero.
+     */
     public Hero myArcher;
+    /**
+     * A reference to the hero display class.
+     */
     private HeroDisplay myHeroDisplay;
 
     // ASSETS
-    public ParentItem myItems[];   // for every 10 columns we add to the map add 300 item indexes.]; // change num items based on map???
+    /**
+     * Items' parents.
+     */
+    public ParentItem myItems[];
+    // for every 10 columns we add to the map add 300 item indexes.
+    /**
+     * Item Setter reference.
+     */
     private ItemSetter myItemSetter;
+    /**
+     * Item Display reference.
+     */
     private ItemDisplay myItemDisplay;
 
     // ENTITIES
+    /**
+     * The entities.
+     */
     public Entity myEntities[];
+    /**
+     * The Entity Setter reference.
+     */
     private EntitySetter myEntitySetter;
+    /**
+     * The Entity Display reference.
+     */
     private EntityDisplay myEntityDisplay;
+    /**
+     * The game state value.
+     */
     private int myGameState = 2;
+    /**
+     * The code for play state.
+     */
     public final int PLAY_STATE = 1;
+    /**
+     * The code for pause state.
+     */
     public final int PAUSE_STATE = 0;
 
 
-
-    // constructor for game
+    /**
+     * The constructor.
+      * @param theGameFile
+     * @param myHeroSelection
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     public GameLoop(String theGameFile, int myHeroSelection) throws IOException, ClassNotFoundException {
 
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
@@ -147,8 +249,7 @@ public class GameLoop extends JPanel implements Runnable {
         // listens to keyboard.
         this.addKeyListener(myKeyHandler);
 
-        // listens to when mouse is clicked, pressed, released, has entered or exited
-        this.addMouseListener(myMouseHandler);
+
 
         // this GamePanel can be "focused" to receive key input.
         this.setFocusable(true);
@@ -187,12 +288,25 @@ public class GameLoop extends JPanel implements Runnable {
         myGameState = PLAY_STATE;
     }
 
+    /**
+     * Sets the game state.
+     * @param theGameState
+     */
     public void setGameState(int theGameState) {
         myGameState = theGameState;
     }
+
+    /**
+     * Gets the game state.
+     * @return
+     */
     public int getGameState() {
         return myGameState;
     }
+
+    /**
+     * Starts the thread.
+     */
     public void startGameThread(){
 
         // we instantiate game thread. we pass "this" (the gamepanel class) to
@@ -252,6 +366,10 @@ public class GameLoop extends JPanel implements Runnable {
 
     }
 
+    /**
+     * Prints the map at end of game.
+     * @return
+     */
     private String printMap() {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < getWorldMap().length; i++) {
@@ -269,8 +387,6 @@ public class GameLoop extends JPanel implements Runnable {
     /**
      * Update display with changes in player position.
      */
-
-
     public void update (){
         if (myGameState == PLAY_STATE) {
             myHeroDisplay.update();
@@ -316,13 +432,8 @@ public class GameLoop extends JPanel implements Runnable {
 
         //THE PLAYER
         myHeroDisplay.draw(g2);
-        // good practice to save memory.
         if (getGameState() == PAUSE_STATE) {
             String pauseString = "PAUSE";
-//            if (getCombat()) {
-//                pauseString = "";
-//            }
-
             g2.setFont(g2.getFont().deriveFont(Font.BOLD, 99f));
             g2.drawString(pauseString, screenWidth/2, screenHeight/2);
         }
@@ -331,11 +442,4 @@ public class GameLoop extends JPanel implements Runnable {
 
     }
 
-//    private boolean myCombat = false;
-//    public void setCombat(Boolean theCombat) {
-//        myCombat = theCombat;
-//    }
-//    private boolean getCombat() {
-//        return myCombat;
-//    }
 }

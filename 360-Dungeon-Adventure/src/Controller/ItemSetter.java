@@ -12,17 +12,31 @@ import java.util.Random;
 
 /**
  * @author Makai Martinez
+ * @version 1.0
+ */
+
+ /**
  * A class to create and set position of the game items (doors of all types, keys, pillars, and potions).
  */
 public class ItemSetter {
-    GameLoop myGameLoop;
-    RoomManager myRoomManager;
+     /**
+      * The game loop reference.
+      */
+    private GameLoop myGameLoop;
+     /**
+      * Reference to the room manager.
+      */
+    private RoomManager myRoomManager;
     /**
      * The total number of items generated thus far.
      */
     private int myNumExistingItems;
 
-
+     /**
+      * Sets the items.
+      * @param theGP
+      * @param theRoomManager
+      */
     public ItemSetter(GameLoop theGP, RoomManager theRoomManager) {
         this.myGameLoop = theGP;
         this.myRoomManager = theRoomManager;

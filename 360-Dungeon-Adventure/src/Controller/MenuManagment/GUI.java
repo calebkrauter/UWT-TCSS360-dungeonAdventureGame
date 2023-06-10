@@ -1,11 +1,11 @@
 
-package MenuManagment;
+package Controller.MenuManagment;
 
 import Actions.interactionSound;
 import Actions.MusicPlayer;
 import Actions.VolumeChange;
 import Controller.GameLoop;
-import LoadSave.SerializeMapGenerator;
+import Controller.LoadSave.SerializeMapGenerator;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;

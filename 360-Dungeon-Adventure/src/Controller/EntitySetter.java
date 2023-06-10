@@ -10,13 +10,35 @@ import java.util.List;
 /**
  * @author Caleb Krauter
  * @author Makai
+ * @version  1.0
+ */
+
+/**
+ * Sets entities.
  */
 public class EntitySetter {
-
-    GameLoop myGameLoop;
-    RoomManager myRoomManager;
+    /**
+     * The game loop class reference.
+     */
+    private GameLoop myGameLoop;
+    /**
+     * The reference to the room manager class.
+     */
+    private RoomManager myRoomManager;
+    /**
+     * The number of entities.
+     */
     private int myNumEntitys;
+    /**
+     * The reference to the monster stats database.
+     */
     private MonsterStatsDB myMonsterStatsDB;
+
+    /**
+     * The constructor.
+     * @param theGP
+     * @param theRoomManager
+     */
     public EntitySetter(GameLoop theGP, RoomManager theRoomManager) {
         this.myGameLoop = theGP;
         this.myRoomManager = theRoomManager;
@@ -49,25 +71,11 @@ public class EntitySetter {
             // below getx and gety are reversed due to how the map is made
             myGameLoop.myEntities[place].setWorldX((int) thePoint.getY() *  myGameLoop.ROOM_SIZE +  myGameLoop.ROOM_SIZE/2 -  myGameLoop.TILE_SIZE/2);
             myGameLoop.myEntities[place].setWorldY((int) thePoint.getX() *  myGameLoop.ROOM_SIZE +  myGameLoop.ROOM_SIZE/2 -  myGameLoop.TILE_SIZE/2);
-            setOgresPosition(myGameLoop.myEntities[place].getWorldX(), myGameLoop.myEntities[place].getWorldY());
             myNumEntitys += 1;
             place = myNumEntitys;
 
         }
     }
-    int myOgreX;
-    int myOgreY;
-    private void setOgresPosition(int theX, int theY) {
-        myOgreX = theX;
-        myOgreY = theY;
-    }
-    public int getOgresWorldX() {
-        return myOgreX;
-    }
-    public int getOgresWorldY() {
-        return myOgreY;
-    }
-    
 
     /**
      * Creates and sets 4 skeletons' positions in the end room (the boss)
@@ -99,6 +107,9 @@ public class EntitySetter {
 
     }
 
+    /**
+     * Sets gremlins.
+     */
     public void setGremlins() {
         List<Point2D> thePoints;
         thePoints = myRoomManager.getDoorRoomPositions();
@@ -123,13 +134,12 @@ public class EntitySetter {
         }
     }
 
-
+    /**
+     * Gets num of entities.
+     * @return
+     */
     public int getNumEntitys() {
         return myNumEntitys;
-    }
-
-    public void setNumEntitys(int theNumEntitys) {
-        myNumEntitys = theNumEntitys;
     }
 }
 

@@ -1,18 +1,35 @@
-package LoadSave;
+package Controller.LoadSave;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
+/**
+ * @author Caleb Krauter
+ * @version 1.0
+ */
 
+/**
+ * Deserializes the game saves.
+ */
 public class DeserializeGameSaves {
-    ArrayList<String> myDeserializedGameSaves;
+    /**
+     * The saves.
+     */
+    private ArrayList<String> myDeserializedGameSaves;
 
+    /**
+     * The constructor.
+     */
     public DeserializeGameSaves() {
 
     }
 
+    /**
+     * Deserializes the saves.
+     * @throws IOException
+     */
     public void deserializeGameSaves() throws IOException {
         ArrayList<String> deserializedGameSaves = null;
         FileInputStream fileInputStream = null;
@@ -39,10 +56,19 @@ public class DeserializeGameSaves {
         objectInputStream.close();
         fileInputStream.close();
     }
+
+    /**
+     * Sets the game saves.
+     * @param theDeserializedGameSaves
+     */
     private void setDeserializedGameSaves(ArrayList<String> theDeserializedGameSaves) {
         myDeserializedGameSaves = theDeserializedGameSaves;
     }
 
+    /**
+     * Gets the saves.
+     * @return
+     */
     public ArrayList<String> getDeserializedGameSaves() {
         return myDeserializedGameSaves;
     }

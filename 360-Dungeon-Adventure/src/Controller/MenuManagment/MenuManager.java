@@ -1,14 +1,14 @@
-package MenuManagment;
+package Controller.MenuManagment;
 
 import Actions.*;
 import ChangeMenuAttributes.DisableMenu;
 import ChangeMenuAttributes.EnableMenu;
 import Components.ComponentGenerator;
 import Components.ModifyInsets;
-import LoadSave.CheckFileValidity;
-import LoadSave.DeserializeGameSaves;
-import LoadSave.SerializeGameSaves;
-import LoadSave.SerializeMapGenerator;
+import Controller.LoadSave.CheckFileValidity;
+import Controller.LoadSave.DeserializeGameSaves;
+import Controller.LoadSave.SerializeGameSaves;
+import Controller.LoadSave.SerializeMapGenerator;
 
 import javax.imageio.ImageIO;
 import javax.sound.sampled.LineUnavailableException;

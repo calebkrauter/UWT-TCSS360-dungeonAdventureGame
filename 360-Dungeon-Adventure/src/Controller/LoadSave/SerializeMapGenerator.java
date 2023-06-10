@@ -1,4 +1,4 @@
-package LoadSave;
+package Controller.LoadSave;
 
 import Model.MapGenerator;
 
@@ -7,22 +7,39 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 
+/**
+ * @author Caleb Krauter
+ * @version 1.0
+ */
+
+/**
+ * Serializes the map.
+ */
 public class SerializeMapGenerator {
 
+    /**
+    *Constructor.
+     */
     public SerializeMapGenerator(String theGameStateFile) {
-
-//        setGameSaves(theGameStateFile);
         try {
-            // Passing in dummy values for the rows and cols because they won't get used in this call.
             serializeMapGenerator(theGameStateFile, true);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
+    /**
+     *Constructor.
+     */
     public SerializeMapGenerator() {
 
     }
 
+    /**
+     * Serializes the map generator.
+     * @param theGameStateFile
+     * @param theEasyMode
+     * @throws IOException
+     */
     private void serializeMapGenerator(String theGameStateFile, boolean theEasyMode) throws IOException {
         MapGenerator mapGenerator = null;
         if (new File(theGameStateFile).exists() == false) {
@@ -41,13 +58,9 @@ public class SerializeMapGenerator {
         FileOutputStream fileOutputStream = new FileOutputStream(theGameStateFile);
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
 
-
         objectOutputStream.writeObject(mapGenerator);
         objectOutputStream.close();
         fileOutputStream.close();
 
     }
-
-
-
 }

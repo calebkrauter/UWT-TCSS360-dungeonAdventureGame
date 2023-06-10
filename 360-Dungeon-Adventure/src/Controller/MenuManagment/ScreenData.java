@@ -1,4 +1,4 @@
-package MenuManagment;
+package Controller.MenuManagment;
 
 import java.awt.*;
 

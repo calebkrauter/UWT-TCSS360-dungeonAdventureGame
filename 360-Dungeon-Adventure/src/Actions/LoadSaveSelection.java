@@ -5,19 +5,43 @@ import LoadSave.DeserializeGameSaves;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
+/**
+ * @author Caleb Krauter
+ * @version 1.0
+ */
 
-public class LoadSaveSelection implements Serializable {
+/**
+ * Load save selector.
+ */
+public class LoadSaveSelection {
+    /**
+     * The save selection.
+     */
     private static int mySaveSelection = 0;
+    /**
+     * Index for selecting the save.
+     */
     private static int i = 0;
-    private static boolean mySelectedSave = false;
+    /**
+     * Deserialize game saves reference.
+     */
     private static DeserializeGameSaves deserializeGameSaves;
-    private ArrayList<String> mySaves;
+
+    /**
+     * Constructor.
+     * @throws IOException
+     */
     public LoadSaveSelection() throws IOException {
         deserializeGameSaves = new DeserializeGameSaves();
         deserializeGameSaves.deserializeGameSaves();
-        mySaves = deserializeGameSaves.getDeserializedGameSaves();
     }
 
+    /**
+     * The selector for saves.
+     * @param theGoLeft
+     * @param theGoRight
+     * @throws IOException
+     */
     public void loadSaveSelection(boolean theGoLeft, boolean theGoRight) throws IOException {
         if (theGoLeft) {
             --i;
@@ -36,6 +60,13 @@ public class LoadSaveSelection implements Serializable {
         }
 
     }
+
+    /**
+     * To ensure that the index stays in bounds.
+     * @param theI
+     * @return index
+     * @throws IOException
+     */
     public int containInBounds(int theI) throws IOException {
         deserializeGameSaves.deserializeGameSaves();
         if (deserializeGameSaves.getDeserializedGameSaves() != null) {
@@ -49,10 +80,19 @@ public class LoadSaveSelection implements Serializable {
         return i;
 
     }
+
+    /**
+     * Sets the save selection.
+     * @param theSaveSelection
+     */
     private void setLoadSaveSelection(int theSaveSelection) {
         mySaveSelection = theSaveSelection;
     }
 
+    /**
+     * Gets the selection.
+     * @return
+     */
     public int getLoadSaveSelection() {
         return mySaveSelection;
     }

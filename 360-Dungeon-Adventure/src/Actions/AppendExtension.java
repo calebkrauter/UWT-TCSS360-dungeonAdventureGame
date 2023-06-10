@@ -1,4 +1,8 @@
 package Actions;
+/**
+ * @author Caleb Krauter
+ * @version 1.0
+ */
 
 /**
  * Append extension.

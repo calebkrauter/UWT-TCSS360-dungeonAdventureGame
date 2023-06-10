@@ -1,6 +1,10 @@
 package Actions;
 
 import javax.swing.*;
+/**
+ * @author Caleb Krauter
+ * @version 1.0
+ */
 
 /**
  * A popup to display credits.

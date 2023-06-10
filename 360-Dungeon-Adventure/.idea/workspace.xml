@@ -6,25 +6,60 @@
   <component name="ChangeListManager">
     <list default="true" id="27f8f73f-7178-4dc7-aba6-935ecb596e40" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game File Naasme.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game File Name.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game File Namesa.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game File a.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game File s.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/a.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aaa.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aaaa.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aame.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ae.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ame.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/as.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/asName.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/asasasasasasa.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/asdas.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/asdasa.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ase.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assa.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aw.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/awaw.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/awme.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/d.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ddddd.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/de.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dsa.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dsadae.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/f.ser" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/game-saves.ser" beforeDir="false" afterPath="$PROJECT_DIR$/game-saves.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DungeonAdventure/Controller/DB/SQLRes/monsterData.db" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DungeonAdventure/Controller/DB/SQLRes/monsterData.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sa.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/saas.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdsaame.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/AboutAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/AboutAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Actions/AppendExtension.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/AppendExtension.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Actions/CreditsAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/CreditsAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Actions/EasyModeAction.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Actions/GoBackAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/GoBackAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Actions/HardModeAction.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Actions/HeroSelection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/HeroSelection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/LoadSaveSelection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/LoadSaveSelection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/MusicPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/MusicPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/OptionsButtonAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/OptionsButtonAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/VolumeChange.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/VolumeChange.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/interactionSound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/interactionSound.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChangeMenuAttributes/DisableMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChangeMenuAttributes/DisableMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChangeMenuAttributes/EnableMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChangeMenuAttributes/EnableMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ComponentGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ComponentGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ModifyInsets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ModifyInsets.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DB/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/DB/MonsterStatsDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DB/MonsterStatsDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/DB/SQLRes/monsterData.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DB/SQLRes/monsterData.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/GameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GameLoop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LoadSave/SerializeMapGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoadSave/SerializeMapGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuManagment/MenuManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuManagment/MenuManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Item/ParentItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Item/ParentItem.java" afterDir="false" />
-    </list>
-    <list id="a933851f-c568-4adf-98b0-80348355eabc" name="Changes by makaimartinez" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Item/ParentItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Item/ParentItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/w.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wa.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/waaw.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/x.ser" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,19 +78,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/Model/Item/ParentItem.java">
-      <ranges>
-        <range start1="7" end1="9" start2="7" end2="12" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
-        <range start1="10" end1="10" start2="13" end2="14" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
-        <range start1="21" end1="22" start2="25" end2="26" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
-        <range start1="24" end1="25" start2="28" end2="29" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
-        <range start1="28" end1="29" start2="32" end2="33" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="31" end1="32" start2="35" end2="36" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
-        <range start1="83" end1="83" start2="87" end2="92" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -145,7 +167,7 @@
       <workItem from="1686202943235" duration="369000" />
       <workItem from="1686203323552" duration="547000" />
       <workItem from="1686279123654" duration="17978000" />
-      <workItem from="1686417132090" duration="10100000" />
+      <workItem from="1686417132090" duration="11738000" />
     </task>
     <task id="LOCAL-00001" summary="trying to set up new code base">
       <created>1686203597009</created>

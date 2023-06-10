@@ -4,6 +4,10 @@ import ChangeMenuAttributes.DisableMenu;
 import ChangeMenuAttributes.EnableMenu;
 
 import javax.swing.*;
+/**
+ * @author Caleb Krauter
+ * @version 1.0
+ */
 
 /**
  * Class for the go back action in menus.

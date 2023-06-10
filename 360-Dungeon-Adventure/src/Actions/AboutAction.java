@@ -2,6 +2,10 @@ package Actions;
 
 import javax.swing.*;
 import java.io.IOException;
+/**
+ * @author Caleb Krauter
+ * @version 1.0
+ */
 
 /**
  * A class that makes a pop up to tell about the game and the developers.

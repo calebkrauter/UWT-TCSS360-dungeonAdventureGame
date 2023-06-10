@@ -4,32 +4,67 @@ package Components;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * @author Caleb Krauter
+ * @version 1.0
+ */
+
+/**
+ * Generates components for menus.
+ */
 public class ComponentGenerator {
-    private final int PLAY_GAME = 1;
-    private final int LOAD_GAME = 2;
-    private final int OPTIONS = 3;
-    private final int CREDITS = 4;
-    private final int GO_LEFT = 65;
-    private final int GO_RIGHT = 99;
-    private final int GO_UP = -88;
-    private final int GO_DOWN = 90;
-    GridBagConstraints[] myConstraints;
-    JComponent[] components;
-    int myYPos = 150;
-    JButton[] buttons;
-    String[] menuButtonTitles;
-    GridBagConstraints gBC;
-    String[] myTitles;
+
+    /**
+     * The constraints array.
+     */
+    private GridBagConstraints[] myConstraints;
+    /**
+     * The components.
+     */
+    private JComponent[] components;
+    /**
+     * The grid bag constraints.
+     */
+    private GridBagConstraints gBC;
+    /**
+     * The titles.
+     */
+    private String[] myTitles;
+    /**
+     * The button code.
+     */
     private int myButtonCode;
-    int myPageStart;
-    int myInsetTop;
-    int myInsetLeft;
-    int myInsetBottom;
-    int myInsetRight;
-    JComponent[][] manyComponents;
-    final int myDirectionOfFlow;
+    /**
+     * The page start location.
+     */
+    private int myPageStart;
+    /**
+     * An inset.
+     */
+    private int myInsetTop;
+    /**
+     * An inset.
+     */
+    private int myInsetLeft;
+    /**
+     * An inset.
+     */
+    private int myInsetBottom;
+    /**
+     * An inset.
+     */
+    private int myInsetRight;
+    /**
+     * The list of components.
+     */
+    private JComponent[][] myManyComponents;
+    /**
+     * The direction of button flow.
+     */
+    private final int myDirectionOfFlow;
 
     public ComponentGenerator(String[] theTitles, int thePageStart, int theInsetTop, int theInsetLeft, int theInsetBottom, int theInsetRight, int theDirectionOfFlow) {
+        int numOfTitles = 6;
         this.myTitles = theTitles;
         this.myPageStart = thePageStart;
         this.myInsetTop = theInsetTop;
@@ -37,7 +72,7 @@ public class ComponentGenerator {
         this.myInsetBottom = theInsetBottom;
         this.myInsetRight = theInsetRight;
         this.myDirectionOfFlow = theDirectionOfFlow;
-        this.manyComponents = new JComponent[this.myTitles.length][6];
+        this.myManyComponents = new JComponent[this.myTitles.length][numOfTitles];
         this.gBC = new GridBagConstraints();
         this.produceButton();
     }
@@ -63,12 +98,12 @@ public class ComponentGenerator {
                 this.myInsetLeft += 300;
             }
 
-            this.manyComponents[i][0] = new JButton();
-            this.manyComponents[i][1] = new JToggleButton();
-            this.manyComponents[i][2] = new JSlider();
-            this.manyComponents[i][3] = new JCheckBox();
-            this.manyComponents[i][4] = new JTextField();
-            this.manyComponents[i][5] = new JLabel();
+            this.myManyComponents[i][0] = new JButton();
+            this.myManyComponents[i][1] = new JToggleButton();
+            this.myManyComponents[i][2] = new JSlider();
+            this.myManyComponents[i][3] = new JCheckBox();
+            this.myManyComponents[i][4] = new JTextField();
+            this.myManyComponents[i][5] = new JLabel();
             this.myConstraints[i] = new GridBagConstraints();
             this.myConstraints[i].ipadx = 50;
             this.myConstraints[i].ipady = 10;
@@ -84,26 +119,26 @@ public class ComponentGenerator {
             // Easily update buttons with titles
             // TODO
             // For future, TELL don't ASK regarding instanceof...
-            if (this.manyComponents[i][this.myButtonCode] instanceof JButton) {
-                ((JButton) this.manyComponents[i][this.myButtonCode]).setText(this.myTitles[i]);
+            if (this.myManyComponents[i][this.myButtonCode] instanceof JButton) {
+                ((JButton) this.myManyComponents[i][this.myButtonCode]).setText(this.myTitles[i]);
             }
-            if (this.manyComponents[i][this.myButtonCode + 1] instanceof JToggleButton) {
-                ((JToggleButton) this.manyComponents[i][this.myButtonCode + 1]).setText(this.myTitles[i]);
+            if (this.myManyComponents[i][this.myButtonCode + 1] instanceof JToggleButton) {
+                ((JToggleButton) this.myManyComponents[i][this.myButtonCode + 1]).setText(this.myTitles[i]);
             }
-            if (this.manyComponents[i][4] instanceof JTextField) {
-                ((JTextField) this.manyComponents[i][4]).setText(this.myTitles[i]);
+            if (this.myManyComponents[i][4] instanceof JTextField) {
+                ((JTextField) this.myManyComponents[i][4]).setText(this.myTitles[i]);
             }
-            if (this.manyComponents[i][5] instanceof JLabel) {
-                ((JLabel) this.manyComponents[i][5]).setText(this.myTitles[i]);
+            if (this.myManyComponents[i][5] instanceof JLabel) {
+                ((JLabel) this.myManyComponents[i][5]).setText(this.myTitles[i]);
             }
 
-            this.setcomponents(this.manyComponents);
+            this.setcomponents(this.myManyComponents);
         }
 
     }
 
     private void setcomponents(JComponent[][] theComponents) {
-        this.manyComponents = theComponents;
+        this.myManyComponents = theComponents;
     }
 
     private void setMyConstraints(GridBagConstraints[] theConstraints) {
@@ -115,6 +150,6 @@ public class ComponentGenerator {
     }
 
     public JComponent[][] getComponents() {
-        return this.manyComponents;
+        return this.myManyComponents;
     }
 }

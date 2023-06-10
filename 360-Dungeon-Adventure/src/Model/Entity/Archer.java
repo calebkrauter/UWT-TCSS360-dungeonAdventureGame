@@ -8,7 +8,9 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-
+/**
+ * The Archer is a Hero.
+ */
 public class Archer extends Hero {
     private int myHitChance = 80; // 80% percent
     private int myMinDamage = 35;
@@ -40,7 +42,7 @@ public class Archer extends Hero {
         // EX: StartRoom = [1, 3], worldX = (1 * 400) + 200, worldY = (3 * 400) + 200
         setWorldX(myGameLoop.myWorldMapMaxCol / 2);
         setWorldY(myGameLoop.myWorldMapMaxRow / 2);
-        setSpeed(4);
+        setSpeed(getDefaultSpeed());
         //starting direction can vary.
         setDirection("down");
 

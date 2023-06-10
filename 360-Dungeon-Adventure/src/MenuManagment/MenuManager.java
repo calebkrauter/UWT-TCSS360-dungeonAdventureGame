@@ -81,7 +81,6 @@ public class MenuManager extends JPanel {
     ScreenData screenData;
     JComponent[] gamePlayMenuComponents;
     JTextField myGameStateField;
-    UpdateMusicSlider updateMusicSlider;
     JComponent[] loadSaveSelectionComponents;
 
     public MenuManager() throws IOException {
@@ -364,18 +363,11 @@ public class MenuManager extends JPanel {
             this.add(optionsMenuComponents[i], optionButton.getMyButtonConstraints()[i]);
         }
 
-        updateAudioSettings();
         setMusicPlayedFirstTime(NOT_FIRST_TIME_PLAYED);
 
         addOptionsActions();
     }
-    public void updateAudioSettings() {
-        updateMusicSlider = new UpdateMusicSlider(myVolumeSlider);
 
-        if (getMusicPlayedFirstTimeState() == FIRST_TIME_PLAYED) {
-            updateMusicSlider.setVolumeSlider();
-        }
-    }
 
     private void addMainMenuActions() {
         myMainPlayButton.addActionListener(e -> {
@@ -470,9 +462,9 @@ public class MenuManager extends JPanel {
         // Easy mode provides a chance that there will be less paths overall and generates a simple path from start to end.
         myEasyModeButton = (JButton) gamePlayComponentMaker.getComponents()[0][BUTTON];
         myHardModeButton = (JButton) gamePlayComponentMaker.getComponents()[1][BUTTON];
-        myGameStateField = (JTextField) gamePlayComponentMaker.getComponents()[2][TEXT_FIELD];
-        myStartButton = (JButton) gamePlayComponentMaker.getComponents()[3][BUTTON];
-        myBackButton = (JButton) gamePlayComponentMaker.getComponents()[4][BUTTON];
+        myGameStateField = (JTextField) gamePlayComponentMaker.getComponents()[1][TEXT_FIELD];
+        myStartButton = (JButton) gamePlayComponentMaker.getComponents()[2][BUTTON];
+        myBackButton = (JButton) gamePlayComponentMaker.getComponents()[3][BUTTON];
 
 
         gamePlayMenuComponents = new JComponent[] {myEasyModeButton, myHardModeButton, myGameStateField, myStartButton, myBackButton};

@@ -146,22 +146,22 @@ public class MonsterStatsDB {
         gremlin.add("Gremlin");
         gremlin.add("res/Monster/Gremlin.png");
         gremlin.add(80);
-        gremlin.add(30);
-        gremlin.add(60);
+        gremlin.add(25);
+        gremlin.add(35);
         gremlin.add(150);
         initMonsters.add(gremlin);
         skeleton.add("Skeleton");
         skeleton.add("res/Monster/skeleton.png");
         skeleton.add(50);
-        skeleton.add(50);
-        skeleton.add(65);
+        skeleton.add(40);
+        skeleton.add(60);
         skeleton.add(200);
         initMonsters.add(skeleton);
         ogre.add("Ogre");
         ogre.add("res/Monster/Ogre.png");
         ogre.add(80);
-        ogre.add(30);
-        ogre.add(55);
+        ogre.add(15);
+        ogre.add(25);
         ogre.add(100);
         initMonsters.add(ogre);
 

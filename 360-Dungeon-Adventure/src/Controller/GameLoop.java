@@ -173,6 +173,8 @@ public class GameLoop extends JPanel implements Runnable {
         myItemSetter.setKeys();
         myItemSetter.setDoors();
         myItemSetter.setPillars();
+        myItemSetter.setHealthPotions();
+        myItemSetter.setSpeedPotions();
 
 
         // set up entities
@@ -239,13 +241,32 @@ public class GameLoop extends JPanel implements Runnable {
 //                timer = 0;
 //            }
             if(myHero.getNumEndDoorsRemoved() == 4){
-                myGameThread = null;
+                new JOptionPane().showMessageDialog(null, "YOU WON. To play again go to the main menu and load a new save.\n"
+                        + "If you want to look around at the map go for it.\n " +
+                        "MAP SYMOLS\n" +
+                        "S = START\n" +
+                        "E = END \n" +
+                        "O = INTERSECTION\n" +
+                        "| = VERTICAL PATH\n" +
+                        "- = HORIZONTAL PATH\n" +
+                        "# = OUT OF BOUNDS \n" +
+                        "" + printMap(), "YOU WON.", JOptionPane.PLAIN_MESSAGE);
             }
 
         }
 
     }
 
+    private String printMap() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < getWorldMap().length; i++) {
+            sb.append("\n");
+            for (int j = 0; j < getWorldMap().length; j++) {
+                sb.append(getWorldMap()[i][j]);
+            }
+        }
+        return sb.toString();
+    }
     // Important to remember that:
     // X value increases when going to the right
     // Y value increases when going downward
@@ -269,6 +290,7 @@ public class GameLoop extends JPanel implements Runnable {
         }
 
     }
+
 
 
     /**
@@ -302,9 +324,9 @@ public class GameLoop extends JPanel implements Runnable {
         // good practice to save memory.
         if (getGameState() == PAUSE_STATE) {
             String pauseString = "PAUSE";
-            if (getCombat()) {
-                pauseString = "";
-            }
+//            if (getCombat()) {
+//                pauseString = "";
+//            }
 
             g2.setFont(g2.getFont().deriveFont(Font.BOLD, 99f));
             g2.drawString(pauseString, screenWidth/2, screenHeight/2);
@@ -314,11 +336,11 @@ public class GameLoop extends JPanel implements Runnable {
 
     }
 
-    private boolean myCombat = false;
-    public void setCombat(Boolean theCombat) {
-        myCombat = theCombat;
-    }
-    private boolean getCombat() {
-        return myCombat;
-    }
+//    private boolean myCombat = false;
+//    public void setCombat(Boolean theCombat) {
+//        myCombat = theCombat;
+//    }
+//    private boolean getCombat() {
+//        return myCombat;
+//    }
 }

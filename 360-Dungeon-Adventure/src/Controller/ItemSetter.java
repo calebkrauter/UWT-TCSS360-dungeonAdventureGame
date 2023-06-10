@@ -10,11 +10,18 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * @author Makai Martinez
+ * A class to create and set position of the game items (doors of all types, keys, pillars, and potions).
+ */
 public class ItemSetter {
     GameLoop myGameLoop;
     RoomManager myRoomManager;
-
+    /**
+     * The total number of items generated thus far.
+     */
     private int myNumExistingItems;
+
 
     public ItemSetter(GameLoop theGP, RoomManager theRoomManager) {
         this.myGameLoop = theGP;
@@ -22,30 +29,27 @@ public class ItemSetter {
         myNumExistingItems = 0;
     }
 
+    /**
+     * Creates and places a key, a health potion, and a speed potion in the start room.
+     */
     public void setStartItems() {
         Point2D thePoint = new Point2D.Float(0, 0);
         thePoint = myRoomManager.getStartPoint();
 
-        myGameLoop.myItems[0] = new SpeedPotion();
+        myGameLoop.myItems[0] = new HealthPotion();
         myGameLoop.myItems[0].setWorldX((int) thePoint.getX() * myGameLoop.ROOM_SIZE + myGameLoop.ROOM_SIZE / 2 + myGameLoop.TILE_SIZE);
-        myGameLoop.myItems[0].setWorldY((int) thePoint.getY() * myGameLoop.ROOM_SIZE + myGameLoop.ROOM_SIZE / 2 + myGameLoop.TILE_SIZE);
+        myGameLoop.myItems[0].setWorldY((int) thePoint.getY() * myGameLoop.ROOM_SIZE + myGameLoop.ROOM_SIZE / 2 - myGameLoop.TILE_SIZE);
         setNumExistingItems(myNumExistingItems + 1);
 
-        myGameLoop.myItems[1] = new HealthPotion();
-        myGameLoop.myItems[1].setWorldX((int) thePoint.getX() * myGameLoop.ROOM_SIZE + myGameLoop.ROOM_SIZE / 2 + myGameLoop.TILE_SIZE);
+        myGameLoop.myItems[1] = new Key();
+        myGameLoop.myItems[1].setWorldX((int) thePoint.getX() * myGameLoop.ROOM_SIZE + myGameLoop.ROOM_SIZE / 2 - myGameLoop.TILE_SIZE);
         myGameLoop.myItems[1].setWorldY((int) thePoint.getY() * myGameLoop.ROOM_SIZE + myGameLoop.ROOM_SIZE / 2 - myGameLoop.TILE_SIZE);
-        setNumExistingItems(myNumExistingItems + 1);
-
-        myGameLoop.myItems[2] = new Key();
-        myGameLoop.myItems[2].setWorldX((int) thePoint.getX() * myGameLoop.ROOM_SIZE + myGameLoop.ROOM_SIZE / 2 - myGameLoop.TILE_SIZE);
-        myGameLoop.myItems[2].setWorldY((int) thePoint.getY() * myGameLoop.ROOM_SIZE + myGameLoop.ROOM_SIZE / 2 - myGameLoop.TILE_SIZE);
         setNumExistingItems(myNumExistingItems + 1);
 
     }
 
     /**
-     * Creates a key for each door room and sets each key position to the center of each room.
-     * This Item is created in the Array of all world items variable "myItems".
+     * Creates and places a key for each door room and sets each key position to the center of each room.
      */
     public void setKeys() {
         List<Point2D> thePoints;
@@ -66,7 +70,7 @@ public class ItemSetter {
     }
 
     /**
-     * Creates 4 doors (1 for each direction) and sets them for each door room.
+     * Creates and places 4 doors (1 for each direction) for each door room.
      */
     public void setDoors() {
         List<Point2D> thePoints;
@@ -102,7 +106,7 @@ public class ItemSetter {
     }
 
     /**
-     * Creates and sets the end room's doors' position and image for the end room.
+     * Creates and places the end room's doors' position and image for the end room.
      */
     public void setEndDoors() {
         Point2D thePoint = new Point2D.Float(0, 0);
@@ -149,7 +153,9 @@ public class ItemSetter {
 
     }
 
-
+    /**
+     * Creates and places 4 pillars in 4 randomly selected rooms.
+     */
     public void setPillars() {
         List<Point2D> thePoints;
         thePoints = myRoomManager.getDoorRoomPositions();
@@ -197,11 +203,110 @@ public class ItemSetter {
 
     }
 
+    /**
+     * Creates and places 10 health potions in 10 randomly selected rooms.
+     */
+    public void setHealthPotions() {
+        List<Point2D> thePoints;
+        thePoints = myRoomManager.getDoorRoomPositions();   // placeholder
+        int place = getNumExistingItems();
+        int numHealthPotions = 20;
 
+        // get a random number representing room type
+        Random rand = new Random();
+        for (int j = 0; j < numHealthPotions; j++){
+
+            myGameLoop.myItems[place] = new HealthPotion();
+
+            // generates random numbers in the range 0 to 4 - 1. 0-3 is 4 diff options.
+            int roomType = rand.nextInt(4);
+
+            int roomNumber = 0;
+            if(roomType == 0) { // door rooms
+                // set the list on points equal to the room type
+                thePoints = myRoomManager.getDoorRoomPositions();
+            }
+            else if(roomType == 1) { // xpath
+                thePoints = myRoomManager.getXPathRoomPositions();
+            }
+            else if(roomType == 2) { // ypath
+                thePoints = myRoomManager.getYPathRoomPositions();
+            }
+            else if(roomType == 3) { // intersection
+                thePoints = myRoomManager.getIntersectionRoomPositions();
+            }
+            // We now have a list of points representing the different rooms of a randomly selected room type
+
+            // Next get a random point in the list
+            roomNumber = rand.nextInt(thePoints.size());
+            Point2D thePoint = thePoints.get(roomNumber);
+
+            myGameLoop.myItems[place].setWorldY((int) thePoint.getX() *  myGameLoop.ROOM_SIZE +  myGameLoop.ROOM_SIZE/2 -  myGameLoop.TILE_SIZE/2 - myGameLoop.TILE_SIZE);
+            myGameLoop.myItems[place].setWorldX((int) thePoint.getY() *  myGameLoop.ROOM_SIZE +  myGameLoop.ROOM_SIZE/2 -  myGameLoop.TILE_SIZE/2);
+
+            myNumExistingItems += 1;
+            place = myNumExistingItems;
+        }
+
+    }
+
+    /**
+     * Creates and places 2 speed potions in 2 randomly selected rooms.
+     */
+    public void setSpeedPotions() {
+        List<Point2D> thePoints;
+        thePoints = myRoomManager.getDoorRoomPositions();   // placeholder
+        int place = getNumExistingItems();
+        int numSpeedPotions = 2;
+
+        // get a random number representing room type
+        Random rand = new Random();
+        for (int j = 0; j < numSpeedPotions; j++){
+
+            myGameLoop.myItems[place] = new SpeedPotion();
+
+            // generates random numbers in the range 0 to 4 - 1. 0-3 is 4 diff options.
+            int roomType = rand.nextInt(4);
+
+            int roomNumber = 0;
+            if(roomType == 0) { // door rooms
+                // set the list on points equal to the room type
+                thePoints = myRoomManager.getDoorRoomPositions();
+            }
+            else if(roomType == 1) { // xpath
+                thePoints = myRoomManager.getXPathRoomPositions();
+            }
+            else if(roomType == 2) { // ypath
+                thePoints = myRoomManager.getYPathRoomPositions();
+            }
+            else if(roomType == 3) { // intersection
+                thePoints = myRoomManager.getIntersectionRoomPositions();
+            }
+            // We now have a list of points representing the different rooms of a randomly selected room type
+
+            // Next get a random point in the list
+            roomNumber = rand.nextInt(thePoints.size());
+            Point2D thePoint = thePoints.get(roomNumber);
+
+            myGameLoop.myItems[place].setWorldY((int) thePoint.getX() *  myGameLoop.ROOM_SIZE +  myGameLoop.ROOM_SIZE/2 -  myGameLoop.TILE_SIZE/2);
+            myGameLoop.myItems[place].setWorldX((int) thePoint.getY() *  myGameLoop.ROOM_SIZE +  myGameLoop.ROOM_SIZE/2 -  myGameLoop.TILE_SIZE/2 + myGameLoop.TILE_SIZE);
+
+            myNumExistingItems += 1;
+            place = myNumExistingItems;
+        }
+
+    }
+
+    /**
+     * Gets the total number of items generated thus far.
+     * @return myNumExistingItems
+     */
     public int getNumExistingItems() {
         return myNumExistingItems;
     }
-
+    /**
+     * Sets the total number of items generated thus far.
+     */
     public void setNumExistingItems(int theNumItems) {
         myNumExistingItems = theNumItems;
     }

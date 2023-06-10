@@ -13,12 +13,27 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 
+/**
+ * Displays the window and GUI.
+ */
 public class GUI {
 
+    /**
+     * A JFrame.
+     */
     private static final JFrame myJFrame = new JFrame();
+    /**
+     * A reference to the MenuManager.
+     */
     private MenuManager newMenu;
-    ScreenData screenData;
-    boolean myPlayGame = false;
+    /**
+     * A reference to a class that holds data about the screen.
+     */
+    private ScreenData screenData;
+    /**
+     * Used to determine if the main menu should be shown or the map.
+     */
+    private boolean myPlayGame = false;
     String myGameStateFile = "";
     private String MAIN_MENU_MUSIC = "MainMenu.wav";
     private final String buttonSound = "typeWriterSound.wav";

@@ -15,16 +15,37 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- * Caleb Krauter
- * Makai
- * James?
+ * @author Caleb Krauter
+ * @author Makai Martinez
  */
 public class HeroDisplay {
+    /**
+     * The KeyHandler that reads key input needs to communicate with how the player's character is displayed.
+     */
     KeyHandler myKeyHandler;
+    /**
+     * The CollisionHandler that checks for collision with items, walls, and monsters needs to communicate with how the
+     * player's character is displayed.
+     */
     CollisionHandler myCollisionHandler;
+    /**
+     * The GameLoop that runs the game needs to share world values with the character display.
+     */
     GameLoop myGameLoop;
+    /**
+     * The Player's chosen character.
+     */
     Hero myHero;
-    boolean fightEnd = false;
+
+    /**
+     * Displays the player's character.
+     *
+     * @param theGP The GameLoop that runs the game needs to share world values with the character display.
+     * @param theKeyH The KeyHandler that reads key input needs to communicate with how the player's character is displayed.
+     * @param theHero The Player's chosen character.
+     * @param theCollisionHandler The CollisionHandler that checks for collision with items, walls, and monsters needs to communicate with how the
+     * player's character is displayed.
+     */
     public HeroDisplay(GameLoop theGP, KeyHandler theKeyH, Hero theHero, CollisionHandler theCollisionHandler) {
         this.myGameLoop = theGP;
         this.myKeyHandler = theKeyH;
@@ -32,11 +53,13 @@ public class HeroDisplay {
         this.myCollisionHandler = theCollisionHandler;
     }
 
-
-    // change player position. Important to remember that:
+    // Important to remember that:
     // X value increases when going to the right
     // Y value increases when going downward
-    // gets called 60 times a seconds in the game loop (GamePanel class)
+    /**
+     * Gets called 60 times a seconds in the game loop to update player position. This is where collision checks are
+     * also called.
+     */
     public void update(){
         int tempWorldX = myHero.getWorldX();
         int tempWorldY = myHero.getWorldY();
@@ -65,16 +88,7 @@ public class HeroDisplay {
             // Check item collision
             int myItemIndex = myCollisionHandler.checkItem(myHero, true); // pass hero class as an Entity
             myHero.pickUpItem(myItemIndex);
-            fightEnd = myCollisionHandler.checkMonster(myHero);
-//            if (fightEnd) {
-//                myHero.setSpeed(0);
-//
-//                startTimer();
-//
-//            }
-            myHero.setSpeed(myHero.getDefaultSpeed());
-
-
+            myCollisionHandler.checkMonster(myHero);
 
             // if collision is false player can move
             if (myHero.getCollision() == false) {
@@ -96,7 +110,6 @@ public class HeroDisplay {
                 }
             }
 
-
             myHero.mySpriteCounter++;
             // every 12 frames player image changes
             if(myHero.mySpriteCounter > 12) {
@@ -112,24 +125,12 @@ public class HeroDisplay {
 
 
     }
-    private void startTimer() {
 
-        Timer timer = new Timer();
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                // Code to be executed after 5 seconds
-
-                timer.cancel(); // Cancel the timer after it expires
-                fightEnd = false;
-                myHero.setSpeed(0);
-            }
-        }, 3000);
-    }
+    /**
+     * Draws the player's character at the current position on the map.
+     * @param g2 Graphics2D for drawing image.
+     */
     public void draw(Graphics2D g2){
-//        test rectangle
-//        g2.setColor(Color.white);
-//        g2.fillRect(x, y, gp.tileSize, gp.tileSize);
 
         BufferedImage image = null;
 

@@ -5,69 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27f8f73f-7178-4dc7-aba6-935ecb596e40" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/res/Items/Door/GoldDoor/GoldBottomDoor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/Items/Door/GoldDoor/GoldLeftDoor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/Items/Door/GoldDoor/GoldRightDoor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/Items/Door/GoldDoor/GoldTopDoor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/Items/Door/GoldDoor/doorGold.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/Items/Door/RedDoor/RedBottomDoor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/Items/Door/RedDoor/RedLeftDoor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/Items/Door/RedDoor/RedRightDoor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/Items/Door/RedDoor/RedTopDoor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/Items/Door/RedDoor/doorRed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/RoomTiles/endRoom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/RoomTiles/startRoom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/GameLoop_run_flow.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Item/EndDoor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/5.ser" beforeDir="false" afterPath="$PROJECT_DIR$/5.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/EntityDisplay.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/HeroDisplay.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/ItemDisplay.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/map/CollisionTile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/map/Room.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/map/RoomManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/a.ser" beforeDir="false" afterPath="$PROJECT_DIR$/a.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aGame File Name.ser" beforeDir="false" afterPath="$PROJECT_DIR$/aGame File Name.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aName.ser" beforeDir="false" afterPath="$PROJECT_DIR$/aName.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aa.ser" beforeDir="false" afterPath="$PROJECT_DIR$/aa.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aaaaaaaa.ser" beforeDir="false" afterPath="$PROJECT_DIR$/aaaaaaaa.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asas.ser" beforeDir="false" afterPath="$PROJECT_DIR$/asas.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asile Name.ser" beforeDir="false" afterPath="$PROJECT_DIR$/asile Name.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ddd Name.ser" beforeDir="false" afterPath="$PROJECT_DIR$/ddd Name.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game-saves.ser" beforeDir="false" afterPath="$PROJECT_DIR$/game-saves.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/man1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/man2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/man3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/man4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/man5.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DungeonAdventure/Controller/DB/SQLRes/monsterData.db" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DungeonAdventure/Controller/DB/SQLRes/monsterData.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s.ser" beforeDir="false" afterPath="$PROJECT_DIR$/s.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Actions/UpdateMusicSlider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/UpdateMusicSlider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Actions/interactionSound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/interactionSound.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Actions/AboutAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Actions/AboutAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CollisionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CollisionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DB/MonsterStatsDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DB/MonsterStatsDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/DB/SQLRes/monsterData.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DB/SQLRes/monsterData.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/EntitySetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EntitySetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/GameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GameLoop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MenuManagment/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuManagment/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MenuManagment/MenuManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuManagment/MenuManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/HeroDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/HeroDisplay.java" afterDir="false" />
+    </list>
+    <list id="a933851f-c568-4adf-98b0-80348355eabc" name="Changes by makaimartinez" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Controller/CollisionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CollisionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/GameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GameLoop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ItemSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ItemSetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/KeyHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MouseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MouseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuManagment/MenuManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuManagment/MenuManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Archer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Archer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Entity/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Hero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/StartHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/StartHero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Stevey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Stevey.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/HeroDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/HeroDisplay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/map/RoomManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/map/RoomManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ssssssssssss.ser" beforeDir="false" afterPath="$PROJECT_DIR$/ssssssssssss.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../360-Dungeon-AdventureCopy/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-AdventureCopy/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../360-Dungeon-AdventureCopy/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-AdventureCopy/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../360-Dungeon-AdventureCopy/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-AdventureCopy/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../360-Dungeon-AdventureCopy/360-Dungeon-AdventureCopy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../360-Dungeon-AdventureCopy/360-Dungeon-AdventureCopy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sql/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../sql/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sql/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../sql/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sql/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../sql/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sql/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../sql/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sql/sql.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../sql/sql.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +46,72 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/Controller/GameLoop.java">
+      <ranges>
+        <range start1="175" end1="175" start2="175" end2="177" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
+        <range start1="241" end1="242" start2="243" end2="253" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="248" end1="248" start2="259" end2="269" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="272" end1="272" start2="293" end2="294" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="304" end1="307" start2="326" end2="329" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="316" end1="323" start2="338" end2="345" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Controller/CollisionHandler.java">
+      <ranges>
+        <range start1="50" end1="53" start2="50" end2="53" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
+        <range start1="54" end1="55" start2="54" end2="54" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
+        <range start1="59" end1="59" start2="58" end2="63" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
+        <range start1="124" end1="127" start2="128" end2="135" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
+        <range start1="128" end1="131" start2="136" end2="137" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="135" end1="137" start2="141" end2="141" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="138" end1="141" start2="142" end2="145" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="147" end1="148" start2="151" end2="152" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="149" end1="150" start2="153" end2="154" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="155" end1="156" start2="159" end2="160" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="158" end1="159" start2="162" end2="163" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="164" end1="165" start2="168" end2="169" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="167" end1="168" start2="171" end2="172" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="173" end1="174" start2="177" end2="178" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="177" end1="178" start2="181" end2="182" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="183" end1="184" start2="187" end2="188" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="188" end1="191" start2="192" end2="195" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="198" end1="199" start2="202" end2="202" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
+        <range start1="201" end1="204" start2="204" end2="204" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
+        <range start1="211" end1="212" start2="211" end2="211" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="236" end1="237" start2="235" end2="235" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="238" end1="243" start2="236" end2="237" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="244" end1="245" start2="238" end2="238" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="260" end1="275" start2="253" end2="268" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="276" end1="279" start2="269" end2="272" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="280" end1="283" start2="273" end2="276" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="284" end1="292" start2="277" end2="284" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="316" end1="317" start2="308" end2="308" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="322" end1="323" start2="313" end2="314" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="331" end1="332" start2="322" end2="322" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="361" end1="362" start2="351" end2="351" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="367" end1="368" start2="356" end2="357" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="370" end1="370" start2="359" end2="360" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/View/HeroDisplay.java">
+      <ranges>
+        <range start1="17" end1="20" start2="17" end2="19" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
+        <range start1="22" end1="22" start2="21" end2="24" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
+        <range start1="23" end1="23" start2="25" end2="29" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
+        <range start1="24" end1="24" start2="30" end2="33" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
+        <range start1="25" end1="25" start2="34" end2="37" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
+        <range start1="26" end1="27" start2="38" end2="48" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
+        <range start1="34" end1="36" start2="55" end2="56" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="38" end1="39" start2="58" end2="62" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
+        <range start1="67" end1="77" start2="90" end2="91" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="98" end1="99" start2="112" end2="112" changelist="27f8f73f-7178-4dc7-aba6-935ecb596e40" />
+        <range start1="114" end1="115" start2="127" end2="127" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
+        <range start1="116" end1="128" start2="128" end2="132" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
+        <range start1="129" end1="132" start2="133" end2="133" changelist="a933851f-c568-4adf-98b0-80348355eabc" />
+      </ranges>
+    </file>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -95,21 +120,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;STABLE-MAKAI&quot;,
-    &quot;last_directory_selection&quot;: &quot;/Users/calebkrauter/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure/src/Model/entity&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/makaimartinez/IdeaProjects/360-Dungeon-Adventure/360-Dungeon-Adventure&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot; }
-}</component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "STABLE-MAKAI",
+    "last_directory_selection": "/Users/calebkrauter/Workspace/360-Dungeon-Adventure/360-Dungeon-Adventure/src/Model/entity",
+    "last_opened_file_path": "/Users/makaimartinez/IdeaProjects/360-Dungeon-Adventure/360-Dungeon-Adventure",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "CodeWithMe",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Kraut\Documents\Workspace\360-Dungeon-Adventure\360-Dungeon-Adventure" />
@@ -163,7 +191,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0df212bb-e81b-4d49-8840-12ee792b8347" name="Changes" comment="" />
+      <changelist id="27f8f73f-7178-4dc7-aba6-935ecb596e40" name="Changes" comment="" />
       <created>1685985633839</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -172,6 +200,7 @@
       <workItem from="1686202943235" duration="369000" />
       <workItem from="1686203323552" duration="547000" />
       <workItem from="1686279123654" duration="17978000" />
+      <workItem from="1686417132090" duration="8085000" />
     </task>
     <task id="LOCAL-00001" summary="trying to set up new code base">
       <created>1686203597009</created>
@@ -189,6 +218,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="trying to set up new code base" />
     <option name="LAST_COMMIT_MESSAGE" value="trying to set up new code base" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/360_Dungeon_Adventure$Main.ic" NAME="Main Coverage Results" MODIFIED="1686285963447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

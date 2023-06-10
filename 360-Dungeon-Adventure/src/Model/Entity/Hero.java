@@ -57,21 +57,20 @@ public abstract class Hero extends Entity {
         setDefaultValues();
     }
 
-    // set the Hero's default values.
+    /**
+     * set the Hero's default values.
+     */
     public void setDefaultValues(){
-        // Will eventually be set to center of start room. This would be the coordinate of the room
-        // times the room size plus half the room size on both x and y.
-        // EX: StartRoom = [1, 3], worldX = (1 * 400) + 200, worldY = (3 * 400) + 200
         setWorldX(myGameLoop.myWorldMapMaxCol / 2);
         setWorldY(myGameLoop.myWorldMapMaxRow / 2);
-        setSpeed(4);
+        setSpeed(getDefaultSpeed());
         //starting direction can vary.
         setDirection("down");
         setHeroImages();
     }
 
     public int getDefaultSpeed() {
-        return 4;
+        return 2;
     }
     public int getScreenX(){
         return myScreenX;
@@ -157,36 +156,35 @@ public abstract class Hero extends Entity {
                     }
                     break;
                 case "Speed Potion":
-                    setNumSpeedPotions(getNumSpeedPotions() + 1);
+                    setSpeed(getSpeed() + 1);
                     myGameLoop.myItems[theIndex] = null;   // delete from the map
+                    System.out.println("You got a health potion. Current speed is: " + getSpeed());
                     break;
                 case "Health Potion":
-                    setNumHealthPotions(getNumHealthPotions() + 1);
+                    setHealth(getHealth() + 20);
                     myGameLoop.myItems[theIndex] = null;   // delete from the map
                     break;
                 case "Pillar":
                     setNumPillars(getNumPillars() + 1);
                     myGameLoop.myItems[theIndex] = null;   // delete from the map
-
-                    // for testing
-//                    System.out.println("number of pillars in hero inventory: " + getNumPillars());
-
-
                     break;
                 case "EndDoor":
                     if(getNumPillars() >= 1) {
                         setNumPillars(getNumPillars() - 1); // remove pillar to open end door
-//                        int worldX = myGameLoop.myItems[theIndex].getWorldX();
-//                        int worldY = myGameLoop.myItems[theIndex].getWorldY();
+
+                        //saving the end door coordinates
+                        int worldX = myGameLoop.myItems[theIndex].getWorldX();
+                        int worldY = myGameLoop.myItems[theIndex].getWorldY();
 
                         myGameLoop.myItems[theIndex] = null;    // delete from the map
                         setNumEndDoorsRemoved(getNumEndDoorsRemoved() + 1);         // add to count of number of doors removed
 
+                        myGameLoop.myItems[theIndex] = new Pillar();    // create new pillar in place of end room
 
-//                        myGameLoop.myItems[theIndex] = new Pillar();    // create new pillar in place of end room
-//                        myGameLoop.myItems[theIndex].setCollision(false);
-//                        myGameLoop.myItems[theIndex].setWorldX(worldX);
-//                        myGameLoop.myItems[theIndex].setWorldY(worldY);
+                        myGameLoop.myItems[theIndex].setCollision(false);
+
+                        myGameLoop.myItems[theIndex].setWorldX(worldX);
+                        myGameLoop.myItems[theIndex].setWorldY(worldY);
 
                     }
                     break;

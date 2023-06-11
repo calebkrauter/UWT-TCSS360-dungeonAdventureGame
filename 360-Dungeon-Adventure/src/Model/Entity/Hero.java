@@ -2,7 +2,7 @@ package Model.Entity;
 
 import Controller.GameLoop;
 import Controller.KeyHandler;
-import ControllerAndView.Item.Pillar;
+import Model.Item.Pillar;
 
 import javax.imageio.ImageIO;
 import java.awt.*;

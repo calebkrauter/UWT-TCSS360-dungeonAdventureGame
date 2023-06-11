@@ -1,6 +1,6 @@
 package Model.Entity.Enemy;
 
-import Controller.DB.MonsterStatsDB;
+import Model.DB.MonsterStatsDB;
 import Controller.EntitySetter;
 import Controller.GameLoop;
 import Model.Entity.Entity;

@@ -1,14 +1,15 @@
 package Controller.MenuManagment;
 
-import Actions.*;
-import ChangeMenuAttributes.DisableMenu;
-import ChangeMenuAttributes.EnableMenu;
-import Components.ComponentGenerator;
-import Components.ModifyInsets;
-import Controller.LoadSave.CheckFileValidity;
-import Controller.LoadSave.DeserializeGameSaves;
-import Controller.LoadSave.SerializeGameSaves;
-import Controller.LoadSave.SerializeMapGenerator;
+import Controller.MenuManagment.Actions.*;
+import Controller.MenuManagment.ChangeMenuAttributes.DisableMenu;
+import Controller.MenuManagment.ChangeMenuAttributes.EnableMenu;
+import Controller.MenuManagment.Components.ComponentGenerator;
+import Controller.MenuManagment.Components.ModifyInsets;
+import Controller.GUI;
+import Controller.MenuManagment.LoadSave.CheckFileValidity;
+import Controller.MenuManagment.LoadSave.DeserializeGameSaves;
+import Controller.MenuManagment.LoadSave.SerializeGameSaves;
+import Controller.MenuManagment.LoadSave.SerializeMapGenerator;
 
 import javax.imageio.ImageIO;
 import javax.sound.sampled.LineUnavailableException;
@@ -23,7 +24,6 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * @author Caleb Krauter
@@ -247,7 +247,7 @@ public class MenuManager extends JPanel {
         myOptionMenuTitles = new String[]{"Volume", "About", "Credits", "<--BACK"};
         characterSelectTitles = new String[]{"<--BACK", "<--", "SELECT", "-->"};
         loadGameTitles = new String[]{"<--BACK", "<--", "SELECT", "-->", "DELETE"};
-        gameplayMenuTitles = new String[]{"Game File Name", "START!", "<--BACK"};
+        gameplayMenuTitles = new String[]{"ENTER SAVE NAME", "START!", "<--BACK"};
         addMainMenu();
     }
 

@@ -2,14 +2,14 @@
 
 package Controller;
 
-import Controller.LoadSave.DeserializeMapGenerator;
+import Controller.MenuManagment.LoadSave.DeserializeMapGenerator;
 import Model.Entity.*;
-import ControllerAndView.Item.ParentItem;
+import Model.Item.ParentItem;
 import Model.MapGenerator;
-import ControllerAndView.EntityDisplay;
-import ControllerAndView.HeroDisplay;
-import ControllerAndView.ItemDisplay;
-import ControllerAndView.map.RoomManager;
+import View.EntityDisplay;
+import View.HeroDisplay;
+import View.ItemDisplay;
+import View.map.RoomManager;
 
 import javax.swing.*;
 import java.awt.*;

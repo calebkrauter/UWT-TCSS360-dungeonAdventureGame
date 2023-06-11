@@ -3,11 +3,11 @@ import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import Actions.interactionSound;
-import Controller.DB.MonsterStatsDB;
+import Controller.MenuManagment.Actions.interactionSound;
+import Model.DB.MonsterStatsDB;
 import Model.Entity.Entity;
-import ControllerAndView.map.CollisionTile;
-import ControllerAndView.map.RoomManager;
+import View.map.CollisionTile;
+import View.map.RoomManager;
 
 import javax.swing.*;
 import java.awt.*;

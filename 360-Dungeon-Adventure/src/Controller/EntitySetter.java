@@ -1,9 +1,9 @@
 package Controller;
 
 
-import Controller.DB.MonsterStatsDB;
+import Model.DB.MonsterStatsDB;
 import Model.Entity.Enemy.Monster;
-import ControllerAndView.map.RoomManager;
+import View.map.RoomManager;
 
 import java.awt.geom.Point2D;
 import java.util.List;

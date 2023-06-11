@@ -16,7 +16,9 @@ import java.util.List;
  * @author James Lee
  */
 public class RoomManager {
-
+    /**
+     * A reference to the Game Loop class.
+     */
     private GameLoop myGameLoop;
 
     /**
@@ -30,28 +32,80 @@ public class RoomManager {
     private String[][] myWorldMap;
 
     // Each text file is 8 x 8 digits.
+    /**
+     * Text file max rows.
+     */
     int textFileMaxRows = 8;
+    /**
+     * Text file max cols.
+     */
     int textFileMaxCols = 8;
-
+    /**
+     * Wall collision map.
+     */
     private CollisionTile myWallCollisionMap[][];
+    /**
+     * X path collision map.
+     */
     private CollisionTile myXPathCollisionMap[][];
+    /**
+     * Y path collision map.
+     */
     private CollisionTile myYPathCollisionMap[][];
+    /**
+     * Intersection collision map.
+     */
     private CollisionTile myIntersectionCollisionMap[][];
+    /**
+     * Open Door collision map.
+     */
     private CollisionTile myOpenDoorRoomCollisionMap[][];
+    /**
+     * Closed Door collision map.
+     */
     private CollisionTile myClosedDoorCollisionMap[][];
-
+    /**
+     * Collision World Map Max Cols.
+     */
     private int collisionWorldMapMaxCols;
+    /**
+     * Collision World Map Max Rows.
+     */
     private int collisionWorldMapMaxRows;
+    /**
+     * Collision Tile reference representing a world map of collisions.
+     */
     public CollisionTile myCollisionWorldMap[][];
-
-
+    /**
+     * Start point.
+     */
     private Point2D myStartPoint = new Point2D.Float(0, 0);
+    /**
+     * End point.
+     */
     private Point2D myEndPoint = new Point2D.Float(0, 0);
+    /**
+     * Door Room positions list.
+     */
     private final List<Point2D> DoorRoomPositions = new ArrayList<Point2D>();
+    /**
+     * Intersection Room positions list.
+     */
     private final List<Point2D> IntersectionRoomPositions = new ArrayList<Point2D>();
+    /**
+     * X Path positions list.
+     */
     private final List<Point2D> XPathRoomPositions = new ArrayList<Point2D>();
+    /**
+     * Y Path positions list.
+     */
     private final List<Point2D> YPathRoomPositions = new ArrayList<Point2D>();
 
+    /**
+     * Constructor.
+     * @param theGameLoop
+     * @param theWorldMap
+     */
     public RoomManager(GameLoop theGameLoop, String[][] theWorldMap){
 
         this.myGameLoop = theGameLoop;
@@ -193,7 +247,9 @@ public class RoomManager {
         }
     }
 
-    //
+    /**
+     * Creates a world map of collisions.
+     */
     public void createCollisionWorldMap() {
         int theRoomType;
         for(int row = 0; row < myGameLoop.myWorldMapMaxRow; row++){
@@ -230,6 +286,12 @@ public class RoomManager {
         }
     }
 
+    /**
+     * Adds rooms to the world map of collision states.
+     * @param theRoomType
+     * @param theRoomRow
+     * @param theRoomCol
+     */
     public void addRoomToCollisionWorldMap(int theRoomType, int theRoomRow, int theRoomCol) {
         int maxCol = textFileMaxCols;   // 8
         int maxRow = textFileMaxRows;   // 8
@@ -261,11 +323,15 @@ public class RoomManager {
         }
     }
 
+    /**
+     * Gets a world map of collisions.
+     * @return
+     */
     public CollisionTile[][] getCollisionWorldMap() {
         return myCollisionWorldMap;
     }
 
-    // had to do this interpreting because we did not do numbers.
+    // A symbol key of the indices in our tile array.
     // "#" = walls = tile[0]
     // "|" = yPath = tile[1]
     // "-" = xPath = tile[2]
@@ -273,6 +339,11 @@ public class RoomManager {
     // "S" = start = tile[4]
     // "E" = end = tile[5]
     // "[" = door = tile[6]
+
+    /**
+     * Draws the map.
+     * @param g2
+     */
     public void draw (Graphics2D g2) {
 
         int mapCol = 0;
@@ -357,21 +428,45 @@ public class RoomManager {
         }
     }
 
+    /**
+     * Gets Y Path room positions.
+     * @return
+     */
     public List<Point2D> getYPathRoomPositions(){
         return YPathRoomPositions;
     }
+    /**
+     * Gets X Path room positions.
+     * @return
+     */
     public List<Point2D> getXPathRoomPositions(){
         return XPathRoomPositions;
     }
+    /**
+     * Gets Intersection room positions.
+     * @return
+     */
     public List<Point2D> getIntersectionRoomPositions(){
         return IntersectionRoomPositions;
     }
+    /**
+     * Gets Door room positions.
+     * @return
+     */
     public List<Point2D> getDoorRoomPositions(){
         return DoorRoomPositions;
     }
+    /**
+     * Gets Start point.
+     * @return
+     */
     public Point2D getStartPoint(){
         return myStartPoint;
     }
+    /**
+     * Gets End point.
+     * @return
+     */
     public Point2D getEndPoint(){
         return myEndPoint;
     }

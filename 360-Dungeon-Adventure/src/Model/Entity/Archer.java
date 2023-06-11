@@ -7,40 +7,67 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+/**
+ * @author Makai Marteniz
+ * @version 1.0
+ */
 
 /**
- * The Archer is a Hero.
+ * The Archer class is a Hero class that sets up its initial information.
  */
 public class Archer extends Hero {
-    private int myHitChance = 80; // 80% percent
+    /**
+     * Hit chance of this character.
+     */
+    private int myHitChance = 80;
+    /**
+     * Minimum damage of this character.
+     */
     private int myMinDamage = 35;
+    /**
+     * Maximum damage of this character.
+     */
     private int myMaxDamage = 60;
+    /**
+     * Name of this character.
+     */
     private String myEntityName = "Archer";
+    /**
+     * Health of this character.
+     */
     private int myHealthPoints = 150;
+    /**
+     * block chance of this character.
+     */
     private int myBlockChance = 20; // 20% percent
+    /**
+     * Chance of special attack.
+     */
     private int mySpecialChance = 40; // 40% percent
+    /**
+     * The special damage.
+     */
     private int mySpecialDamage = 100;
 
+    /**
+     * Constructor.
+     * @param theGP
+     * @param theKeyH
+     */
     public Archer(GameLoop theGP, KeyHandler theKeyH) {
         super(theGP, theKeyH);
         setDefaultValues();
     }
+
+    /**
+     * Sets default values of the character.
+     */
     public void setDefaultValues(){
-
-        // Start of the copied code:
-
-        // Will eventually be set to center of start room. This would be the coordinate of the room
-        // times the room size plus half the room size on both x and y.
-        // EX: StartRoom = [1, 3], worldX = (1 * 400) + 200, worldY = (3 * 400) + 200
         setWorldX(myGameLoop.myWorldMapMaxCol / 2);
         setWorldY(myGameLoop.myWorldMapMaxRow / 2);
         setSpeed(getDefaultSpeed());
         //starting direction can vary.
         setDirection("down");
-
-        // The code above is copied from the "hero" class method with the
-        // same name "setDefaultValues". Trying to figure out why getDirection is
-        // null and crashing the game.
 
         setHitChance(myHitChance); // 80% percent
         setMinDamage(myMinDamage);

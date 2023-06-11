@@ -59,7 +59,7 @@ public class HeroDisplay {
     public void update(){
         int tempWorldX = myHero.getWorldX();
         int tempWorldY = myHero.getWorldY();
-        // this if statement allows our character to be frozen when
+        // This if statement allows our character to be frozen when
         // we are stationary. Counter doesnt increase unless we press a key.
         if(myKeyHandler.upPressed == true || myKeyHandler.downPressed == true ||
                 myKeyHandler.leftPressed == true || myKeyHandler.rightPressed == true) {
@@ -102,7 +102,6 @@ public class HeroDisplay {
                     case "right":
                         myHero.setWorldX(tempWorldX + myHero.getSpeed());
                         break;
-
                 }
             }
 
@@ -158,8 +157,6 @@ public class HeroDisplay {
                 image = myHero.getImageRight2();
             }
         }
-
-        // g2.drawImage(image, positionX, positionY, dimensionX, dimensionY, ImageObserver);
         g2.drawImage(image, myHero.getScreenX(), myHero.getScreenY(), myGameLoop.TILE_SIZE, myGameLoop.TILE_SIZE, null);
 
 

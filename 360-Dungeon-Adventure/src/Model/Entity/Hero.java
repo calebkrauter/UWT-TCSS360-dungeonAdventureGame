@@ -10,32 +10,68 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * Makai
- * Caleb
+ * @author Makai Marteniz
+ * @author Caleb Krauter
+ */
+
+/**
+ * The Hero class is a Hero class that sets up initial data and is inherited by different heros.
  */
 public abstract class Hero extends Entity {
-
-    KeyHandler keyH;
-    GameLoop myGameLoop;
-
+    /**
+     * A reference to KeyHandler.
+     */
+    private KeyHandler keyH;
+    /**
+     * A reference to the Game Loop class.
+     */
+    public GameLoop myGameLoop;
+    /**
+     * Screen x.
+     */
     private final int myScreenX;
+    /**
+     * Screen y.
+     */
     private final int myScreenY;
+    /**
+     * Reference to the number of health potions.
+     */
     private int myNumHealthPotions = 0;
-
+    /**
+     * Reference to the number of speed potions.
+     */
     private int myNumSpeedPotions = 0;
-
+    /**
+     * Reference to the number of keys.
+     */
     private int myNumKeys = 0;
-
+    /**
+     * Reference to the number of pillars.
+     */
     private int myNumPillars = 0;
-
+    /**
+     * Reference to the block chance.
+     */
     private int myBlockChance = 0;
-
+    /**
+     * Reference to the special chance.
+     */
     private int mySpecialChance = 0;
-
+    /**
+     * Reference to the special damage.
+     */
     private int mySpecialDamage = 0;
-
+    /**
+     * Reference to the number of doors removed from the end room.
+     */
     private int myNumEndDoorsRemoved = 0;
 
+    /**
+     * Constructor.
+     * @param theGP
+     * @param theKeyH
+     */
     public Hero (GameLoop theGP, KeyHandler theKeyH){
         this.myGameLoop = theGP;
         this.keyH = theKeyH;
@@ -65,76 +101,127 @@ public abstract class Hero extends Entity {
         setHeroImages();
     }
 
+    /**
+     * Gets default speed.
+     * @return speed integer.
+     */
     public int getDefaultSpeed() {
         return 2;
     }
+
+    /**
+     * Gets the screen x.
+     * @return screen x integer.
+     */
     public int getScreenX(){
         return myScreenX;
     }
+
+    /**
+     * Gets the screen y.
+     * @return screen y integer.
+     */
     public int getScreenY(){
         return myScreenY;
     }
 
-    public void setNumHealthPotions(int theNumPotions){
-        myNumHealthPotions = theNumPotions;
-    }
-
-    public int getNumHealthPotions() {
-        return myNumHealthPotions;
-    }
-
-    public void setNumSpeedPotions(int theNumPotions){
-        myNumSpeedPotions = theNumPotions;
-    }
-    public int getNumSpeedPotions(){
-        return myNumSpeedPotions;
-    }
-
+    /**
+     * Sets the number of keys.
+     * @param theKeys
+     */
     public void setNumKeys(int theKeys) {
         myNumKeys = theKeys;
     }
+
+    /**
+     * Gets the number of keys.
+     * @return int number of keys
+     */
     public int getNumKeys() {
         return myNumKeys;
     }
+
+    /**
+     * Sets the number of pillars.
+     * @param theNumPillars
+     */
     public void setNumPillars(int theNumPillars) { myNumPillars = theNumPillars; }
 
+    /**
+     * Gets the number of pillars.
+     * @return the int number of pillars
+     */
     public int getNumPillars() { return myNumPillars; }
 
+    /**
+     * Sets the block chance.
+     * @param theChance
+     */
     public void setBlockChance(int theChance){
         myBlockChance = theChance;
     }
+
+    /**
+     * Gets the block chance.
+     * @return
+     */
     public int getBlockChance(){
         return myBlockChance;
     }
 
+    /**
+     * Sets the special chance.
+     * @param theChance
+     */
     public void setSpecialChance(int theChance){
         mySpecialChance = theChance;
     }
+
+    /**
+     * Gets the special chance.
+     * @return
+     */
     public int getSpecialChance(){
         return mySpecialChance;
     }
 
+    /**
+     * Sets the special damage.
+     * @param theDamage
+     */
     public void setSpecialDamage(int theDamage) {
         mySpecialDamage = theDamage;
     }
 
+    /**
+     * Gets the special damage.
+     * @return
+     */
     public int getSpecialDamage() {
         return mySpecialDamage;
     }
 
+    /**
+     * Sets the number of end doors removed.
+     * @param theNumDoors
+     */
     public void setNumEndDoorsRemoved(int theNumDoors){
         myNumEndDoorsRemoved = theNumDoors;
     }
+
+    /**
+     * Gets the number of end doors removed.
+     * @return
+     */
     public int getNumEndDoorsRemoved(){
         return myNumEndDoorsRemoved;
     }
 
     /**
-     * The collision cctions for different items.
+     * The collision actions for different items.
      *
      * @param theIndex the index of the item in the array of all world items
      */
-    static int val = 0;
     public void pickUpItem(int theIndex){
 
         // if index is not 999 we touched an object. 999 can be any index not used initem array
@@ -192,36 +279,9 @@ public abstract class Hero extends Entity {
 
     }
 
-
-//    private void addInteractWithDoorPane(int theIndex) {
-//        int openDoorOption = new JOptionPane().showOptionDialog(new JFrame(), "You have "
-//                + getNumKeys() + " keys left would you like to use one to open the door?", "ARE YOU SURE?????!!!",
-//                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
-//
-//        if (openDoorOption == JOptionPane.YES_OPTION) {
-//            setNumKeys(getNumKeys() - 1);   // delete a key from inventory
-//            myGameLoop.myItems[theIndex] = null;   // delete door from the map
-//        } else if (openDoorOption == JOptionPane.NO_OPTION) {
-//        }
-//        val = 0;
-//    }
-
-//    private void moveHeroBack() {
-//        switch(getDirection()) {
-//            case "up":
-//                setWorldY(getWorldY() + myGameLoop.ROOM_SIZE/2);
-//                break;
-//            case "down":
-//                setWorldY(getWorldY() - myGameLoop.ROOM_SIZE/2);
-//                break;
-//            case "left":
-//                setWorldX(getWorldX() + myGameLoop.ROOM_SIZE/2);
-//                break;
-//            case "right":
-//                setWorldX(getWorldX() - myGameLoop.ROOM_SIZE/2);
-//                break;
-//        }
-//    }
+    /**
+     * Sets Hero images.
+     */
     public void setHeroImages() {
 
         try {

@@ -16,18 +16,34 @@ import java.io.IOException;
  * @author Caleb Krauter
  * @version 1.0
  */
+
+/**
+ * Sets up data for the monsters.
+ */
 public class Monster extends Entity {
 
-
-    private BufferedImage myEnemyImage;
+    /**
+     * Represents collision of an entity.
+     */
     private boolean myCollision = false;
-    private int myBlockChance;
-
+    /**
+     * Represents the size of a tile.
+     */
     private final int TILE_SIZE = 48;
-    GameLoop myGameLoop;
+    /**
+     * Represents the type of monster.
+     */
     private String myMonsterType;
+    /**
+     * Represents a reference to the class where the monsters stats are saved into the DB.
+     */
     private MonsterStatsDB myMonsterStatsDB;
-    private EntitySetter myEntitySetter;
+
+    /**
+     * A constructor.
+     * @param theMonsterType
+     * @param theMonsterStatsDB
+     */
     public Monster(Object theMonsterType, MonsterStatsDB theMonsterStatsDB){
         myMonsterType = (String) theMonsterType;
         myMonsterStatsDB = theMonsterStatsDB;
@@ -37,6 +53,9 @@ public class Monster extends Entity {
         setDefaultValues();
     }
 
+    /**
+     * Sets default values for monsters.
+     */
     public void setDefaultValues(){
         String skeletonName = (String) myMonsterStatsDB.getMonsterStat(myMonsterStatsDB.SKELTON, myMonsterStatsDB.MONSTER_TYPE);
         String ogreName = (String) myMonsterStatsDB.getMonsterStat(myMonsterStatsDB.OGRE, myMonsterStatsDB.MONSTER_TYPE);
@@ -50,11 +69,13 @@ public class Monster extends Entity {
         }
 
         setSpeed(2);
-        //starting direction can vary.
         setDirection("down");
         setCollision(true);
     }
 
+    /**
+     * Sets the stats of the skeleton.
+     */
     private void setSkeletonStats() {
         setEntityName((String) myMonsterStatsDB.getMonsterStat(myMonsterStatsDB.SKELTON, myMonsterStatsDB.MONSTER_TYPE));
         try {
@@ -69,6 +90,9 @@ public class Monster extends Entity {
         setHealth(Integer.valueOf((String) myMonsterStatsDB.getMonsterStat(myMonsterStatsDB.SKELTON, myMonsterStatsDB.DEFAULT_HEALTH))); // point system
     }
 
+    /**
+     * Sets the stats of the ogre.
+     */
     private void setOgreStats() {
         setEntityName((String) myMonsterStatsDB.getMonsterStat(myMonsterStatsDB.OGRE, myMonsterStatsDB.MONSTER_TYPE));
         try {
@@ -83,6 +107,9 @@ public class Monster extends Entity {
         setHealth(Integer.valueOf((String) myMonsterStatsDB.getMonsterStat(myMonsterStatsDB.OGRE, myMonsterStatsDB.DEFAULT_HEALTH))); // point system
     }
 
+    /**
+     * Sets the stats of the Gremlin.
+     */
     private void setGremlinStats() {
         setEntityName((String) myMonsterStatsDB.getMonsterStat(myMonsterStatsDB.GREMLIN, myMonsterStatsDB.MONSTER_TYPE));
         try {
@@ -96,18 +123,21 @@ public class Monster extends Entity {
         setMaxDamage(Integer.valueOf((String) myMonsterStatsDB.getMonsterStat(myMonsterStatsDB.GREMLIN, myMonsterStatsDB.MAX_DAMAGE)));   // point system
         setHealth(Integer.valueOf((String) myMonsterStatsDB.getMonsterStat(myMonsterStatsDB.GREMLIN, myMonsterStatsDB.DEFAULT_HEALTH))); // point system
     }
+
+    /**
+     * Sets the collision.
+     * @param theCollision
+     */
     public void setCollision(boolean theCollision) {
         myCollision = theCollision;
     }
 
+    /**
+     * Gets the collision.
+     * @return
+     */
     public boolean getCollision() {
         return myCollision;
     }
 
-    public void setBlockChance(int theChance){
-            myBlockChance = theChance;
-        }
-    public int getBlockChance(){
-            return myBlockChance;
-        }
 }

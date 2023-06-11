@@ -105,7 +105,10 @@ public abstract class Entity {
     public int getSpeed() {
         return mySpeed;
     }
-
+    /**
+     * Sets entity name.
+     * @param theName
+     */
     public void setEntityName(String theName){
         myEntityName = theName;
     }
@@ -116,6 +119,11 @@ public abstract class Entity {
     public String getEntityName(){
         return myEntityName;
     }
+
+    /**
+     * Sets direction.
+     * @param theDirection
+     */
     public void setDirection(String theDirection){
         myDirection = theDirection;
     }
@@ -127,6 +135,10 @@ public abstract class Entity {
         return myDirection;
     }
 
+    /**
+     * Sets HP.
+     * @param thePoints
+     */
     public void setHealth(int thePoints) {
         myHealthPoints = thePoints;
     }
@@ -138,6 +150,10 @@ public abstract class Entity {
         return myHealthPoints;
     }
 
+    /**
+     * Sets minimum damage.
+     * @param theDamage
+     */
     public void setMinDamage(int theDamage) {
         myMinDamage = theDamage;
     }
@@ -148,6 +164,11 @@ public abstract class Entity {
     public int getMinDamage() {
         return myMinDamage;
     }
+
+    /**
+     * Sets max damage.
+     * @param theDamage
+     */
     public void setMaxDamage(int theDamage) {
         myMaxDamage = theDamage;
     }
@@ -159,6 +180,10 @@ public abstract class Entity {
         return myMaxDamage;
     }
 
+    /**
+     * Sets hit chance.
+     * @param theChance
+     */
     public void setHitChance(int theChance) {
         myHitChance = theChance;
     }
@@ -170,27 +195,55 @@ public abstract class Entity {
         return myHitChance;
     }
 
+    /**
+     * Sets a directional image.
+     * @param theBufferedImage
+     */
     public void setImageUp1(BufferedImage theBufferedImage) {
         up1 = theBufferedImage;
     }
+    /**
+     * Sets a directional image.
+     * @param theBufferedImage
+     */
     public void setImageUp2(BufferedImage theBufferedImage) {
         up2 = theBufferedImage;
     }
     public void setImageDown1(BufferedImage theBufferedImage) {
         down1= theBufferedImage;
     }
+    /**
+     * Sets a directional image.
+     * @param theBufferedImage
+     */
     public void setImageDown2(BufferedImage theBufferedImage) {
         down2 = theBufferedImage;
     }
+    /**
+     * Sets a directional image.
+     * @param theBufferedImage
+     */
     public void setImagLeft1(BufferedImage theBufferedImage) {
         left1 = theBufferedImage;
     }
+    /**
+     * Sets a directional image.
+     * @param theBufferedImage
+     */
     public void setImageLeft2(BufferedImage theBufferedImage) {
         left2 = theBufferedImage;
     }
+    /**
+     * Sets a directional image.
+     * @param theBufferedImage
+     */
     public void setImageRight1(BufferedImage theBufferedImage) {
         right1 = theBufferedImage;
     }
+    /**
+     * Sets a directional image.
+     * @param theBufferedImage
+     */
     public void setImageRight2(BufferedImage theBufferedImage) {
         right2 = theBufferedImage;
     }
@@ -257,6 +310,11 @@ public abstract class Entity {
     public Rectangle getHitBox() {
         return myHitBox;
     }
+
+    /**
+     * Sets hitbox.
+     * @param theHitBox
+     */
     public void setHitBox(Rectangle theHitBox) {
         myHitBox = theHitBox;
     }
@@ -265,6 +323,11 @@ public abstract class Entity {
      * @return
      */
     public int getHitboxDefaultX(){ return myHitboxDefaultX;}
+
+    /**
+     * Sets hitbox default x.
+     * @param theX
+     */
 
     public void setHitboxDefaultX(int theX) {
         myHitboxDefaultX = theX;
@@ -275,6 +338,10 @@ public abstract class Entity {
      */
     public int getHitboxDefaultY(){ return myHitboxDefaultX;}
 
+    /**
+     * Sets hitbox default y.
+     * @param theY
+     */
     public void setHitboxDefaultY(int theY) {
         myHitboxDefaultY = theY;
     }
@@ -285,6 +352,11 @@ public abstract class Entity {
     public boolean getCollision(){
         return myCollision;
     }
+
+    /**
+     * Sets collision.
+     * @param hasCollision
+     */
     public void setCollision(boolean hasCollision){
         myCollision = hasCollision;
     }

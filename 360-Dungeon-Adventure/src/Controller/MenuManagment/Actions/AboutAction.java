@@ -28,15 +28,15 @@ public class AboutAction {
                     "GOAL:\n" +
                     "The player is intended to traverse the randomized maze in \n" +
                             "search for the lost pillars of O.O.P. \n" +
-                    "while encountering dangerous foes along the path. \n" +
-                            "After all necessary items are collected, traverse to the end! \n\n" +
+                            "After finding the pillars, traverse to the end room and\n" +
+                            "defeat the bosses and replace the locked doors with the pillars to escape.\n" +
                     "Tip: You can find locked rooms along the way.\n" +
                             "MORE TIPS... The moving glitch after combat can be averted by\n" +
                             "moving in the direction that the player is forced.\n" +
                             "For example after leaving a battle, if the player is forced in a specific direction," +
                             "\n press the key to move in that direction and let go.\n" +
                             "Also pick up as many health potions as possible and play defensive to beat the bosses.\n" +
-                            "There are ten health potions around the map and one randomly placed speed potion.\n" +
+                            "There are ten health potions around the map and one randomly placed speed potion.\n\n" +
                             "GAMEPLAY : WASD for move, ESC for pause." +
                     "\n\nHave fun Matey");
     }

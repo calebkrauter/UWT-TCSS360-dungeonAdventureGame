@@ -5,6 +5,7 @@ import java.util.TimerTask;
 
 import Controller.MenuManagment.Actions.interactionSound;
 import Model.DB.MonsterStatsDB;
+import Model.Entity.Archer;
 import Model.Entity.Entity;
 import View.map.CollisionTile;
 import View.map.RoomManager;

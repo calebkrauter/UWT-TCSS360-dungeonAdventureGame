@@ -5,14 +5,33 @@ import Model.Entity.Entity;
 
 import java.awt.*;
 
+/**
+ * @author Makai Marteniz
+ * @version 1.0
+ */
+
+/**
+ * A class for displaying entities.
+ */
 public class EntityDisplay {
+    /**
+     * A reference to the Game Loop class.
+     */
+    private GameLoop myGameLoop;
 
-    GameLoop myGameLoop;
-
+    /**
+     * A constructor.
+     * @param theGP
+     */
     public EntityDisplay(GameLoop theGP) {
         this.myGameLoop = theGP;
     }
 
+    /**
+     * Draws entities.
+     * @param g2
+     * @param theEntity
+     */
     public void draw(Graphics2D g2, Entity theEntity) {
 
         int screenX = theEntity.getWorldX() - myGameLoop.myHero.getWorldX() + myGameLoop.myHero.getScreenX();

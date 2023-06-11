@@ -5,13 +5,33 @@ import Model.Item.ParentItem;
 
 import java.awt.*;
 
-public class ItemDisplay {
-    GameLoop myGameLoop;
+/**
+ * @author Makai Marteniz
+ * @version 1.0
+ */
 
+/**
+ * Class that displays items.
+ */
+public class ItemDisplay {
+    /**
+     * A reference to the Game Loop class.
+     */
+    private GameLoop myGameLoop;
+
+    /**
+     * A constructor.
+     * @param theGP
+     */
     public ItemDisplay(GameLoop theGP) {
         this.myGameLoop = theGP;
     }
 
+    /**
+     * Draws items.
+     * @param g2
+     * @param theItem
+     */
     public void draw(Graphics2D g2, ParentItem theItem) {
 
         int screenX = theItem.getWorldX() - myGameLoop.myHero.getWorldX() + myGameLoop.myHero.getScreenX();

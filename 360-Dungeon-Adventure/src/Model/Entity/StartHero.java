@@ -3,37 +3,69 @@ package Model.Entity;
 import Controller.GameLoop;
 import Controller.KeyHandler;
 
+/**
+ * @author Makai Marteniz
+ * @version 1.0
+ */
 
+/**
+ * Start Hero sets up data for the Starter hero that we call FRED.
+ */
 public class StartHero extends Hero {
+    /**
+     * Hit chance.
+     */
     private int myHitChance = 70; // 70% percent
+    /**
+     * Min damage.
+     */
     private int myMinDamage = 25;
+    /**
+     * Max damage.
+     */
     private int myMaxDamage = 45;
+    /**
+     * A name of the hero called FRED.
+     */
     private String myEntityName = "Starter";
+    /**
+     * The HP.
+     */
     private int myHealthPoints = 75;
+    /**
+     * Block chance.
+     */
     private int myBlockChance = 30; // 30% percent
-    private int mySpecialChance = 30; // 30% percent
+    /**
+     * Special Chance.
+     */
+    private int mySpecialChance = 20; // 30% percent
+    /**
+     * Special Damage.
+     */
     private int mySpecialDamage = 80;
 
+    /**
+     * Constructor.
+     * @param theGP
+     * @param theKeyH
+     */
     public StartHero(GameLoop theGP, KeyHandler theKeyH) {
         super(theGP, theKeyH);
         setDefaultValues();
     }
+
+    /**
+     * Sets default values.
+     */
     public void setDefaultValues(){
 
-        // Start of the copied code:
         setHeroImages();
-        // Will eventually be set to center of start room. This would be the coordinate of the room
-        // times the room size plus half the room size on both x and y.
-        // EX: StartRoom = [1, 3], worldX = (1 * 400) + 200, worldY = (3 * 400) + 200
         setWorldX(myGameLoop.myWorldMapMaxCol / 2);
         setWorldY(myGameLoop.myWorldMapMaxRow / 2);
         setSpeed(getDefaultSpeed());
         //starting direction can vary.
         setDirection("down");
-
-        // The code above is copied from the "hero" class method with the
-        // same name "setDefaultValues". Trying to figure out why getDirection is
-        // null and crashing the game.
 
         setHitChance(myHitChance); // 80% percent
         setMinDamage(myMinDamage);

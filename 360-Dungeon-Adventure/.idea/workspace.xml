@@ -6,23 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="27f8f73f-7178-4dc7-aba6-935ecb596e40" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game-saves.ser" beforeDir="false" afterPath="$PROJECT_DIR$/game-saves.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DungeonAdventure/Model/DB/SQLRes/monsterData.db" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DungeonAdventure/Model/DB/SQLRes/monsterData.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CollisionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CollisionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MenuManagment/Actions/AboutAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MenuManagment/Actions/AboutAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/DB/SQLRes/monsterData.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/DB/SQLRes/monsterData.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Archer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Archer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Enemy/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Enemy/Monster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Hero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Hero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Entity/StartHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/StartHero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Stevey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Stevey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/EntityDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/EntityDisplay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/HeroDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/HeroDisplay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/ItemDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ItemDisplay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/map/CollisionTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/map/CollisionTile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/map/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/map/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/map/RoomManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/map/RoomManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,11 +73,11 @@
       <recent name="$PROJECT_DIR$/src/View" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Kraut\Documents\Workspace\360-Dungeon-Adventure\360-Dungeon-Adventure\res" />
       <recent name="C:\Users\Kraut\Documents\Workspace\360-Dungeon-Adventure\360-Dungeon-Adventure\src\Controller\ItemManagment" />
       <recent name="$PROJECT_DIR$/res/RoomTiles" />
       <recent name="$PROJECT_DIR$/res/Items/Door/RedDoor" />
       <recent name="$PROJECT_DIR$/res/Monster" />
-      <recent name="$PROJECT_DIR$/res/Items/Door/GoldDoor" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -215,7 +200,7 @@
       <workItem from="1686203323552" duration="547000" />
       <workItem from="1686279123654" duration="17978000" />
       <workItem from="1686417132090" duration="17023000" />
-      <workItem from="1686452941703" duration="5238000" />
+      <workItem from="1686452941703" duration="7025000" />
     </task>
     <task id="LOCAL-00001" summary="trying to set up new code base">
       <created>1686203597009</created>

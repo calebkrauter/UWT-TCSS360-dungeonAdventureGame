@@ -61,19 +61,19 @@ public class HeroDisplay {
         int tempWorldY = myHero.getWorldY();
         // This if statement allows our character to be frozen when
         // we are stationary. Counter doesnt increase unless we press a key.
-        if(myKeyHandler.upPressed == true || myKeyHandler.downPressed == true ||
-                myKeyHandler.leftPressed == true || myKeyHandler.rightPressed == true) {
+        if(myKeyHandler.getUpPressed() == true || myKeyHandler.getDownPressed() == true ||
+                myKeyHandler.getLeftPressed() == true || myKeyHandler.getRightPressed() == true) {
 
-            if(myKeyHandler.upPressed == true){
+            if(myKeyHandler.getUpPressed() == true){
                 myHero.setDirection("up");
             }
-            else if(myKeyHandler.downPressed == true){
+            else if(myKeyHandler.getDownPressed() == true){
                 myHero.setDirection("down");
             }
-            else if(myKeyHandler.leftPressed == true){
+            else if(myKeyHandler.getLeftPressed() == true){
                 myHero.setDirection("left");
             }
-            else if(myKeyHandler.rightPressed == true){
+            else if(myKeyHandler.getRightPressed() == true){
                 myHero.setDirection("right");
             }
 
@@ -87,20 +87,45 @@ public class HeroDisplay {
             myCollisionHandler.checkMonster(myHero);
 
             // if collision is false player can move
+            // IF collision is false and popup is not active
+
+//            if (myGameLoop.getPopUpActive()) {
+//                System.out.println("WHATUP");
+//                myKeyHandler.setUpPressed(false);
+//                myKeyHandler.setDownPressed(false);
+//                myKeyHandler.setLeftPressed(false);
+//                myKeyHandler.setRightPressed(false);
+//            }
             if (myHero.getCollision() == false) {
 
                 switch (myHero.getDirection()) {
                     case "up":
-                        myHero.setWorldY(tempWorldY - myHero.getSpeed());
+                        if (myGameLoop.getPopUpActive()) {
+                            myHero.setWorldY(tempWorldY);
+                        } else {
+                            myHero.setWorldY(tempWorldY - myHero.getSpeed());
+                        }
                         break;
                     case "down":
-                        myHero.setWorldY(tempWorldY + myHero.getSpeed());
+                        if (myGameLoop.getPopUpActive()) {
+                            myHero.setWorldY(tempWorldY);
+                        } else {
+                            myHero.setWorldY(tempWorldY + myHero.getSpeed());
+                        }
                         break;
                     case "left":
-                        myHero.setWorldX(tempWorldX - myHero.getSpeed());
+                        if (myGameLoop.getPopUpActive()) {
+                            myHero.setWorldX(tempWorldX);
+                        } else {
+                            myHero.setWorldX(tempWorldX - myHero.getSpeed());
+                        }
                         break;
                     case "right":
-                        myHero.setWorldX(tempWorldX + myHero.getSpeed());
+                        if (myGameLoop.getPopUpActive()) {
+                            myHero.setWorldX(tempWorldX);
+                        } else {
+                            myHero.setWorldX(tempWorldX + myHero.getSpeed());
+                        }
                         break;
                 }
             }
@@ -120,6 +145,8 @@ public class HeroDisplay {
 
 
     }
+
+
 
     /**
      * Draws the player's character at the current position on the map.

@@ -442,4 +442,19 @@ public class GameLoop extends JPanel implements Runnable {
 
     }
 
+    private static boolean myActivityOfPopUp = false;
+    public void setPopUpActive(boolean theActivityOfPopUp) {
+        System.out.println("The popup is active " + theActivityOfPopUp);
+        myActivityOfPopUp = theActivityOfPopUp;
+    }
+
+    public boolean getPopUpActive() {
+        if (myActivityOfPopUp) {
+//            System.out.println("ACTIvE in getter");
+        } else {
+//            System.out.println("inACTIvE in getter");
+
+        }
+        return myActivityOfPopUp;
+    }
 }

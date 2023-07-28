@@ -17,7 +17,7 @@ public class KeyHandler implements KeyListener {
     /**
      * Directional presses.
      */
-    public boolean upPressed, downPressed, leftPressed, rightPressed;
+    private boolean upPressed, downPressed, leftPressed, rightPressed;
     /**
      * Reference to game loop class.
      */
@@ -31,6 +31,34 @@ public class KeyHandler implements KeyListener {
     public KeyHandler(GameLoop theGameloop) {
 
         myGameloop = theGameloop;
+
+
+    }
+
+    public void setUpPressed(boolean theUpPressed) {
+        this.upPressed = theUpPressed;
+    }
+    public void setDownPressed(boolean theDownPressed) {
+        this.upPressed = theDownPressed;
+    }
+    public void setLeftPressed(boolean theLeftPressed) {
+        this.upPressed = theLeftPressed;
+    }
+    public void setRightPressed(boolean theRightPressed) {
+        this.upPressed = theRightPressed;
+    }
+
+    public boolean getUpPressed() {
+        return this.upPressed;
+    }
+    public boolean getDownPressed() {
+        return this.downPressed;
+    }
+    public boolean getLeftPressed() {
+        return this.leftPressed;
+    }
+    public boolean getRightPressed() {
+        return this.rightPressed;
     }
 
     /**
@@ -53,15 +81,39 @@ public class KeyHandler implements KeyListener {
 
         if (code == KeyEvent.VK_W) {
             upPressed = true;
+            if (myGameloop.getPopUpActive()) {
+                System.out.println("WHATUP w");
+                myGameloop.setPopUpActive(false);
+                setUpPressed(false);
+                return;
+            }
         }
         if (code == KeyEvent.VK_S) {
             downPressed = true;
+            if (myGameloop.getPopUpActive()) {
+                System.out.println("WHATUP s");
+                myGameloop.setPopUpActive(false);
+                setDownPressed(false);
+                return;
+            }
         }
         if (code == KeyEvent.VK_A) {
             leftPressed = true;
+            if (myGameloop.getPopUpActive()) {
+                System.out.println("WHATUP a");
+                myGameloop.setPopUpActive(false);
+                setLeftPressed(false);
+                return;
+            }
         }
         if (code == KeyEvent.VK_D) {
             rightPressed = true;
+            if (myGameloop.getPopUpActive()) {
+                System.out.println("WHATUP d");
+                myGameloop.setPopUpActive(false);
+                setRightPressed(false);
+                return;
+            }
         }
         if (code == KeyEvent.VK_ESCAPE) {
             if (myGameloop.getGameState() == myGameloop.PLAY_STATE) {

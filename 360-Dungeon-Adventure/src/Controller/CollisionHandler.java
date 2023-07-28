@@ -220,6 +220,8 @@ public class CollisionHandler {
             if (myGameLoop.myEntities[i].getCollision()) {
                 thePlayer.setCollision(true);
                 if (!dialogShown && !blockDialogShown) {
+                    myGameLoop.setPopUpActive(true);
+                    System.out.println("ACTIvE");
                     popUpFight(thePlayer, i);
                 } else {
                     myGameLoop.setGameState(myGameLoop.PLAY_STATE);
@@ -279,6 +281,9 @@ public class CollisionHandler {
             dialogShown = false;
 
         } else if (fightOption == JOptionPane.NO_OPTION) {
+
+            System.out.println("inACTIvE");
+
             thePlayer.setCollision(false);
             startTimer();
             myGameLoop.setGameState(myGameLoop.PLAY_STATE);

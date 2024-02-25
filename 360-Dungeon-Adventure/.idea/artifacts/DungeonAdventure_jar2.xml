@@ -2,6 +2,9 @@
   <artifact type="jar" name="DungeonAdventure:jar2">
     <output-path>$PROJECT_DIR$/out/artifacts/DungeonAdventure_jar2</output-path>
     <root id="archive" name="DungeonAdventure.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
       <element id="module-output" name="DungeonAdventure" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter/5.8.1/junit-jupiter-5.8.1.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.8.1/junit-jupiter-api-5.8.1.jar" path-in-jar="/" />

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="DungeonAdventure:jar2" />
+      <artifact name="DungeonAdventure:jarV1" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -10,11 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27f8f73f-7178-4dc7-aba6-935ecb596e40" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/DungeonAdventure_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/DungeonAdventure_jar2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/DungeonAdventure_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/DungeonAdventure_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/DungeonAdventure_jar2.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/DungeonAdventure_jar2/game-saves.ser" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DungeonAdventure/Model/DB/SQLRes/monsterData.db" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DungeonAdventure/Model/DB/SQLRes/monsterData.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MenuManagment/Actions/AboutAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MenuManagment/Actions/AboutAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MenuManagment/Actions/CreditsAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MenuManagment/Actions/CreditsAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/DB/SQLRes/monsterData.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/DB/SQLRes/monsterData.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -100,7 +103,7 @@
       <recent name="Model" />
     </key>
   </component>
-  <component name="RunManager" selected="JAR Application.DungeonAdventure.jar">
+  <component name="RunManager" selected="Application.Controller.Main">
     <configuration name="Controller.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Controller.Main" />
       <module name="DungeonAdventure" />
@@ -143,37 +146,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MapGeneratorTest.getMyEndCol" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DungeonAdventure" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Model" />
-      <option name="MAIN_CLASS_NAME" value="Model.MapGeneratorTest" />
-      <option name="METHOD_NAME" value="getMyEndCol" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="DungeonAdventure.jar (1)" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/DungeonAdventure_jarV1/DungeonAdventure.jar" />
+      <method v="2" />
     </configuration>
-    <configuration name="MapGeneratorTest.getMyEndRow" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DungeonAdventure" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Model" />
-      <option name="MAIN_CLASS_NAME" value="Model.MapGeneratorTest" />
-      <option name="METHOD_NAME" value="getMyEndRow" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="DungeonAdventure.jar (2)" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/DungeonAdventure_jar/DungeonAdventure.jar" />
+      <method v="2" />
     </configuration>
     <configuration name="DungeonAdventure.jar" type="JarApplication" temporary="true">
       <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/DungeonAdventure_jar2/DungeonAdventure.jar" />
@@ -181,11 +160,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JAR Application.DungeonAdventure.jar" />
         <item itemvalue="Application.Controller.Main" />
+        <item itemvalue="JAR Application.DungeonAdventure.jar (2)" />
+        <item itemvalue="JAR Application.DungeonAdventure.jar (1)" />
+        <item itemvalue="JAR Application.DungeonAdventure.jar" />
         <item itemvalue="JUnit.MapGeneratorTest.getMyCurIntersectionCol" />
-        <item itemvalue="JUnit.MapGeneratorTest.getMyEndRow" />
-        <item itemvalue="JUnit.MapGeneratorTest.getMyEndCol" />
       </list>
     </recent_temporary>
   </component>
@@ -213,6 +192,9 @@
       <workItem from="1708827701993" duration="16000" />
       <workItem from="1708827815498" duration="5279000" />
       <workItem from="1708833120394" duration="891000" />
+      <workItem from="1708836603165" duration="1671000" />
+      <workItem from="1708850171098" duration="70000" />
+      <workItem from="1708850851784" duration="716000" />
     </task>
     <task id="LOCAL-00001" summary="trying to set up new code base">
       <created>1686203597009</created>

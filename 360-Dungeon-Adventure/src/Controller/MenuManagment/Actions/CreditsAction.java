@@ -22,20 +22,29 @@ public class CreditsAction {
      */
     private void creditsAction() {
         JOptionPane.showMessageDialog(new JFrame(),
-                "Who are we? Caleb, Makai and James, students of UWT as of 2023\n\n" +
+                "Who are we? Caleb, Makai and James\n\n" +
+                        "What is this?\n" +
+                        "LOST PILLARS OF OOP is a JR project.\n" +
+                        "Course: ABET Accredited Software Development and Quality Assurance.\n" +
+                        "University Washington Tacoma.\n\n" +
                         "Who did what?:\n" +
                         "Backend:\n" +
-                        "Map generation -> Caleb\n" +
+                        "Procedural Map generation -> Caleb\n" +
                         "Player Movement -> Makai\n" +
-                        "Collision Detection -> James, Makai\n\n" +
+                        "Collision Detection -> Makai, James\n\n" +
                         "Frontend:\n" +
                         "Character Design -> Makai\n" +
                         "Map Design -> James\n" +
                         "Menu Design and development -> Caleb\n\n" +
-                        "Music written and produced by Caleb Krauter\n\n" +
+                        "Music written and produced by Caleb\n\n" +
                         "Thanks For Playing!\n\n" +
                         "Follow us at:\n" +
-                        "GITHUB PLACEHOLDER - Caleb, Makai, James\n" +
-                        "PLACEHOLDER YT/INSTA - Caleb, Makai, James");
+                        "GITHUB:" +
+                        "Caleb - https://github.com/calebkrauter\n" +
+                        "Makai - https://github.com/makaimartinez\n" +
+                        "James - https://github.com/jamesylee3\n\n" +
+                        "Youtube: https://www.youtube.com/@calebkrauterdev\n" +
+                        "Check me out on YT - Caleb Krauter"
+        );
     }
 }

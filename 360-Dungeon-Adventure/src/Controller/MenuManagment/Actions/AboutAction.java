@@ -24,21 +24,19 @@ public class AboutAction {
      */
     private void aboutAction() {
             JOptionPane.showMessageDialog(new JFrame(),
-                    "The Lost Pillars is created by Caleb K., Makai M. and James L.\n\n" +
+                    "The Lost Pillars is created by Caleb Krauter, Makai Marteniz and James Lee.\n\n" +
                     "GOAL:\n" +
                     "The player is intended to traverse the randomized maze in \n" +
-                            "search for the lost pillars of O.O.P. \n" +
+                            "search of the lost pillars of O.O.P.\n" +
                             "After finding the pillars, traverse to the end room and\n" +
                             "defeat the bosses and replace the locked doors with the pillars to escape.\n" +
                     "Tip: You can find locked rooms along the way.\n" +
-                            "MORE TIPS... The moving glitch after combat can be averted by\n" +
-                            "moving in the direction that the player is forced.\n" +
-                            "For example after leaving a battle, if the player is forced in a specific direction," +
-                            "\n press the key to move in that direction and let go.\n" +
-                            "Also pick up as many health potions as possible and play defensive to beat the bosses.\n" +
+                            "Your health will not increase past 100 so be careful when you pick up health potions." +
                             "There are ten health potions around the map and one randomly placed speed potion.\n\n" +
                             "GAMEPLAY : WASD for move, ESC for pause." +
-                    "\n\nHave fun Matey");
+                            "Most importantly, if you die, your game resets. This game hard mode, you may reload your save\n" +
+                            "but your save data will only contain the map as it was from the start." +
+                    "\n\nHave fun!");
     }
 
 }

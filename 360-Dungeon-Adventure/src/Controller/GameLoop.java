@@ -390,13 +390,11 @@ public class GameLoop extends JPanel implements Runnable {
     public void update (){
 //        System.out.println(GUI.myJFrame.isFocused());
         if (CollisionHandler.fightEnd) {
-            System.out.println("true");
             KeyHandler.upPressed = false;
             KeyHandler.downPressed = false;
             KeyHandler.leftPressed = false;
             KeyHandler.rightPressed = false;
             CollisionHandler.fightEnd = false;
-            CollisionHandler.startTimer();
         }
 
         if (myGameState == PLAY_STATE) {

@@ -205,8 +205,13 @@ public class CollisionHandler {
                 if (!dialogShown && !blockDialogShown) {
                     popUpFight(thePlayer, i);
                 } else {
+//                    thePlayer.setCollision(false);
+                    fightEnd = true;
+                    startedFight = false;
+                    dialogShown = false;
+                    blockDialogShown = false;
+//                    startTimer();
                     myGameLoop.setGameState(myGameLoop.PLAY_STATE);
-
                 }
             }
         }
@@ -226,7 +231,6 @@ public class CollisionHandler {
                 dialogShown = false;
                 blockDialogShown = false;
 //                fightEnd = true;
-                startedFight = false;
 
 //                myGameLoop.setGameState(myGameLoop.PLAY_STATE);
                 timer.cancel(); // Cancel the timer after it expires
@@ -240,6 +244,8 @@ public class CollisionHandler {
      * @param theMonster
      */
     private void popUpFight(Entity thePlayer, int theMonster) {
+//        myGameLoop.setGameState(myGameLoop.PAUSE_STATE);
+
         dialogShown = true;
         int fightOption = JOptionPane.showOptionDialog(
                 null,
@@ -262,10 +268,10 @@ public class CollisionHandler {
             dialogShown = false;
 
         } else if (fightOption == JOptionPane.NO_OPTION) {
-            thePlayer.setCollision(false);
-            fightEnd = true;
-            startTimer();
-            myGameLoop.setGameState(myGameLoop.PLAY_STATE);
+//            thePlayer.setCollision(false);
+//            fightEnd = true;
+//            startTimer();
+//            myGameLoop.setGameState(myGameLoop.PLAY_STATE);
         }
     }
 
@@ -296,7 +302,7 @@ public class CollisionHandler {
                 myGameLoop.myEntities[theMonster] = null;
                 new interactionSound(DEATH_SOUND);
                 new JOptionPane().showMessageDialog(null, "YOU DEFEATED THE MONSTER!!!", "YOU WON.", JOptionPane.PLAIN_MESSAGE);
-                thePlayer.setCollision(false);
+//                thePlayer.setCollision(false);
 //                myGameLoop.setGameState(myGameLoop.PAUSE_STATE);
                 fightEnd = true;
 //                startTimer();
@@ -326,10 +332,10 @@ public class CollisionHandler {
             );
 
             if (leaveOption == JOptionPane.YES_OPTION) {
-                thePlayer.setCollision(false);
-                fightEnd = true;
+//                thePlayer.setCollision(false);
+//                fightEnd = true;
 
-                startTimer();
+//                startTimer();
             } else {
                 doFight(thePlayer, myGameLoop.myEntities, theMonster);
                 System.out.println("FIGHT");

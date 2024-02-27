@@ -65,7 +65,7 @@ public class MenuManager extends JPanel {
     /**
      * String for the file of the gameplay music.
      */
-    final private String TREASURE_HUNT_SONG = "TreasureHunt.wav";
+    final private String TREASURE_HUNT_SONG = "res/TreasureHunt.wav";
     /**
      * Game save name.
      */
@@ -178,7 +178,7 @@ public class MenuManager extends JPanel {
     /**
      * Main menu image.
      */
-    private final BufferedImage mainImage = ImageIO.read(new File("mainMenu.png"));
+    private final BufferedImage mainImage = ImageIO.read(new File("res/mainMenu.png"));
     /**
      * Hero Stevey image.
      */
@@ -218,7 +218,7 @@ public class MenuManager extends JPanel {
     /**
      * Reference to the button sound.
      */
-    private final String buttonSound = "typeWriterSound.wav";
+    private final String buttonSound = "res/typeWriterSound.wav";
 
     /**
      * The hero selection.

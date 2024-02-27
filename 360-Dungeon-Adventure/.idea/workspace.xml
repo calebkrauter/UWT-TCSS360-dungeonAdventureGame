@@ -9,17 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27f8f73f-7178-4dc7-aba6-935ecb596e40" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/DungeonAdventure_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/DungeonAdventure_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/DungeonAdventure_jar2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/DungeonAdventure_jar2/game-saves.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DungeonAdventure/Model/DB/SQLRes/monsterData.db" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DungeonAdventure/Model/DB/SQLRes/monsterData.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MenuManagment/Actions/AboutAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MenuManagment/Actions/AboutAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MenuManagment/Actions/CreditsAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MenuManagment/Actions/CreditsAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/DB/SQLRes/monsterData.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/DB/SQLRes/monsterData.db" afterDir="false" />
-    </list>
+    <list default="true" id="27f8f73f-7178-4dc7-aba6-935ecb596e40" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,12 +36,16 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2QnNx5ZM7FzkYDKUbXffBvLhWxN" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;Application.Controller.Main.executor&quot;: &quot;Run&quot;,
     &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
     &quot;JAR Application.DungeonAdventure.jar.executor&quot;: &quot;Run&quot;,
@@ -158,6 +152,17 @@
       <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/DungeonAdventure_jar2/DungeonAdventure.jar" />
       <method v="2" />
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Controller.Main" />
@@ -167,13 +172,6 @@
         <item itemvalue="JUnit.MapGeneratorTest.getMyCurIntersectionCol" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-19.0.2-corretto-19.0.2-f644763e9732-1e16d6ec" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -195,6 +193,7 @@
       <workItem from="1708836603165" duration="1671000" />
       <workItem from="1708850171098" duration="70000" />
       <workItem from="1708850851784" duration="716000" />
+      <workItem from="1709006825609" duration="118000" />
     </task>
     <task id="LOCAL-00001" summary="trying to set up new code base">
       <created>1686203597009</created>
@@ -210,6 +209,7 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="trying to set up new code base" />
     <option name="LAST_COMMIT_MESSAGE" value="trying to set up new code base" />
   </component>

@@ -43,7 +43,7 @@ public class CollisionHandler {
     /**
      * An audio String file used for dying entities.
      */
-    private final String DEATH_SOUND = "deathSound.wav";
+    private final String DEATH_SOUND = "res/deathSound.wav";
 
     /**
      * A boolean telling if the player is out of a fight.

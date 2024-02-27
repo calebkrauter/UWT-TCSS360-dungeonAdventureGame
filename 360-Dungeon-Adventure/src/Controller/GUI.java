@@ -42,11 +42,11 @@ public class GUI {
     /**
      * Main menu music.
      */
-    private String MAIN_MENU_MUSIC = "MainMenu.wav";
+    private String MAIN_MENU_MUSIC = "res/MainMenu.wav";
     /**
      * Button sound.
      */
-    private final String buttonSound = "typeWriterSound.wav";
+    private final String buttonSound = "res/typeWriterSound.wav";
 
     /**
      * Reference to music player.
